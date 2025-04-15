@@ -90,7 +90,7 @@ namespace Airline
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
         private void label3_Click(object sender, EventArgs e)
         {
