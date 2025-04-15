@@ -217,10 +217,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 49);
+            this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1300, 190);
+            this.panel1.Size = new System.Drawing.Size(1300, 220);
             this.panel1.TabIndex = 23;
             // 
             // label3
@@ -231,7 +231,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Britannic Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(214, 21);
+            this.label3.Location = new System.Drawing.Point(214, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(807, 41);
@@ -244,7 +244,7 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::Airline.Properties.Resources.logofinal;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(3, 18);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(206, 184);
             this.panel3.TabIndex = 21;
@@ -255,7 +255,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label2.Location = new System.Drawing.Point(216, 79);
+            this.label2.Location = new System.Drawing.Point(216, 108);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(558, 27);
@@ -270,7 +270,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Britannic Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(214, 38);
+            this.label1.Location = new System.Drawing.Point(214, 67);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(807, 41);
@@ -290,7 +290,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1300, 49);
+            this.pnlHeader.Size = new System.Drawing.Size(1300, 70);
             this.pnlHeader.TabIndex = 15;
             // 
             // btnExit
@@ -299,11 +299,12 @@
             this.btnExit.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnExit.BackgroundImage = global::Airline.Properties.Resources.ButtonSmall;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(1253, 11);
+            this.btnExit.Location = new System.Drawing.Point(1248, 12);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(36, 31);
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
             this.btnExit.TabIndex = 16;
             this.btnExit.Text = "x";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -315,12 +316,12 @@
             this.lblHelp.AutoSize = true;
             this.lblHelp.BackColor = System.Drawing.Color.Transparent;
             this.lblHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblHelp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHelp.ForeColor = System.Drawing.Color.Gold;
-            this.lblHelp.Location = new System.Drawing.Point(1204, 19);
+            this.lblHelp.Location = new System.Drawing.Point(1185, 21);
             this.lblHelp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(44, 19);
+            this.lblHelp.Size = new System.Drawing.Size(58, 25);
             this.lblHelp.TabIndex = 17;
             this.lblHelp.Text = "HELP";
             this.lblHelp.Click += new System.EventHandler(this.lblContactUs_Click);
@@ -331,12 +332,12 @@
             this.lblLogIn.AutoSize = true;
             this.lblLogIn.BackColor = System.Drawing.Color.Transparent;
             this.lblLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblLogIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogIn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogIn.ForeColor = System.Drawing.Color.Gold;
-            this.lblLogIn.Location = new System.Drawing.Point(956, 19);
+            this.lblLogIn.Location = new System.Drawing.Point(851, 21);
             this.lblLogIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogIn.Name = "lblLogIn";
-            this.lblLogIn.Size = new System.Drawing.Size(62, 19);
+            this.lblLogIn.Size = new System.Drawing.Size(85, 25);
             this.lblLogIn.TabIndex = 18;
             this.lblLogIn.Text = "LOG IN";
             this.lblLogIn.Click += new System.EventHandler(this.label6_Click_1);
@@ -347,12 +348,12 @@
             this.lblSignUp.AutoSize = true;
             this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
             this.lblSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblSignUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignUp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignUp.ForeColor = System.Drawing.Color.Gold;
-            this.lblSignUp.Location = new System.Drawing.Point(1022, 19);
+            this.lblSignUp.Location = new System.Drawing.Point(940, 21);
             this.lblSignUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(69, 19);
+            this.lblSignUp.Size = new System.Drawing.Size(95, 25);
             this.lblSignUp.TabIndex = 19;
             this.lblSignUp.Text = "SIGN UP";
             this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
@@ -363,12 +364,12 @@
             this.lblLearnMore.AutoSize = true;
             this.lblLearnMore.BackColor = System.Drawing.Color.Transparent;
             this.lblLearnMore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblLearnMore.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLearnMore.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLearnMore.ForeColor = System.Drawing.Color.Gold;
-            this.lblLearnMore.Location = new System.Drawing.Point(1095, 19);
+            this.lblLearnMore.Location = new System.Drawing.Point(1039, 21);
             this.lblLearnMore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLearnMore.Name = "lblLearnMore";
-            this.lblLearnMore.Size = new System.Drawing.Size(105, 19);
+            this.lblLearnMore.Size = new System.Drawing.Size(142, 25);
             this.lblLearnMore.TabIndex = 16;
             this.lblLearnMore.Text = "LEARN MORE";
             this.lblLearnMore.Click += new System.EventHandler(this.lblLearnMore_Click);
