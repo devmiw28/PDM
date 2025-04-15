@@ -12,6 +12,8 @@ namespace Airline
 {
     public partial class Homepage : Form
     {
+        private static LogIn loginFormInstance;
+        private static SignUp signupFormInstance;
         private int currentImageIndex = 0;
         private string[] imagePaths = new string[]
         {
@@ -137,9 +139,26 @@ namespace Airline
 
         private void label6_Click_1(object sender, EventArgs e)
         {
-            LogIn form2 = new LogIn();
-            form2.Show();
-            
+            if (signupFormInstance != null && !signupFormInstance.IsDisposed)
+            {
+                signupFormInstance.Close();
+                signupFormInstance = null;
+            }
+
+            if (loginFormInstance == null || loginFormInstance.IsDisposed)
+            {
+                loginFormInstance = new LogIn();
+                loginFormInstance.FormClosed += (s, args) => loginFormInstance = null; // Reset after closing
+                loginFormInstance.Show();
+            }
+            else
+            {
+                loginFormInstance.BringToFront();
+                loginFormInstance.Focus();
+            }
+            //LogIn form2 = new LogIn();
+            // form2.Show();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -149,14 +168,35 @@ namespace Airline
 
         private void lblSignUp_Click(object sender, EventArgs e)
         {
-            SignUp form3 = new SignUp();
-            form3.Show();
+            // Close Login if it's open
+            if (loginFormInstance != null && !loginFormInstance.IsDisposed)
+            {
+                loginFormInstance.Close();
+                loginFormInstance = null;
+            }
+
+            if (signupFormInstance == null || signupFormInstance.IsDisposed)
+            {
+                signupFormInstance = new SignUp();
+                signupFormInstance.FormClosed += (s, args) => signupFormInstance = null;
+                signupFormInstance.Show();
+            }
+            else
+            {
+                signupFormInstance.BringToFront();
+                signupFormInstance.Focus();
+            }
+            //SignUp form3 = new SignUp();
+            //form3.Show();
         }
 
         private void lblLearnMore_Click(object sender, EventArgs e)
         {
-            LearnMore form4 = new LearnMore();
-            form4.Show();
+            LearnMore learnmore = new LearnMore();
+            learnmore.FormClosed += (s, args) => this.Show();
+            learnmore.Show();
+
+            this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -171,8 +211,11 @@ namespace Airline
 
         private void lblContactUs_Click(object sender, EventArgs e)
         {
-            Help form5 = new Help();
-            form5.Show();
+            Help help = new Help();
+            help.FormClosed += (s, args) => this.Show();
+            help.Show();
+
+            this.Hide();
         }
     }
 }

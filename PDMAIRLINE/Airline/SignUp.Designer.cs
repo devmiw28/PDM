@@ -137,9 +137,9 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::Airline.Properties.Resources.logofinal;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(67, 17);
+            this.panel3.Location = new System.Drawing.Point(74, 11);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(276, 95);
+            this.panel3.Size = new System.Drawing.Size(270, 98);
             this.panel3.TabIndex = 22;
             // 
             // textBox2
@@ -168,7 +168,7 @@
             this.button1.Location = new System.Drawing.Point(73, 232);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(276, 72);
+            this.button1.Size = new System.Drawing.Size(265, 68);
             this.button1.TabIndex = 13;
             this.button1.Text = "SIGN UP";
             this.button1.UseVisualStyleBackColor = false;
@@ -228,7 +228,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(371, 14);
+            this.btnExit.Location = new System.Drawing.Point(373, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.TabIndex = 26;
