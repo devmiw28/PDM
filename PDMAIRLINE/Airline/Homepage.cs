@@ -17,7 +17,7 @@ namespace Airline
         private int currentImageIndex = 0;
         private string[] imagePaths = new string[]
         {
-    @"C:\Users\Student\Downloads\new3\NEW\destination\DAVAO1.png",
+    @"C:\Users\ADMIN\Source\Repos\PDM\PDMAIRLINE\destination\DAVAO1.png",
     @"C:\Users\Student\Downloads\new3\NEW\destination\DAVAO2.png",
     @"C:\Users\Student\Downloads\new3\NEW\destination\DAVAO3.png"
         };

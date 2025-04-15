@@ -61,13 +61,13 @@
             // 
             // pnlDestination1
             // 
-            this.pnlDestination1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDestination1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlDestination1.Controls.Add(this.label4);
             this.pnlDestination1.Controls.Add(this.linkLabel1);
-            this.pnlDestination1.Location = new System.Drawing.Point(311, 288);
-            this.pnlDestination1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDestination1.Location = new System.Drawing.Point(265, 294);
+            this.pnlDestination1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDestination1.Name = "pnlDestination1";
-            this.pnlDestination1.Size = new System.Drawing.Size(287, 154);
+            this.pnlDestination1.Size = new System.Drawing.Size(400, 300);
             this.pnlDestination1.TabIndex = 20;
             this.pnlDestination1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDestination1_Paint);
             // 
@@ -77,7 +77,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(102, 53);
+            this.label4.Location = new System.Drawing.Point(132, 90);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 33);
@@ -89,7 +89,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel1.Location = new System.Drawing.Point(116, 116);
+            this.linkLabel1.Location = new System.Drawing.Point(146, 153);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(67, 13);
@@ -99,13 +99,13 @@
             // 
             // pnlDestination4
             // 
-            this.pnlDestination4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDestination4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlDestination4.Controls.Add(this.linkLabel2);
             this.pnlDestination4.Controls.Add(this.label5);
-            this.pnlDestination4.Location = new System.Drawing.Point(311, 473);
-            this.pnlDestination4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDestination4.Location = new System.Drawing.Point(265, 598);
+            this.pnlDestination4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDestination4.Name = "pnlDestination4";
-            this.pnlDestination4.Size = new System.Drawing.Size(287, 154);
+            this.pnlDestination4.Size = new System.Drawing.Size(400, 350);
             this.pnlDestination4.TabIndex = 21;
             // 
             // linkLabel2
@@ -136,13 +136,13 @@
             // 
             // pnlDestination2
             // 
-            this.pnlDestination2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDestination2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlDestination2.Controls.Add(this.linkLabel3);
             this.pnlDestination2.Controls.Add(this.label6);
-            this.pnlDestination2.Location = new System.Drawing.Point(658, 288);
-            this.pnlDestination2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDestination2.Location = new System.Drawing.Point(676, 294);
+            this.pnlDestination2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDestination2.Name = "pnlDestination2";
-            this.pnlDestination2.Size = new System.Drawing.Size(287, 154);
+            this.pnlDestination2.Size = new System.Drawing.Size(400, 300);
             this.pnlDestination2.TabIndex = 22;
             // 
             // linkLabel3
@@ -173,13 +173,13 @@
             // 
             // pnlDestination3
             // 
-            this.pnlDestination3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDestination3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlDestination3.Controls.Add(this.linkLabel4);
             this.pnlDestination3.Controls.Add(this.label7);
-            this.pnlDestination3.Location = new System.Drawing.Point(658, 473);
-            this.pnlDestination3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDestination3.Location = new System.Drawing.Point(676, 598);
+            this.pnlDestination3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDestination3.Name = "pnlDestination3";
-            this.pnlDestination3.Size = new System.Drawing.Size(287, 154);
+            this.pnlDestination3.Size = new System.Drawing.Size(400, 300);
             this.pnlDestination3.TabIndex = 24;
             // 
             // linkLabel4
@@ -218,9 +218,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 70);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1300, 220);
+            this.panel1.Size = new System.Drawing.Size(1440, 220);
             this.panel1.TabIndex = 23;
             // 
             // label3
@@ -290,7 +290,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1300, 70);
+            this.pnlHeader.Size = new System.Drawing.Size(1440, 70);
             this.pnlHeader.TabIndex = 15;
             // 
             // btnExit
@@ -302,7 +302,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(1248, 12);
+            this.btnExit.Location = new System.Drawing.Point(1388, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 40);
             this.btnExit.TabIndex = 16;
@@ -318,7 +318,7 @@
             this.lblHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblHelp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHelp.ForeColor = System.Drawing.Color.Gold;
-            this.lblHelp.Location = new System.Drawing.Point(1185, 21);
+            this.lblHelp.Location = new System.Drawing.Point(1325, 21);
             this.lblHelp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHelp.Name = "lblHelp";
             this.lblHelp.Size = new System.Drawing.Size(58, 25);
@@ -334,7 +334,7 @@
             this.lblLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLogIn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogIn.ForeColor = System.Drawing.Color.Gold;
-            this.lblLogIn.Location = new System.Drawing.Point(851, 21);
+            this.lblLogIn.Location = new System.Drawing.Point(991, 21);
             this.lblLogIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogIn.Name = "lblLogIn";
             this.lblLogIn.Size = new System.Drawing.Size(85, 25);
@@ -350,7 +350,7 @@
             this.lblSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblSignUp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignUp.ForeColor = System.Drawing.Color.Gold;
-            this.lblSignUp.Location = new System.Drawing.Point(940, 21);
+            this.lblSignUp.Location = new System.Drawing.Point(1080, 21);
             this.lblSignUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(95, 25);
@@ -366,7 +366,7 @@
             this.lblLearnMore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLearnMore.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLearnMore.ForeColor = System.Drawing.Color.Gold;
-            this.lblLearnMore.Location = new System.Drawing.Point(1039, 21);
+            this.lblLearnMore.Location = new System.Drawing.Point(1179, 21);
             this.lblLearnMore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLearnMore.Name = "lblLearnMore";
             this.lblLearnMore.Size = new System.Drawing.Size(142, 25);
@@ -379,7 +379,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1300, 750);
+            this.ClientSize = new System.Drawing.Size(1440, 900);
             this.Controls.Add(this.pnlDestination3);
             this.Controls.Add(this.pnlDestination4);
             this.Controls.Add(this.pnlDestination2);
@@ -387,7 +387,7 @@
             this.Controls.Add(this.pnlDestination1);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Homepage";
             this.Text = "PDM AIRLINE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
