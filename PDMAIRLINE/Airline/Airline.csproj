@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5696EED7-4797-4FB5-934C-ECF4125B163C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Airline</RootNamespace>
+    <AssemblyName>Airline</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage.Designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LearnMore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearnMore.Designer.cs">
+      <DependentUpon>LearnMore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LearnMore.resx">
+      <DependentUpon>LearnMore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM-Facade-1024x422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM-Facade-1024x4221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TEXT-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG 86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1e3a0db-c794-4570-a3fc-34a3dfb3036b-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1e3a0db-c794-4570-a3fc-34a3dfb3036b-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1e3a0db-c794-4570-a3fc-34a3dfb3036b-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1e3a0db-c794-4570-a3fc-34a3dfb3036b-removebg-preview %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logofinal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AIRPLANE 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG 861.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient__1_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGIN BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGIN BG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelHeaderBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panelHeader%282%29bg %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelHeaderBg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirplaneBg %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirplaneBgFinal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtoncolorBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtoncolorBig1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirplaneBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGIN BG2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabpageBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGIN BG3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview %283%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
