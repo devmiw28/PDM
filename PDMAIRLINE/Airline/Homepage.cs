@@ -17,7 +17,7 @@ namespace Airline
         private int currentImageIndex = 0;
         private string[] imagePaths = new string[]
         {
-    @"C:\Users\ADMIN\Source\Repos\PDM\PDMAIRLINE\destination\DAVAO1.png",
+    @"PDM/PDMAIRLINE/destination/DAVAO1.png",
     @"C:\Users\Student\Downloads\new3\NEW\destination\DAVAO2.png",
     @"C:\Users\Student\Downloads\new3\NEW\destination\DAVAO3.png"
         };
@@ -214,6 +214,42 @@ namespace Airline
             Help help = new Help();
             help.FormClosed += (s, args) => this.Show();
             help.Show();
+
+            this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SearchFlight searchflight = new SearchFlight();
+            searchflight.FormClosed += (s, args) => this.Show();
+            searchflight.Show();
+
+            this.Hide();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SearchFlight searchflight = new SearchFlight();
+            searchflight.FormClosed += (s, args) => this.Show();
+            searchflight.Show();
+
+            this.Hide();
+        }
+
+        private void BookNow3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SearchFlight searchflight = new SearchFlight();
+            searchflight.FormClosed += (s, args) => this.Show();
+            searchflight.Show();
+
+            this.Hide();
+        }
+
+        private void BookNow4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SearchFlight searchflight = new SearchFlight();
+            searchflight.FormClosed += (s, args) => this.Show();
+            searchflight.Show();
 
             this.Hide();
         }

@@ -30,15 +30,15 @@
         {
             this.pnlDestination1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.BookNow1 = new System.Windows.Forms.LinkLabel();
             this.pnlDestination4 = new System.Windows.Forms.Panel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.BookNow3 = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlDestination2 = new System.Windows.Forms.Panel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.BookNow2 = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlDestination3 = new System.Windows.Forms.Panel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.BookNow4 = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             // 
             this.pnlDestination1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlDestination1.Controls.Add(this.label4);
-            this.pnlDestination1.Controls.Add(this.linkLabel1);
+            this.pnlDestination1.Controls.Add(this.BookNow1);
             this.pnlDestination1.Location = new System.Drawing.Point(265, 294);
             this.pnlDestination1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDestination1.Name = "pnlDestination1";
@@ -76,7 +76,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(132, 90);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -84,23 +84,25 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "DAVAO";
             // 
-            // linkLabel1
+            // BookNow1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel1.Location = new System.Drawing.Point(146, 153);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(67, 13);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "BOOK NOW";
+            this.BookNow1.AutoSize = true;
+            this.BookNow1.BackColor = System.Drawing.Color.Transparent;
+            this.BookNow1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BookNow1.LinkColor = System.Drawing.Color.Black;
+            this.BookNow1.Location = new System.Drawing.Point(146, 153);
+            this.BookNow1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BookNow1.Name = "BookNow1";
+            this.BookNow1.Size = new System.Drawing.Size(67, 13);
+            this.BookNow1.TabIndex = 1;
+            this.BookNow1.TabStop = true;
+            this.BookNow1.Text = "BOOK NOW";
+            this.BookNow1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pnlDestination4
             // 
             this.pnlDestination4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pnlDestination4.Controls.Add(this.linkLabel2);
+            this.pnlDestination4.Controls.Add(this.BookNow3);
             this.pnlDestination4.Controls.Add(this.label5);
             this.pnlDestination4.Location = new System.Drawing.Point(265, 598);
             this.pnlDestination4.Margin = new System.Windows.Forms.Padding(2);
@@ -108,25 +110,27 @@
             this.pnlDestination4.Size = new System.Drawing.Size(400, 350);
             this.pnlDestination4.TabIndex = 21;
             // 
-            // linkLabel2
+            // BookNow3
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.LinkColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel2.Location = new System.Drawing.Point(104, 107);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(67, 13);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "BOOK NOW";
+            this.BookNow3.AutoSize = true;
+            this.BookNow3.BackColor = System.Drawing.Color.Transparent;
+            this.BookNow3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BookNow3.LinkColor = System.Drawing.Color.Black;
+            this.BookNow3.Location = new System.Drawing.Point(104, 107);
+            this.BookNow3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BookNow3.Name = "BookNow3";
+            this.BookNow3.Size = new System.Drawing.Size(67, 13);
+            this.BookNow3.TabIndex = 2;
+            this.BookNow3.TabStop = true;
+            this.BookNow3.Text = "BOOK NOW";
+            this.BookNow3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BookNow3_LinkClicked);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(79, 44);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
@@ -137,7 +141,7 @@
             // pnlDestination2
             // 
             this.pnlDestination2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pnlDestination2.Controls.Add(this.linkLabel3);
+            this.pnlDestination2.Controls.Add(this.BookNow2);
             this.pnlDestination2.Controls.Add(this.label6);
             this.pnlDestination2.Location = new System.Drawing.Point(676, 294);
             this.pnlDestination2.Margin = new System.Windows.Forms.Padding(2);
@@ -145,25 +149,27 @@
             this.pnlDestination2.Size = new System.Drawing.Size(400, 300);
             this.pnlDestination2.TabIndex = 22;
             // 
-            // linkLabel3
+            // BookNow2
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.LinkColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel3.Location = new System.Drawing.Point(116, 116);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(67, 13);
-            this.linkLabel3.TabIndex = 3;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "BOOK NOW";
+            this.BookNow2.AutoSize = true;
+            this.BookNow2.BackColor = System.Drawing.Color.Transparent;
+            this.BookNow2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BookNow2.LinkColor = System.Drawing.Color.Black;
+            this.BookNow2.Location = new System.Drawing.Point(116, 116);
+            this.BookNow2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BookNow2.Name = "BookNow2";
+            this.BookNow2.Size = new System.Drawing.Size(67, 13);
+            this.BookNow2.TabIndex = 3;
+            this.BookNow2.TabStop = true;
+            this.BookNow2.Text = "BOOK NOW";
+            this.BookNow2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(109, 53);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -174,7 +180,7 @@
             // pnlDestination3
             // 
             this.pnlDestination3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pnlDestination3.Controls.Add(this.linkLabel4);
+            this.pnlDestination3.Controls.Add(this.BookNow4);
             this.pnlDestination3.Controls.Add(this.label7);
             this.pnlDestination3.Location = new System.Drawing.Point(676, 598);
             this.pnlDestination3.Margin = new System.Windows.Forms.Padding(2);
@@ -182,25 +188,27 @@
             this.pnlDestination3.Size = new System.Drawing.Size(400, 300);
             this.pnlDestination3.TabIndex = 24;
             // 
-            // linkLabel4
+            // BookNow4
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel4.LinkColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel4.Location = new System.Drawing.Point(116, 107);
-            this.linkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(67, 13);
-            this.linkLabel4.TabIndex = 4;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "BOOK NOW";
+            this.BookNow4.AutoSize = true;
+            this.BookNow4.BackColor = System.Drawing.Color.Transparent;
+            this.BookNow4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BookNow4.LinkColor = System.Drawing.Color.Black;
+            this.BookNow4.Location = new System.Drawing.Point(116, 107);
+            this.BookNow4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BookNow4.Name = "BookNow4";
+            this.BookNow4.Size = new System.Drawing.Size(67, 13);
+            this.BookNow4.TabIndex = 4;
+            this.BookNow4.TabStop = true;
+            this.BookNow4.Text = "BOOK NOW";
+            this.BookNow4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BookNow4_LinkClicked);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(99, 44);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
@@ -425,12 +433,12 @@
         private System.Windows.Forms.Panel pnlDestination2;
         private System.Windows.Forms.Panel pnlDestination3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel BookNow1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel BookNow3;
+        private System.Windows.Forms.LinkLabel BookNow2;
+        private System.Windows.Forms.LinkLabel BookNow4;
     }
 }
