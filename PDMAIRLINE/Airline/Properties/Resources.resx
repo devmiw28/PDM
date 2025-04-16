@@ -127,11 +127,17 @@
   <data name="PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ILOILO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ILOILO11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logofinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logofinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="f1e3a0db-c794-4570-a3fc-34a3dfb3036b-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f1e3a0db-c794-4570-a3fc-34a3dfb3036b-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LOGIN BG3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN BG3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +151,14 @@
   <data name="LOGIN BG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN BG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CEBU2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CEBU21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PDM-Facade-1024x4221" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDM-Facade-1024x4221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DAVAO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DAVAO11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,11 +190,23 @@
   <data name="TEXT-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TEXT-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ILOILO3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ILOILO31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AirplaneBgFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AirplaneBgFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LOGIN BG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ILOILO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ILOILO21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PALAWAN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PALAWAN11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CEBU3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CEBU31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PDM-Facade-1024x422" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDM-Facade-1024x422.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +214,20 @@
   <data name="AIRPLANE 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AIRPLANE 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DAVAO3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DAVAO31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PALAWAN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PALAWAN31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PALAWAN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PALAWAN21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TabpageBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TabpageBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +247,9 @@
   <data name="panelHeader(2)bg (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panelHeader(2)bg (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DAVAO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DAVAO21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -229,7 +265,7 @@
   <data name="AirplaneBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AirplaneBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CEBU1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CEBU11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -15,6 +15,11 @@ namespace Airline
         private static LogIn loginFormInstance;
         private static SignUp signupFormInstance;
         private int currentImageIndex = 0;
+        private Image[] images1;
+        private Image[] images2;
+        private Image[] images3;
+        private Image[] images4;
+
         private string[] imagePaths = new string[]
         {
     @"PDM/PDMAIRLINE/destination/DAVAO1.png",
@@ -32,28 +37,52 @@ namespace Airline
             // Load the first image
             LoadCurrentImage();
 
-            // Attach the Paint event to redraw the image
-            pnlDestination1.Paint += Panel1_Paint;
-            pnlDestination2.Paint += Panel1_Paint;
-            pnlDestination3.Paint += Panel1_Paint;
-            pnlDestination4.Paint += Panel1_Paint;
-          
-            // Start the timer
-            Timer timer = new Timer();
-            timer.Interval = 3000; // 3 seconds
-            timer.Tick += Timer_Tick;
-            timer.Start();
+
+            images1 = new Image[]
+            {
+                Properties.Resources.DAVAO1,
+                Properties.Resources.DAVAO2,
+                Properties.Resources.DAVAO3,
+            };
+
+            images2 = new Image[]
+            {
+                Properties.Resources.CEBU1,
+                Properties.Resources.CEBU2,
+                Properties.Resources.CEBU3,
+            };
+
+            images3 = new Image[]
+            {
+                Properties.Resources.PALAWAN1,
+                Properties.Resources.PALAWAN2,
+                Properties.Resources.PALAWAN3,
+            };
+
+            images4 = new Image[]
+            {
+                Properties.Resources.ILOILO1,
+                Properties.Resources.ILOILO2,
+                Properties.Resources.ILOILO3,
+            };
+
+            PbDestination1.SizeMode = PictureBoxSizeMode.StretchImage;
+            PbDestination1.Image = images1[currentImageIndex];
+
+            PbDestination2.SizeMode = PictureBoxSizeMode.StretchImage;
+            PbDestination2.Image = images2[currentImageIndex];
+
+            PbDestination3.SizeMode = PictureBoxSizeMode.StretchImage;
+            PbDestination3.Image = images3[currentImageIndex];
+
+            PbDestination4.SizeMode = PictureBoxSizeMode.StretchImage;
+            PbDestination4.Image = images4[currentImageIndex];
+
+            timer1.Interval = 3000;
+            timer1.Start();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            LoadCurrentImage();
-            pnlDestination1.Invalidate(); // Force the panel to repaint
-            pnlDestination2.Invalidate();
-            pnlDestination3.Invalidate();
-            pnlDestination4.Invalidate(); // Force the panel to repaint
 
-        }
 
         private void LoadCurrentImage()
         {
@@ -77,14 +106,6 @@ namespace Airline
             currentImageIndex = (currentImageIndex + 1) % imagePaths.Length;
         }
 
-        // Paint event to draw the image on the panel
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            if (currentImage != null)
-            {
-                e.Graphics.DrawImage(currentImage, new Rectangle(0, 0, pnlDestination1.Width, pnlDestination1.Height));
-            }
-        }
 
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -252,6 +273,19 @@ namespace Airline
             searchflight.Show();
 
             this.Hide();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            currentImageIndex = (currentImageIndex + 1) % images1.Length;
+            currentImageIndex = (currentImageIndex + 1) % images2.Length;
+            currentImageIndex = (currentImageIndex + 1) % images3.Length;
+            currentImageIndex = (currentImageIndex + 1) % images4.Length;
+
+            PbDestination1.Image = images1[currentImageIndex];
+            PbDestination2.Image = images2[currentImageIndex];
+            PbDestination3.Image = images3[currentImageIndex];
+            PbDestination4.Image = images4[currentImageIndex];
         }
     }
 }

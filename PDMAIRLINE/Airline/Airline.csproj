@@ -256,6 +256,42 @@
   <ItemGroup>
     <None Include="Resources\PDM_AIRLINE_HELP_CENTER_LOGO-removebg-preview__3_-removebg-preview-removebg-preview %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DAVAO11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CEBU21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CEBU31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ILOILO11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ILOILO21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ILOILO31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PALAWAN11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PALAWAN21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PALAWAN31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DAVAO31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DAVAO21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CEBU11.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

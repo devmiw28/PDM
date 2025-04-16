@@ -173,6 +173,66 @@ namespace Airline.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CEBU1 {
+            get {
+                object obj = ResourceManager.GetObject("CEBU1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CEBU2 {
+            get {
+                object obj = ResourceManager.GetObject("CEBU2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CEBU3 {
+            get {
+                object obj = ResourceManager.GetObject("CEBU3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DAVAO1 {
+            get {
+                object obj = ResourceManager.GetObject("DAVAO1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DAVAO2 {
+            get {
+                object obj = ResourceManager.GetObject("DAVAO2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DAVAO3 {
+            get {
+                object obj = ResourceManager.GetObject("DAVAO3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap f1e3a0db_c794_4570_a3fc_34a3dfb3036b_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("f1e3a0db-c794-4570-a3fc-34a3dfb3036b-removebg-preview", resourceCulture);
@@ -216,6 +276,36 @@ namespace Airline.Properties {
         internal static System.Drawing.Bitmap gradient__1__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("gradient__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ILOILO1 {
+            get {
+                object obj = ResourceManager.GetObject("ILOILO1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ILOILO2 {
+            get {
+                object obj = ResourceManager.GetObject("ILOILO2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ILOILO3 {
+            get {
+                object obj = ResourceManager.GetObject("ILOILO3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +386,36 @@ namespace Airline.Properties {
         internal static System.Drawing.Bitmap logofinal {
             get {
                 object obj = ResourceManager.GetObject("logofinal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PALAWAN1 {
+            get {
+                object obj = ResourceManager.GetObject("PALAWAN1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PALAWAN2 {
+            get {
+                object obj = ResourceManager.GetObject("PALAWAN2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PALAWAN3 {
+            get {
+                object obj = ResourceManager.GetObject("PALAWAN3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
