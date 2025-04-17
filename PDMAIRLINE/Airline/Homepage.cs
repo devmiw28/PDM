@@ -241,38 +241,106 @@ namespace Airline
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SearchFlight searchflight = new SearchFlight();
-            searchflight.FormClosed += (s, args) => this.Show();
-            searchflight.Show();
+            // Check if SearchFlight form is already open
+            SearchFlight searchFlight = Application.OpenForms.OfType<SearchFlight>().FirstOrDefault();
 
-            this.Hide();
+            if (searchFlight == null || searchFlight.IsDisposed)
+            {
+                // If not open, create a new instance of SearchFlight
+                searchFlight = new SearchFlight();
+                searchFlight.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                searchFlight.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                searchFlight.BringToFront();
+                searchFlight.Focus();
+            }
+
+            // Pass "Davao" to SearchFlight form to set ComboBox1
+            searchFlight.SetComboBoxes("Marilao   MRL", "Davao   DVO");
+            
+
+            this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SearchFlight searchflight = new SearchFlight();
-            searchflight.FormClosed += (s, args) => this.Show();
-            searchflight.Show();
+            // Check if SearchFlight form is already open
+            SearchFlight searchFlight = Application.OpenForms.OfType<SearchFlight>().FirstOrDefault();
 
-            this.Hide();
+            if (searchFlight == null || searchFlight.IsDisposed)
+            {
+                // If not open, create a new instance of SearchFlight
+                searchFlight = new SearchFlight();
+                searchFlight.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                searchFlight.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                searchFlight.BringToFront();
+                searchFlight.Focus();
+            }
+
+            // Pass "Davao" to SearchFlight form to set ComboBox1
+            searchFlight.SetComboBoxes("Marilao   MRL", "Cebu   CEB");
+
+
+            this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
         private void BookNow3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SearchFlight searchflight = new SearchFlight();
-            searchflight.FormClosed += (s, args) => this.Show();
-            searchflight.Show();
+            // Check if SearchFlight form is already open
+            SearchFlight searchFlight = Application.OpenForms.OfType<SearchFlight>().FirstOrDefault();
 
-            this.Hide();
+            if (searchFlight == null || searchFlight.IsDisposed)
+            {
+                // If not open, create a new instance of SearchFlight
+                searchFlight = new SearchFlight();
+                searchFlight.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                searchFlight.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                searchFlight.BringToFront();
+                searchFlight.Focus();
+            }
+
+            // Pass "Davao" to SearchFlight form to set ComboBox1
+            searchFlight.SetComboBoxes("Marilao   MRL", "Palawan   PAL");
+
+
+            this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
         private void BookNow4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SearchFlight searchflight = new SearchFlight();
-            searchflight.FormClosed += (s, args) => this.Show();
-            searchflight.Show();
+            // Check if SearchFlight form is already open
+            SearchFlight searchFlight = Application.OpenForms.OfType<SearchFlight>().FirstOrDefault();
 
-            this.Hide();
+            if (searchFlight == null || searchFlight.IsDisposed)
+            {
+                // If not open, create a new instance of SearchFlight
+                searchFlight = new SearchFlight();
+                searchFlight.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                searchFlight.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                searchFlight.BringToFront();
+                searchFlight.Focus();
+            }
+
+            // Pass "Davao" to SearchFlight form to set ComboBox1
+            searchFlight.SetComboBoxes("Marilao   MRL", "Iloilo   ILO");
+
+
+            this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
         private void timer1_Tick(object sender, EventArgs e)

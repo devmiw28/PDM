@@ -60,6 +60,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.LblXFrom = new System.Windows.Forms.Label();
             this.LblXTo = new System.Windows.Forms.Label();
+            this.BtnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -525,11 +526,23 @@
             this.LblXTo.Text = "X";
             this.LblXTo.Click += new System.EventHandler(this.LblXTo_Click);
             // 
+            // BtnSearch
+            // 
+            this.BtnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.BtnSearch.Location = new System.Drawing.Point(855, 645);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(247, 38);
+            this.BtnSearch.TabIndex = 52;
+            this.BtnSearch.Text = "Search flights";
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            // 
             // SearchFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 750);
+            this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.LblXTo);
             this.Controls.Add(this.LblXFrom);
             this.Controls.Add(this.label12);
@@ -607,5 +620,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label LblXFrom;
         private System.Windows.Forms.Label LblXTo;
+        private System.Windows.Forms.Button BtnSearch;
     }
 }

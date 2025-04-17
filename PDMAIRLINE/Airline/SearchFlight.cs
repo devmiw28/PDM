@@ -45,7 +45,7 @@ namespace Airline
                 DTPReturn.Visible = false; // Hide the return date DateTimePicker
             }
 
-            
+
         }
 
         // Populating the ComboBox with sample dates (You can populate with actual dates from a database or range)
@@ -53,10 +53,10 @@ namespace Airline
         {
             // Set the minimum and maximum date range for the destination and return DateTimePickers
             DTPDepart.MinDate = DateTime.Now;
-            DTPDepart.MaxDate = DateTime.Now.AddMonths(6);
+            DTPDepart.MaxDate = DateTime.Now.AddMonths(12);
 
             DTPReturn.MinDate = DateTime.Now;
-            DTPReturn.MaxDate = DateTime.Now.AddMonths(6);
+            DTPReturn.MaxDate = DateTime.Now.AddMonths(12);
 
             // Optionally, you can set default selected date for both DateTimePickers
             DTPDepart.Value = DateTime.Now;
@@ -76,8 +76,8 @@ namespace Airline
 
         private void Pet_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void PopulateComboBoxes()
@@ -87,14 +87,14 @@ namespace Airline
             CmbLoc2.Items.Clear();
 
             // Add locations to both ComboBoxes
-            string[] locations = { "Cebu   CEB", "Davao   DVO", "Iloilo   ILO", "Palawan   PAL" , "Marilao   MRL"};
+            string[] locations = { "Cebu   CEB", "Davao   DVO", "Iloilo   ILO", "Palawan   PAL", "Marilao   MRL" };
             CmbLoc1.Items.AddRange(locations);
             CmbLoc2.Items.AddRange(locations);
         }
 
         private void CmbLoc1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
             // Check if an item is selected
             if (CmbLoc1.SelectedItem != null)
@@ -135,7 +135,7 @@ namespace Airline
 
         private void CmbLoc2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
             // Check if an item is selected
             if (CmbLoc2.SelectedItem != null)
@@ -194,6 +194,34 @@ namespace Airline
 
             // Reset flag after clearing selection
             isClearingSelection = false;
+        }
+
+        // Set ComboBox1 and ComboBox2 based on passed values
+        public void SetComboBoxes(string location1, string location2)
+        {
+            SetComboBox1Text(location1);
+            SetComboBox2Text(location2);
+        }
+
+        public void SetComboBox1Text(string location)
+        {
+            // Check if the location exists in the ComboBox, and select it if it does
+            int index = CmbLoc1.Items.IndexOf(location);
+            if (index != -1)
+            {
+                CmbLoc1.SelectedIndex = index;  // Set the selected item to the given location
+            }
+            
+        }
+
+        // Set ComboBox2 text based on passed value
+        private void SetComboBox2Text(string location)
+        {
+            int index = CmbLoc2.Items.IndexOf(location);
+            if (index != -1)
+            {
+                CmbLoc2.SelectedIndex = index;  // Set the selected item to the given location
+            }
         }
     }
 }
