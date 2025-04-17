@@ -12,10 +12,12 @@ namespace Airline
 {
     public partial class SearchFlight : Form
     {
+
         public SearchFlight()
         {
             InitializeComponent();
         }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -58,17 +60,28 @@ namespace Airline
             CmbTrip.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbAdults.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbChildren.DropDownStyle = ComboBoxStyle.DropDownList;
+            PnlInfant.Visible = false;
 
-            
+
 
             PopulateDates();
         }
 
         private void Pet_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
-        
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            PnlInfant.Visible = true;
+        }
+
+        private void labelInfant_Click(object sender, EventArgs e)
+        {
+            PnlInfant.Visible = !PnlInfant.Visible;
+        }
+
     }
 }
