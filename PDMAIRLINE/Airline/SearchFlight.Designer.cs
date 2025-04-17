@@ -449,9 +449,9 @@
             this.label11.Location = new System.Drawing.Point(851, 501);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 24);
+            this.label11.Size = new System.Drawing.Size(70, 24);
             this.label11.TabIndex = 45;
-            this.label11.Text = "Promo";
+            this.label11.Text = "Nigga";
             // 
             // BtnSwitch
             // 

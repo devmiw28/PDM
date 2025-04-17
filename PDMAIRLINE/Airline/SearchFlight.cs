@@ -58,7 +58,6 @@ namespace Airline
             CmbTrip.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbAdults.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbChildren.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbInfant.DropDownStyle = ComboBoxStyle.DropDownList;
 
             
 
