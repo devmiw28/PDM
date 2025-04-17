@@ -287,5 +287,10 @@ namespace Airline
             PbDestination3.Image = images3[currentImageIndex];
             PbDestination4.Image = images4[currentImageIndex];
         }
+
+        private void PbDestination2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

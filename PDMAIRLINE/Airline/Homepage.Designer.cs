@@ -217,6 +217,7 @@
             this.PbDestination2.Size = new System.Drawing.Size(400, 300);
             this.PbDestination2.TabIndex = 26;
             this.PbDestination2.TabStop = false;
+            this.PbDestination2.Click += new System.EventHandler(this.PbDestination2_Click);
             // 
             // PbDestination1
             // 
