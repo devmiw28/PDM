@@ -60,7 +60,7 @@ namespace Airline
             CmbChildren.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbInfant.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            PnlInfant.Visible = false;
+            
 
             PopulateDates();
         }
