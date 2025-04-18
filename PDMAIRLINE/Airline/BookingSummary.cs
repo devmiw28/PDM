@@ -10,26 +10,20 @@ using System.Windows.Forms;
 
 namespace Airline
 {
-    public partial class TimeSearching : Form
+    public partial class BookingSummary : Form
     {
-        public TimeSearching()
+        public BookingSummary()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            
-        }
+            Payment payment = new Payment();
+            payment.Show();
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Hide();
+
         }
     }
 }

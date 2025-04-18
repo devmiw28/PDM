@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.Search = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -53,53 +49,12 @@
             this.lblWednesday = new System.Windows.Forms.Label();
             this.lblSaturday = new System.Windows.Forms.Label();
             this.btnProceed = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.Search = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.SaddleBrown;
-            this.pnlHeader.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlHeader.Controls.Add(this.btnExit);
-            this.pnlHeader.Controls.Add(this.Search);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1715, 86);
-            this.pnlHeader.TabIndex = 26;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnExit.BackgroundImage = global::Airline.Properties.Resources.ButtonSmall;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(1646, 15);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(53, 49);
-            this.btnExit.TabIndex = 16;
-            this.btnExit.Text = "x";
-            this.btnExit.UseVisualStyleBackColor = false;
-            // 
-            // Search
-            // 
-            this.Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Search.AutoSize = true;
-            this.Search.BackColor = System.Drawing.Color.Transparent;
-            this.Search.Font = new System.Drawing.Font("Britannic Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search.ForeColor = System.Drawing.Color.Gold;
-            this.Search.Location = new System.Drawing.Point(12, 15);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(305, 56);
-            this.Search.TabIndex = 22;
-            this.Search.Text = "SEARCHTIME";
             // 
             // button1
             // 
@@ -116,17 +71,6 @@
             this.button2.Size = new System.Drawing.Size(689, 139);
             this.button2.TabIndex = 29;
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Airline.Properties.Resources.AirplaneBG;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 86);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1715, 138);
-            this.panel1.TabIndex = 27;
             // 
             // button4
             // 
@@ -291,6 +235,63 @@
             this.btnProceed.Text = "PROCEED";
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Airline.Properties.Resources.AirplaneBG;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 86);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1715, 138);
+            this.panel1.TabIndex = 27;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.SaddleBrown;
+            this.pnlHeader.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHeader.Controls.Add(this.btnExit);
+            this.pnlHeader.Controls.Add(this.Search);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(1715, 86);
+            this.pnlHeader.TabIndex = 26;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnExit.BackgroundImage = global::Airline.Properties.Resources.ButtonSmall;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Gold;
+            this.btnExit.Location = new System.Drawing.Point(1646, 15);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(53, 49);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.Text = "x";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // Search
+            // 
+            this.Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Search.AutoSize = true;
+            this.Search.BackColor = System.Drawing.Color.Transparent;
+            this.Search.Font = new System.Drawing.Font("Britannic Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search.ForeColor = System.Drawing.Color.Gold;
+            this.Search.Location = new System.Drawing.Point(12, 15);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(305, 56);
+            this.Search.TabIndex = 22;
+            this.Search.Text = "SEARCHTIME";
             // 
             // TimeSearching
             // 

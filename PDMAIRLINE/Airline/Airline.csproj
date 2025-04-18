@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookingSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingSummary.Designer.cs">
+      <DependentUpon>BookingSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchFlight.cs">
       <SubType>Form</SubType>
@@ -106,6 +118,9 @@
     <Compile Include="TimeSearching.Designer.cs">
       <DependentUpon>TimeSearching.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BookingSummary.resx">
+      <DependentUpon>BookingSummary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchFlight.resx">
       <DependentUpon>SearchFlight.cs</DependentUpon>

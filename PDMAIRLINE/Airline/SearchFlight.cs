@@ -214,10 +214,24 @@ namespace Airline
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            TimeSearching timesearching = new TimeSearching();
-            timesearching.Show();
+            // Check if SearchFlight form is already open
+            TimeSearching timeSearch = Application.OpenForms.OfType<TimeSearching>().FirstOrDefault();
 
-            Close();
+            if (timeSearch == null || timeSearch.IsDisposed)
+            {
+                // If not open, create a new instance of SearchFlight
+                timeSearch = new TimeSearching();
+                timeSearch.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                timeSearch.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                timeSearch.BringToFront();
+                timeSearch.Focus();
+            }
+
+            this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
     }
 }
