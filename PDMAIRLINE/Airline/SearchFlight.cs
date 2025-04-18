@@ -174,26 +174,14 @@ namespace Airline
 
         private void LblXFrom_Click(object sender, EventArgs e)
         {
-            // Set flag to indicate we're clearing the ComboBox
-            isClearingSelection = true;
-
-            // Clear the selection (text) in ComboBox1
+            MessageBox.Show("LblXFrom Clicked");
             CmbLoc1.SelectedIndex = -1;
-
-            // Reset flag after clearing selection
-            isClearingSelection = false;
         }
 
         private void LblXTo_Click(object sender, EventArgs e)
         {
-            // Set flag to indicate we're clearing the ComboBox
-            isClearingSelection = true;
-
-            // Clear the selection (text) in ComboBox1
+            MessageBox.Show("LblXTo Clicked");
             CmbLoc2.SelectedIndex = -1;
-
-            // Reset flag after clearing selection
-            isClearingSelection = false;
         }
 
         // Set ComboBox1 and ComboBox2 based on passed values
@@ -211,7 +199,7 @@ namespace Airline
             {
                 CmbLoc1.SelectedIndex = index;  // Set the selected item to the given location
             }
-            
+
         }
 
         // Set ComboBox2 text based on passed value
@@ -223,5 +211,15 @@ namespace Airline
                 CmbLoc2.SelectedIndex = index;  // Set the selected item to the given location
             }
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            TimeSearching timesearching = new TimeSearching();
+            timesearching.Show();
+
+            Close();
+        }
     }
 }
+
+
