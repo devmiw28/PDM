@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Got questions about your flight?
+Whether it's booking, baggage,
+ or boarding—we've got you covered! 
+Reach out to our Help Center 
+anytime and let us make your travel 
+experience smoother with Pambayang 
+Dalubhasaan ng Marilao Airline.</value>
+  </data>
 </root>

@@ -68,10 +68,9 @@
             this.LinkLblIloilo.BackColor = System.Drawing.Color.Transparent;
             this.LinkLblIloilo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LinkLblIloilo.LinkColor = System.Drawing.Color.Black;
-            this.LinkLblIloilo.Location = new System.Drawing.Point(849, 762);
-            this.LinkLblIloilo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LinkLblIloilo.Location = new System.Drawing.Point(1347, 1016);
             this.LinkLblIloilo.Name = "LinkLblIloilo";
-            this.LinkLblIloilo.Size = new System.Drawing.Size(67, 13);
+            this.LinkLblIloilo.Size = new System.Drawing.Size(86, 17);
             this.LinkLblIloilo.TabIndex = 4;
             this.LinkLblIloilo.TabStop = true;
             this.LinkLblIloilo.Text = "BOOK NOW";
@@ -84,10 +83,9 @@
             this.LinkLblPalawan.BackColor = System.Drawing.Color.Transparent;
             this.LinkLblPalawan.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LinkLblPalawan.LinkColor = System.Drawing.Color.Black;
-            this.LinkLblPalawan.Location = new System.Drawing.Point(427, 762);
-            this.LinkLblPalawan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LinkLblPalawan.Location = new System.Drawing.Point(355, 1016);
             this.LinkLblPalawan.Name = "LinkLblPalawan";
-            this.LinkLblPalawan.Size = new System.Drawing.Size(67, 13);
+            this.LinkLblPalawan.Size = new System.Drawing.Size(86, 17);
             this.LinkLblPalawan.TabIndex = 2;
             this.LinkLblPalawan.TabStop = true;
             this.LinkLblPalawan.Text = "BOOK NOW";
@@ -98,12 +96,12 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(832, 719);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(1324, 963);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 33);
+            this.label7.Size = new System.Drawing.Size(121, 40);
             this.label7.TabIndex = 3;
             this.label7.Text = "ILO-ILO";
             // 
@@ -114,10 +112,9 @@
             this.LinkLblCebu.BackColor = System.Drawing.Color.Transparent;
             this.LinkLblCebu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LinkLblCebu.LinkColor = System.Drawing.Color.Black;
-            this.LinkLblCebu.Location = new System.Drawing.Point(849, 477);
-            this.LinkLblCebu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LinkLblCebu.Location = new System.Drawing.Point(1328, 601);
             this.LinkLblCebu.Name = "LinkLblCebu";
-            this.LinkLblCebu.Size = new System.Drawing.Size(67, 13);
+            this.LinkLblCebu.Size = new System.Drawing.Size(86, 17);
             this.LinkLblCebu.TabIndex = 3;
             this.LinkLblCebu.TabStop = true;
             this.LinkLblCebu.Text = "BOOK NOW";
@@ -128,12 +125,12 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(394, 719);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(311, 963);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 33);
+            this.label5.Size = new System.Drawing.Size(164, 40);
             this.label5.TabIndex = 1;
             this.label5.Text = "PALAWAN";
             // 
@@ -142,12 +139,12 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label4.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(412, 437);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(372, 553);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 33);
+            this.label4.Size = new System.Drawing.Size(121, 40);
             this.label4.TabIndex = 0;
             this.label4.Text = "DAVAO";
             // 
@@ -156,14 +153,15 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(843, 437);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(1324, 539);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 33);
+            this.label6.Size = new System.Drawing.Size(94, 40);
             this.label6.TabIndex = 2;
             this.label6.Text = "CEBU";
+            this.label6.Click += new System.EventHandler(this.label6_Click_2);
             // 
             // LinkLblDavao
             // 
@@ -172,10 +170,9 @@
             this.LinkLblDavao.BackColor = System.Drawing.Color.Transparent;
             this.LinkLblDavao.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LinkLblDavao.LinkColor = System.Drawing.Color.Black;
-            this.LinkLblDavao.Location = new System.Drawing.Point(427, 477);
-            this.LinkLblDavao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LinkLblDavao.Location = new System.Drawing.Point(392, 602);
             this.LinkLblDavao.Name = "LinkLblDavao";
-            this.LinkLblDavao.Size = new System.Drawing.Size(67, 13);
+            this.LinkLblDavao.Size = new System.Drawing.Size(86, 17);
             this.LinkLblDavao.TabIndex = 1;
             this.LinkLblDavao.TabStop = true;
             this.LinkLblDavao.Text = "BOOK NOW";
@@ -190,9 +187,10 @@
             this.PbDestination3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbDestination3.BackgroundImage = global::Airline.Properties.Resources.PALAWAN1;
             this.PbDestination3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbDestination3.Location = new System.Drawing.Point(265, 600);
+            this.PbDestination3.Location = new System.Drawing.Point(70, 732);
+            this.PbDestination3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbDestination3.Name = "PbDestination3";
-            this.PbDestination3.Size = new System.Drawing.Size(400, 300);
+            this.PbDestination3.Size = new System.Drawing.Size(853, 331);
             this.PbDestination3.TabIndex = 27;
             this.PbDestination3.TabStop = false;
             // 
@@ -201,20 +199,23 @@
             this.PbDestination4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbDestination4.BackgroundImage = global::Airline.Properties.Resources.ILOILO1;
             this.PbDestination4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbDestination4.Location = new System.Drawing.Point(676, 600);
+            this.PbDestination4.Location = new System.Drawing.Point(938, 732);
+            this.PbDestination4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbDestination4.Name = "PbDestination4";
-            this.PbDestination4.Size = new System.Drawing.Size(400, 300);
+            this.PbDestination4.Size = new System.Drawing.Size(853, 331);
             this.PbDestination4.TabIndex = 27;
             this.PbDestination4.TabStop = false;
+            this.PbDestination4.Click += new System.EventHandler(this.PbDestination4_Click);
             // 
             // PbDestination2
             // 
             this.PbDestination2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbDestination2.BackgroundImage = global::Airline.Properties.Resources.DAVAO1;
             this.PbDestination2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbDestination2.Location = new System.Drawing.Point(676, 294);
+            this.PbDestination2.Location = new System.Drawing.Point(938, 388);
+            this.PbDestination2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbDestination2.Name = "PbDestination2";
-            this.PbDestination2.Size = new System.Drawing.Size(400, 300);
+            this.PbDestination2.Size = new System.Drawing.Size(853, 331);
             this.PbDestination2.TabIndex = 26;
             this.PbDestination2.TabStop = false;
             this.PbDestination2.Click += new System.EventHandler(this.PbDestination2_Click);
@@ -224,9 +225,10 @@
             this.PbDestination1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbDestination1.BackgroundImage = global::Airline.Properties.Resources.DAVAO1;
             this.PbDestination1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbDestination1.Location = new System.Drawing.Point(265, 294);
+            this.PbDestination1.Location = new System.Drawing.Point(70, 388);
+            this.PbDestination1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbDestination1.Name = "PbDestination1";
-            this.PbDestination1.Size = new System.Drawing.Size(400, 300);
+            this.PbDestination1.Size = new System.Drawing.Size(853, 331);
             this.PbDestination1.TabIndex = 25;
             this.PbDestination1.TabStop = false;
             // 
@@ -239,10 +241,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 86);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1440, 220);
+            this.panel1.Size = new System.Drawing.Size(1920, 271);
             this.panel1.TabIndex = 23;
             // 
             // label3
@@ -251,12 +253,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Britannic Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 40F);
             this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(214, 50);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(286, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(807, 41);
+            this.label3.Size = new System.Drawing.Size(1466, 74);
             this.label3.TabIndex = 22;
             this.label3.Text = "PAMBAYANG DALUBHASAAN NG MARILAO AIRLINE";
             // 
@@ -266,9 +267,10 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::Airline.Properties.Resources.logofinal;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 18);
+            this.panel3.Location = new System.Drawing.Point(4, 22);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(206, 184);
+            this.panel3.Size = new System.Drawing.Size(275, 226);
             this.panel3.TabIndex = 21;
             // 
             // label2
@@ -277,10 +279,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label2.Location = new System.Drawing.Point(216, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(293, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(558, 27);
+            this.label2.Size = new System.Drawing.Size(691, 34);
             this.label2.TabIndex = 20;
             this.label2.Text = "Where quality flight is a right, not a privelege.";
             // 
@@ -290,12 +291,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 40F);
             this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(214, 67);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(288, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(807, 41);
+            this.label1.Size = new System.Drawing.Size(1466, 74);
             this.label1.TabIndex = 19;
             this.label1.Text = "PAMBAYANG DALUBHASAAN NG MARILAO AIRLINE";
             // 
@@ -311,8 +311,9 @@
             this.pnlHeader.Controls.Add(this.lblLearnMore);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1440, 70);
+            this.pnlHeader.Size = new System.Drawing.Size(1920, 86);
             this.pnlHeader.TabIndex = 15;
             // 
             // btnExit
@@ -324,9 +325,10 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(1388, 12);
+            this.btnExit.Location = new System.Drawing.Point(1851, 15);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.Size = new System.Drawing.Size(53, 49);
             this.btnExit.TabIndex = 16;
             this.btnExit.Text = "x";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -340,10 +342,9 @@
             this.lblHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblHelp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHelp.ForeColor = System.Drawing.Color.Gold;
-            this.lblHelp.Location = new System.Drawing.Point(1325, 21);
-            this.lblHelp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHelp.Location = new System.Drawing.Point(1767, 26);
             this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(58, 25);
+            this.lblHelp.Size = new System.Drawing.Size(74, 32);
             this.lblHelp.TabIndex = 17;
             this.lblHelp.Text = "HELP";
             this.lblHelp.Click += new System.EventHandler(this.lblContactUs_Click);
@@ -356,10 +357,9 @@
             this.lblLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLogIn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogIn.ForeColor = System.Drawing.Color.Gold;
-            this.lblLogIn.Location = new System.Drawing.Point(991, 21);
-            this.lblLogIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLogIn.Location = new System.Drawing.Point(1321, 26);
             this.lblLogIn.Name = "lblLogIn";
-            this.lblLogIn.Size = new System.Drawing.Size(85, 25);
+            this.lblLogIn.Size = new System.Drawing.Size(109, 32);
             this.lblLogIn.TabIndex = 18;
             this.lblLogIn.Text = "LOG IN";
             this.lblLogIn.Click += new System.EventHandler(this.label6_Click_1);
@@ -372,10 +372,9 @@
             this.lblSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblSignUp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignUp.ForeColor = System.Drawing.Color.Gold;
-            this.lblSignUp.Location = new System.Drawing.Point(1080, 21);
-            this.lblSignUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSignUp.Location = new System.Drawing.Point(1440, 26);
             this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(95, 25);
+            this.lblSignUp.Size = new System.Drawing.Size(121, 32);
             this.lblSignUp.TabIndex = 19;
             this.lblSignUp.Text = "SIGN UP";
             this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
@@ -388,20 +387,19 @@
             this.lblLearnMore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLearnMore.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLearnMore.ForeColor = System.Drawing.Color.Gold;
-            this.lblLearnMore.Location = new System.Drawing.Point(1179, 21);
-            this.lblLearnMore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLearnMore.Location = new System.Drawing.Point(1572, 26);
             this.lblLearnMore.Name = "lblLearnMore";
-            this.lblLearnMore.Size = new System.Drawing.Size(142, 25);
+            this.lblLearnMore.Size = new System.Drawing.Size(182, 32);
             this.lblLearnMore.TabIndex = 16;
             this.lblLearnMore.Text = "LEARN MORE";
             this.lblLearnMore.Click += new System.EventHandler(this.lblLearnMore_Click);
             // 
             // Homepage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1440, 900);
+            this.ClientSize = new System.Drawing.Size(1920, 1102);
             this.Controls.Add(this.LinkLblIloilo);
             this.Controls.Add(this.LinkLblCebu);
             this.Controls.Add(this.label7);
@@ -417,7 +415,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Homepage";
             this.Text = "PDM AIRLINE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

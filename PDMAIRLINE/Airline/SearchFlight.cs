@@ -233,6 +233,11 @@ namespace Airline
 
             this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
