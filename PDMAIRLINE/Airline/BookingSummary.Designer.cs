@@ -34,6 +34,13 @@
             this.Search = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProceed = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,9 +102,9 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(73, 290);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(73, 388);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1559, 456);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1559, 358);
             this.flowLayoutPanel1.TabIndex = 30;
             // 
             // btnProceed
@@ -112,11 +119,96 @@
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.Gold;
+            this.label15.Location = new System.Drawing.Point(1143, 254);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 58);
+            this.label15.TabIndex = 65;
+            this.label15.Text = "—";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.Gold;
+            this.label14.Location = new System.Drawing.Point(872, 254);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 58);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "—";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.Gold;
+            this.label13.Location = new System.Drawing.Point(601, 254);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 58);
+            this.label13.TabIndex = 63;
+            this.label13.Text = "—";
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__2_;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Location = new System.Drawing.Point(725, 254);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 90);
+            this.panel4.TabIndex = 60;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__3_;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Location = new System.Drawing.Point(945, 229);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(175, 155);
+            this.panel5.TabIndex = 61;
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__4_;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Location = new System.Drawing.Point(1234, 254);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(100, 90);
+            this.panel6.TabIndex = 62;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__1_;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(468, 254);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 90);
+            this.panel3.TabIndex = 59;
+            // 
             // BookingSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1715, 876);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -126,6 +218,7 @@
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,5 +230,12 @@
         private System.Windows.Forms.Label Search;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnProceed;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
     }
 }

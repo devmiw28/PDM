@@ -113,5 +113,10 @@ namespace Airline
         {
             this.Close();
         }
+
+        private void TimeSearching_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

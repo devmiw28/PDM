@@ -79,7 +79,7 @@
             this.label2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label2.Location = new System.Drawing.Point(16, 535);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 42);
+            this.label2.Size = new System.Drawing.Size(108, 40);
             this.label2.TabIndex = 24;
             this.label2.Text = "Flight";
             // 
@@ -123,7 +123,7 @@
             this.label3.ForeColor = System.Drawing.Color.Sienna;
             this.label3.Location = new System.Drawing.Point(612, 533);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 42);
+            this.label3.Size = new System.Drawing.Size(236, 40);
             this.label3.TabIndex = 29;
             this.label3.Text = "Trip Selection";
             // 
@@ -450,7 +450,7 @@
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Location = new System.Drawing.Point(755, 390);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 91);
+            this.panel4.Size = new System.Drawing.Size(100, 90);
             this.panel4.TabIndex = 55;
             // 
             // panel5
@@ -459,7 +459,7 @@
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Location = new System.Drawing.Point(1018, 390);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(100, 91);
+            this.panel5.Size = new System.Drawing.Size(100, 90);
             this.panel5.TabIndex = 55;
             // 
             // panel6
@@ -468,16 +468,16 @@
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel6.Location = new System.Drawing.Point(1264, 390);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 91);
+            this.panel6.Size = new System.Drawing.Size(100, 90);
             this.panel6.TabIndex = 55;
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__1_;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(398, 362);
+            this.panel3.Location = new System.Drawing.Point(399, 365);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(175, 162);
+            this.panel3.Size = new System.Drawing.Size(175, 155);
             this.panel3.TabIndex = 54;
             // 
             // BtnSearch
@@ -514,11 +514,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Where.AutoSize = true;
             this.Where.BackColor = System.Drawing.Color.Transparent;
-            this.Where.Font = new System.Drawing.Font("Lucida Sans", 30F);
+            this.Where.Font = new System.Drawing.Font("Britannic Bold", 40F);
             this.Where.ForeColor = System.Drawing.Color.Gold;
             this.Where.Location = new System.Drawing.Point(4, 120);
             this.Where.Name = "Where";
-            this.Where.Size = new System.Drawing.Size(802, 56);
+            this.Where.Size = new System.Drawing.Size(954, 74);
             this.Where.TabIndex = 23;
             this.Where.Text = "Hi, where would you like to go?";
             // 
