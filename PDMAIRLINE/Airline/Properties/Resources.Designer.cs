@@ -63,29 +63,9 @@ namespace Airline.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1716c14c_3569_44ac_ace0_15f3c5a18731_removebg_preview__1_ {
-            get {
-                object obj = ResourceManager.GetObject("1716c14c-3569-44ac-ace0-15f3c5a18731-removebg-preview (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap AIRPLANE_1 {
             get {
                 object obj = ResourceManager.GetObject("AIRPLANE 1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AIRPLANEABOUTUS {
-            get {
-                object obj = ResourceManager.GetObject("AIRPLANEABOUTUS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,36 +136,6 @@ namespace Airline.Properties {
         internal static System.Drawing.Bitmap bg_yellow {
             get {
                 object obj = ResourceManager.GetObject("bg yellow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BOOKINGSTEPICONS__1_ {
-            get {
-                object obj = ResourceManager.GetObject("BOOKINGSTEPICONS (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BOOKINGSTEPICONS__1__removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("BOOKINGSTEPICONS__1_-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BOOKINGSTEPICONS__1__removebg_preview1 {
-            get {
-                object obj = ResourceManager.GetObject("BOOKINGSTEPICONS__1_-removebg-preview1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,66 +283,6 @@ namespace Airline.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap help_desk {
-            get {
-                object obj = ResourceManager.GetObject("help-desk", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ICONS__1_ {
-            get {
-                object obj = ResourceManager.GetObject("ICONS (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ICONS_removebg_preview__1_ {
-            get {
-                object obj = ResourceManager.GetObject("ICONS-removebg-preview (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ICONS_removebg_preview__2_ {
-            get {
-                object obj = ResourceManager.GetObject("ICONS-removebg-preview (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ICONS_removebg_preview__3_ {
-            get {
-                object obj = ResourceManager.GetObject("ICONS-removebg-preview (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ICONS_removebg_preview__4_ {
-            get {
-                object obj = ResourceManager.GetObject("ICONS-removebg-preview (4)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ILOILO1 {
             get {
                 object obj = ResourceManager.GetObject("ILOILO1", resourceCulture);
@@ -496,16 +386,6 @@ namespace Airline.Properties {
         internal static System.Drawing.Bitmap logofinal {
             get {
                 object obj = ResourceManager.GetObject("logofinal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lost_and_found {
-            get {
-                object obj = ResourceManager.GetObject("lost-and-found", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -658,26 +538,6 @@ namespace Airline.Properties {
         internal static System.Drawing.Bitmap PDM_Facade_1024x4221 {
             get {
                 object obj = ResourceManager.GetObject("PDM-Facade-1024x4221", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap STEPICON__1_ {
-            get {
-                object obj = ResourceManager.GetObject("STEPICON (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap STEPICON__1__removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("STEPICON__1_-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

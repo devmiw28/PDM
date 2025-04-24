@@ -232,35 +232,37 @@ namespace Airline
 
         private void lblContactUs_Click(object sender, EventArgs e)
         {
+            
             Help help = new Help();
             help.FormClosed += (s, args) => this.Show();
             help.Show();
-
+            
+            
             this.Hide();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Check if SearchFlight form is already open
-            SearchFlight searchFlight = Application.OpenForms.OfType<SearchFlight>().FirstOrDefault();
+             SearchFlight searchFlight = Application.OpenForms.OfType<SearchFlight>().FirstOrDefault();
 
-            if (searchFlight == null || searchFlight.IsDisposed)
-            {
-                // If not open, create a new instance of SearchFlight
-                searchFlight = new SearchFlight();
-                searchFlight.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
-                searchFlight.Show();
-            }
-            else
-            {
-                // If already open, bring it to the front
-                searchFlight.BringToFront();
-                searchFlight.Focus();
-            }
+             if (searchFlight == null || searchFlight.IsDisposed)
+             {
+                 // If not open, create a new instance of SearchFlight
+                 searchFlight = new SearchFlight();
+                 searchFlight.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                 searchFlight.Show();
+             }
+             else
+             {
+                 // If already open, bring it to the front
+                 searchFlight.BringToFront();
+                 searchFlight.Focus();
+             }
 
-            // Pass "Davao" to SearchFlight form to set ComboBox1
-            searchFlight.SetComboBoxes("Marilao   MRL", "Davao   DVO");
-            
+             // Pass "Davao" to SearchFlight form to set ComboBox1
+             searchFlight.SetComboBoxes("Marilao   MRL", "Davao   DVO");
+             
 
             this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
@@ -361,12 +363,12 @@ namespace Airline
 
         }
 
-        private void PbDestination4_Click(object sender, EventArgs e)
+        private void label3_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void label6_Click_2(object sender, EventArgs e)
+        private void PbDestination1_Click(object sender, EventArgs e)
         {
 
         }

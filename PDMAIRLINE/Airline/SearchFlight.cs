@@ -15,11 +15,15 @@ namespace Airline
         private string lastSelectedLocation = null;  // To keep track of the last selected location in CmbLoc1
         private string lastSelectedLocation2 = null; // To keep track of the last selected location in CmbLoc2
         private bool isClearingSelection = false; // Flag to avoid unwanted behavior
-
+        private NumericUpDown numericUpDownAdults;          //
+        private NumericUpDown numericUpDownChildren;        // di ko sure to
+        private NumericUpDown numericUpDownInfants;
+        BookingSummary bookingSummary = new BookingSummary();
         public SearchFlight()
         {
+            
             InitializeComponent();
-
+            
             // Subscribe to the SelectedIndexChanged event
             CmbLoc1.SelectedIndexChanged += CmbLoc1_SelectedIndexChanged;
             CmbLoc2.SelectedIndexChanged += CmbLoc2_SelectedIndexChanged;
@@ -38,11 +42,13 @@ namespace Airline
             {
                 LblReturn.Visible = true;
                 DTPReturn.Visible = true; // Show the return date DateTimePicker
+                bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
             }
-            else
+            else if(CmbTrip.SelectedItem.ToString() == "One-way")
             {
                 LblReturn.Visible = false;
                 DTPReturn.Visible = false; // Hide the return date DateTimePicker
+                bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
             }
 
 
@@ -131,6 +137,7 @@ namespace Airline
             // Prevent processing when clearing ComboBox
             if (isClearingSelection)
                 return;
+
         }
 
         private void CmbLoc2_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,6 +221,13 @@ namespace Airline
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            
+
+            int adultCount = Convert.ToInt32(numericUpDownAdults.Value);
+            int childCount = Convert.ToInt32(numericUpDownChildren.Value);      // di ko sure kung gagana to
+            int infantCount = Convert.ToInt32(numericUpDownInfants.Value);
+            string departure = CmbLoc1.SelectedItem?.ToString();
+            string destination = CmbLoc2.SelectedItem?.ToString();
             // Check if SearchFlight form is already open
             TimeSearching timeSearch = Application.OpenForms.OfType<TimeSearching>().FirstOrDefault();
 
@@ -231,12 +245,35 @@ namespace Airline
                 timeSearch.Focus();
             }
 
+            bookingSummary.Departure = CmbLoc1.SelectedItem?.ToString();
+            bookingSummary.Destination = CmbLoc2.SelectedItem?.ToString();
+            bookingSummary.Adults = adultCount.ToString();
+            bookingSummary.Children = childCount.ToString();
+            bookingSummary.Infants = infantCount.ToString();
+            bookingSummary.PromoCode = txtPromo.Text;
+
+            bookingSummary.ShowDialog();
+
             this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        private void DTPReturn_ValueChanged(object sender, EventArgs e)
+        {
+            bookingSummary.ReturnDate = DTPReturn.Value.ToString("yyyy-MM-dd");
+        }
+
+        private void DTPDepart_ValueChanged(object sender, EventArgs e)
+        {
+            bookingSummary.DepartDate = DTPReturn.Value.ToString("yyyy-MM-dd");
+        }
+
+        private void CmbAdults_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Promo_TextChanged(object sender, EventArgs e)
+        { 
         }
     }
 }
