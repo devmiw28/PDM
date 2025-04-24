@@ -15,10 +15,10 @@ namespace Airline
         private string lastSelectedLocation = null;  // To keep track of the last selected location in CmbLoc1
         private string lastSelectedLocation2 = null; // To keep track of the last selected location in CmbLoc2
         private bool isClearingSelection = false; // Flag to avoid unwanted behavior
-        private NumericUpDown numericUpDownAdults;          //
-        private NumericUpDown numericUpDownChildren;        // di ko sure to
+        private NumericUpDown numericUpDownAdults;         
+        private NumericUpDown numericUpDownChildren;        
         private NumericUpDown numericUpDownInfants;
-        BookingSummary bookingSummary = new BookingSummary();
+
         public SearchFlight()
         {
             
@@ -30,6 +30,21 @@ namespace Airline
 
         }
 
+        private void SearchFlight_Load(object sender, EventArgs e)
+        {
+            
+
+            CmbTrip.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbAdults.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbChildren.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbInfant.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            PopulateComboBoxes();
+            PopulateDates();
+
+            
+        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -38,15 +53,17 @@ namespace Airline
 
         private void CbTrip_SelectedIndexChanged(object sender, EventArgs e)
         {
+            BookingSummary bookingSummary = new BookingSummary();
             if (CmbTrip.SelectedItem.ToString() == "Round-trip")
             {
-                LblReturn.Visible = true;
+                LblReturnDate.Visible = true;
                 DTPReturn.Visible = true; // Show the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
+
             }
             else if(CmbTrip.SelectedItem.ToString() == "One-way")
             {
-                LblReturn.Visible = false;
+                LblReturnDate.Visible = false;
                 DTPReturn.Visible = false; // Hide the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
             }
@@ -69,16 +86,7 @@ namespace Airline
             DTPReturn.Value = DateTime.Now;
         }
 
-        private void SearchFlight_Load(object sender, EventArgs e)
-        {
-            CmbTrip.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbAdults.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbChildren.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbInfant.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            PopulateComboBoxes();
-            PopulateDates();
-        }
+        
 
         private void Pet_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -88,6 +96,8 @@ namespace Airline
 
         private void PopulateComboBoxes()
         {
+            
+
             // Clear existing items
             CmbLoc1.Items.Clear();
             CmbLoc2.Items.Clear();
@@ -244,7 +254,7 @@ namespace Airline
                 timeSearch.BringToFront();
                 timeSearch.Focus();
             }
-
+            BookingSummary bookingSummary = new BookingSummary();
             bookingSummary.Departure = CmbLoc1.SelectedItem?.ToString();
             bookingSummary.Destination = CmbLoc2.SelectedItem?.ToString();
             bookingSummary.Adults = adultCount.ToString();
@@ -252,18 +262,20 @@ namespace Airline
             bookingSummary.Infants = infantCount.ToString();
             bookingSummary.PromoCode = txtPromo.Text;
 
-            bookingSummary.ShowDialog();
+            
 
             this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
         private void DTPReturn_ValueChanged(object sender, EventArgs e)
         {
+            BookingSummary bookingSummary = new BookingSummary();
             bookingSummary.ReturnDate = DTPReturn.Value.ToString("yyyy-MM-dd");
         }
 
         private void DTPDepart_ValueChanged(object sender, EventArgs e)
         {
+            BookingSummary bookingSummary = new BookingSummary();
             bookingSummary.DepartDate = DTPReturn.Value.ToString("yyyy-MM-dd");
         }
 
@@ -275,6 +287,12 @@ namespace Airline
         private void Promo_TextChanged(object sender, EventArgs e)
         { 
         }
+
+        private void DTPDepartTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }
 
