@@ -106,7 +106,16 @@ namespace Airline
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            
+            DialogResult result = MessageBox.Show("Are you already signed in?", "Sign In Required", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            { 
+                BookingSummary summary = Application.OpenForms.OfType<BookingSummary>().FirstOrDefault();
+            }
+            else
+            {
+                SignUp signUp = Application.OpenForms.OfType<SignUp>().FirstOrDefault();
+            }
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
@@ -114,7 +123,7 @@ namespace Airline
             this.Close();
         }
 
-        private void TimeSearching_Load_1(object sender, EventArgs e)
+        private void btnFlight2_Click(object sender, EventArgs e)
         {
 
         }

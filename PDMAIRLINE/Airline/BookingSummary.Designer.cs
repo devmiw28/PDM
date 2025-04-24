@@ -32,16 +32,27 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProceed = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnShowFlight = new System.Windows.Forms.Button();
+            this.lblPromo = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblInfant = new System.Windows.Forms.Label();
+            this.lblChild = new System.Windows.Forms.Label();
+            this.lblAdults = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblDepartDate = new System.Windows.Forms.Label();
+            this.lblDepart = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTripSummary = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblFlightDate = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,10 +60,10 @@
             this.panel1.BackgroundImage = global::Airline.Properties.Resources.AirplaneBG;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 86);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1715, 138);
+            this.panel1.Size = new System.Drawing.Size(1286, 112);
             this.panel1.TabIndex = 29;
             // 
             // pnlHeader
@@ -64,9 +75,8 @@
             this.pnlHeader.Controls.Add(this.Search);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1715, 86);
+            this.pnlHeader.Size = new System.Drawing.Size(1286, 70);
             this.pnlHeader.TabIndex = 28;
             // 
             // btnExit
@@ -78,10 +88,9 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(1646, 15);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Location = new System.Drawing.Point(1234, 12);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(53, 49);
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
             this.btnExit.TabIndex = 16;
             this.btnExit.Text = "x";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -94,131 +103,269 @@
             this.Search.BackColor = System.Drawing.Color.Transparent;
             this.Search.Font = new System.Drawing.Font("Britannic Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search.ForeColor = System.Drawing.Color.Gold;
-            this.Search.Location = new System.Drawing.Point(12, 15);
+            this.Search.Location = new System.Drawing.Point(9, 12);
+            this.Search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(458, 56);
+            this.Search.Size = new System.Drawing.Size(367, 44);
             this.Search.TabIndex = 22;
             this.Search.Text = "BOOKING SUMMARY";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(73, 388);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1559, 358);
-            this.flowLayoutPanel1.TabIndex = 30;
             // 
             // btnProceed
             // 
             this.btnProceed.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
             this.btnProceed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProceed.Location = new System.Drawing.Point(772, 796);
+            this.btnProceed.Location = new System.Drawing.Point(579, 647);
+            this.btnProceed.Margin = new System.Windows.Forms.Padding(2);
             this.btnProceed.Name = "btnProceed";
-            this.btnProceed.Size = new System.Drawing.Size(179, 55);
+            this.btnProceed.Size = new System.Drawing.Size(134, 45);
             this.btnProceed.TabIndex = 50;
             this.btnProceed.Text = "PROCEED";
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
-            // label15
+            // groupBox1
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.Gold;
-            this.label15.Location = new System.Drawing.Point(1143, 254);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 58);
-            this.label15.TabIndex = 65;
-            this.label15.Text = "—";
+            this.groupBox1.Controls.Add(this.btnShowFlight);
+            this.groupBox1.Controls.Add(this.lblPromo);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lblInfant);
+            this.groupBox1.Controls.Add(this.lblChild);
+            this.groupBox1.Controls.Add(this.lblAdults);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblDepartDate);
+            this.groupBox1.Controls.Add(this.lblDepart);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblTripSummary);
+            this.groupBox1.Controls.Add(this.lblName);
+            this.groupBox1.Controls.Add(this.lblFlightDate);
+            this.groupBox1.Controls.Add(this.lblLocation);
+            this.groupBox1.Location = new System.Drawing.Point(225, 212);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(849, 385);
+            this.groupBox1.TabIndex = 51;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label14
+            // btnShowFlight
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Bold);
-            this.label14.ForeColor = System.Drawing.Color.Gold;
-            this.label14.Location = new System.Drawing.Point(872, 254);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 58);
-            this.label14.TabIndex = 64;
-            this.label14.Text = "—";
+            this.btnShowFlight.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowFlight.Location = new System.Drawing.Point(729, 345);
+            this.btnShowFlight.Name = "btnShowFlight";
+            this.btnShowFlight.Size = new System.Drawing.Size(75, 23);
+            this.btnShowFlight.TabIndex = 2;
+            this.btnShowFlight.Text = "Show details";
+            this.btnShowFlight.UseVisualStyleBackColor = false;
+            this.btnShowFlight.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label13
+            // lblPromo
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.Gold;
-            this.label13.Location = new System.Drawing.Point(601, 254);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 58);
-            this.label13.TabIndex = 63;
-            this.label13.Text = "—";
+            this.lblPromo.AutoSize = true;
+            this.lblPromo.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.lblPromo.Location = new System.Drawing.Point(544, 264);
+            this.lblPromo.Name = "lblPromo";
+            this.lblPromo.Size = new System.Drawing.Size(112, 26);
+            this.lblPromo.TabIndex = 17;
+            this.lblPromo.Text = "PromoCode";
+            this.lblPromo.Click += new System.EventHandler(this.label7_Click);
             // 
-            // panel4
+            // label6
             // 
-            this.panel4.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__2_;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(725, 254);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 90);
-            this.panel4.TabIndex = 60;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.label6.Location = new System.Drawing.Point(114, 265);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(82, 25);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Promo:";
             // 
-            // panel5
+            // lblInfant
             // 
-            this.panel5.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__3_;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(945, 229);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(175, 155);
-            this.panel5.TabIndex = 61;
+            this.lblInfant.AutoSize = true;
+            this.lblInfant.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.lblInfant.Location = new System.Drawing.Point(544, 234);
+            this.lblInfant.Name = "lblInfant";
+            this.lblInfant.Size = new System.Drawing.Size(104, 26);
+            this.lblInfant.TabIndex = 15;
+            this.lblInfant.Text = "How many";
+            this.lblInfant.Click += new System.EventHandler(this.lblInfant_Click);
             // 
-            // panel6
+            // lblChild
             // 
-            this.panel6.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__4_;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(1234, 254);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 90);
-            this.panel6.TabIndex = 62;
+            this.lblChild.AutoSize = true;
+            this.lblChild.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.lblChild.Location = new System.Drawing.Point(544, 204);
+            this.lblChild.Name = "lblChild";
+            this.lblChild.Size = new System.Drawing.Size(104, 26);
+            this.lblChild.TabIndex = 14;
+            this.lblChild.Text = "How many";
+            this.lblChild.Click += new System.EventHandler(this.lblChild_Click);
             // 
-            // panel3
+            // lblAdults
             // 
-            this.panel3.BackgroundImage = global::Airline.Properties.Resources.ICONS_removebg_preview__1_;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(468, 254);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 90);
-            this.panel3.TabIndex = 59;
+            this.lblAdults.AutoSize = true;
+            this.lblAdults.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.lblAdults.Location = new System.Drawing.Point(544, 172);
+            this.lblAdults.Name = "lblAdults";
+            this.lblAdults.Size = new System.Drawing.Size(104, 26);
+            this.lblAdults.TabIndex = 13;
+            this.lblAdults.Text = "How many";
+            this.lblAdults.Click += new System.EventHandler(this.lblAdults_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.label5.Location = new System.Drawing.Point(114, 234);
+            this.label5.Margin = new System.Windows.Forms.Padding(3);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(75, 25);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Infant:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.label4.Location = new System.Drawing.Point(114, 203);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Child:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.label3.Location = new System.Drawing.Point(114, 172);
+            this.label3.Margin = new System.Windows.Forms.Padding(3);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(77, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Adults:";
+            // 
+            // lblDepartDate
+            // 
+            this.lblDepartDate.AutoSize = true;
+            this.lblDepartDate.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.lblDepartDate.Location = new System.Drawing.Point(544, 79);
+            this.lblDepartDate.Margin = new System.Windows.Forms.Padding(3);
+            this.lblDepartDate.Name = "lblDepartDate";
+            this.lblDepartDate.Size = new System.Drawing.Size(52, 26);
+            this.lblDepartDate.TabIndex = 9;
+            this.lblDepartDate.Text = "Date";
+            this.lblDepartDate.Click += new System.EventHandler(this.lblDepartDate_Click);
+            // 
+            // lblDepart
+            // 
+            this.lblDepart.AutoSize = true;
+            this.lblDepart.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.lblDepart.Location = new System.Drawing.Point(114, 79);
+            this.lblDepart.Margin = new System.Windows.Forms.Padding(3);
+            this.lblDepart.Name = "lblDepart";
+            this.lblDepart.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDepart.Size = new System.Drawing.Size(83, 25);
+            this.lblDepart.TabIndex = 8;
+            this.lblDepart.Text = "Depart:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.label2.Location = new System.Drawing.Point(114, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(3);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label2.Size = new System.Drawing.Size(83, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Return:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.label1.Location = new System.Drawing.Point(114, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(3);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(174, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Flight Loacation:";
+            // 
+            // lblTripSummary
+            // 
+            this.lblTripSummary.AutoSize = true;
+            this.lblTripSummary.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.lblTripSummary.Location = new System.Drawing.Point(544, 141);
+            this.lblTripSummary.Margin = new System.Windows.Forms.Padding(3);
+            this.lblTripSummary.Name = "lblTripSummary";
+            this.lblTripSummary.Size = new System.Drawing.Size(209, 26);
+            this.lblTripSummary.TabIndex = 5;
+            this.lblTripSummary.Text = "Round-Trip or One-way";
+            this.lblTripSummary.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.lblName.Location = new System.Drawing.Point(114, 141);
+            this.lblName.Margin = new System.Windows.Forms.Padding(3);
+            this.lblName.Name = "lblName";
+            this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblName.Size = new System.Drawing.Size(107, 25);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "Trip Type:";
+            this.lblName.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lblFlightDate
+            // 
+            this.lblFlightDate.AutoSize = true;
+            this.lblFlightDate.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.lblFlightDate.Location = new System.Drawing.Point(544, 110);
+            this.lblFlightDate.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFlightDate.Name = "lblFlightDate";
+            this.lblFlightDate.Size = new System.Drawing.Size(52, 26);
+            this.lblFlightDate.TabIndex = 1;
+            this.lblFlightDate.Text = "Date";
+            this.lblFlightDate.Click += new System.EventHandler(this.lblFlightDate_Click);
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation.Location = new System.Drawing.Point(544, 49);
+            this.lblLocation.Margin = new System.Windows.Forms.Padding(3);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(85, 26);
+            this.lblLocation.TabIndex = 0;
+            this.lblLocation.Text = "Location";
+            this.lblLocation.Click += new System.EventHandler(this.label1_Click);
             // 
             // BookingSummary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1715, 876);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1286, 712);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnProceed);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlHeader);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookingSummary";
             this.Text = "BookingSummary";
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -228,14 +375,24 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label Search;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnProceed;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnShowFlight;
+        private System.Windows.Forms.Label lblFlightDate;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.Label lblTripSummary;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDepartDate;
+        private System.Windows.Forms.Label lblDepart;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInfant;
+        private System.Windows.Forms.Label lblChild;
+        private System.Windows.Forms.Label lblAdults;
+        private System.Windows.Forms.Label lblPromo;
+        private System.Windows.Forms.Label label6;
     }
 }
