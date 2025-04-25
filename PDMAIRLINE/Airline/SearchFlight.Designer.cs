@@ -31,12 +31,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchFlight));
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Where = new System.Windows.Forms.Label();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.Search = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CmbTrip = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,12 +63,18 @@
             this.LblReturnTime = new System.Windows.Forms.Label();
             this.CmbDepartTime = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.pnlHeader.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Where = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.Search = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAdults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChildren)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInfants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -90,89 +90,6 @@
             this.label2.Size = new System.Drawing.Size(94, 32);
             this.label2.TabIndex = 24;
             this.label2.Text = "Flight";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(201, 402);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Airline.Properties.Resources.AirplaneBG;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.Where);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1691, 220);
-            this.panel1.TabIndex = 25;
-            // 
-            // Where
-            // 
-            this.Where.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Where.AutoSize = true;
-            this.Where.BackColor = System.Drawing.Color.Transparent;
-            this.Where.Font = new System.Drawing.Font("Lucida Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Where.ForeColor = System.Drawing.Color.Black;
-            this.Where.Location = new System.Drawing.Point(67, 70);
-            this.Where.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Where.Name = "Where";
-            this.Where.Size = new System.Drawing.Size(504, 37);
-            this.Where.TabIndex = 23;
-            this.Where.Text = "Hi, where would you like to go?";
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.SaddleBrown;
-            this.pnlHeader.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlHeader.Controls.Add(this.btnExit);
-            this.pnlHeader.Controls.Add(this.Search);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1691, 70);
-            this.pnlHeader.TabIndex = 16;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnExit.BackgroundImage = global::Airline.Properties.Resources.ButtonSmall;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(1639, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.TabIndex = 16;
-            this.btnExit.Text = "x";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // Search
-            // 
-            this.Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Search.AutoSize = true;
-            this.Search.BackColor = System.Drawing.Color.Transparent;
-            this.Search.Font = new System.Drawing.Font("Britannic Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search.ForeColor = System.Drawing.Color.Gold;
-            this.Search.Location = new System.Drawing.Point(66, 13);
-            this.Search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(254, 44);
-            this.Search.TabIndex = 22;
-            this.Search.Text = "Search Flight";
             // 
             // label1
             // 
@@ -545,7 +462,7 @@
             // 
             this.BtnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.BtnSearch.Location = new System.Drawing.Point(490, 863);
+            this.BtnSearch.Location = new System.Drawing.Point(1251, 745);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(247, 38);
             this.BtnSearch.TabIndex = 52;
@@ -668,6 +585,89 @@
             this.comboBox2.TabIndex = 63;
             this.comboBox2.Text = "0";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(201, 402);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Airline.Properties.Resources.AirplaneBG;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.Where);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1691, 220);
+            this.panel1.TabIndex = 25;
+            // 
+            // Where
+            // 
+            this.Where.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Where.AutoSize = true;
+            this.Where.BackColor = System.Drawing.Color.Transparent;
+            this.Where.Font = new System.Drawing.Font("Lucida Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Where.ForeColor = System.Drawing.Color.Black;
+            this.Where.Location = new System.Drawing.Point(67, 70);
+            this.Where.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Where.Name = "Where";
+            this.Where.Size = new System.Drawing.Size(504, 37);
+            this.Where.TabIndex = 23;
+            this.Where.Text = "Hi, where would you like to go?";
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.SaddleBrown;
+            this.pnlHeader.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHeader.Controls.Add(this.btnExit);
+            this.pnlHeader.Controls.Add(this.Search);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(1691, 70);
+            this.pnlHeader.TabIndex = 16;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnExit.BackgroundImage = global::Airline.Properties.Resources.ButtonSmall;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Gold;
+            this.btnExit.Location = new System.Drawing.Point(1639, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.Text = "x";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // Search
+            // 
+            this.Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Search.AutoSize = true;
+            this.Search.BackColor = System.Drawing.Color.Transparent;
+            this.Search.Font = new System.Drawing.Font("Britannic Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search.ForeColor = System.Drawing.Color.Gold;
+            this.Search.Location = new System.Drawing.Point(66, 13);
+            this.Search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(254, 44);
+            this.Search.TabIndex = 22;
+            this.Search.Text = "Search Flight";
+            // 
             // SearchFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,14 +712,14 @@
             this.Text = "SearchFlight";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SearchFlight_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAdults)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChildren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInfants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAdults)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChildren)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInfants)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
