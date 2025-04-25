@@ -181,9 +181,36 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -339,7 +366,7 @@
             this.panel2.Controls.Add(this.checkBox3);
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Location = new System.Drawing.Point(51, 357);
+            this.panel2.Location = new System.Drawing.Point(46, 439);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1811, 305);
             this.panel2.TabIndex = 52;
@@ -419,15 +446,17 @@
             // btnProceed
             // 
             this.btnProceed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnProceed.BackColor = System.Drawing.Color.White;
             this.btnProceed.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
             this.btnProceed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProceed.Location = new System.Drawing.Point(1346, 829);
+            this.btnProceed.ForeColor = System.Drawing.Color.White;
+            this.btnProceed.Location = new System.Drawing.Point(1658, 1003);
             this.btnProceed.Margin = new System.Windows.Forms.Padding(2);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(134, 45);
             this.btnProceed.TabIndex = 49;
             this.btnProceed.Text = "PROCEED";
-            this.btnProceed.UseVisualStyleBackColor = true;
+            this.btnProceed.UseVisualStyleBackColor = false;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
             // checkBox1
@@ -2262,11 +2291,232 @@
             this.label22.TabIndex = 198;
             this.label22.Text = "20";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(13, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(121, 33);
+            this.label23.TabIndex = 201;
+            this.label23.Text = "PIcked Seat";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(140, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(295, 33);
+            this.textBox1.TabIndex = 202;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.Peru;
+            this.panel3.Controls.Add(this.label23);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Location = new System.Drawing.Point(167, 787);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(460, 54);
+            this.panel3.TabIndex = 203;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Peru;
+            this.panel4.Controls.Add(this.label24);
+            this.panel4.Controls.Add(this.textBox2);
+            this.panel4.Location = new System.Drawing.Point(657, 787);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(460, 54);
+            this.panel4.TabIndex = 204;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(13, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(119, 33);
+            this.label24.TabIndex = 201;
+            this.label24.Text = "No. of Seats";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(140, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(295, 33);
+            this.textBox2.TabIndex = 202;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.Peru;
+            this.panel5.Controls.Add(this.label25);
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Location = new System.Drawing.Point(1161, 787);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(460, 54);
+            this.panel5.TabIndex = 205;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(13, 9);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(118, 33);
+            this.label25.TabIndex = 201;
+            this.label25.Text = "Flight Class";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(140, 12);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(295, 33);
+            this.textBox3.TabIndex = 202;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Bahnschrift Condensed", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(810, 5);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(347, 58);
+            this.label26.TabIndex = 203;
+            this.label26.Text = "SELECTION OF SEATS";
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.Peru;
+            this.panel6.Controls.Add(this.label27);
+            this.panel6.Controls.Add(this.textBox4);
+            this.panel6.Location = new System.Drawing.Point(167, 862);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(460, 54);
+            this.panel6.TabIndex = 206;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(13, 9);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(140, 33);
+            this.label27.TabIndex = 201;
+            this.label27.Text = "Flight Number";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(159, 12);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(276, 33);
+            this.textBox4.TabIndex = 202;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.Peru;
+            this.panel7.Controls.Add(this.label28);
+            this.panel7.Controls.Add(this.textBox5);
+            this.panel7.Location = new System.Drawing.Point(657, 862);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(460, 54);
+            this.panel7.TabIndex = 207;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(13, 9);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(125, 33);
+            this.label28.TabIndex = 201;
+            this.label28.Text = "No. of Adults";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(159, 12);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(276, 33);
+            this.textBox5.TabIndex = 202;
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.Peru;
+            this.panel8.Controls.Add(this.label29);
+            this.panel8.Controls.Add(this.textBox6);
+            this.panel8.Location = new System.Drawing.Point(1161, 862);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(460, 54);
+            this.panel8.TabIndex = 208;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(13, 9);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(112, 33);
+            this.label29.TabIndex = 201;
+            this.label29.Text = "No. of Child";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(140, 12);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(295, 33);
+            this.textBox6.TabIndex = 202;
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.BackColor = System.Drawing.Color.Peru;
+            this.panel9.Controls.Add(this.label26);
+            this.panel9.Location = new System.Drawing.Point(0, 339);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1916, 71);
+            this.panel9.TabIndex = 209;
+            // 
             // TimeSearching
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1916, 930);
+            this.ClientSize = new System.Drawing.Size(1916, 1073);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlHeader);
@@ -2283,6 +2533,20 @@
             this.panel1.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2441,5 +2705,25 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Panel panel9;
     }
 }
