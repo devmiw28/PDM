@@ -268,6 +268,7 @@
             this.DataGridUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridUsers.Location = new System.Drawing.Point(0, 0);
             this.DataGridUsers.Name = "DataGridUsers";
+            this.DataGridUsers.RowHeadersVisible = false;
             this.DataGridUsers.Size = new System.Drawing.Size(1432, 772);
             this.DataGridUsers.TabIndex = 0;
             this.DataGridUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

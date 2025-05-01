@@ -90,6 +90,7 @@ namespace Airline
             DataGridUsers.DefaultCellStyle.ForeColor = Color.Black;
             DataGridUsers.DefaultCellStyle.SelectionBackColor = Color.Goldenrod;
             DataGridUsers.DefaultCellStyle.SelectionForeColor = Color.White;
+            
 
             DataGridUsers.RowTemplate.Height = 28;
             DataGridUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -97,6 +98,8 @@ namespace Airline
             DataGridUsers.ReadOnly = true;
             DataGridUsers.BorderStyle = BorderStyle.None;
             DataGridUsers.GridColor = Color.FromArgb(153, 101, 21);
+            DataGridUsers.AllowUserToResizeColumns = false;
+            DataGridUsers.AllowUserToResizeRows = false;
         }
 
 
@@ -111,9 +114,11 @@ namespace Airline
             role.Width = 300;
             role.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+
             created_at.Width = 350;
             created_at.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             created_at.DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+
         }
     }
 }
