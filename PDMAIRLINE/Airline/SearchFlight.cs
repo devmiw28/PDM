@@ -38,10 +38,9 @@ namespace Airline
             CmbAdults.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbChildren.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbInfant.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbReturnDate.DropDownStyle = ComboBoxStyle.DropDownList;
 
             PopulateComboBoxes();
-            PopulateDates();
-
             
         }
 
@@ -57,7 +56,7 @@ namespace Airline
             if (CmbTrip.SelectedItem.ToString() == "Round-trip")
             {
                 LblReturnDate.Visible = true;
-                DTPReturn.Visible = true; // Show the return date DateTimePicker
+                CmbReturnDate.Visible = true; // Show the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
 
                 LblReturnTime.Visible = true;
@@ -67,7 +66,7 @@ namespace Airline
             else if(CmbTrip.SelectedItem.ToString() == "One-way")
             {
                 LblReturnDate.Visible = false;
-                DTPReturn.Visible = false; // Hide the return date DateTimePicker
+                CmbReturnDate.Visible = false; // Hide the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
 
                 LblReturnTime.Visible = false;
@@ -77,24 +76,7 @@ namespace Airline
 
 
         }
-
-        // Populating the ComboBox with sample dates (You can populate with actual dates from a database or range)
-        private void PopulateDates()
-        {
-            // Set the minimum and maximum date range for the destination and return DateTimePickers
-            DTPDepart.MinDate = DateTime.Now;
-            DTPDepart.MaxDate = DateTime.Now.AddMonths(12);
-
-            DTPReturn.MinDate = DateTime.Now;
-            DTPReturn.MaxDate = DateTime.Now.AddMonths(12);
-
-            // Optionally, you can set default selected date for both DateTimePickers
-            DTPDepart.Value = DateTime.Now;
-            DTPReturn.Value = DateTime.Now;
-        }
-
         
-
         private void Pet_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -238,53 +220,34 @@ namespace Airline
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            
-
             int adultCount = Convert.ToInt32(numericUpDownAdults.Value);
             int childCount = Convert.ToInt32(numericUpDownChildren.Value);      // di ko sure kung gagana to
             int infantCount = Convert.ToInt32(numericUpDownInfants.Value);
             string departure = CmbLoc1.SelectedItem?.ToString();
             string destination = CmbLoc2.SelectedItem?.ToString();
-            // Check if SearchFlight form is already open
-            TimeSearching timeSearch = Application.OpenForms.OfType<TimeSearching>().FirstOrDefault();
 
-            if (timeSearch == null || timeSearch.IsDisposed)
+            // Check if SearchFlight form is already open
+            SeatSelection seatselection = Application.OpenForms.OfType<SeatSelection>().FirstOrDefault();
+            
+            if (seatselection == null || seatselection.IsDisposed)
             {
                 // If not open, create a new instance of SearchFlight
-                timeSearch = new TimeSearching();
-                timeSearch.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
-                timeSearch.Show();
+                seatselection = new SeatSelection();
+                seatselection.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                seatselection.Show();
             }
             else
             {
                 // If already open, bring it to the front
-                timeSearch.BringToFront();
-                timeSearch.Focus();
+                seatselection.BringToFront();
+                seatselection.Focus();
             }
-            BookingSummary bookingSummary = new BookingSummary();
-            bookingSummary.Departure = CmbLoc1.SelectedItem?.ToString();
-            bookingSummary.Destination = CmbLoc2.SelectedItem?.ToString();
-            bookingSummary.Adults = adultCount.ToString();
-            bookingSummary.Children = childCount.ToString();
-            bookingSummary.Infants = infantCount.ToString();
-            bookingSummary.PromoCode = txtPromo.Text;
-
+           
             
-
             this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
-        private void DTPReturn_ValueChanged(object sender, EventArgs e)
-        {
-            BookingSummary bookingSummary = new BookingSummary();
-            bookingSummary.ReturnDate = DTPReturn.Value.ToString("yyyy-MM-dd");
-        }
-
-        private void DTPDepart_ValueChanged(object sender, EventArgs e)
-        {
-            BookingSummary bookingSummary = new BookingSummary();
-            bookingSummary.DepartDate = DTPReturn.Value.ToString("yyyy-MM-dd");
-        }
+      
 
         private void CmbAdults_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -292,7 +255,8 @@ namespace Airline
         }
 
         private void Promo_TextChanged(object sender, EventArgs e)
-        { 
+        {
+             
         }
 
         private void DTPDepartTime_ValueChanged(object sender, EventArgs e)

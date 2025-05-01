@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookingSummary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +118,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimeSearching.cs">
+    <Compile Include="SeatSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimeSearching.Designer.cs">
-      <DependentUpon>TimeSearching.cs</DependentUpon>
+    <Compile Include="SeatSelection.Designer.cs">
+      <DependentUpon>SeatSelection.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookingSummary.resx">
       <DependentUpon>BookingSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,8 +161,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TimeSearching.resx">
-      <DependentUpon>TimeSearching.cs</DependentUpon>
+    <EmbeddedResource Include="SeatSelection.resx">
+      <DependentUpon>SeatSelection.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

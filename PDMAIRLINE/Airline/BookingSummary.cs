@@ -31,10 +31,21 @@ namespace Airline
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            Payment payment = new Payment();
-            payment.Show();
+            Payment payment = Application.OpenForms.OfType<Payment>().FirstOrDefault();
 
-            Hide();
+            if (payment == null || payment.IsDisposed)
+            {
+                // If not open, create a new instance of SearchFlight
+                payment = new Payment();
+                payment.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                payment.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                payment.BringToFront();
+                payment.Focus();
+            }
 
         }
         private void BookingSummary_Load(object sender, EventArgs e)
@@ -112,6 +123,11 @@ namespace Airline
         {
             lblPromo.Text = PromoCode;
             lblPromo.Text = string.IsNullOrWhiteSpace(PromoCode) ? "None" : PromoCode;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

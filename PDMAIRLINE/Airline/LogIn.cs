@@ -7,6 +7,8 @@ namespace Airline
     public partial class LogIn : Form
     {
         private readonly string connectionString = "server=localhost;database=pdm_airline_db;user=root;password=;";
+        private static SignUp signupFormInstance;
+        private static LogIn loginFormInstance;
 
         public LogIn()
         {
@@ -58,7 +60,12 @@ namespace Airline
                                 MessageBox.Show($"Welcome!: {SessionManager.Role}", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                
-                                if (SessionManager.Role == "admin" || SessionManager.Role == "customer")
+                                if (SessionManager.Role == "admin")
+                                {
+                                    new Admin().Show();
+                                    this.Hide();
+                                }
+                                else
                                 {
                                     new Homepage().Show();
                                     this.Hide();
@@ -80,6 +87,8 @@ namespace Airline
                     MessageBox.Show("Database Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            
         }
 
 
@@ -88,10 +97,7 @@ namespace Airline
             TxtPassword.PasswordChar = ChkShowPassword.Checked ? '\0' : '*';
         }
 
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -99,7 +105,32 @@ namespace Airline
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void lblSignup_Click(object sender, EventArgs e)
+        {
+            // Close Login if it's open
+            if (loginFormInstance != null && !loginFormInstance.IsDisposed)
+            {
+                loginFormInstance.Close();
+                loginFormInstance = null;
+            }
+
+            if (signupFormInstance == null || signupFormInstance.IsDisposed)
+            {
+                signupFormInstance = new SignUp();
+                signupFormInstance.FormClosed += (s, args) => signupFormInstance = null;
+                signupFormInstance.Show();
+            }
+            else
+            {
+                signupFormInstance.BringToFront();
+                signupFormInstance.Focus();
+            }
+
+
+            this.Hide();
         }
     }
 }

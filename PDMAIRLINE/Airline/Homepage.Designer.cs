@@ -49,9 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lblHelp = new System.Windows.Forms.Label();
-            this.lblLogIn = new System.Windows.Forms.Label();
-            this.lblSignUp = new System.Windows.Forms.Label();
             this.lblLearnMore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination4)).BeginInit();
@@ -307,9 +304,6 @@
             this.pnlHeader.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
             this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlHeader.Controls.Add(this.btnExit);
-            this.pnlHeader.Controls.Add(this.lblHelp);
-            this.pnlHeader.Controls.Add(this.lblLogIn);
-            this.pnlHeader.Controls.Add(this.lblSignUp);
             this.pnlHeader.Controls.Add(this.lblLearnMore);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
@@ -334,54 +328,6 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lblHelp
-            // 
-            this.lblHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHelp.AutoSize = true;
-            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblHelp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHelp.ForeColor = System.Drawing.Color.Gold;
-            this.lblHelp.Location = new System.Drawing.Point(1325, 21);
-            this.lblHelp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(58, 25);
-            this.lblHelp.TabIndex = 17;
-            this.lblHelp.Text = "HELP";
-            this.lblHelp.Click += new System.EventHandler(this.lblContactUs_Click);
-            // 
-            // lblLogIn
-            // 
-            this.lblLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLogIn.AutoSize = true;
-            this.lblLogIn.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblLogIn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogIn.ForeColor = System.Drawing.Color.Gold;
-            this.lblLogIn.Location = new System.Drawing.Point(991, 21);
-            this.lblLogIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLogIn.Name = "lblLogIn";
-            this.lblLogIn.Size = new System.Drawing.Size(85, 25);
-            this.lblLogIn.TabIndex = 18;
-            this.lblLogIn.Text = "LOG IN";
-            this.lblLogIn.Click += new System.EventHandler(this.label6_Click_1);
-            // 
-            // lblSignUp
-            // 
-            this.lblSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSignUp.AutoSize = true;
-            this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblSignUp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignUp.ForeColor = System.Drawing.Color.Gold;
-            this.lblSignUp.Location = new System.Drawing.Point(1080, 21);
-            this.lblSignUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(95, 25);
-            this.lblSignUp.TabIndex = 19;
-            this.lblSignUp.Text = "SIGN UP";
-            this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
-            // 
             // lblLearnMore
             // 
             this.lblLearnMore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -390,7 +336,7 @@
             this.lblLearnMore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLearnMore.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLearnMore.ForeColor = System.Drawing.Color.Gold;
-            this.lblLearnMore.Location = new System.Drawing.Point(1179, 21);
+            this.lblLearnMore.Location = new System.Drawing.Point(1241, 21);
             this.lblLearnMore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLearnMore.Name = "lblLearnMore";
             this.lblLearnMore.Size = new System.Drawing.Size(142, 25);
@@ -435,16 +381,12 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-
         }
 
         #endregion
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label lblSignUp;
         private System.Windows.Forms.Label lblLearnMore;
-        private System.Windows.Forms.Label lblLogIn;
-        private System.Windows.Forms.Label lblHelp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;

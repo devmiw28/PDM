@@ -36,8 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CmbLoc1 = new System.Windows.Forms.ComboBox();
             this.CmbLoc2 = new System.Windows.Forms.ComboBox();
-            this.DTPDepart = new System.Windows.Forms.DateTimePicker();
-            this.DTPReturn = new System.Windows.Forms.DateTimePicker();
             this.CmbAdults = new System.Windows.Forms.ComboBox();
             this.CmbChildren = new System.Windows.Forms.ComboBox();
             this.CmbInfant = new System.Windows.Forms.ComboBox();
@@ -61,14 +59,16 @@
             this.numericUpDownInfants = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.LblReturnTime = new System.Windows.Forms.Label();
-            this.CmbDepartTime = new System.Windows.Forms.ComboBox();
-            this.CmbReturnTime = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Where = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.Label();
+            this.CmbDepartDate = new System.Windows.Forms.ComboBox();
+            this.CmbDepartTime = new System.Windows.Forms.ComboBox();
+            this.CmbReturnDate = new System.Windows.Forms.ComboBox();
+            this.CmbReturnTime = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAdults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChildren)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInfants)).BeginInit();
@@ -158,28 +158,6 @@
             this.CmbLoc2.TabIndex = 31;
             this.CmbLoc2.SelectedIndexChanged += new System.EventHandler(this.CmbLoc2_SelectedIndexChanged);
             // 
-            // DTPDepart
-            // 
-            this.DTPDepart.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DTPDepart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPDepart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPDepart.Location = new System.Drawing.Point(774, 530);
-            this.DTPDepart.Name = "DTPDepart";
-            this.DTPDepart.Size = new System.Drawing.Size(359, 31);
-            this.DTPDepart.TabIndex = 32;
-            this.DTPDepart.ValueChanged += new System.EventHandler(this.DTPDepart_ValueChanged);
-            // 
-            // DTPReturn
-            // 
-            this.DTPReturn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DTPReturn.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPReturn.Location = new System.Drawing.Point(1139, 530);
-            this.DTPReturn.Name = "DTPReturn";
-            this.DTPReturn.Size = new System.Drawing.Size(359, 31);
-            this.DTPReturn.TabIndex = 33;
-            this.DTPReturn.ValueChanged += new System.EventHandler(this.DTPReturn_ValueChanged);
-            // 
             // CmbAdults
             // 
             this.CmbAdults.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -268,7 +246,7 @@
             // 
             this.txtPromo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPromo.Location = new System.Drawing.Point(490, 746);
+            this.txtPromo.Location = new System.Drawing.Point(490, 752);
             this.txtPromo.Name = "txtPromo";
             this.txtPromo.Size = new System.Drawing.Size(247, 38);
             this.txtPromo.TabIndex = 37;
@@ -365,7 +343,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(210, 719);
+            this.label10.Location = new System.Drawing.Point(201, 725);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 24);
@@ -379,7 +357,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(486, 719);
+            this.label11.Location = new System.Drawing.Point(486, 725);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 24);
@@ -461,10 +439,13 @@
             // BtnSearch
             // 
             this.BtnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.BtnSearch.Location = new System.Drawing.Point(1251, 745);
+            this.BtnSearch.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
+            this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSearch.ForeColor = System.Drawing.Color.White;
+            this.BtnSearch.Location = new System.Drawing.Point(1298, 757);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(247, 38);
+            this.BtnSearch.Size = new System.Drawing.Size(200, 50);
             this.BtnSearch.TabIndex = 52;
             this.BtnSearch.Text = "Search flights";
             this.BtnSearch.UseVisualStyleBackColor = true;
@@ -518,72 +499,6 @@
             this.LblReturnTime.Size = new System.Drawing.Size(136, 24);
             this.LblReturnTime.TabIndex = 61;
             this.LblReturnTime.Text = "Return Time";
-            // 
-            // CmbDepartTime
-            // 
-            this.CmbDepartTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CmbDepartTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CmbDepartTime.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
-            this.CmbDepartTime.FormattingEnabled = true;
-            this.CmbDepartTime.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"});
-            this.CmbDepartTime.Location = new System.Drawing.Point(774, 630);
-            this.CmbDepartTime.Name = "CmbDepartTime";
-            this.CmbDepartTime.Size = new System.Drawing.Size(247, 40);
-            this.CmbDepartTime.TabIndex = 62;
-            this.CmbDepartTime.Text = "0";
-            // 
-            // CmbReturnTime
-            // 
-            this.CmbReturnTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CmbReturnTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CmbReturnTime.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
-            this.CmbReturnTime.FormattingEnabled = true;
-            this.CmbReturnTime.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"});
-            this.CmbReturnTime.Location = new System.Drawing.Point(1139, 630);
-            this.CmbReturnTime.Name = "CmbReturnTime";
-            this.CmbReturnTime.Size = new System.Drawing.Size(247, 40);
-            this.CmbReturnTime.TabIndex = 63;
-            this.CmbReturnTime.Text = "0";
             // 
             // pictureBox1
             // 
@@ -668,13 +583,63 @@
             this.Search.TabIndex = 22;
             this.Search.Text = "Search Flight";
             // 
+            // CmbDepartDate
+            // 
+            this.CmbDepartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CmbDepartDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbDepartDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CmbDepartDate.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
+            this.CmbDepartDate.FormattingEnabled = true;
+            this.CmbDepartDate.Location = new System.Drawing.Point(774, 526);
+            this.CmbDepartDate.Name = "CmbDepartDate";
+            this.CmbDepartDate.Size = new System.Drawing.Size(247, 40);
+            this.CmbDepartDate.TabIndex = 66;
+            // 
+            // CmbDepartTime
+            // 
+            this.CmbDepartTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CmbDepartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbDepartTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CmbDepartTime.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
+            this.CmbDepartTime.FormattingEnabled = true;
+            this.CmbDepartTime.Location = new System.Drawing.Point(774, 630);
+            this.CmbDepartTime.Name = "CmbDepartTime";
+            this.CmbDepartTime.Size = new System.Drawing.Size(247, 40);
+            this.CmbDepartTime.TabIndex = 67;
+            // 
+            // CmbReturnDate
+            // 
+            this.CmbReturnDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CmbReturnDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbReturnDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CmbReturnDate.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
+            this.CmbReturnDate.FormattingEnabled = true;
+            this.CmbReturnDate.Location = new System.Drawing.Point(1139, 526);
+            this.CmbReturnDate.Name = "CmbReturnDate";
+            this.CmbReturnDate.Size = new System.Drawing.Size(247, 40);
+            this.CmbReturnDate.TabIndex = 68;
+            // 
+            // CmbReturnTime
+            // 
+            this.CmbReturnTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CmbReturnTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbReturnTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CmbReturnTime.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
+            this.CmbReturnTime.FormattingEnabled = true;
+            this.CmbReturnTime.Location = new System.Drawing.Point(1139, 630);
+            this.CmbReturnTime.Name = "CmbReturnTime";
+            this.CmbReturnTime.Size = new System.Drawing.Size(247, 40);
+            this.CmbReturnTime.TabIndex = 69;
+            // 
             // SearchFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1691, 955);
             this.Controls.Add(this.CmbReturnTime);
+            this.Controls.Add(this.CmbReturnDate);
             this.Controls.Add(this.CmbDepartTime);
+            this.Controls.Add(this.CmbDepartDate);
             this.Controls.Add(this.LblReturnTime);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.BtnSearch);
@@ -695,8 +660,6 @@
             this.Controls.Add(this.CmbInfant);
             this.Controls.Add(this.CmbChildren);
             this.Controls.Add(this.CmbAdults);
-            this.Controls.Add(this.DTPReturn);
-            this.Controls.Add(this.DTPDepart);
             this.Controls.Add(this.CmbLoc2);
             this.Controls.Add(this.CmbLoc1);
             this.Controls.Add(this.label3);
@@ -739,8 +702,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CmbLoc1;
         private System.Windows.Forms.ComboBox CmbLoc2;
-        private System.Windows.Forms.DateTimePicker DTPDepart;
-        private System.Windows.Forms.DateTimePicker DTPReturn;
         private System.Windows.Forms.ComboBox CmbAdults;
         private System.Windows.Forms.ComboBox CmbChildren;
         private System.Windows.Forms.ComboBox CmbInfant;
@@ -761,7 +722,9 @@
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label LblReturnTime;
+        private System.Windows.Forms.ComboBox CmbDepartDate;
         private System.Windows.Forms.ComboBox CmbDepartTime;
+        private System.Windows.Forms.ComboBox CmbReturnDate;
         private System.Windows.Forms.ComboBox CmbReturnTime;
     }
 }
