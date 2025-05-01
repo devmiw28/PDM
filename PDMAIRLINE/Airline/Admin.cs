@@ -19,7 +19,8 @@ namespace Airline
         {
             InitializeComponent();
             SetupDataGridColumns();
-            StyleDataGrid();
+            StyleDataGrid_BrownGold();
+            SetColumnSizesAndAlignment();
             LoadUserData();
 
         }
@@ -74,20 +75,45 @@ namespace Airline
             
         }
 
-        private void StyleDataGrid()
+        private void StyleDataGrid_BrownGold()
         {
             DataGridUsers.AutoGenerateColumns = false;
-            DataGridUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            DataGridUsers.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
             DataGridUsers.EnableHeadersVisualStyles = false;
-            DataGridUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            DataGridUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            DataGridUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            DataGridUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(102, 51, 0);  
+            DataGridUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.Gold;
+            DataGridUsers.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            DataGridUsers.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            DataGridUsers.DefaultCellStyle.BackColor = Color.FromArgb(255, 248, 220);
+            DataGridUsers.DefaultCellStyle.ForeColor = Color.Black;
+            DataGridUsers.DefaultCellStyle.SelectionBackColor = Color.Goldenrod;
+            DataGridUsers.DefaultCellStyle.SelectionForeColor = Color.White;
+
             DataGridUsers.RowTemplate.Height = 28;
             DataGridUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DataGridUsers.MultiSelect = false;
             DataGridUsers.ReadOnly = true;
+            DataGridUsers.BorderStyle = BorderStyle.None;
+            DataGridUsers.GridColor = Color.FromArgb(153, 101, 21);
         }
 
 
+        private void SetColumnSizesAndAlignment()
+        {
+            user_id.Width =150;
+            user_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            email.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            email.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            role.Width = 300;
+            role.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            created_at.Width = 350;
+            created_at.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            created_at.DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+        }
     }
 }
