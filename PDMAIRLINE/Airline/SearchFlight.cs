@@ -60,12 +60,19 @@ namespace Airline
                 DTPReturn.Visible = true; // Show the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
 
+                LblReturnTime.Visible = true;
+                CmbReturnTime.Visible = true;
+
             }
             else if(CmbTrip.SelectedItem.ToString() == "One-way")
             {
                 LblReturnDate.Visible = false;
                 DTPReturn.Visible = false; // Hide the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
+
+                LblReturnTime.Visible = false;
+                CmbReturnTime.Visible = false;
+
             }
 
 

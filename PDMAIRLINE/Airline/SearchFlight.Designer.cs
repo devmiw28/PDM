@@ -62,7 +62,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.LblReturnTime = new System.Windows.Forms.Label();
             this.CmbDepartTime = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CmbReturnTime = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Where = new System.Windows.Forms.Label();
@@ -552,13 +552,13 @@
             this.CmbDepartTime.TabIndex = 62;
             this.CmbDepartTime.Text = "0";
             // 
-            // comboBox2
+            // CmbReturnTime
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.CmbReturnTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CmbReturnTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CmbReturnTime.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
+            this.CmbReturnTime.FormattingEnabled = true;
+            this.CmbReturnTime.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -579,11 +579,11 @@
             "17",
             "18",
             "19"});
-            this.comboBox2.Location = new System.Drawing.Point(1139, 630);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(247, 40);
-            this.comboBox2.TabIndex = 63;
-            this.comboBox2.Text = "0";
+            this.CmbReturnTime.Location = new System.Drawing.Point(1139, 630);
+            this.CmbReturnTime.Name = "CmbReturnTime";
+            this.CmbReturnTime.Size = new System.Drawing.Size(247, 40);
+            this.CmbReturnTime.TabIndex = 63;
+            this.CmbReturnTime.Text = "0";
             // 
             // pictureBox1
             // 
@@ -673,7 +673,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1691, 955);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.CmbReturnTime);
             this.Controls.Add(this.CmbDepartTime);
             this.Controls.Add(this.LblReturnTime);
             this.Controls.Add(this.label13);
@@ -762,7 +762,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label LblReturnTime;
         private System.Windows.Forms.ComboBox CmbDepartTime;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CmbReturnTime;
     }
 }
 
