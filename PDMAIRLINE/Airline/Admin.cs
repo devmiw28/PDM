@@ -18,33 +18,49 @@ namespace Airline
         public Admin()
         {
             InitializeComponent();
+            SetupDataGridColumns();
+            StyleDataGrid();
             LoadUserData();
 
         }
 
-        // Function to fetch user data and bind it to DataGridView
+       
         private void LoadUserData()
         {
-            // SQL query to fetch user data
-            string query = "SELECT user_id, email, role, created_at FROM users";
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            try
             {
-                try
+
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    // Bind the DataTable to the DataGridView
-                    dataGridView1.DataSource = dataTable;
+                    string query = "SELECT user_id, email, role, created_at FROM users";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataGridUsers.AutoGenerateColumns = false;
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            DataGridUsers.DataSource = dt;
+                        }
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+             }
+             catch (Exception ex)
+            {
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        
+
+        private void SetupDataGridColumns()
+        {
+            DataGridUsers.AutoGenerateColumns = false;
+            user_id.DataPropertyName = "user_id";
+            email.DataPropertyName = "email";
+            role.DataPropertyName = "role";
+            created_at.DataPropertyName = "created_at";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -54,15 +70,24 @@ namespace Airline
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Example: If you want to handle clicking on a cell (like opening a detailed view or editing)
-            if (e.RowIndex >= 0)
-            {
-                // Retrieve the data from the selected row (example: user_id)
-                int selectedUserId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["user_id"].Value);
-
-                // You could now open another form to edit or view the user's details
-                MessageBox.Show("User ID: " + selectedUserId);
-            }
+            
+            
         }
+
+        private void StyleDataGrid()
+        {
+            DataGridUsers.AutoGenerateColumns = false;
+            DataGridUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            DataGridUsers.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            DataGridUsers.EnableHeadersVisualStyles = false;
+            DataGridUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            DataGridUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            DataGridUsers.RowTemplate.Height = 28;
+            DataGridUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DataGridUsers.MultiSelect = false;
+            DataGridUsers.ReadOnly = true;
+        }
+
+
     }
 }

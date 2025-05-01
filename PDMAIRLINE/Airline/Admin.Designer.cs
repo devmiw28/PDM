@@ -43,16 +43,16 @@
             this.tabReturnTime = new System.Windows.Forms.TabPage();
             this.tabPromoCode = new System.Windows.Forms.TabPage();
             this.tabUsers = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Created_At = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridUsers = new System.Windows.Forms.DataGridView();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.TabAdmin.SuspendLayout();
             this.tabUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -248,7 +248,7 @@
             // 
             this.tabUsers.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
             this.tabUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabUsers.Controls.Add(this.dataGridView1);
+            this.tabUsers.Controls.Add(this.DataGridUsers);
             this.tabUsers.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
             this.tabUsers.Location = new System.Drawing.Point(4, 34);
             this.tabUsers.Name = "tabUsers";
@@ -257,39 +257,39 @@
             this.tabUsers.Text = "Users";
             this.tabUsers.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DataGridUsers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UserID,
-            this.Email,
-            this.Role,
-            this.Created_At});
-            this.dataGridView1.Location = new System.Drawing.Point(268, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(442, 303);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.user_id,
+            this.email,
+            this.role,
+            this.created_at});
+            this.DataGridUsers.Location = new System.Drawing.Point(268, 86);
+            this.DataGridUsers.Name = "DataGridUsers";
+            this.DataGridUsers.Size = new System.Drawing.Size(442, 303);
+            this.DataGridUsers.TabIndex = 0;
+            this.DataGridUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // UserID
+            // user_id
             // 
-            this.UserID.HeaderText = "UserID";
-            this.UserID.Name = "UserID";
+            this.user_id.HeaderText = "UserID";
+            this.user_id.Name = "user_id";
             // 
-            // Email
+            // email
             // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
             // 
-            // Role
+            // role
             // 
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
+            this.role.HeaderText = "Role";
+            this.role.Name = "role";
             // 
-            // Created_At
+            // created_at
             // 
-            this.Created_At.HeaderText = "Created At";
-            this.Created_At.Name = "Created_At";
+            this.created_at.HeaderText = "Created At";
+            this.created_at.Name = "created_at";
             // 
             // Admin
             // 
@@ -309,7 +309,7 @@
             this.pnlHeader.ResumeLayout(false);
             this.TabAdmin.ResumeLayout(false);
             this.tabUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,10 +331,10 @@
         private System.Windows.Forms.TabPage tabReturnTime;
         private System.Windows.Forms.TabPage tabPromoCode;
         private System.Windows.Forms.TabPage tabUsers;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Created_At;
+        private System.Windows.Forms.DataGridView DataGridUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn role;
+        private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
     }
 }
