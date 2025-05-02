@@ -37,7 +37,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.TabAdmin = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
-            this.tabDepartDate = new System.Windows.Forms.TabPage();
+            this.tabDepartDateAndTime = new System.Windows.Forms.TabPage();
             this.tabReturnDate = new System.Windows.Forms.TabPage();
             this.tabDepartTime = new System.Windows.Forms.TabPage();
             this.tabReturnTime = new System.Windows.Forms.TabPage();
@@ -156,7 +156,7 @@
             // TabAdmin
             // 
             this.TabAdmin.Controls.Add(this.tabDashboard);
-            this.TabAdmin.Controls.Add(this.tabDepartDate);
+            this.TabAdmin.Controls.Add(this.tabDepartDateAndTime);
             this.TabAdmin.Controls.Add(this.tabReturnDate);
             this.TabAdmin.Controls.Add(this.tabDepartTime);
             this.TabAdmin.Controls.Add(this.tabReturnTime);
@@ -183,18 +183,18 @@
             this.tabDashboard.Text = "Dashboard";
             this.tabDashboard.UseVisualStyleBackColor = true;
             // 
-            // tabDepartDate
+            // tabDepartDateAndTime
             // 
-            this.tabDepartDate.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.tabDepartDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabDepartDate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.tabDepartDate.Location = new System.Drawing.Point(4, 34);
-            this.tabDepartDate.Name = "tabDepartDate";
-            this.tabDepartDate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDepartDate.Size = new System.Drawing.Size(1432, 772);
-            this.tabDepartDate.TabIndex = 1;
-            this.tabDepartDate.Text = "Depart Date";
-            this.tabDepartDate.UseVisualStyleBackColor = true;
+            this.tabDepartDateAndTime.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.tabDepartDateAndTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabDepartDateAndTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.tabDepartDateAndTime.Location = new System.Drawing.Point(4, 34);
+            this.tabDepartDateAndTime.Name = "tabDepartDateAndTime";
+            this.tabDepartDateAndTime.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDepartDateAndTime.Size = new System.Drawing.Size(1432, 772);
+            this.tabDepartDateAndTime.TabIndex = 1;
+            this.tabDepartDateAndTime.Text = "Depart Date And Time";
+            this.tabDepartDateAndTime.UseVisualStyleBackColor = true;
             // 
             // tabReturnDate
             // 
@@ -327,7 +327,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TabControl TabAdmin;
         private System.Windows.Forms.TabPage tabDashboard;
-        private System.Windows.Forms.TabPage tabDepartDate;
+        private System.Windows.Forms.TabPage tabDepartDateAndTime;
         private System.Windows.Forms.TabPage tabReturnDate;
         private System.Windows.Forms.TabPage tabDepartTime;
         private System.Windows.Forms.TabPage tabReturnTime;
