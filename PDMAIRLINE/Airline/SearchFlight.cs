@@ -25,8 +25,9 @@ namespace Airline
             InitializeComponent();
             
             // Subscribe to the SelectedIndexChanged event
-            CmbLoc1.SelectedIndexChanged += CmbLoc1_SelectedIndexChanged;
-            CmbLoc2.SelectedIndexChanged += CmbLoc2_SelectedIndexChanged;
+            CmbLoc1.SelectedIndexChanged -= CmbLoc1_SelectedIndexChanged;
+            CmbLoc2.SelectedIndexChanged -= CmbLoc2_SelectedIndexChanged;
+
 
         }
 
@@ -38,8 +39,19 @@ namespace Airline
             CmbAdults.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbChildren.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbInfant.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbReturnDate.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            // Set the DateTimePicker to allow dates only within one year range
+            DateTime today = DateTime.Today;
+            dtpDepartDate.MinDate = today;  // Set minimum date to today
+            dtpDepartDate.MaxDate = today.AddYears(1);  // Set maximum date to one year from today
+            dtpReturnDate.MinDate = today;
+            dtpReturnDate.MaxDate = today.AddYears(1);
+
+            // Make the DateTimePicker read - only by preventing user input
+            dtpDepartDate.KeyPress += (s, args) =>
+            {
+                args.Handled = true;  // Prevent editing through the keyboard
+            };
             PopulateComboBoxes();
             
         }
@@ -56,7 +68,7 @@ namespace Airline
             if (CmbTrip.SelectedItem.ToString() == "Round-trip")
             {
                 LblReturnDate.Visible = true;
-                CmbReturnDate.Visible = true; // Show the return date DateTimePicker
+                dtpReturnDate.Visible = true; // Show the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
 
                 LblReturnTime.Visible = true;
@@ -66,15 +78,13 @@ namespace Airline
             else if(CmbTrip.SelectedItem.ToString() == "One-way")
             {
                 LblReturnDate.Visible = false;
-                CmbReturnDate.Visible = false; // Hide the return date DateTimePicker
+                dtpReturnDate.Visible = false; // Hide the return date DateTimePicker
                 bookingSummary.TripType = CmbTrip.SelectedItem.ToString();
 
                 LblReturnTime.Visible = false;
                 CmbReturnTime.Visible = false;
 
             }
-
-
         }
         
         private void Pet_SelectedIndexChanged(object sender, EventArgs e)
@@ -220,19 +230,42 @@ namespace Airline
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            int adultCount = Convert.ToInt32(numericUpDownAdults.Value);
-            int childCount = Convert.ToInt32(numericUpDownChildren.Value);      // di ko sure kung gagana to
-            int infantCount = Convert.ToInt32(numericUpDownInfants.Value);
-            string departure = CmbLoc1.SelectedItem?.ToString();
-            string destination = CmbLoc2.SelectedItem?.ToString();
+            int adultCount = CmbAdults.SelectedItem != null ? Convert.ToInt32(CmbAdults.SelectedItem.ToString()) : 0;
+            int childCount = CmbChildren.SelectedItem != null ? Convert.ToInt32(CmbChildren.SelectedItem.ToString()) : 0;
+            int infantCount = CmbInfant.SelectedItem != null ? Convert.ToInt32(CmbInfant.SelectedItem.ToString()) : 0;
+
+            int totalSeats = adultCount + childCount + infantCount;
 
             // Check if SearchFlight form is already open
             SeatSelection seatselection = Application.OpenForms.OfType<SeatSelection>().FirstOrDefault();
             
             if (seatselection == null || seatselection.IsDisposed)
             {
-                // If not open, create a new instance of SearchFlight
                 seatselection = new SeatSelection();
+                seatselection.DepartDate = dtpDepartDate.Value.ToShortDateString();
+                seatselection.NumAdults = adultCount;  // Pass the number of adults to SeatSelection
+                seatselection.AllowedSeatCount = totalSeats; // ✅ Pass it here
+                seatselection.NumChildren = childCount;
+                seatselection.NumInfants = infantCount;
+
+                seatselection.Destination = $"{CmbLoc1.Text} to {CmbLoc2.Text}";
+
+                seatselection.TripType = CmbTrip.SelectedItem?.ToString();
+
+                // Handle Round-trip and One-way cases
+                if (CmbTrip.SelectedItem?.ToString() == "Round-trip")
+                {
+                    // Pass the Return Date and Time for Round-trip
+                    seatselection.ReturnDate = dtpReturnDate.Value.ToShortDateString();
+                    seatselection.ReturnTime = CmbReturnTime.SelectedItem?.ToString();
+                }
+                else
+                {
+                    // For One-way trip, ReturnDate and ReturnTime can be null
+                    seatselection.ReturnDate = null;
+                    seatselection.ReturnTime = null;
+                }
+
                 seatselection.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
                 seatselection.Show();
             }

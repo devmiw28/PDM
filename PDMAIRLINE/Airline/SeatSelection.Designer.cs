@@ -188,7 +188,6 @@
             this.lblNoOfSeats = new System.Windows.Forms.Label();
             this.txtNumSeats = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cmbFlightClass = new System.Windows.Forms.ComboBox();
             this.lblFlightClass = new System.Windows.Forms.Label();
             this.lblSelectionOfSeats = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -204,6 +203,7 @@
             this.txtNumInfants = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNoOfInfant = new System.Windows.Forms.Label();
+            this.cmbFlightClass = new System.Windows.Forms.ComboBox();
             this.panelSeats.SuspendLayout();
             this.pnlHeader1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -607,7 +607,6 @@
             this.chkA1.TabIndex = 178;
             this.chkA1.TabStop = false;
             this.chkA1.UseVisualStyleBackColor = true;
-            
             // 
             // chkB1
             // 
@@ -621,7 +620,6 @@
             this.chkB1.TabIndex = 177;
             this.chkB1.TabStop = false;
             this.chkB1.UseVisualStyleBackColor = true;
-            
             // 
             // chkA2
             // 
@@ -635,7 +633,6 @@
             this.chkA2.TabIndex = 176;
             this.chkA2.TabStop = false;
             this.chkA2.UseVisualStyleBackColor = true;
-     
             // 
             // chkB2
             // 
@@ -649,7 +646,6 @@
             this.chkB2.TabIndex = 175;
             this.chkB2.TabStop = false;
             this.chkB2.UseVisualStyleBackColor = true;
-           
             // 
             // chkA3
             // 
@@ -663,7 +659,6 @@
             this.chkA3.TabIndex = 174;
             this.chkA3.TabStop = false;
             this.chkA3.UseVisualStyleBackColor = true;
-            
             // 
             // chkB3
             // 
@@ -677,7 +672,6 @@
             this.chkB3.TabIndex = 173;
             this.chkB3.TabStop = false;
             this.chkB3.UseVisualStyleBackColor = true;
-            
             // 
             // chkE1
             // 
@@ -691,7 +685,6 @@
             this.chkE1.TabIndex = 172;
             this.chkE1.TabStop = false;
             this.chkE1.UseVisualStyleBackColor = true;
-            
             // 
             // chkF1
             // 
@@ -705,7 +698,6 @@
             this.chkF1.TabIndex = 171;
             this.chkF1.TabStop = false;
             this.chkF1.UseVisualStyleBackColor = true;
-          
             // 
             // chkE2
             // 
@@ -719,7 +711,6 @@
             this.chkE2.TabIndex = 170;
             this.chkE2.TabStop = false;
             this.chkE2.UseVisualStyleBackColor = true;
-            
             // 
             // chkF2
             // 
@@ -733,7 +724,6 @@
             this.chkF2.TabIndex = 169;
             this.chkF2.TabStop = false;
             this.chkF2.UseVisualStyleBackColor = true;
-            
             // 
             // chkE3
             // 
@@ -747,7 +737,6 @@
             this.chkE3.TabIndex = 168;
             this.chkE3.TabStop = false;
             this.chkE3.UseVisualStyleBackColor = true;
-          
             // 
             // chkF3
             // 
@@ -761,7 +750,6 @@
             this.chkF3.TabIndex = 167;
             this.chkF3.TabStop = false;
             this.chkF3.UseVisualStyleBackColor = true;
-           
             // 
             // chkB10
             // 
@@ -775,7 +763,6 @@
             this.chkB10.TabIndex = 166;
             this.chkB10.TabStop = false;
             this.chkB10.UseVisualStyleBackColor = true;
-         
             // 
             // chkC10
             // 
@@ -789,7 +776,6 @@
             this.chkC10.TabIndex = 165;
             this.chkC10.TabStop = false;
             this.chkC10.UseVisualStyleBackColor = true;
-           
             // 
             // chkD10
             // 
@@ -803,7 +789,6 @@
             this.chkD10.TabIndex = 164;
             this.chkD10.TabStop = false;
             this.chkD10.UseVisualStyleBackColor = true;
-           
             // 
             // chkE10
             // 
@@ -817,7 +802,6 @@
             this.chkE10.TabIndex = 163;
             this.chkE10.TabStop = false;
             this.chkE10.UseVisualStyleBackColor = true;
-           
             // 
             // chkA17
             // 
@@ -831,7 +815,6 @@
             this.chkA17.TabIndex = 162;
             this.chkA17.TabStop = false;
             this.chkA17.UseVisualStyleBackColor = true;
-            
             // 
             // chkC17
             // 
@@ -845,7 +828,6 @@
             this.chkC17.TabIndex = 160;
             this.chkC17.TabStop = false;
             this.chkC17.UseVisualStyleBackColor = true;
-            
             // 
             // chkB17
             // 
@@ -859,7 +841,6 @@
             this.chkB17.TabIndex = 161;
             this.chkB17.TabStop = false;
             this.chkB17.UseVisualStyleBackColor = true;
-     
             // 
             // chkA18
             // 
@@ -873,7 +854,6 @@
             this.chkA18.TabIndex = 159;
             this.chkA18.TabStop = false;
             this.chkA18.UseVisualStyleBackColor = true;
-     
             // 
             // chkC18
             // 
@@ -887,7 +867,6 @@
             this.chkC18.TabIndex = 157;
             this.chkC18.TabStop = false;
             this.chkC18.UseVisualStyleBackColor = true;
-     
             // 
             // chkB18
             // 
@@ -901,7 +880,6 @@
             this.chkB18.TabIndex = 158;
             this.chkB18.TabStop = false;
             this.chkB18.UseVisualStyleBackColor = true;
-          
             // 
             // chkA19
             // 
@@ -915,7 +893,6 @@
             this.chkA19.TabIndex = 156;
             this.chkA19.TabStop = false;
             this.chkA19.UseVisualStyleBackColor = true;
-         
             // 
             // chkC19
             // 
@@ -929,7 +906,6 @@
             this.chkC19.TabIndex = 154;
             this.chkC19.TabStop = false;
             this.chkC19.UseVisualStyleBackColor = true;
-          
             // 
             // chkB19
             // 
@@ -943,7 +919,6 @@
             this.chkB19.TabIndex = 155;
             this.chkB19.TabStop = false;
             this.chkB19.UseVisualStyleBackColor = true;
-         
             // 
             // chkA20
             // 
@@ -957,7 +932,6 @@
             this.chkA20.TabIndex = 153;
             this.chkA20.TabStop = false;
             this.chkA20.UseVisualStyleBackColor = true;
-            
             // 
             // chkC20
             // 
@@ -971,7 +945,6 @@
             this.chkC20.TabIndex = 151;
             this.chkC20.TabStop = false;
             this.chkC20.UseVisualStyleBackColor = true;
-           
             // 
             // chkB20
             // 
@@ -985,7 +958,6 @@
             this.chkB20.TabIndex = 152;
             this.chkB20.TabStop = false;
             this.chkB20.UseVisualStyleBackColor = true;
-           
             // 
             // chkA21
             // 
@@ -999,7 +971,6 @@
             this.chkA21.TabIndex = 150;
             this.chkA21.TabStop = false;
             this.chkA21.UseVisualStyleBackColor = true;
-       
             // 
             // chkC21
             // 
@@ -1013,7 +984,6 @@
             this.chkC21.TabIndex = 148;
             this.chkC21.TabStop = false;
             this.chkC21.UseVisualStyleBackColor = true;
-            
             // 
             // chkB21
             // 
@@ -1027,7 +997,6 @@
             this.chkB21.TabIndex = 149;
             this.chkB21.TabStop = false;
             this.chkB21.UseVisualStyleBackColor = true;
-            
             // 
             // chkA22
             // 
@@ -1041,7 +1010,6 @@
             this.chkA22.TabIndex = 147;
             this.chkA22.TabStop = false;
             this.chkA22.UseVisualStyleBackColor = true;
-            
             // 
             // chkC22
             // 
@@ -1055,7 +1023,6 @@
             this.chkC22.TabIndex = 145;
             this.chkC22.TabStop = false;
             this.chkC22.UseVisualStyleBackColor = true;
-     
             // 
             // chkB22
             // 
@@ -1069,7 +1036,6 @@
             this.chkB22.TabIndex = 146;
             this.chkB22.TabStop = false;
             this.chkB22.UseVisualStyleBackColor = true;
-           
             // 
             // chkD17
             // 
@@ -1083,7 +1049,6 @@
             this.chkD17.TabIndex = 144;
             this.chkD17.TabStop = false;
             this.chkD17.UseVisualStyleBackColor = true;
-          
             // 
             // chkF17
             // 
@@ -1097,7 +1062,6 @@
             this.chkF17.TabIndex = 142;
             this.chkF17.TabStop = false;
             this.chkF17.UseVisualStyleBackColor = true;
-
             // 
             // chkE17
             // 
@@ -1111,7 +1075,6 @@
             this.chkE17.TabIndex = 143;
             this.chkE17.TabStop = false;
             this.chkE17.UseVisualStyleBackColor = true;
-
             // 
             // chkD18
             // 
@@ -1125,7 +1088,6 @@
             this.chkD18.TabIndex = 141;
             this.chkD18.TabStop = false;
             this.chkD18.UseVisualStyleBackColor = true;
-
             // 
             // chkF18
             // 
@@ -1139,7 +1101,6 @@
             this.chkF18.TabIndex = 139;
             this.chkF18.TabStop = false;
             this.chkF18.UseVisualStyleBackColor = true;
-           
             // 
             // chkE18
             // 
@@ -1153,7 +1114,6 @@
             this.chkE18.TabIndex = 140;
             this.chkE18.TabStop = false;
             this.chkE18.UseVisualStyleBackColor = true;
-          
             // 
             // chkD19
             // 
@@ -1167,7 +1127,6 @@
             this.chkD19.TabIndex = 138;
             this.chkD19.TabStop = false;
             this.chkD19.UseVisualStyleBackColor = true;
-           
             // 
             // chkF19
             // 
@@ -1181,7 +1140,6 @@
             this.chkF19.TabIndex = 136;
             this.chkF19.TabStop = false;
             this.chkF19.UseVisualStyleBackColor = true;
-          
             // 
             // chkE19
             // 
@@ -1195,7 +1153,6 @@
             this.chkE19.TabIndex = 137;
             this.chkE19.TabStop = false;
             this.chkE19.UseVisualStyleBackColor = true;
-           
             // 
             // chkD20
             // 
@@ -1209,7 +1166,6 @@
             this.chkD20.TabIndex = 135;
             this.chkD20.TabStop = false;
             this.chkD20.UseVisualStyleBackColor = true;
-          
             // 
             // chkF20
             // 
@@ -1223,7 +1179,6 @@
             this.chkF20.TabIndex = 133;
             this.chkF20.TabStop = false;
             this.chkF20.UseVisualStyleBackColor = true;
-           
             // 
             // chkE20
             // 
@@ -1237,7 +1192,6 @@
             this.chkE20.TabIndex = 134;
             this.chkE20.TabStop = false;
             this.chkE20.UseVisualStyleBackColor = true;
-           
             // 
             // chkD21
             // 
@@ -1251,7 +1205,6 @@
             this.chkD21.TabIndex = 132;
             this.chkD21.TabStop = false;
             this.chkD21.UseVisualStyleBackColor = true;
-            
             // 
             // chkF21
             // 
@@ -1265,7 +1218,6 @@
             this.chkF21.TabIndex = 130;
             this.chkF21.TabStop = false;
             this.chkF21.UseVisualStyleBackColor = true;
-          
             // 
             // chkE21
             // 
@@ -1279,7 +1231,6 @@
             this.chkE21.TabIndex = 131;
             this.chkE21.TabStop = false;
             this.chkE21.UseVisualStyleBackColor = true;
-            
             // 
             // chkD22
             // 
@@ -1293,7 +1244,6 @@
             this.chkD22.TabIndex = 129;
             this.chkD22.TabStop = false;
             this.chkD22.UseVisualStyleBackColor = true;
-            
             // 
             // chkF22
             // 
@@ -1307,7 +1257,6 @@
             this.chkF22.TabIndex = 127;
             this.chkF22.TabStop = false;
             this.chkF22.UseVisualStyleBackColor = true;
-           
             // 
             // chkE22
             // 
@@ -1321,7 +1270,6 @@
             this.chkE22.TabIndex = 128;
             this.chkE22.TabStop = false;
             this.chkE22.UseVisualStyleBackColor = true;
-        
             // 
             // chkA11
             // 
@@ -1335,7 +1283,6 @@
             this.chkA11.TabIndex = 126;
             this.chkA11.TabStop = false;
             this.chkA11.UseVisualStyleBackColor = true;
-          
             // 
             // chkC11
             // 
@@ -1349,7 +1296,6 @@
             this.chkC11.TabIndex = 124;
             this.chkC11.TabStop = false;
             this.chkC11.UseVisualStyleBackColor = true;
-          
             // 
             // chkB11
             // 
@@ -1363,7 +1309,6 @@
             this.chkB11.TabIndex = 125;
             this.chkB11.TabStop = false;
             this.chkB11.UseVisualStyleBackColor = true;
-           
             // 
             // chkA12
             // 
@@ -1377,7 +1322,6 @@
             this.chkA12.TabIndex = 123;
             this.chkA12.TabStop = false;
             this.chkA12.UseVisualStyleBackColor = true;
-           
             // 
             // chkC12
             // 
@@ -1391,7 +1335,6 @@
             this.chkC12.TabIndex = 121;
             this.chkC12.TabStop = false;
             this.chkC12.UseVisualStyleBackColor = true;
-            
             // 
             // chkB12
             // 
@@ -1405,7 +1348,6 @@
             this.chkB12.TabIndex = 122;
             this.chkB12.TabStop = false;
             this.chkB12.UseVisualStyleBackColor = true;
-            
             // 
             // chkA13
             // 
@@ -1419,7 +1361,6 @@
             this.chkA13.TabIndex = 120;
             this.chkA13.TabStop = false;
             this.chkA13.UseVisualStyleBackColor = true;
-    
             // 
             // chkC13
             // 
@@ -1433,7 +1374,7 @@
             this.chkC13.TabIndex = 118;
             this.chkC13.TabStop = false;
             this.chkC13.UseVisualStyleBackColor = true;
-            //
+            // 
             // chkB13
             // 
             this.chkB13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1446,7 +1387,6 @@
             this.chkB13.TabIndex = 119;
             this.chkB13.TabStop = false;
             this.chkB13.UseVisualStyleBackColor = true;
-         
             // 
             // chkA14
             // 
@@ -1460,7 +1400,6 @@
             this.chkA14.TabIndex = 117;
             this.chkA14.TabStop = false;
             this.chkA14.UseVisualStyleBackColor = true;
-           
             // 
             // chkC14
             // 
@@ -1474,7 +1413,6 @@
             this.chkC14.TabIndex = 115;
             this.chkC14.TabStop = false;
             this.chkC14.UseVisualStyleBackColor = true;
-            
             // 
             // chkB14
             // 
@@ -1488,7 +1426,6 @@
             this.chkB14.TabIndex = 116;
             this.chkB14.TabStop = false;
             this.chkB14.UseVisualStyleBackColor = true;
-           
             // 
             // chkA15
             // 
@@ -1502,7 +1439,6 @@
             this.chkA15.TabIndex = 114;
             this.chkA15.TabStop = false;
             this.chkA15.UseVisualStyleBackColor = true;
-          
             // 
             // chkC15
             // 
@@ -1516,7 +1452,6 @@
             this.chkC15.TabIndex = 112;
             this.chkC15.TabStop = false;
             this.chkC15.UseVisualStyleBackColor = true;
-         
             // 
             // chkB15
             // 
@@ -1530,7 +1465,6 @@
             this.chkB15.TabIndex = 113;
             this.chkB15.TabStop = false;
             this.chkB15.UseVisualStyleBackColor = true;
-            
             // 
             // chkA16
             // 
@@ -1544,7 +1478,6 @@
             this.chkA16.TabIndex = 111;
             this.chkA16.TabStop = false;
             this.chkA16.UseVisualStyleBackColor = true;
-            
             // 
             // chkC16
             // 
@@ -1558,7 +1491,6 @@
             this.chkC16.TabIndex = 109;
             this.chkC16.TabStop = false;
             this.chkC16.UseVisualStyleBackColor = true;
-          
             // 
             // chkB16
             // 
@@ -1572,7 +1504,6 @@
             this.chkB16.TabIndex = 110;
             this.chkB16.TabStop = false;
             this.chkB16.UseVisualStyleBackColor = true;
-           
             // 
             // chkD11
             // 
@@ -1586,7 +1517,6 @@
             this.chkD11.TabIndex = 108;
             this.chkD11.TabStop = false;
             this.chkD11.UseVisualStyleBackColor = true;
-            
             // 
             // chkF11
             // 
@@ -1600,7 +1530,6 @@
             this.chkF11.TabIndex = 106;
             this.chkF11.TabStop = false;
             this.chkF11.UseVisualStyleBackColor = true;
-            
             // 
             // chkE11
             // 
@@ -1614,7 +1543,6 @@
             this.chkE11.TabIndex = 107;
             this.chkE11.TabStop = false;
             this.chkE11.UseVisualStyleBackColor = true;
-            
             // 
             // chkD12
             // 
@@ -1628,7 +1556,6 @@
             this.chkD12.TabIndex = 105;
             this.chkD12.TabStop = false;
             this.chkD12.UseVisualStyleBackColor = true;
-            
             // 
             // chkF12
             // 
@@ -1642,7 +1569,6 @@
             this.chkF12.TabIndex = 103;
             this.chkF12.TabStop = false;
             this.chkF12.UseVisualStyleBackColor = true;
-            
             // 
             // chkE12
             // 
@@ -1656,7 +1582,6 @@
             this.chkE12.TabIndex = 104;
             this.chkE12.TabStop = false;
             this.chkE12.UseVisualStyleBackColor = true;
-           
             // 
             // chkD13
             // 
@@ -1670,7 +1595,6 @@
             this.chkD13.TabIndex = 102;
             this.chkD13.TabStop = false;
             this.chkD13.UseVisualStyleBackColor = true;
-            
             // 
             // chkF13
             // 
@@ -1684,7 +1608,6 @@
             this.chkF13.TabIndex = 100;
             this.chkF13.TabStop = false;
             this.chkF13.UseVisualStyleBackColor = true;
-            
             // 
             // chkE13
             // 
@@ -1698,7 +1621,6 @@
             this.chkE13.TabIndex = 101;
             this.chkE13.TabStop = false;
             this.chkE13.UseVisualStyleBackColor = true;
-           
             // 
             // chkD14
             // 
@@ -1712,7 +1634,6 @@
             this.chkD14.TabIndex = 99;
             this.chkD14.TabStop = false;
             this.chkD14.UseVisualStyleBackColor = true;
-            
             // 
             // chkF14
             // 
@@ -1726,7 +1647,6 @@
             this.chkF14.TabIndex = 97;
             this.chkF14.TabStop = false;
             this.chkF14.UseVisualStyleBackColor = true;
-            
             // 
             // chkE14
             // 
@@ -1740,7 +1660,6 @@
             this.chkE14.TabIndex = 98;
             this.chkE14.TabStop = false;
             this.chkE14.UseVisualStyleBackColor = true;
-            
             // 
             // chkD15
             // 
@@ -1754,7 +1673,6 @@
             this.chkD15.TabIndex = 96;
             this.chkD15.TabStop = false;
             this.chkD15.UseVisualStyleBackColor = true;
-           
             // 
             // chkF15
             // 
@@ -1768,7 +1686,6 @@
             this.chkF15.TabIndex = 94;
             this.chkF15.TabStop = false;
             this.chkF15.UseVisualStyleBackColor = true;
-           
             // 
             // chkE15
             // 
@@ -1782,7 +1699,6 @@
             this.chkE15.TabIndex = 95;
             this.chkE15.TabStop = false;
             this.chkE15.UseVisualStyleBackColor = true;
-           
             // 
             // chkD16
             // 
@@ -1796,7 +1712,6 @@
             this.chkD16.TabIndex = 93;
             this.chkD16.TabStop = false;
             this.chkD16.UseVisualStyleBackColor = true;
-            
             // 
             // chkF16
             // 
@@ -1810,7 +1725,6 @@
             this.chkF16.TabIndex = 91;
             this.chkF16.TabStop = false;
             this.chkF16.UseVisualStyleBackColor = true;
-            
             // 
             // chkE16
             // 
@@ -1824,7 +1738,6 @@
             this.chkE16.TabIndex = 92;
             this.chkE16.TabStop = false;
             this.chkE16.UseVisualStyleBackColor = true;
-           
             // 
             // chkA4
             // 
@@ -1838,7 +1751,6 @@
             this.chkA4.TabIndex = 90;
             this.chkA4.TabStop = false;
             this.chkA4.UseVisualStyleBackColor = true;
-           
             // 
             // chkC4
             // 
@@ -1852,7 +1764,6 @@
             this.chkC4.TabIndex = 88;
             this.chkC4.TabStop = false;
             this.chkC4.UseVisualStyleBackColor = true;
-            
             // 
             // chkB4
             // 
@@ -1866,7 +1777,6 @@
             this.chkB4.TabIndex = 89;
             this.chkB4.TabStop = false;
             this.chkB4.UseVisualStyleBackColor = true;
-            
             // 
             // chkA5
             // 
@@ -1880,7 +1790,6 @@
             this.chkA5.TabIndex = 87;
             this.chkA5.TabStop = false;
             this.chkA5.UseVisualStyleBackColor = true;
-            
             // 
             // chkC5
             // 
@@ -1894,7 +1803,6 @@
             this.chkC5.TabIndex = 85;
             this.chkC5.TabStop = false;
             this.chkC5.UseVisualStyleBackColor = true;
-            //this.chkC5.CheckedChanged += new System.EventHandler(this.chkC5_CheckedChanged);
             // 
             // chkB5
             // 
@@ -1908,7 +1816,6 @@
             this.chkB5.TabIndex = 86;
             this.chkB5.TabStop = false;
             this.chkB5.UseVisualStyleBackColor = true;
-            
             // 
             // chkA6
             // 
@@ -1922,7 +1829,6 @@
             this.chkA6.TabIndex = 84;
             this.chkA6.TabStop = false;
             this.chkA6.UseVisualStyleBackColor = true;
-            
             // 
             // chkC6
             // 
@@ -1936,7 +1842,6 @@
             this.chkC6.TabIndex = 82;
             this.chkC6.TabStop = false;
             this.chkC6.UseVisualStyleBackColor = true;
-            //this.chkC6.CheckedChanged += new System.EventHandler(this.chkC6_CheckedChanged);
             // 
             // chkB6
             // 
@@ -1950,7 +1855,6 @@
             this.chkB6.TabIndex = 83;
             this.chkB6.TabStop = false;
             this.chkB6.UseVisualStyleBackColor = true;
-           // this.chkB6.CheckedChanged += new System.EventHandler(this.chkB6_CheckedChanged);
             // 
             // chkA7
             // 
@@ -1964,7 +1868,6 @@
             this.chkA7.TabIndex = 81;
             this.chkA7.TabStop = false;
             this.chkA7.UseVisualStyleBackColor = true;
-            //this.chkA7.CheckedChanged += new System.EventHandler(this.chkA7_CheckedChanged);
             // 
             // chkC7
             // 
@@ -1978,7 +1881,6 @@
             this.chkC7.TabIndex = 79;
             this.chkC7.TabStop = false;
             this.chkC7.UseVisualStyleBackColor = true;
-            //this.chkC7.CheckedChanged += new System.EventHandler(this.chkC7_CheckedChanged);
             // 
             // chkB7
             // 
@@ -1992,7 +1894,6 @@
             this.chkB7.TabIndex = 80;
             this.chkB7.TabStop = false;
             this.chkB7.UseVisualStyleBackColor = true;
-           // this.chkB7.CheckedChanged += new System.EventHandler(this.chkB7_CheckedChanged);
             // 
             // chkA8
             // 
@@ -2006,7 +1907,6 @@
             this.chkA8.TabIndex = 78;
             this.chkA8.TabStop = false;
             this.chkA8.UseVisualStyleBackColor = true;
-            ///this.chkA8.CheckedChanged += new System.EventHandler(this.chkA8_CheckedChanged);
             // 
             // chkC8
             // 
@@ -2020,7 +1920,6 @@
             this.chkC8.TabIndex = 76;
             this.chkC8.TabStop = false;
             this.chkC8.UseVisualStyleBackColor = true;
-           // this.chkC8.CheckedChanged += new System.EventHandler(this.chkC8_CheckedChanged);
             // 
             // chkB8
             // 
@@ -2034,7 +1933,6 @@
             this.chkB8.TabIndex = 77;
             this.chkB8.TabStop = false;
             this.chkB8.UseVisualStyleBackColor = true;
-            //this.chkB8.CheckedChanged += new System.EventHandler(this.chkB8_CheckedChanged);
             // 
             // chkA9
             // 
@@ -2048,7 +1946,6 @@
             this.chkA9.TabIndex = 75;
             this.chkA9.TabStop = false;
             this.chkA9.UseVisualStyleBackColor = true;
-            //this.chkA9.CheckedChanged += new System.EventHandler(this.chkA9_CheckedChanged);
             // 
             // chkC9
             // 
@@ -2062,7 +1959,6 @@
             this.chkC9.TabIndex = 73;
             this.chkC9.TabStop = false;
             this.chkC9.UseVisualStyleBackColor = true;
-            //this.chkC9.CheckedChanged += new System.EventHandler(this.chkC9_CheckedChanged);
             // 
             // chkB9
             // 
@@ -2076,7 +1972,6 @@
             this.chkB9.TabIndex = 74;
             this.chkB9.TabStop = false;
             this.chkB9.UseVisualStyleBackColor = true;
-            //this.chkB9.CheckedChanged += new System.EventHandler(this.chkB9_CheckedChanged);
             // 
             // chkD9
             // 
@@ -2090,7 +1985,6 @@
             this.chkD9.TabIndex = 72;
             this.chkD9.TabStop = false;
             this.chkD9.UseVisualStyleBackColor = true;
-            //this.chkD9.CheckedChanged += new System.EventHandler(this.chkD9_CheckedChanged);
             // 
             // chkF9
             // 
@@ -2104,7 +1998,6 @@
             this.chkF9.TabIndex = 70;
             this.chkF9.TabStop = false;
             this.chkF9.UseVisualStyleBackColor = true;
-            //this.chkF9.CheckedChanged += new System.EventHandler(this.chkF9_CheckedChanged);
             // 
             // chkE9
             // 
@@ -2118,7 +2011,6 @@
             this.chkE9.TabIndex = 71;
             this.chkE9.TabStop = false;
             this.chkE9.UseVisualStyleBackColor = true;
-            //this.chkE9.CheckedChanged += new System.EventHandler(this.chkE9_CheckedChanged);
             // 
             // chkD8
             // 
@@ -2132,7 +2024,6 @@
             this.chkD8.TabIndex = 69;
             this.chkD8.TabStop = false;
             this.chkD8.UseVisualStyleBackColor = true;
-            //this.chkD8.CheckedChanged += new System.EventHandler(this.chkD8_CheckedChanged);
             // 
             // chkF8
             // 
@@ -2146,7 +2037,6 @@
             this.chkF8.TabIndex = 67;
             this.chkF8.TabStop = false;
             this.chkF8.UseVisualStyleBackColor = true;
-            //this.chkF8.CheckedChanged += new System.EventHandler(this.chkF8_CheckedChanged);
             // 
             // chkE8
             // 
@@ -2160,7 +2050,6 @@
             this.chkE8.TabIndex = 68;
             this.chkE8.TabStop = false;
             this.chkE8.UseVisualStyleBackColor = true;
-            //this.chkE8.CheckedChanged += new System.EventHandler(this.chkE8_CheckedChanged);
             // 
             // chkD7
             // 
@@ -2174,7 +2063,6 @@
             this.chkD7.TabIndex = 66;
             this.chkD7.TabStop = false;
             this.chkD7.UseVisualStyleBackColor = true;
-            //this.chkD7.CheckedChanged += new System.EventHandler(this.chkD7_CheckedChanged);
             // 
             // chkF7
             // 
@@ -2188,7 +2076,6 @@
             this.chkF7.TabIndex = 64;
             this.chkF7.TabStop = false;
             this.chkF7.UseVisualStyleBackColor = true;
-            //this.chkF7.CheckedChanged += new System.EventHandler(this.chkF7_CheckedChanged);
             // 
             // chkE7
             // 
@@ -2202,7 +2089,6 @@
             this.chkE7.TabIndex = 65;
             this.chkE7.TabStop = false;
             this.chkE7.UseVisualStyleBackColor = true;
-            //this.chkE7.CheckedChanged += new System.EventHandler(this.chkE7_CheckedChanged);
             // 
             // chkD6
             // 
@@ -2216,7 +2102,6 @@
             this.chkD6.TabIndex = 63;
             this.chkD6.TabStop = false;
             this.chkD6.UseVisualStyleBackColor = true;
-            //this.chkD6.CheckedChanged += new System.EventHandler(this.chkD6_CheckedChanged);
             // 
             // chkF6
             // 
@@ -2230,7 +2115,6 @@
             this.chkF6.TabIndex = 61;
             this.chkF6.TabStop = false;
             this.chkF6.UseVisualStyleBackColor = true;
-            //this.chkF6.CheckedChanged += new System.EventHandler(this.chkF6_CheckedChanged);
             // 
             // chkE6
             // 
@@ -2244,7 +2128,6 @@
             this.chkE6.TabIndex = 62;
             this.chkE6.TabStop = false;
             this.chkE6.UseVisualStyleBackColor = true;
-            //this.chkE6.CheckedChanged += new System.EventHandler(this.chkE6_CheckedChanged);
             // 
             // chkD5
             // 
@@ -2258,7 +2141,6 @@
             this.chkD5.TabIndex = 60;
             this.chkD5.TabStop = false;
             this.chkD5.UseVisualStyleBackColor = true;
-            //this.chkD5.CheckedChanged += new System.EventHandler(this.chkD5_CheckedChanged);
             // 
             // chkF5
             // 
@@ -2272,7 +2154,6 @@
             this.chkF5.TabIndex = 58;
             this.chkF5.TabStop = false;
             this.chkF5.UseVisualStyleBackColor = true;
-            //this.chkF5.CheckedChanged += new System.EventHandler(this.chkF5_CheckedChanged);
             // 
             // chkE5
             // 
@@ -2286,7 +2167,6 @@
             this.chkE5.TabIndex = 59;
             this.chkE5.TabStop = false;
             this.chkE5.UseVisualStyleBackColor = true;
-            //this.chkE5.CheckedChanged += new System.EventHandler(this.chkE5_CheckedChanged);
             // 
             // chkD4
             // 
@@ -2300,7 +2180,6 @@
             this.chkD4.TabIndex = 57;
             this.chkD4.TabStop = false;
             this.chkD4.UseVisualStyleBackColor = true;
-            //this.chkD4.CheckedChanged += new System.EventHandler(this.chkD4_CheckedChanged);
             // 
             // chkF4
             // 
@@ -2314,7 +2193,6 @@
             this.chkF4.TabIndex = 55;
             this.chkF4.TabStop = false;
             this.chkF4.UseVisualStyleBackColor = true;
-           // this.chkF4.CheckedChanged += new System.EventHandler(this.chkF4_CheckedChanged);
             // 
             // chkE4
             // 
@@ -2328,7 +2206,6 @@
             this.chkE4.TabIndex = 56;
             this.chkE4.TabStop = false;
             this.chkE4.UseVisualStyleBackColor = true;
-            //this.chkE4.CheckedChanged += new System.EventHandler(this.chkE4_CheckedChanged);
             // 
             // pnlHeader1
             // 
@@ -2490,26 +2367,12 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Peru;
-            this.panel5.Controls.Add(this.cmbFlightClass);
             this.panel5.Controls.Add(this.lblFlightClass);
+            this.panel5.Controls.Add(this.cmbFlightClass);
             this.panel5.Location = new System.Drawing.Point(764, 416);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(460, 54);
             this.panel5.TabIndex = 205;
-            // 
-            // cmbFlightClass
-            // 
-            this.cmbFlightClass.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cmbFlightClass.FormattingEnabled = true;
-            this.cmbFlightClass.Items.AddRange(new object[] {
-            "First Class",
-            "Business Class",
-            "Economy Class"});
-            this.cmbFlightClass.Location = new System.Drawing.Point(140, 12);
-            this.cmbFlightClass.Name = "cmbFlightClass";
-            this.cmbFlightClass.Size = new System.Drawing.Size(295, 33);
-            this.cmbFlightClass.TabIndex = 202;
-            this.cmbFlightClass.SelectedIndexChanged += new System.EventHandler(this.cmbFlightClass_SelectedIndexChanged);
             // 
             // lblFlightClass
             // 
@@ -2675,6 +2538,23 @@
             this.lblNoOfInfant.Size = new System.Drawing.Size(119, 33);
             this.lblNoOfInfant.TabIndex = 201;
             this.lblNoOfInfant.Text = "No. of Infant";
+            // 
+            // cmbFlightClass
+            // 
+            this.cmbFlightClass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbFlightClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFlightClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFlightClass.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cmbFlightClass.FormattingEnabled = true;
+            this.cmbFlightClass.Items.AddRange(new object[] {
+            "First Class",
+            "Business Class",
+            "Economy Class"});
+            this.cmbFlightClass.Location = new System.Drawing.Point(137, 12);
+            this.cmbFlightClass.Name = "cmbFlightClass";
+            this.cmbFlightClass.Size = new System.Drawing.Size(295, 33);
+            this.cmbFlightClass.TabIndex = 210;
+            this.cmbFlightClass.SelectedIndexChanged += new System.EventHandler(this.cmbFlightClass_SelectedIndexChanged_1);
             // 
             // SeatSelection
             // 
@@ -2898,9 +2778,9 @@
         private System.Windows.Forms.Label lblNoOfChild;
         private System.Windows.Forms.TextBox txtNumChildren;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.ComboBox cmbFlightClass;
         private System.Windows.Forms.TextBox txtNumInfants;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNoOfInfant;
+        private System.Windows.Forms.ComboBox cmbFlightClass;
     }
 }
