@@ -53,7 +53,46 @@ namespace Airline
 
         private void cmbFlightClass_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbFlightClass.SelectedItem == null) return;
 
+            string selectedClass = cmbFlightClass.SelectedItem.ToString();
+
+            foreach (Control ctrl in panelSeats.Controls)
+            {
+                if (ctrl is CheckBox)
+                {
+                    CheckBox seatCheckbox = (CheckBox)ctrl;
+                    string seatName = seatCheckbox.Name;
+
+                    if (seatName.StartsWith("chk") && seatName.Length >= 5)
+                    {
+                        string seatLabel = seatName.Substring(3);
+                        string rowStr = seatLabel.Substring(1);
+
+                        int rowNumber;
+
+                        if (int.TryParse(rowStr, out rowNumber))
+                        {
+                            switch (selectedClass)
+                            {
+                                case "First Class":
+                                    seatCheckbox.Enabled = (rowNumber >= 1 && rowNumber <= 3);
+                                    break;
+
+                                case "Business Class":
+                                    seatCheckbox.Enabled = (rowNumber >= 4 && rowNumber <= 10);
+                                    break;
+
+                                case "Economy Class":
+                                    seatCheckbox.Enabled = (rowNumber >= 11 && rowNumber <= 22);
+                                    break;
+                            }
+
+                            seatCheckbox.BackColor = seatCheckbox.Enabled ? Color.White : Color.LightGray;
+                        }
+                    }
+                }
+            }
         }
 
         private void chkA1_CheckedChanged(object sender, EventArgs e)
@@ -675,5 +714,7 @@ namespace Airline
         {
 
         }
+
+
     }
 }
