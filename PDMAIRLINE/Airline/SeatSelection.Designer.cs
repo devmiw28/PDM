@@ -607,7 +607,7 @@
             this.chkA1.TabIndex = 178;
             this.chkA1.TabStop = false;
             this.chkA1.UseVisualStyleBackColor = true;
-            this.chkA1.CheckedChanged += new System.EventHandler(this.chkA1_CheckedChanged);
+            
             // 
             // chkB1
             // 
@@ -621,7 +621,7 @@
             this.chkB1.TabIndex = 177;
             this.chkB1.TabStop = false;
             this.chkB1.UseVisualStyleBackColor = true;
-            this.chkB1.CheckedChanged += new System.EventHandler(this.chkB1_CheckedChanged);
+            
             // 
             // chkA2
             // 
@@ -635,7 +635,7 @@
             this.chkA2.TabIndex = 176;
             this.chkA2.TabStop = false;
             this.chkA2.UseVisualStyleBackColor = true;
-            this.chkA2.CheckedChanged += new System.EventHandler(this.chkA2_CheckedChanged);
+     
             // 
             // chkB2
             // 
@@ -649,7 +649,7 @@
             this.chkB2.TabIndex = 175;
             this.chkB2.TabStop = false;
             this.chkB2.UseVisualStyleBackColor = true;
-            this.chkB2.CheckedChanged += new System.EventHandler(this.chkB2_CheckedChanged);
+           
             // 
             // chkA3
             // 
@@ -663,7 +663,7 @@
             this.chkA3.TabIndex = 174;
             this.chkA3.TabStop = false;
             this.chkA3.UseVisualStyleBackColor = true;
-            this.chkA3.CheckedChanged += new System.EventHandler(this.chkA3_CheckedChanged);
+            
             // 
             // chkB3
             // 
@@ -677,7 +677,7 @@
             this.chkB3.TabIndex = 173;
             this.chkB3.TabStop = false;
             this.chkB3.UseVisualStyleBackColor = true;
-            this.chkB3.CheckedChanged += new System.EventHandler(this.chkB3_CheckedChanged);
+            
             // 
             // chkE1
             // 
@@ -691,7 +691,7 @@
             this.chkE1.TabIndex = 172;
             this.chkE1.TabStop = false;
             this.chkE1.UseVisualStyleBackColor = true;
-            this.chkE1.CheckedChanged += new System.EventHandler(this.chkE1_CheckedChanged);
+            
             // 
             // chkF1
             // 
@@ -705,7 +705,7 @@
             this.chkF1.TabIndex = 171;
             this.chkF1.TabStop = false;
             this.chkF1.UseVisualStyleBackColor = true;
-            this.chkF1.CheckedChanged += new System.EventHandler(this.chkF1_CheckedChanged);
+          
             // 
             // chkE2
             // 
@@ -719,7 +719,7 @@
             this.chkE2.TabIndex = 170;
             this.chkE2.TabStop = false;
             this.chkE2.UseVisualStyleBackColor = true;
-            this.chkE2.CheckedChanged += new System.EventHandler(this.chkE2_CheckedChanged);
+            
             // 
             // chkF2
             // 
@@ -733,7 +733,7 @@
             this.chkF2.TabIndex = 169;
             this.chkF2.TabStop = false;
             this.chkF2.UseVisualStyleBackColor = true;
-            this.chkF2.CheckedChanged += new System.EventHandler(this.chkF2_CheckedChanged);
+            
             // 
             // chkE3
             // 
@@ -747,7 +747,7 @@
             this.chkE3.TabIndex = 168;
             this.chkE3.TabStop = false;
             this.chkE3.UseVisualStyleBackColor = true;
-            this.chkE3.CheckedChanged += new System.EventHandler(this.chkE3_CheckedChanged);
+          
             // 
             // chkF3
             // 
@@ -761,7 +761,7 @@
             this.chkF3.TabIndex = 167;
             this.chkF3.TabStop = false;
             this.chkF3.UseVisualStyleBackColor = true;
-            this.chkF3.CheckedChanged += new System.EventHandler(this.chkF3_CheckedChanged);
+           
             // 
             // chkB10
             // 
@@ -775,7 +775,7 @@
             this.chkB10.TabIndex = 166;
             this.chkB10.TabStop = false;
             this.chkB10.UseVisualStyleBackColor = true;
-            this.chkB10.CheckedChanged += new System.EventHandler(this.chkB10_CheckedChanged);
+         
             // 
             // chkC10
             // 
@@ -789,7 +789,7 @@
             this.chkC10.TabIndex = 165;
             this.chkC10.TabStop = false;
             this.chkC10.UseVisualStyleBackColor = true;
-            this.chkC10.CheckedChanged += new System.EventHandler(this.chkC10_CheckedChanged);
+           
             // 
             // chkD10
             // 
@@ -803,7 +803,7 @@
             this.chkD10.TabIndex = 164;
             this.chkD10.TabStop = false;
             this.chkD10.UseVisualStyleBackColor = true;
-            this.chkD10.CheckedChanged += new System.EventHandler(this.chkD10_CheckedChanged);
+           
             // 
             // chkE10
             // 
@@ -817,7 +817,7 @@
             this.chkE10.TabIndex = 163;
             this.chkE10.TabStop = false;
             this.chkE10.UseVisualStyleBackColor = true;
-            this.chkE10.CheckedChanged += new System.EventHandler(this.chkE10_CheckedChanged);
+           
             // 
             // chkA17
             // 
@@ -831,7 +831,7 @@
             this.chkA17.TabIndex = 162;
             this.chkA17.TabStop = false;
             this.chkA17.UseVisualStyleBackColor = true;
-            this.chkA17.CheckedChanged += new System.EventHandler(this.chkA17_CheckedChanged);
+            
             // 
             // chkC17
             // 
@@ -845,7 +845,7 @@
             this.chkC17.TabIndex = 160;
             this.chkC17.TabStop = false;
             this.chkC17.UseVisualStyleBackColor = true;
-            this.chkC17.CheckedChanged += new System.EventHandler(this.chkC17_CheckedChanged);
+            
             // 
             // chkB17
             // 
@@ -859,7 +859,7 @@
             this.chkB17.TabIndex = 161;
             this.chkB17.TabStop = false;
             this.chkB17.UseVisualStyleBackColor = true;
-            this.chkB17.CheckedChanged += new System.EventHandler(this.chkB17_CheckedChanged);
+     
             // 
             // chkA18
             // 
@@ -873,7 +873,7 @@
             this.chkA18.TabIndex = 159;
             this.chkA18.TabStop = false;
             this.chkA18.UseVisualStyleBackColor = true;
-            this.chkA18.CheckedChanged += new System.EventHandler(this.chkA18_CheckedChanged);
+     
             // 
             // chkC18
             // 
@@ -887,7 +887,7 @@
             this.chkC18.TabIndex = 157;
             this.chkC18.TabStop = false;
             this.chkC18.UseVisualStyleBackColor = true;
-            this.chkC18.CheckedChanged += new System.EventHandler(this.chkC18_CheckedChanged);
+     
             // 
             // chkB18
             // 
@@ -901,7 +901,7 @@
             this.chkB18.TabIndex = 158;
             this.chkB18.TabStop = false;
             this.chkB18.UseVisualStyleBackColor = true;
-            this.chkB18.CheckedChanged += new System.EventHandler(this.chkB18_CheckedChanged);
+          
             // 
             // chkA19
             // 
@@ -915,7 +915,7 @@
             this.chkA19.TabIndex = 156;
             this.chkA19.TabStop = false;
             this.chkA19.UseVisualStyleBackColor = true;
-            this.chkA19.CheckedChanged += new System.EventHandler(this.chkA19_CheckedChanged);
+         
             // 
             // chkC19
             // 
@@ -929,7 +929,7 @@
             this.chkC19.TabIndex = 154;
             this.chkC19.TabStop = false;
             this.chkC19.UseVisualStyleBackColor = true;
-            this.chkC19.CheckedChanged += new System.EventHandler(this.chkC19_CheckedChanged);
+          
             // 
             // chkB19
             // 
@@ -943,7 +943,7 @@
             this.chkB19.TabIndex = 155;
             this.chkB19.TabStop = false;
             this.chkB19.UseVisualStyleBackColor = true;
-            this.chkB19.CheckedChanged += new System.EventHandler(this.chkB19_CheckedChanged);
+         
             // 
             // chkA20
             // 
@@ -957,7 +957,7 @@
             this.chkA20.TabIndex = 153;
             this.chkA20.TabStop = false;
             this.chkA20.UseVisualStyleBackColor = true;
-            this.chkA20.CheckedChanged += new System.EventHandler(this.chkA20_CheckedChanged);
+            
             // 
             // chkC20
             // 
@@ -971,7 +971,7 @@
             this.chkC20.TabIndex = 151;
             this.chkC20.TabStop = false;
             this.chkC20.UseVisualStyleBackColor = true;
-            this.chkC20.CheckedChanged += new System.EventHandler(this.chkC20_CheckedChanged);
+           
             // 
             // chkB20
             // 
@@ -985,7 +985,7 @@
             this.chkB20.TabIndex = 152;
             this.chkB20.TabStop = false;
             this.chkB20.UseVisualStyleBackColor = true;
-            this.chkB20.CheckedChanged += new System.EventHandler(this.chkB20_CheckedChanged);
+           
             // 
             // chkA21
             // 
@@ -999,7 +999,7 @@
             this.chkA21.TabIndex = 150;
             this.chkA21.TabStop = false;
             this.chkA21.UseVisualStyleBackColor = true;
-            this.chkA21.CheckedChanged += new System.EventHandler(this.chkA21_CheckedChanged);
+       
             // 
             // chkC21
             // 
@@ -1013,7 +1013,7 @@
             this.chkC21.TabIndex = 148;
             this.chkC21.TabStop = false;
             this.chkC21.UseVisualStyleBackColor = true;
-            this.chkC21.CheckedChanged += new System.EventHandler(this.chkC21_CheckedChanged);
+            
             // 
             // chkB21
             // 
@@ -1027,7 +1027,7 @@
             this.chkB21.TabIndex = 149;
             this.chkB21.TabStop = false;
             this.chkB21.UseVisualStyleBackColor = true;
-            this.chkB21.CheckedChanged += new System.EventHandler(this.chkB21_CheckedChanged);
+            
             // 
             // chkA22
             // 
@@ -1041,7 +1041,7 @@
             this.chkA22.TabIndex = 147;
             this.chkA22.TabStop = false;
             this.chkA22.UseVisualStyleBackColor = true;
-            this.chkA22.CheckedChanged += new System.EventHandler(this.chkA22_CheckedChanged);
+            
             // 
             // chkC22
             // 
@@ -1055,7 +1055,7 @@
             this.chkC22.TabIndex = 145;
             this.chkC22.TabStop = false;
             this.chkC22.UseVisualStyleBackColor = true;
-            this.chkC22.CheckedChanged += new System.EventHandler(this.chkC22_CheckedChanged);
+     
             // 
             // chkB22
             // 
@@ -1069,7 +1069,7 @@
             this.chkB22.TabIndex = 146;
             this.chkB22.TabStop = false;
             this.chkB22.UseVisualStyleBackColor = true;
-            this.chkB22.CheckedChanged += new System.EventHandler(this.chkB22_CheckedChanged);
+           
             // 
             // chkD17
             // 
@@ -1083,7 +1083,7 @@
             this.chkD17.TabIndex = 144;
             this.chkD17.TabStop = false;
             this.chkD17.UseVisualStyleBackColor = true;
-            this.chkD17.CheckedChanged += new System.EventHandler(this.chkD17_CheckedChanged);
+          
             // 
             // chkF17
             // 
@@ -1097,7 +1097,7 @@
             this.chkF17.TabIndex = 142;
             this.chkF17.TabStop = false;
             this.chkF17.UseVisualStyleBackColor = true;
-            this.chkF17.CheckedChanged += new System.EventHandler(this.chkF17_CheckedChanged);
+
             // 
             // chkE17
             // 
@@ -1111,7 +1111,7 @@
             this.chkE17.TabIndex = 143;
             this.chkE17.TabStop = false;
             this.chkE17.UseVisualStyleBackColor = true;
-            this.chkE17.CheckedChanged += new System.EventHandler(this.chkE17_CheckedChanged);
+
             // 
             // chkD18
             // 
@@ -1125,7 +1125,7 @@
             this.chkD18.TabIndex = 141;
             this.chkD18.TabStop = false;
             this.chkD18.UseVisualStyleBackColor = true;
-            this.chkD18.CheckedChanged += new System.EventHandler(this.chkD18_CheckedChanged);
+
             // 
             // chkF18
             // 
@@ -1139,7 +1139,7 @@
             this.chkF18.TabIndex = 139;
             this.chkF18.TabStop = false;
             this.chkF18.UseVisualStyleBackColor = true;
-            this.chkF18.CheckedChanged += new System.EventHandler(this.chkF18_CheckedChanged);
+           
             // 
             // chkE18
             // 
@@ -1153,7 +1153,7 @@
             this.chkE18.TabIndex = 140;
             this.chkE18.TabStop = false;
             this.chkE18.UseVisualStyleBackColor = true;
-            this.chkE18.CheckedChanged += new System.EventHandler(this.chkE18_CheckedChanged);
+          
             // 
             // chkD19
             // 
@@ -1167,7 +1167,7 @@
             this.chkD19.TabIndex = 138;
             this.chkD19.TabStop = false;
             this.chkD19.UseVisualStyleBackColor = true;
-            this.chkD19.CheckedChanged += new System.EventHandler(this.chkD19_CheckedChanged);
+           
             // 
             // chkF19
             // 
@@ -1181,7 +1181,7 @@
             this.chkF19.TabIndex = 136;
             this.chkF19.TabStop = false;
             this.chkF19.UseVisualStyleBackColor = true;
-            this.chkF19.CheckedChanged += new System.EventHandler(this.chkF19_CheckedChanged);
+          
             // 
             // chkE19
             // 
@@ -1195,7 +1195,7 @@
             this.chkE19.TabIndex = 137;
             this.chkE19.TabStop = false;
             this.chkE19.UseVisualStyleBackColor = true;
-            this.chkE19.CheckedChanged += new System.EventHandler(this.chkE19_CheckedChanged);
+           
             // 
             // chkD20
             // 
@@ -1209,7 +1209,7 @@
             this.chkD20.TabIndex = 135;
             this.chkD20.TabStop = false;
             this.chkD20.UseVisualStyleBackColor = true;
-            this.chkD20.CheckedChanged += new System.EventHandler(this.chkD20_CheckedChanged);
+          
             // 
             // chkF20
             // 
@@ -1223,7 +1223,7 @@
             this.chkF20.TabIndex = 133;
             this.chkF20.TabStop = false;
             this.chkF20.UseVisualStyleBackColor = true;
-            this.chkF20.CheckedChanged += new System.EventHandler(this.chkF20_CheckedChanged);
+           
             // 
             // chkE20
             // 
@@ -1237,7 +1237,7 @@
             this.chkE20.TabIndex = 134;
             this.chkE20.TabStop = false;
             this.chkE20.UseVisualStyleBackColor = true;
-            this.chkE20.CheckedChanged += new System.EventHandler(this.chkE20_CheckedChanged);
+           
             // 
             // chkD21
             // 
@@ -1251,7 +1251,7 @@
             this.chkD21.TabIndex = 132;
             this.chkD21.TabStop = false;
             this.chkD21.UseVisualStyleBackColor = true;
-            this.chkD21.CheckedChanged += new System.EventHandler(this.chkD21_CheckedChanged);
+            
             // 
             // chkF21
             // 
@@ -1265,7 +1265,7 @@
             this.chkF21.TabIndex = 130;
             this.chkF21.TabStop = false;
             this.chkF21.UseVisualStyleBackColor = true;
-            this.chkF21.CheckedChanged += new System.EventHandler(this.chkF21_CheckedChanged);
+          
             // 
             // chkE21
             // 
@@ -1279,7 +1279,7 @@
             this.chkE21.TabIndex = 131;
             this.chkE21.TabStop = false;
             this.chkE21.UseVisualStyleBackColor = true;
-            this.chkE21.CheckedChanged += new System.EventHandler(this.chkE21_CheckedChanged);
+            
             // 
             // chkD22
             // 
@@ -1293,7 +1293,7 @@
             this.chkD22.TabIndex = 129;
             this.chkD22.TabStop = false;
             this.chkD22.UseVisualStyleBackColor = true;
-            this.chkD22.CheckedChanged += new System.EventHandler(this.chkD22_CheckedChanged);
+            
             // 
             // chkF22
             // 
@@ -1307,7 +1307,7 @@
             this.chkF22.TabIndex = 127;
             this.chkF22.TabStop = false;
             this.chkF22.UseVisualStyleBackColor = true;
-            this.chkF22.CheckedChanged += new System.EventHandler(this.chkF22_CheckedChanged);
+           
             // 
             // chkE22
             // 
@@ -1321,7 +1321,7 @@
             this.chkE22.TabIndex = 128;
             this.chkE22.TabStop = false;
             this.chkE22.UseVisualStyleBackColor = true;
-            this.chkE22.CheckedChanged += new System.EventHandler(this.chkE22_CheckedChanged);
+        
             // 
             // chkA11
             // 
@@ -1335,7 +1335,7 @@
             this.chkA11.TabIndex = 126;
             this.chkA11.TabStop = false;
             this.chkA11.UseVisualStyleBackColor = true;
-            this.chkA11.CheckedChanged += new System.EventHandler(this.chkA11_CheckedChanged);
+          
             // 
             // chkC11
             // 
@@ -1349,7 +1349,7 @@
             this.chkC11.TabIndex = 124;
             this.chkC11.TabStop = false;
             this.chkC11.UseVisualStyleBackColor = true;
-            this.chkC11.CheckedChanged += new System.EventHandler(this.chkC11_CheckedChanged);
+          
             // 
             // chkB11
             // 
@@ -1363,7 +1363,7 @@
             this.chkB11.TabIndex = 125;
             this.chkB11.TabStop = false;
             this.chkB11.UseVisualStyleBackColor = true;
-            this.chkB11.CheckedChanged += new System.EventHandler(this.chkB11_CheckedChanged);
+           
             // 
             // chkA12
             // 
@@ -1377,7 +1377,7 @@
             this.chkA12.TabIndex = 123;
             this.chkA12.TabStop = false;
             this.chkA12.UseVisualStyleBackColor = true;
-            this.chkA12.CheckedChanged += new System.EventHandler(this.chkA12_CheckedChanged);
+           
             // 
             // chkC12
             // 
@@ -1391,7 +1391,7 @@
             this.chkC12.TabIndex = 121;
             this.chkC12.TabStop = false;
             this.chkC12.UseVisualStyleBackColor = true;
-            this.chkC12.CheckedChanged += new System.EventHandler(this.chkC12_CheckedChanged);
+            
             // 
             // chkB12
             // 
@@ -1405,7 +1405,7 @@
             this.chkB12.TabIndex = 122;
             this.chkB12.TabStop = false;
             this.chkB12.UseVisualStyleBackColor = true;
-            this.chkB12.CheckedChanged += new System.EventHandler(this.chkB12_CheckedChanged);
+            
             // 
             // chkA13
             // 
@@ -1419,7 +1419,7 @@
             this.chkA13.TabIndex = 120;
             this.chkA13.TabStop = false;
             this.chkA13.UseVisualStyleBackColor = true;
-            this.chkA13.CheckedChanged += new System.EventHandler(this.chkA13_CheckedChanged);
+    
             // 
             // chkC13
             // 
@@ -1433,8 +1433,7 @@
             this.chkC13.TabIndex = 118;
             this.chkC13.TabStop = false;
             this.chkC13.UseVisualStyleBackColor = true;
-            this.chkC13.CheckedChanged += new System.EventHandler(this.chkC13_CheckedChanged);
-            // 
+            //
             // chkB13
             // 
             this.chkB13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1447,7 +1446,7 @@
             this.chkB13.TabIndex = 119;
             this.chkB13.TabStop = false;
             this.chkB13.UseVisualStyleBackColor = true;
-            this.chkB13.CheckedChanged += new System.EventHandler(this.chkB13_CheckedChanged);
+         
             // 
             // chkA14
             // 
@@ -1461,7 +1460,7 @@
             this.chkA14.TabIndex = 117;
             this.chkA14.TabStop = false;
             this.chkA14.UseVisualStyleBackColor = true;
-            this.chkA14.CheckedChanged += new System.EventHandler(this.chkA14_CheckedChanged);
+           
             // 
             // chkC14
             // 
@@ -1475,7 +1474,7 @@
             this.chkC14.TabIndex = 115;
             this.chkC14.TabStop = false;
             this.chkC14.UseVisualStyleBackColor = true;
-            this.chkC14.CheckedChanged += new System.EventHandler(this.chkC14_CheckedChanged);
+            
             // 
             // chkB14
             // 
@@ -1489,7 +1488,7 @@
             this.chkB14.TabIndex = 116;
             this.chkB14.TabStop = false;
             this.chkB14.UseVisualStyleBackColor = true;
-            this.chkB14.CheckedChanged += new System.EventHandler(this.chkB14_CheckedChanged);
+           
             // 
             // chkA15
             // 
@@ -1503,7 +1502,7 @@
             this.chkA15.TabIndex = 114;
             this.chkA15.TabStop = false;
             this.chkA15.UseVisualStyleBackColor = true;
-            this.chkA15.CheckedChanged += new System.EventHandler(this.chkA15_CheckedChanged);
+          
             // 
             // chkC15
             // 
@@ -1517,7 +1516,7 @@
             this.chkC15.TabIndex = 112;
             this.chkC15.TabStop = false;
             this.chkC15.UseVisualStyleBackColor = true;
-            this.chkC15.CheckedChanged += new System.EventHandler(this.chkC15_CheckedChanged);
+         
             // 
             // chkB15
             // 
@@ -1531,7 +1530,7 @@
             this.chkB15.TabIndex = 113;
             this.chkB15.TabStop = false;
             this.chkB15.UseVisualStyleBackColor = true;
-            this.chkB15.CheckedChanged += new System.EventHandler(this.chkB15_CheckedChanged);
+            
             // 
             // chkA16
             // 
@@ -1545,7 +1544,7 @@
             this.chkA16.TabIndex = 111;
             this.chkA16.TabStop = false;
             this.chkA16.UseVisualStyleBackColor = true;
-            this.chkA16.CheckedChanged += new System.EventHandler(this.chkA16_CheckedChanged);
+            
             // 
             // chkC16
             // 
@@ -1559,7 +1558,7 @@
             this.chkC16.TabIndex = 109;
             this.chkC16.TabStop = false;
             this.chkC16.UseVisualStyleBackColor = true;
-            this.chkC16.CheckedChanged += new System.EventHandler(this.chkC16_CheckedChanged);
+          
             // 
             // chkB16
             // 
@@ -1573,7 +1572,7 @@
             this.chkB16.TabIndex = 110;
             this.chkB16.TabStop = false;
             this.chkB16.UseVisualStyleBackColor = true;
-            this.chkB16.CheckedChanged += new System.EventHandler(this.chkB16_CheckedChanged);
+           
             // 
             // chkD11
             // 
@@ -1587,7 +1586,7 @@
             this.chkD11.TabIndex = 108;
             this.chkD11.TabStop = false;
             this.chkD11.UseVisualStyleBackColor = true;
-            this.chkD11.CheckedChanged += new System.EventHandler(this.chkD11_CheckedChanged);
+            
             // 
             // chkF11
             // 
@@ -1601,7 +1600,7 @@
             this.chkF11.TabIndex = 106;
             this.chkF11.TabStop = false;
             this.chkF11.UseVisualStyleBackColor = true;
-            this.chkF11.CheckedChanged += new System.EventHandler(this.chkF11_CheckedChanged);
+            
             // 
             // chkE11
             // 
@@ -1615,7 +1614,7 @@
             this.chkE11.TabIndex = 107;
             this.chkE11.TabStop = false;
             this.chkE11.UseVisualStyleBackColor = true;
-            this.chkE11.CheckedChanged += new System.EventHandler(this.chkE11_CheckedChanged);
+            
             // 
             // chkD12
             // 
@@ -1629,7 +1628,7 @@
             this.chkD12.TabIndex = 105;
             this.chkD12.TabStop = false;
             this.chkD12.UseVisualStyleBackColor = true;
-            this.chkD12.CheckedChanged += new System.EventHandler(this.chkD12_CheckedChanged);
+            
             // 
             // chkF12
             // 
@@ -1643,7 +1642,7 @@
             this.chkF12.TabIndex = 103;
             this.chkF12.TabStop = false;
             this.chkF12.UseVisualStyleBackColor = true;
-            this.chkF12.CheckedChanged += new System.EventHandler(this.chkF12_CheckedChanged);
+            
             // 
             // chkE12
             // 
@@ -1657,7 +1656,7 @@
             this.chkE12.TabIndex = 104;
             this.chkE12.TabStop = false;
             this.chkE12.UseVisualStyleBackColor = true;
-            this.chkE12.CheckedChanged += new System.EventHandler(this.chkE12_CheckedChanged);
+           
             // 
             // chkD13
             // 
@@ -1671,7 +1670,7 @@
             this.chkD13.TabIndex = 102;
             this.chkD13.TabStop = false;
             this.chkD13.UseVisualStyleBackColor = true;
-            this.chkD13.CheckedChanged += new System.EventHandler(this.chkD13_CheckedChanged);
+            
             // 
             // chkF13
             // 
@@ -1685,7 +1684,7 @@
             this.chkF13.TabIndex = 100;
             this.chkF13.TabStop = false;
             this.chkF13.UseVisualStyleBackColor = true;
-            this.chkF13.CheckedChanged += new System.EventHandler(this.chkF13_CheckedChanged);
+            
             // 
             // chkE13
             // 
@@ -1699,7 +1698,7 @@
             this.chkE13.TabIndex = 101;
             this.chkE13.TabStop = false;
             this.chkE13.UseVisualStyleBackColor = true;
-            this.chkE13.CheckedChanged += new System.EventHandler(this.chkE13_CheckedChanged);
+           
             // 
             // chkD14
             // 
@@ -1713,7 +1712,7 @@
             this.chkD14.TabIndex = 99;
             this.chkD14.TabStop = false;
             this.chkD14.UseVisualStyleBackColor = true;
-            this.chkD14.CheckedChanged += new System.EventHandler(this.chkD14_CheckedChanged);
+            
             // 
             // chkF14
             // 
@@ -1727,7 +1726,7 @@
             this.chkF14.TabIndex = 97;
             this.chkF14.TabStop = false;
             this.chkF14.UseVisualStyleBackColor = true;
-            this.chkF14.CheckedChanged += new System.EventHandler(this.chkF14_CheckedChanged);
+            
             // 
             // chkE14
             // 
@@ -1741,7 +1740,7 @@
             this.chkE14.TabIndex = 98;
             this.chkE14.TabStop = false;
             this.chkE14.UseVisualStyleBackColor = true;
-            this.chkE14.CheckedChanged += new System.EventHandler(this.chkE14_CheckedChanged);
+            
             // 
             // chkD15
             // 
@@ -1755,7 +1754,7 @@
             this.chkD15.TabIndex = 96;
             this.chkD15.TabStop = false;
             this.chkD15.UseVisualStyleBackColor = true;
-            this.chkD15.CheckedChanged += new System.EventHandler(this.chkD15_CheckedChanged);
+           
             // 
             // chkF15
             // 
@@ -1769,7 +1768,7 @@
             this.chkF15.TabIndex = 94;
             this.chkF15.TabStop = false;
             this.chkF15.UseVisualStyleBackColor = true;
-            this.chkF15.CheckedChanged += new System.EventHandler(this.chkF15_CheckedChanged);
+           
             // 
             // chkE15
             // 
@@ -1783,7 +1782,7 @@
             this.chkE15.TabIndex = 95;
             this.chkE15.TabStop = false;
             this.chkE15.UseVisualStyleBackColor = true;
-            this.chkE15.CheckedChanged += new System.EventHandler(this.chkE15_CheckedChanged);
+           
             // 
             // chkD16
             // 
@@ -1797,7 +1796,7 @@
             this.chkD16.TabIndex = 93;
             this.chkD16.TabStop = false;
             this.chkD16.UseVisualStyleBackColor = true;
-            this.chkD16.CheckedChanged += new System.EventHandler(this.chkD16_CheckedChanged);
+            
             // 
             // chkF16
             // 
@@ -1811,7 +1810,7 @@
             this.chkF16.TabIndex = 91;
             this.chkF16.TabStop = false;
             this.chkF16.UseVisualStyleBackColor = true;
-            this.chkF16.CheckedChanged += new System.EventHandler(this.chkF16_CheckedChanged);
+            
             // 
             // chkE16
             // 
@@ -1825,7 +1824,7 @@
             this.chkE16.TabIndex = 92;
             this.chkE16.TabStop = false;
             this.chkE16.UseVisualStyleBackColor = true;
-            this.chkE16.CheckedChanged += new System.EventHandler(this.chkE16_CheckedChanged);
+           
             // 
             // chkA4
             // 
@@ -1839,7 +1838,7 @@
             this.chkA4.TabIndex = 90;
             this.chkA4.TabStop = false;
             this.chkA4.UseVisualStyleBackColor = true;
-            this.chkA4.CheckedChanged += new System.EventHandler(this.chkA4_CheckedChanged);
+           
             // 
             // chkC4
             // 
@@ -1853,7 +1852,7 @@
             this.chkC4.TabIndex = 88;
             this.chkC4.TabStop = false;
             this.chkC4.UseVisualStyleBackColor = true;
-            this.chkC4.CheckedChanged += new System.EventHandler(this.chkC4_CheckedChanged);
+            
             // 
             // chkB4
             // 
@@ -1867,7 +1866,7 @@
             this.chkB4.TabIndex = 89;
             this.chkB4.TabStop = false;
             this.chkB4.UseVisualStyleBackColor = true;
-            this.chkB4.CheckedChanged += new System.EventHandler(this.chkB4_CheckedChanged);
+            
             // 
             // chkA5
             // 
@@ -1881,7 +1880,7 @@
             this.chkA5.TabIndex = 87;
             this.chkA5.TabStop = false;
             this.chkA5.UseVisualStyleBackColor = true;
-            this.chkA5.CheckedChanged += new System.EventHandler(this.chkA5_CheckedChanged);
+            
             // 
             // chkC5
             // 
@@ -1895,7 +1894,7 @@
             this.chkC5.TabIndex = 85;
             this.chkC5.TabStop = false;
             this.chkC5.UseVisualStyleBackColor = true;
-            this.chkC5.CheckedChanged += new System.EventHandler(this.chkC5_CheckedChanged);
+            //this.chkC5.CheckedChanged += new System.EventHandler(this.chkC5_CheckedChanged);
             // 
             // chkB5
             // 
@@ -1909,7 +1908,7 @@
             this.chkB5.TabIndex = 86;
             this.chkB5.TabStop = false;
             this.chkB5.UseVisualStyleBackColor = true;
-            this.chkB5.CheckedChanged += new System.EventHandler(this.chkB5_CheckedChanged);
+            
             // 
             // chkA6
             // 
@@ -1923,7 +1922,7 @@
             this.chkA6.TabIndex = 84;
             this.chkA6.TabStop = false;
             this.chkA6.UseVisualStyleBackColor = true;
-            this.chkA6.CheckedChanged += new System.EventHandler(this.chkA6_CheckedChanged);
+            
             // 
             // chkC6
             // 
@@ -1937,7 +1936,7 @@
             this.chkC6.TabIndex = 82;
             this.chkC6.TabStop = false;
             this.chkC6.UseVisualStyleBackColor = true;
-            this.chkC6.CheckedChanged += new System.EventHandler(this.chkC6_CheckedChanged);
+            //this.chkC6.CheckedChanged += new System.EventHandler(this.chkC6_CheckedChanged);
             // 
             // chkB6
             // 
@@ -1951,7 +1950,7 @@
             this.chkB6.TabIndex = 83;
             this.chkB6.TabStop = false;
             this.chkB6.UseVisualStyleBackColor = true;
-            this.chkB6.CheckedChanged += new System.EventHandler(this.chkB6_CheckedChanged);
+           // this.chkB6.CheckedChanged += new System.EventHandler(this.chkB6_CheckedChanged);
             // 
             // chkA7
             // 
@@ -1965,7 +1964,7 @@
             this.chkA7.TabIndex = 81;
             this.chkA7.TabStop = false;
             this.chkA7.UseVisualStyleBackColor = true;
-            this.chkA7.CheckedChanged += new System.EventHandler(this.chkA7_CheckedChanged);
+            //this.chkA7.CheckedChanged += new System.EventHandler(this.chkA7_CheckedChanged);
             // 
             // chkC7
             // 
@@ -1979,7 +1978,7 @@
             this.chkC7.TabIndex = 79;
             this.chkC7.TabStop = false;
             this.chkC7.UseVisualStyleBackColor = true;
-            this.chkC7.CheckedChanged += new System.EventHandler(this.chkC7_CheckedChanged);
+            //this.chkC7.CheckedChanged += new System.EventHandler(this.chkC7_CheckedChanged);
             // 
             // chkB7
             // 
@@ -1993,7 +1992,7 @@
             this.chkB7.TabIndex = 80;
             this.chkB7.TabStop = false;
             this.chkB7.UseVisualStyleBackColor = true;
-            this.chkB7.CheckedChanged += new System.EventHandler(this.chkB7_CheckedChanged);
+           // this.chkB7.CheckedChanged += new System.EventHandler(this.chkB7_CheckedChanged);
             // 
             // chkA8
             // 
@@ -2007,7 +2006,7 @@
             this.chkA8.TabIndex = 78;
             this.chkA8.TabStop = false;
             this.chkA8.UseVisualStyleBackColor = true;
-            this.chkA8.CheckedChanged += new System.EventHandler(this.chkA8_CheckedChanged);
+            ///this.chkA8.CheckedChanged += new System.EventHandler(this.chkA8_CheckedChanged);
             // 
             // chkC8
             // 
@@ -2021,7 +2020,7 @@
             this.chkC8.TabIndex = 76;
             this.chkC8.TabStop = false;
             this.chkC8.UseVisualStyleBackColor = true;
-            this.chkC8.CheckedChanged += new System.EventHandler(this.chkC8_CheckedChanged);
+           // this.chkC8.CheckedChanged += new System.EventHandler(this.chkC8_CheckedChanged);
             // 
             // chkB8
             // 
@@ -2035,7 +2034,7 @@
             this.chkB8.TabIndex = 77;
             this.chkB8.TabStop = false;
             this.chkB8.UseVisualStyleBackColor = true;
-            this.chkB8.CheckedChanged += new System.EventHandler(this.chkB8_CheckedChanged);
+            //this.chkB8.CheckedChanged += new System.EventHandler(this.chkB8_CheckedChanged);
             // 
             // chkA9
             // 
@@ -2049,7 +2048,7 @@
             this.chkA9.TabIndex = 75;
             this.chkA9.TabStop = false;
             this.chkA9.UseVisualStyleBackColor = true;
-            this.chkA9.CheckedChanged += new System.EventHandler(this.chkA9_CheckedChanged);
+            //this.chkA9.CheckedChanged += new System.EventHandler(this.chkA9_CheckedChanged);
             // 
             // chkC9
             // 
@@ -2063,7 +2062,7 @@
             this.chkC9.TabIndex = 73;
             this.chkC9.TabStop = false;
             this.chkC9.UseVisualStyleBackColor = true;
-            this.chkC9.CheckedChanged += new System.EventHandler(this.chkC9_CheckedChanged);
+            //this.chkC9.CheckedChanged += new System.EventHandler(this.chkC9_CheckedChanged);
             // 
             // chkB9
             // 
@@ -2077,7 +2076,7 @@
             this.chkB9.TabIndex = 74;
             this.chkB9.TabStop = false;
             this.chkB9.UseVisualStyleBackColor = true;
-            this.chkB9.CheckedChanged += new System.EventHandler(this.chkB9_CheckedChanged);
+            //this.chkB9.CheckedChanged += new System.EventHandler(this.chkB9_CheckedChanged);
             // 
             // chkD9
             // 
@@ -2091,7 +2090,7 @@
             this.chkD9.TabIndex = 72;
             this.chkD9.TabStop = false;
             this.chkD9.UseVisualStyleBackColor = true;
-            this.chkD9.CheckedChanged += new System.EventHandler(this.chkD9_CheckedChanged);
+            //this.chkD9.CheckedChanged += new System.EventHandler(this.chkD9_CheckedChanged);
             // 
             // chkF9
             // 
@@ -2105,7 +2104,7 @@
             this.chkF9.TabIndex = 70;
             this.chkF9.TabStop = false;
             this.chkF9.UseVisualStyleBackColor = true;
-            this.chkF9.CheckedChanged += new System.EventHandler(this.chkF9_CheckedChanged);
+            //this.chkF9.CheckedChanged += new System.EventHandler(this.chkF9_CheckedChanged);
             // 
             // chkE9
             // 
@@ -2119,7 +2118,7 @@
             this.chkE9.TabIndex = 71;
             this.chkE9.TabStop = false;
             this.chkE9.UseVisualStyleBackColor = true;
-            this.chkE9.CheckedChanged += new System.EventHandler(this.chkE9_CheckedChanged);
+            //this.chkE9.CheckedChanged += new System.EventHandler(this.chkE9_CheckedChanged);
             // 
             // chkD8
             // 
@@ -2133,7 +2132,7 @@
             this.chkD8.TabIndex = 69;
             this.chkD8.TabStop = false;
             this.chkD8.UseVisualStyleBackColor = true;
-            this.chkD8.CheckedChanged += new System.EventHandler(this.chkD8_CheckedChanged);
+            //this.chkD8.CheckedChanged += new System.EventHandler(this.chkD8_CheckedChanged);
             // 
             // chkF8
             // 
@@ -2147,7 +2146,7 @@
             this.chkF8.TabIndex = 67;
             this.chkF8.TabStop = false;
             this.chkF8.UseVisualStyleBackColor = true;
-            this.chkF8.CheckedChanged += new System.EventHandler(this.chkF8_CheckedChanged);
+            //this.chkF8.CheckedChanged += new System.EventHandler(this.chkF8_CheckedChanged);
             // 
             // chkE8
             // 
@@ -2161,7 +2160,7 @@
             this.chkE8.TabIndex = 68;
             this.chkE8.TabStop = false;
             this.chkE8.UseVisualStyleBackColor = true;
-            this.chkE8.CheckedChanged += new System.EventHandler(this.chkE8_CheckedChanged);
+            //this.chkE8.CheckedChanged += new System.EventHandler(this.chkE8_CheckedChanged);
             // 
             // chkD7
             // 
@@ -2175,7 +2174,7 @@
             this.chkD7.TabIndex = 66;
             this.chkD7.TabStop = false;
             this.chkD7.UseVisualStyleBackColor = true;
-            this.chkD7.CheckedChanged += new System.EventHandler(this.chkD7_CheckedChanged);
+            //this.chkD7.CheckedChanged += new System.EventHandler(this.chkD7_CheckedChanged);
             // 
             // chkF7
             // 
@@ -2189,7 +2188,7 @@
             this.chkF7.TabIndex = 64;
             this.chkF7.TabStop = false;
             this.chkF7.UseVisualStyleBackColor = true;
-            this.chkF7.CheckedChanged += new System.EventHandler(this.chkF7_CheckedChanged);
+            //this.chkF7.CheckedChanged += new System.EventHandler(this.chkF7_CheckedChanged);
             // 
             // chkE7
             // 
@@ -2203,7 +2202,7 @@
             this.chkE7.TabIndex = 65;
             this.chkE7.TabStop = false;
             this.chkE7.UseVisualStyleBackColor = true;
-            this.chkE7.CheckedChanged += new System.EventHandler(this.chkE7_CheckedChanged);
+            //this.chkE7.CheckedChanged += new System.EventHandler(this.chkE7_CheckedChanged);
             // 
             // chkD6
             // 
@@ -2217,7 +2216,7 @@
             this.chkD6.TabIndex = 63;
             this.chkD6.TabStop = false;
             this.chkD6.UseVisualStyleBackColor = true;
-            this.chkD6.CheckedChanged += new System.EventHandler(this.chkD6_CheckedChanged);
+            //this.chkD6.CheckedChanged += new System.EventHandler(this.chkD6_CheckedChanged);
             // 
             // chkF6
             // 
@@ -2231,7 +2230,7 @@
             this.chkF6.TabIndex = 61;
             this.chkF6.TabStop = false;
             this.chkF6.UseVisualStyleBackColor = true;
-            this.chkF6.CheckedChanged += new System.EventHandler(this.chkF6_CheckedChanged);
+            //this.chkF6.CheckedChanged += new System.EventHandler(this.chkF6_CheckedChanged);
             // 
             // chkE6
             // 
@@ -2245,7 +2244,7 @@
             this.chkE6.TabIndex = 62;
             this.chkE6.TabStop = false;
             this.chkE6.UseVisualStyleBackColor = true;
-            this.chkE6.CheckedChanged += new System.EventHandler(this.chkE6_CheckedChanged);
+            //this.chkE6.CheckedChanged += new System.EventHandler(this.chkE6_CheckedChanged);
             // 
             // chkD5
             // 
@@ -2259,7 +2258,7 @@
             this.chkD5.TabIndex = 60;
             this.chkD5.TabStop = false;
             this.chkD5.UseVisualStyleBackColor = true;
-            this.chkD5.CheckedChanged += new System.EventHandler(this.chkD5_CheckedChanged);
+            //this.chkD5.CheckedChanged += new System.EventHandler(this.chkD5_CheckedChanged);
             // 
             // chkF5
             // 
@@ -2273,7 +2272,7 @@
             this.chkF5.TabIndex = 58;
             this.chkF5.TabStop = false;
             this.chkF5.UseVisualStyleBackColor = true;
-            this.chkF5.CheckedChanged += new System.EventHandler(this.chkF5_CheckedChanged);
+            //this.chkF5.CheckedChanged += new System.EventHandler(this.chkF5_CheckedChanged);
             // 
             // chkE5
             // 
@@ -2287,7 +2286,7 @@
             this.chkE5.TabIndex = 59;
             this.chkE5.TabStop = false;
             this.chkE5.UseVisualStyleBackColor = true;
-            this.chkE5.CheckedChanged += new System.EventHandler(this.chkE5_CheckedChanged);
+            //this.chkE5.CheckedChanged += new System.EventHandler(this.chkE5_CheckedChanged);
             // 
             // chkD4
             // 
@@ -2301,7 +2300,7 @@
             this.chkD4.TabIndex = 57;
             this.chkD4.TabStop = false;
             this.chkD4.UseVisualStyleBackColor = true;
-            this.chkD4.CheckedChanged += new System.EventHandler(this.chkD4_CheckedChanged);
+            //this.chkD4.CheckedChanged += new System.EventHandler(this.chkD4_CheckedChanged);
             // 
             // chkF4
             // 
@@ -2315,7 +2314,7 @@
             this.chkF4.TabIndex = 55;
             this.chkF4.TabStop = false;
             this.chkF4.UseVisualStyleBackColor = true;
-            this.chkF4.CheckedChanged += new System.EventHandler(this.chkF4_CheckedChanged);
+           // this.chkF4.CheckedChanged += new System.EventHandler(this.chkF4_CheckedChanged);
             // 
             // chkE4
             // 
@@ -2329,7 +2328,7 @@
             this.chkE4.TabIndex = 56;
             this.chkE4.TabStop = false;
             this.chkE4.UseVisualStyleBackColor = true;
-            this.chkE4.CheckedChanged += new System.EventHandler(this.chkE4_CheckedChanged);
+            //this.chkE4.CheckedChanged += new System.EventHandler(this.chkE4_CheckedChanged);
             // 
             // pnlHeader1
             // 
