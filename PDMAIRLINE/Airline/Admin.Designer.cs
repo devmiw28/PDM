@@ -57,14 +57,16 @@
             this.txtReturnTime = new System.Windows.Forms.TextBox();
             this.lblReturnDate = new System.Windows.Forms.Label();
             this.dgReturnDateAndTime = new System.Windows.Forms.DataGridView();
-            this.tabBookHistory = new System.Windows.Forms.TabPage();
+            this.tabBookingHistory = new System.Windows.Forms.TabPage();
+            this.dgBookHistory = new System.Windows.Forms.DataGridView();
             this.tabUsers = new System.Windows.Forms.TabPage();
             this.DataGridUsers = new System.Windows.Forms.DataGridView();
-            this.dgBookHistory = new System.Windows.Forms.DataGridView();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPaymentHistory = new System.Windows.Forms.TabPage();
+            this.dgPaymentHistory = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.TabAdmin.SuspendLayout();
@@ -74,10 +76,12 @@
             this.tabReturnDateAndTime.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnDateAndTime)).BeginInit();
-            this.tabBookHistory.SuspendLayout();
+            this.tabBookingHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).BeginInit();
             this.tabUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).BeginInit();
+            this.tabPaymentHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPaymentHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -183,7 +187,8 @@
             this.TabAdmin.Controls.Add(this.tabDashboard);
             this.TabAdmin.Controls.Add(this.tabDepartDateAndTime);
             this.TabAdmin.Controls.Add(this.tabReturnDateAndTime);
-            this.TabAdmin.Controls.Add(this.tabBookHistory);
+            this.TabAdmin.Controls.Add(this.tabBookingHistory);
+            this.TabAdmin.Controls.Add(this.tabPaymentHistory);
             this.TabAdmin.Controls.Add(this.tabUsers);
             this.TabAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabAdmin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
@@ -461,18 +466,28 @@
             this.dgReturnDateAndTime.Size = new System.Drawing.Size(853, 434);
             this.dgReturnDateAndTime.TabIndex = 77;
             // 
-            // tabBookHistory
+            // tabBookingHistory
             // 
-            this.tabBookHistory.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.tabBookHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabBookHistory.Controls.Add(this.dgBookHistory);
-            this.tabBookHistory.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.tabBookHistory.Location = new System.Drawing.Point(4, 34);
-            this.tabBookHistory.Name = "tabBookHistory";
-            this.tabBookHistory.Size = new System.Drawing.Size(1432, 772);
-            this.tabBookHistory.TabIndex = 5;
-            this.tabBookHistory.Text = "Book History";
-            this.tabBookHistory.UseVisualStyleBackColor = true;
+            this.tabBookingHistory.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.tabBookingHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabBookingHistory.Controls.Add(this.dgBookHistory);
+            this.tabBookingHistory.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.tabBookingHistory.Location = new System.Drawing.Point(4, 34);
+            this.tabBookingHistory.Name = "tabBookingHistory";
+            this.tabBookingHistory.Size = new System.Drawing.Size(1432, 772);
+            this.tabBookingHistory.TabIndex = 5;
+            this.tabBookingHistory.Text = "Booking History";
+            this.tabBookingHistory.UseVisualStyleBackColor = true;
+            // 
+            // dgBookHistory
+            // 
+            this.dgBookHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgBookHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgBookHistory.Location = new System.Drawing.Point(0, 0);
+            this.dgBookHistory.Name = "dgBookHistory";
+            this.dgBookHistory.RowHeadersVisible = false;
+            this.dgBookHistory.Size = new System.Drawing.Size(1432, 772);
+            this.dgBookHistory.TabIndex = 78;
             // 
             // tabUsers
             // 
@@ -503,16 +518,6 @@
             this.DataGridUsers.TabIndex = 0;
             this.DataGridUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // dgBookHistory
-            // 
-            this.dgBookHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBookHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgBookHistory.Location = new System.Drawing.Point(0, 0);
-            this.dgBookHistory.Name = "dgBookHistory";
-            this.dgBookHistory.RowHeadersVisible = false;
-            this.dgBookHistory.Size = new System.Drawing.Size(1432, 772);
-            this.dgBookHistory.TabIndex = 78;
-            // 
             // user_id
             // 
             this.user_id.HeaderText = "UserID";
@@ -532,6 +537,26 @@
             // 
             this.created_at.HeaderText = "Created At";
             this.created_at.Name = "created_at";
+            // 
+            // tabPaymentHistory
+            // 
+            this.tabPaymentHistory.Controls.Add(this.dgPaymentHistory);
+            this.tabPaymentHistory.Location = new System.Drawing.Point(4, 34);
+            this.tabPaymentHistory.Name = "tabPaymentHistory";
+            this.tabPaymentHistory.Size = new System.Drawing.Size(1432, 772);
+            this.tabPaymentHistory.TabIndex = 7;
+            this.tabPaymentHistory.Text = "Payment History";
+            this.tabPaymentHistory.UseVisualStyleBackColor = true;
+            // 
+            // dgPaymentHistory
+            // 
+            this.dgPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPaymentHistory.Location = new System.Drawing.Point(0, 0);
+            this.dgPaymentHistory.Name = "dgPaymentHistory";
+            this.dgPaymentHistory.RowHeadersVisible = false;
+            this.dgPaymentHistory.Size = new System.Drawing.Size(1432, 772);
+            this.dgPaymentHistory.TabIndex = 79;
             // 
             // Admin
             // 
@@ -558,10 +583,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnDateAndTime)).EndInit();
-            this.tabBookHistory.ResumeLayout(false);
+            this.tabBookingHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).EndInit();
             this.tabUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).EndInit();
+            this.tabPaymentHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgPaymentHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -579,7 +606,7 @@
         private System.Windows.Forms.TabPage tabDashboard;
         private System.Windows.Forms.TabPage tabDepartDateAndTime;
         private System.Windows.Forms.TabPage tabReturnDateAndTime;
-        private System.Windows.Forms.TabPage tabBookHistory;
+        private System.Windows.Forms.TabPage tabBookingHistory;
         private System.Windows.Forms.TabPage tabUsers;
         private System.Windows.Forms.DataGridView DataGridUsers;
         private System.Windows.Forms.Panel pnlDepart;
@@ -605,5 +632,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
         private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
+        private System.Windows.Forms.TabPage tabPaymentHistory;
+        private System.Windows.Forms.DataGridView dgPaymentHistory;
     }
 }

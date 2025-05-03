@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Airline
 {
     public partial class SearchFlight : Form
     {
+        private readonly string connectionString = "server=localhost;database=pdm_airline_db1;user=root;password=;";
+
         private string lastSelectedLocation = null;  // To keep track of the last selected location in CmbLoc1
         private string lastSelectedLocation2 = null; // To keep track of the last selected location in CmbLoc2
         private bool isClearingSelection = false; // Flag to avoid unwanted behavior
@@ -280,7 +283,62 @@ namespace Airline
             this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
         }
 
-      
+        private void LoadAvailableDepartTimes(DateTime selectedDate)
+        {
+            // Clear the combo box before adding new items
+            CmbDepartTime.Items.Clear();
+
+            // Format the selected date to match the format in the database
+            string formattedDate = selectedDate.ToString("yyyy-MM-dd");
+
+            // Debugging output to check the selected date
+            Console.WriteLine("Loading departure times for: " + formattedDate);
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT departure_datetime FROM depart_flights WHERE DATE(departure_datetime) = @selectedDate";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@selectedDate", formattedDate);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            // Check if there are any rows returned
+                            if (!reader.HasRows)
+                            {
+                                Console.WriteLine("No records found for the selected date.");
+                            }
+
+                            while (reader.Read())
+                            {
+                                // Get the DateTime value from the database
+                                DateTime departTime = reader.GetDateTime("departure_datetime");
+
+                                // Debugging output to see the values
+                                Console.WriteLine("Depart Time: " + departTime);
+
+                                // Add formatted departure time to the ComboBox (HH:mm format)
+                                CmbDepartTime.Items.Add(departTime.ToString("HH:mm"));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading departure times: " + ex.Message);
+            }
+        }
+
+        // Event to load available departure times when the user selects a depart date
+        private void dtpDepartDate_ValueChanged(object sender, EventArgs e)
+        {
+            LoadAvailableDepartTimes(dtpDepartDate.Value);
+        }
+
 
         private void CmbAdults_SelectedIndexChanged(object sender, EventArgs e)
         {

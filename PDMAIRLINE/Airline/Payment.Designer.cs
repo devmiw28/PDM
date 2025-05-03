@@ -122,10 +122,14 @@
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(398, 275);
+            this.txtTotalPrice.BackColor = System.Drawing.Color.White;
+            this.txtTotalPrice.Enabled = false;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtTotalPrice.Location = new System.Drawing.Point(398, 268);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(167, 20);
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(167, 29);
             this.txtTotalPrice.TabIndex = 54;
             // 
             // pnlCredit
@@ -141,10 +145,11 @@
             // 
             // txtCardNum
             // 
-            this.txtCardNum.Location = new System.Drawing.Point(144, 24);
+            this.txtCardNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtCardNum.Location = new System.Drawing.Point(145, 24);
             this.txtCardNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtCardNum.Name = "txtCardNum";
-            this.txtCardNum.Size = new System.Drawing.Size(137, 20);
+            this.txtCardNum.Size = new System.Drawing.Size(137, 29);
             this.txtCardNum.TabIndex = 39;
             // 
             // lblCCV
@@ -153,7 +158,7 @@
             this.lblCCV.BackColor = System.Drawing.Color.Transparent;
             this.lblCCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblCCV.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblCCV.Location = new System.Drawing.Point(6, 58);
+            this.lblCCV.Location = new System.Drawing.Point(80, 66);
             this.lblCCV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCCV.Name = "lblCCV";
             this.lblCCV.Size = new System.Drawing.Size(61, 25);
@@ -166,7 +171,7 @@
             this.lblCardNum.BackColor = System.Drawing.Color.Transparent;
             this.lblCardNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblCardNum.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblCardNum.Location = new System.Drawing.Point(6, 18);
+            this.lblCardNum.Location = new System.Drawing.Point(6, 24);
             this.lblCardNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCardNum.Name = "lblCardNum";
             this.lblCardNum.Size = new System.Drawing.Size(135, 25);
@@ -175,10 +180,11 @@
             // 
             // txtCCVNum
             // 
-            this.txtCCVNum.Location = new System.Drawing.Point(144, 64);
+            this.txtCCVNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtCCVNum.Location = new System.Drawing.Point(145, 64);
             this.txtCCVNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtCCVNum.Name = "txtCCVNum";
-            this.txtCCVNum.Size = new System.Drawing.Size(137, 20);
+            this.txtCCVNum.Size = new System.Drawing.Size(137, 29);
             this.txtCCVNum.TabIndex = 41;
             // 
             // rdbEWallet
@@ -348,10 +354,11 @@
             // 
             // txtPhoneNum
             // 
-            this.txtPhoneNum.Location = new System.Drawing.Point(169, 154);
+            this.txtPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtPhoneNum.Location = new System.Drawing.Point(169, 148);
             this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(167, 20);
+            this.txtPhoneNum.Size = new System.Drawing.Size(167, 29);
             this.txtPhoneNum.TabIndex = 52;
             // 
             // lblPhoneNum
@@ -369,10 +376,11 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(86, 104);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(86, 97);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(250, 20);
+            this.txtEmail.Size = new System.Drawing.Size(250, 29);
             this.txtEmail.TabIndex = 51;
             // 
             // lblEmail

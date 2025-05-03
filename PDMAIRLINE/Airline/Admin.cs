@@ -27,9 +27,11 @@ namespace Airline
 
             SetupFlightGridColumns();
             SetupReturnFlightGridColumns();
+            SetupPaymentHistoryGridColumns();
 
             LoadFlightData();
             LoadReturnFlightData();
+            LoadPaymentHistoryData();
 
             DepartFlightAdded += Admin_DepartFlightAdded;
             ReturnFlightAdded += Admin_ReturnFlightAdded;
@@ -134,6 +136,7 @@ namespace Airline
             applyStyle(DataGridUsers);
             applyStyle(dgDepartDateAndTime);
             applyStyle(dgReturnDateAndTime);
+            applyStyle(dgPaymentHistory);
 
         }
 
@@ -168,25 +171,26 @@ namespace Airline
                 return;
             }
 
-            
-
+            // Validate time format
             if (!TimeSpan.TryParse(txtDepartTime.Text, out timePart))
             {
                 MessageBox.Show("Invalid time format. Use HH:mm (e.g., 14:30).");
                 return;
             }
 
-            DateTime departureDateTime = datePart.Add(timePart);
+            // Separate date and time
+            DateTime departureDateTime = datePart.Add(timePart); // Combining the date and time
 
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO depart_flights (flight_number, departure_datetime) VALUES (@flightNumber, @departure)";
+                    string query = "INSERT INTO depart_flights (flight_number, departure_date, departure_time) VALUES (@flightNumber, @departureDate, @departureTime)";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
-                    cmd.Parameters.AddWithValue("@departure", departureDateTime);
+                    cmd.Parameters.AddWithValue("@departureDate", departureDateTime.Date);  // Date part
+                    cmd.Parameters.AddWithValue("@departureTime", departureDateTime.TimeOfDay); // Time part
                     cmd.ExecuteNonQuery();
 
                     // Retrieve the last inserted flight_id using LAST_INSERT_ID()
@@ -205,6 +209,7 @@ namespace Airline
                 MessageBox.Show("Error adding flight: " + ex.Message);
             }
 
+            // Clear the input fields
             txtDepartTime.Text = "";
             txtDepartFlightNumber.Text = "";
         }
@@ -216,9 +221,10 @@ namespace Airline
 
             // Create a new row for the new flight
             DataRow newRow = dt.NewRow();
-            newRow["flight_id"] = flightId;
+            newRow["department_flight_id"] = flightId;
             newRow["flight_number"] = flightNumber;
-            newRow["departure_datetime"] = departureDateTime;
+            newRow["departure_date"] = departureDateTime.Date;  // Date part only
+            newRow["departure_time"] = departureDateTime.ToString("HH:mm");  // Time part only
 
             // Add the new row to the DataTable
             dt.Rows.Add(newRow);  // Insert at the top or use dt.Rows.Add(newRow) to append at the bottom
@@ -231,14 +237,14 @@ namespace Airline
             // Flight ID Column
             DataGridViewTextBoxColumn colFlightID = new DataGridViewTextBoxColumn
             {
-                Name = "flight_id",
-                HeaderText = "Flight ID",
-                DataPropertyName = "flight_id", // This binds to the flight_id column in the DataTable
+                Name = "departure_flight_id",
+                HeaderText = "Departure Flight ID",
+                DataPropertyName = "departure_flight_id", // This binds to the flight_id column in the DataTable
                 Width = 100,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
 
-            // Create columns manually
+            // Flight Number Column
             DataGridViewTextBoxColumn colFlightNumber = new DataGridViewTextBoxColumn
             {
                 Name = "flight_number",
@@ -248,20 +254,31 @@ namespace Airline
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
 
-            DataGridViewTextBoxColumn colDeparture = new DataGridViewTextBoxColumn
+            // Departure Date Column
+            DataGridViewTextBoxColumn colDepartureDate = new DataGridViewTextBoxColumn
             {
-                Name = "departure_datetime",
-                HeaderText = "Departure Date & Time",
-                DataPropertyName = "departure_datetime",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
-                DefaultCellStyle = { Format = "yyyy-MM-dd HH:mm", Alignment = DataGridViewContentAlignment.MiddleCenter }
+                Name = "departure_date",
+                HeaderText = "Departure Date",
+                DataPropertyName = "departure_date",
+                Width = 150,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "yyyy-MM-dd" }
+            };
+
+            // Departure Time Column
+            DataGridViewTextBoxColumn colDepartureTime = new DataGridViewTextBoxColumn
+            {
+                Name = "departure_time",
+                HeaderText = "Departure Time",
+                DataPropertyName = "departure_time",
+                Width = 150,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "HH:mm" }
             };
 
             // Add columns to the grid
-
             dgDepartDateAndTime.Columns.Add(colFlightID);
             dgDepartDateAndTime.Columns.Add(colFlightNumber);
-            dgDepartDateAndTime.Columns.Add(colDeparture);
+            dgDepartDateAndTime.Columns.Add(colDepartureDate);
+            dgDepartDateAndTime.Columns.Add(colDepartureTime);
         }
 
         private void LoadFlightData()
@@ -271,7 +288,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT flight_id, flight_number, departure_datetime FROM depart_flights ORDER BY departure_datetime ASC";
+                    string query = "SELECT departure_flight_id, flight_number, departure_date, departure_time FROM depart_flights ORDER BY departure_date, departure_time ASC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -293,15 +310,17 @@ namespace Airline
         {
             dgReturnDateAndTime.AutoGenerateColumns = false;
 
+            // Flight ID Column
             DataGridViewTextBoxColumn colFlightID = new DataGridViewTextBoxColumn
             {
-                Name = "flight_id",
-                HeaderText = "Flight ID",
-                DataPropertyName = "flight_id",
+                Name = "return_flight_id",
+                HeaderText = "Return Flight ID",
+                DataPropertyName = "return_flight_id",
                 Width = 100,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
 
+            // Flight Number Column
             DataGridViewTextBoxColumn colFlightNumber = new DataGridViewTextBoxColumn
             {
                 Name = "flight_number",
@@ -311,18 +330,31 @@ namespace Airline
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
 
-            DataGridViewTextBoxColumn colReturn = new DataGridViewTextBoxColumn
+            // Return Date Column
+            DataGridViewTextBoxColumn colReturnDate = new DataGridViewTextBoxColumn
             {
-                Name = "return_datetime",
-                HeaderText = "Return Date & Time",
-                DataPropertyName = "return_datetime",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
-                DefaultCellStyle = { Format = "yyyy-MM-dd HH:mm", Alignment = DataGridViewContentAlignment.MiddleCenter }
+                Name = "return_date",
+                HeaderText = "Return Date",
+                DataPropertyName = "return_date",
+                Width = 150,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "yyyy-MM-dd" }
             };
 
+            // Return Time Column
+            DataGridViewTextBoxColumn colReturnTime = new DataGridViewTextBoxColumn
+            {
+                Name = "return_time",
+                HeaderText = "Return Time",
+                DataPropertyName = "return_time",
+                Width = 150,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "HH:mm" }
+            };
+
+            // Add columns to the grid
             dgReturnDateAndTime.Columns.Add(colFlightID);
             dgReturnDateAndTime.Columns.Add(colFlightNumber);
-            dgReturnDateAndTime.Columns.Add(colReturn);
+            dgReturnDateAndTime.Columns.Add(colReturnDate);
+            dgReturnDateAndTime.Columns.Add(colReturnTime);
         }
 
         private void LoadReturnFlightData()
@@ -332,7 +364,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT flight_id, flight_number, return_datetime FROM return_flights ORDER BY return_datetime ASC";
+                    string query = "SELECT return_flight_id, flight_number, return_date, return_time FROM return_flights ORDER BY return_date, return_time ASC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -361,7 +393,6 @@ namespace Airline
                 MessageBox.Show("Please enter a flight number.");
                 return;
             }
-            
 
             if (!TimeSpan.TryParse(txtReturnTime.Text, out timePart))
             {
@@ -369,23 +400,24 @@ namespace Airline
                 return;
             }
 
-            DateTime returnDateTime = datePart.Add(timePart);
+            // Separate return_date and return_time
+            DateTime returnDate = datePart;  // Only date part
+            TimeSpan returnTime = timePart;  // Only time part
 
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO return_flights (flight_number, return_datetime) VALUES (@flightNumber, @return)";
+                    string query = "INSERT INTO return_flights (flight_number, return_date, return_time) VALUES (@flightNumber, @returnDate, @returnTime)";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
-                    cmd.Parameters.AddWithValue("@return", returnDateTime);
+                    cmd.Parameters.AddWithValue("@returnDate", returnDate);
+                    cmd.Parameters.AddWithValue("@returnTime", returnTime);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Return flight added successfully.");
-
                     ReturnFlightAdded?.Invoke(this, EventArgs.Empty);
-                    
                 }
             }
             catch (Exception ex)
@@ -395,6 +427,104 @@ namespace Airline
 
             txtReturnTime.Text = "";
             txtReturnFlightNumber.Text = "";
+        }
+
+        private void SetupPaymentHistoryGridColumns()
+        {
+            dgPaymentHistory.AutoGenerateColumns = false;
+
+            // Payment ID Column
+            DataGridViewTextBoxColumn colPaymentID = new DataGridViewTextBoxColumn
+            {
+                Name = "payment_id",
+                HeaderText = "Payment ID",
+                DataPropertyName = "payment_id", // This binds to the payment_id column in the DataTable
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Payment Method Column
+            DataGridViewTextBoxColumn colPaymentMethod = new DataGridViewTextBoxColumn
+            {
+                Name = "payment_method",
+                HeaderText = "Payment Method",
+                DataPropertyName = "payment_method", // This binds to the payment_method column in the DataTable
+                Width = 150,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Payment Amount Column
+            DataGridViewTextBoxColumn colPaymentAmount = new DataGridViewTextBoxColumn
+            {
+                Name = "payment_amount",
+                HeaderText = "Payment Amount",
+                DataPropertyName = "payment_amount",
+                Width = 150,
+                DefaultCellStyle = { Format = "C2", Alignment = DataGridViewContentAlignment.MiddleRight }
+            };
+
+            // Payment Date Column
+            DataGridViewTextBoxColumn colPaymentDate = new DataGridViewTextBoxColumn
+            {
+                Name = "payment_date",
+                HeaderText = "Payment Date",
+                DataPropertyName = "payment_date",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Format = "yyyy-MM-dd HH:mm", Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Payment Status Column
+            DataGridViewTextBoxColumn colPaymentStatus = new DataGridViewTextBoxColumn
+            {
+                Name = "payment_status",
+                HeaderText = "Payment Status",
+                DataPropertyName = "payment_status",
+                Width = 150,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Transaction Reference Column
+            DataGridViewTextBoxColumn colTransactionRef = new DataGridViewTextBoxColumn
+            {
+                Name = "transaction_reference",
+                HeaderText = "Transaction Reference",
+                DataPropertyName = "transaction_reference",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleLeft }
+            };
+
+            // Add columns to the DataGridView
+            dgPaymentHistory.Columns.Add(colPaymentID);
+            dgPaymentHistory.Columns.Add(colPaymentMethod);
+            dgPaymentHistory.Columns.Add(colPaymentAmount);
+            dgPaymentHistory.Columns.Add(colPaymentDate);
+            dgPaymentHistory.Columns.Add(colPaymentStatus);
+            dgPaymentHistory.Columns.Add(colTransactionRef);
+        }
+
+        private void LoadPaymentHistoryData()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT payment_id, payment_method, payment_amount, payment_date, payment_status, transaction_reference FROM payments ORDER BY payment_date DESC";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            dgPaymentHistory.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading payment history: " + ex.Message);
+            }
         }
 
 

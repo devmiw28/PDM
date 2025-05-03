@@ -39,7 +39,10 @@ namespace Airline
             if (payment == null || payment.IsDisposed)
             {
                 // If not open, create a new instance of SearchFlight
-                payment = new Payment();
+                payment = new Payment
+                {
+                    TotalPrice = this.TotalPrice
+                };
                 payment.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
                 payment.Show();
             }

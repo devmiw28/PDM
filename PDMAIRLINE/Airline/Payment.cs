@@ -13,12 +13,16 @@ namespace Airline
 {
     public partial class Payment : Form
     {
-        private readonly string connStr = "server=localhost;user=root;password=yourpassword;database=pdm_airline_db1;";
-        private int currentBookingId;
+        private readonly string connectionString = "server=localhost;database=pdm_airline_db1;user=root;password=;";
+
+
+
+        public decimal TotalPrice { get; set; }
 
         public Payment()
         {
             InitializeComponent();
+            this.Load += Payment_Load;
             chkGcash.Checked = true;
             pnlCredit.Enabled = false;
         }
@@ -49,45 +53,60 @@ namespace Airline
                     return;
                 }
             }
+            else
+            {
+                MessageBox.Show("No payment method selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            // Get payment amount from txtTotalPrice
-            decimal paymentAmount = decimal.Parse(txtTotalPrice.Text);
+            // Convert total price to decimal
+            decimal paymentAmount;
+            if (!decimal.TryParse(txtTotalPrice.Text, System.Globalization.NumberStyles.Currency, null, out paymentAmount))
+            {
+                MessageBox.Show("Invalid price format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Generate transaction reference
             string transactionRef = "TXN" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
-            
-            
-
-            using (MySqlConnection conn = new MySqlConnection(connStr))
+            // Open database connection
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
 
+                    // Modified query to include 'payment_status' as 'completed'
                     string query = @"INSERT INTO payments 
-                (booking_id, payment_method, payment_amount, transaction_reference) 
-                VALUES (@booking_id, @method, @amount, @ref)";
+                             (payment_method, payment_amount, transaction_reference, payment_status) 
+                             VALUES (@method, @amount, @ref, 'completed')";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@booking_id", currentBookingId);
+                        // Add parameters to command
                         cmd.Parameters.AddWithValue("@method", paymentMethod);
                         cmd.Parameters.AddWithValue("@amount", paymentAmount);
                         cmd.Parameters.AddWithValue("@ref", transactionRef);
 
+                        // Execute the query
                         int result = cmd.ExecuteNonQuery();
 
+                        // Check if the query was successful
                         if (result > 0)
                             MessageBox.Show("Payment recorded successfully!\nTransaction Reference: " + transactionRef,
-                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else
                             MessageBox.Show("Failed to record payment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Database error: " + ex.Message);
+                    MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -133,6 +152,11 @@ namespace Airline
             {
                 chkGcash.Checked = false;
             }
+        }
+
+        private void Payment_Load(object sender, EventArgs e)
+        {
+            txtTotalPrice.Text = TotalPrice.ToString("F2"); 
         }
     }
 }
