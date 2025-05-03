@@ -39,7 +39,6 @@
             this.CmbAdults = new System.Windows.Forms.ComboBox();
             this.CmbChildren = new System.Windows.Forms.ComboBox();
             this.CmbInfant = new System.Windows.Forms.ComboBox();
-            this.txtPromo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LblDepartDate = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -242,16 +240,6 @@
             this.CmbInfant.Text = "0";
             this.CmbInfant.SelectedIndexChanged += new System.EventHandler(this.Pet_SelectedIndexChanged);
             // 
-            // txtPromo
-            // 
-            this.txtPromo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPromo.Location = new System.Drawing.Point(490, 752);
-            this.txtPromo.Name = "txtPromo";
-            this.txtPromo.Size = new System.Drawing.Size(247, 38);
-            this.txtPromo.TabIndex = 37;
-            this.txtPromo.TextChanged += new System.EventHandler(this.Promo_TextChanged);
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -349,20 +337,6 @@
             this.label10.Size = new System.Drawing.Size(71, 24);
             this.label10.TabIndex = 44;
             this.label10.Text = "Infant";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(486, 725);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 24);
-            this.label11.TabIndex = 45;
-            this.label11.Text = "Promo";
             // 
             // label6
             // 
@@ -644,7 +618,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -652,7 +625,6 @@
             this.Controls.Add(this.LblDepartDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPromo);
             this.Controls.Add(this.CmbInfant);
             this.Controls.Add(this.CmbChildren);
             this.Controls.Add(this.CmbAdults);
@@ -701,7 +673,6 @@
         private System.Windows.Forms.ComboBox CmbAdults;
         private System.Windows.Forms.ComboBox CmbChildren;
         private System.Windows.Forms.ComboBox CmbInfant;
-        private System.Windows.Forms.TextBox txtPromo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LblDepartDate;
@@ -709,7 +680,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;

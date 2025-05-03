@@ -30,33 +30,40 @@
         {
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rbtCreditDebit = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pnlPayment = new System.Windows.Forms.Panel();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.pnlCredit = new System.Windows.Forms.Panel();
+            this.txtCardNum = new System.Windows.Forms.TextBox();
+            this.lblCCV = new System.Windows.Forms.Label();
+            this.lblCardNum = new System.Windows.Forms.Label();
+            this.txtCCVNum = new System.Windows.Forms.TextBox();
+            this.rdbEWallet = new System.Windows.Forms.RadioButton();
+            this.pnlEWallet = new System.Windows.Forms.Panel();
+            this.chkPayMaya = new System.Windows.Forms.CheckBox();
+            this.chkGcash = new System.Windows.Forms.CheckBox();
+            this.rdbCredit = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Where = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.Label();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPhoneNum = new System.Windows.Forms.TextBox();
+            this.lblPhoneNum = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlPayment.SuspendLayout();
+            this.pnlCredit.SuspendLayout();
+            this.pnlEWallet.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlHeader.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -68,7 +75,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(573, 50);
+            this.panel5.Size = new System.Drawing.Size(607, 50);
             this.panel5.TabIndex = 31;
             // 
             // label2
@@ -80,204 +87,164 @@
             this.label2.Location = new System.Drawing.Point(16, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(293, 29);
+            this.label2.Size = new System.Drawing.Size(341, 29);
             this.label2.TabIndex = 32;
-            this.label2.Text = "CREDIT OR DEBIT CARD";
+            this.label2.Text = "E-WALLET OR CREDIT CARD";
             // 
-            // panel6
+            // pnlPayment
             // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.label8);
-            this.panel6.Controls.Add(this.textBox4);
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.rbtCreditDebit);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.panel5);
-            this.panel6.Location = new System.Drawing.Point(249, 378);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(573, 409);
-            this.panel6.TabIndex = 32;
+            this.pnlPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlPayment.Controls.Add(this.lblTotalPrice);
+            this.pnlPayment.Controls.Add(this.txtTotalPrice);
+            this.pnlPayment.Controls.Add(this.pnlEWallet);
+            this.pnlPayment.Controls.Add(this.pnlCredit);
+            this.pnlPayment.Controls.Add(this.rdbEWallet);
+            this.pnlPayment.Controls.Add(this.rdbCredit);
+            this.pnlPayment.Controls.Add(this.panel5);
+            this.pnlPayment.Location = new System.Drawing.Point(280, 387);
+            this.pnlPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlPayment.Name = "pnlPayment";
+            this.pnlPayment.Size = new System.Drawing.Size(607, 312);
+            this.pnlPayment.TabIndex = 32;
             // 
-            // textBox1
+            // lblTotalPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 163);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 43;
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblTotalPrice.Location = new System.Drawing.Point(283, 270);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(111, 25);
+            this.lblTotalPrice.TabIndex = 54;
+            this.lblTotalPrice.Text = "Total Price:";
             // 
-            // label8
+            // txtTotalPrice
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label8.ForeColor = System.Drawing.Color.Sienna;
-            this.label8.Location = new System.Drawing.Point(283, 208);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(188, 13);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "CW ( number at the back of your card)";
+            this.txtTotalPrice.Location = new System.Drawing.Point(398, 275);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(167, 20);
+            this.txtTotalPrice.TabIndex = 54;
             // 
-            // textBox4
+            // pnlCredit
             // 
-            this.textBox4.Location = new System.Drawing.Point(24, 236);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(137, 20);
-            this.textBox4.TabIndex = 41;
+            this.pnlCredit.Controls.Add(this.txtCardNum);
+            this.pnlCredit.Controls.Add(this.lblCCV);
+            this.pnlCredit.Controls.Add(this.lblCardNum);
+            this.pnlCredit.Controls.Add(this.txtCCVNum);
+            this.pnlCredit.Location = new System.Drawing.Point(284, 124);
+            this.pnlCredit.Name = "pnlCredit";
+            this.pnlCredit.Size = new System.Drawing.Size(307, 108);
+            this.pnlCredit.TabIndex = 54;
             // 
-            // label7
+            // txtCardNum
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label7.ForeColor = System.Drawing.Color.Sienna;
-            this.label7.Location = new System.Drawing.Point(20, 208);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(188, 13);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "CW ( number at the back of your card)";
+            this.txtCardNum.Location = new System.Drawing.Point(144, 24);
+            this.txtCardNum.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCardNum.Name = "txtCardNum";
+            this.txtCardNum.Size = new System.Drawing.Size(137, 20);
+            this.txtCardNum.TabIndex = 39;
             // 
-            // textBox3
+            // lblCCV
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 125);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 20);
-            this.textBox3.TabIndex = 39;
+            this.lblCCV.AutoSize = true;
+            this.lblCCV.BackColor = System.Drawing.Color.Transparent;
+            this.lblCCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblCCV.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblCCV.Location = new System.Drawing.Point(6, 58);
+            this.lblCCV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCCV.Name = "lblCCV";
+            this.lblCCV.Size = new System.Drawing.Size(61, 25);
+            this.lblCCV.TabIndex = 45;
+            this.lblCCV.Text = "CVV:";
             // 
-            // label5
+            // lblCardNum
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.ForeColor = System.Drawing.Color.Sienna;
-            this.label5.Location = new System.Drawing.Point(8, 119);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 25);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Card Number:";
+            this.lblCardNum.AutoSize = true;
+            this.lblCardNum.BackColor = System.Drawing.Color.Transparent;
+            this.lblCardNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblCardNum.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblCardNum.Location = new System.Drawing.Point(6, 18);
+            this.lblCardNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCardNum.Name = "lblCardNum";
+            this.lblCardNum.Size = new System.Drawing.Size(135, 25);
+            this.lblCardNum.TabIndex = 38;
+            this.lblCardNum.Text = "Card Number:";
             // 
-            // rbtCreditDebit
+            // txtCCVNum
             // 
-            this.rbtCreditDebit.AutoSize = true;
-            this.rbtCreditDebit.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.rbtCreditDebit.Location = new System.Drawing.Point(24, 76);
-            this.rbtCreditDebit.Margin = new System.Windows.Forms.Padding(2);
-            this.rbtCreditDebit.Name = "rbtCreditDebit";
-            this.rbtCreditDebit.Size = new System.Drawing.Size(113, 17);
-            this.rbtCreditDebit.TabIndex = 37;
-            this.rbtCreditDebit.TabStop = true;
-            this.rbtCreditDebit.Text = "credit or debit card";
-            this.rbtCreditDebit.UseVisualStyleBackColor = true;
+            this.txtCCVNum.Location = new System.Drawing.Point(144, 64);
+            this.txtCCVNum.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCCVNum.Name = "txtCCVNum";
+            this.txtCCVNum.Size = new System.Drawing.Size(137, 20);
+            this.txtCCVNum.TabIndex = 41;
             // 
-            // label4
+            // rdbEWallet
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label4.ForeColor = System.Drawing.Color.Sienna;
-            this.label4.Location = new System.Drawing.Point(308, 157);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 25);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "LastName:";
+            this.rdbEWallet.AutoSize = true;
+            this.rdbEWallet.Checked = true;
+            this.rdbEWallet.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.rdbEWallet.Location = new System.Drawing.Point(21, 73);
+            this.rdbEWallet.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbEWallet.Name = "rdbEWallet";
+            this.rdbEWallet.Size = new System.Drawing.Size(65, 17);
+            this.rdbEWallet.TabIndex = 46;
+            this.rdbEWallet.TabStop = true;
+            this.rdbEWallet.Text = "E-Wallet";
+            this.rdbEWallet.UseVisualStyleBackColor = true;
+            this.rdbEWallet.CheckedChanged += new System.EventHandler(this.rdbEWallet_CheckedChanged);
             // 
-            // textBox2
+            // pnlEWallet
             // 
-            this.textBox2.Location = new System.Drawing.Point(419, 163);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 20);
-            this.textBox2.TabIndex = 35;
+            this.pnlEWallet.Controls.Add(this.chkPayMaya);
+            this.pnlEWallet.Controls.Add(this.chkGcash);
+            this.pnlEWallet.Location = new System.Drawing.Point(21, 124);
+            this.pnlEWallet.Name = "pnlEWallet";
+            this.pnlEWallet.Size = new System.Drawing.Size(175, 108);
+            this.pnlEWallet.TabIndex = 53;
             // 
-            // label3
+            // chkPayMaya
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label3.ForeColor = System.Drawing.Color.Sienna;
-            this.label3.Location = new System.Drawing.Point(35, 157);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 25);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "FirstName:";
+            this.chkPayMaya.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkPayMaya.AutoSize = true;
+            this.chkPayMaya.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.chkPayMaya.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.chkPayMaya.Location = new System.Drawing.Point(18, 58);
+            this.chkPayMaya.Name = "chkPayMaya";
+            this.chkPayMaya.Size = new System.Drawing.Size(114, 29);
+            this.chkPayMaya.TabIndex = 52;
+            this.chkPayMaya.Text = "PayMaya";
+            this.chkPayMaya.UseVisualStyleBackColor = true;
+            this.chkPayMaya.CheckedChanged += new System.EventHandler(this.chkPayMaya_CheckedChanged);
             // 
-            // panel1
+            // chkGcash
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(875, 378);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(573, 409);
-            this.panel1.TabIndex = 33;
+            this.chkGcash.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkGcash.AutoSize = true;
+            this.chkGcash.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.chkGcash.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.chkGcash.Location = new System.Drawing.Point(18, 8);
+            this.chkGcash.Name = "chkGcash";
+            this.chkGcash.Size = new System.Drawing.Size(88, 29);
+            this.chkGcash.TabIndex = 51;
+            this.chkGcash.Text = "Gcash";
+            this.chkGcash.UseVisualStyleBackColor = true;
+            this.chkGcash.CheckedChanged += new System.EventHandler(this.chkGcash_CheckedChanged);
             // 
-            // radioButton3
+            // rdbCredit
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.radioButton3.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.radioButton3.Location = new System.Drawing.Point(33, 193);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(128, 33);
-            this.radioButton3.TabIndex = 42;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "PayMaya";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.radioButton2.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.radioButton2.Location = new System.Drawing.Point(33, 124);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(99, 33);
-            this.radioButton2.TabIndex = 41;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Gcash";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.SaddleBrown;
-            this.panel4.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(573, 50);
-            this.panel4.TabIndex = 31;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label6.ForeColor = System.Drawing.Color.Gold;
-            this.label6.Location = new System.Drawing.Point(12, 11);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 29);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "E - WALLET";
+            this.rdbCredit.AutoSize = true;
+            this.rdbCredit.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.rdbCredit.Location = new System.Drawing.Point(284, 73);
+            this.rdbCredit.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbCredit.Name = "rdbCredit";
+            this.rdbCredit.Size = new System.Drawing.Size(52, 17);
+            this.rdbCredit.TabIndex = 37;
+            this.rdbCredit.Text = "Credit";
+            this.rdbCredit.UseVisualStyleBackColor = true;
+            this.rdbCredit.CheckedChanged += new System.EventHandler(this.rdbCredit_CheckedChanged);
             // 
             // panel2
             // 
@@ -351,15 +318,111 @@
             this.Search.TabIndex = 22;
             this.Search.Text = "Payment";
             // 
+            // btnPay
+            // 
+            this.btnPay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPay.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
+            this.btnPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPay.Location = new System.Drawing.Point(787, 837);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(134, 45);
+            this.btnPay.TabIndex = 54;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.txtPhoneNum);
+            this.panel1.Controls.Add(this.lblPhoneNum);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.lblEmail);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Location = new System.Drawing.Point(916, 387);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(352, 239);
+            this.panel1.TabIndex = 51;
+            // 
+            // txtPhoneNum
+            // 
+            this.txtPhoneNum.Location = new System.Drawing.Point(169, 154);
+            this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPhoneNum.Name = "txtPhoneNum";
+            this.txtPhoneNum.Size = new System.Drawing.Size(167, 20);
+            this.txtPhoneNum.TabIndex = 52;
+            // 
+            // lblPhoneNum
+            // 
+            this.lblPhoneNum.AutoSize = true;
+            this.lblPhoneNum.BackColor = System.Drawing.Color.Transparent;
+            this.lblPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblPhoneNum.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblPhoneNum.Location = new System.Drawing.Point(16, 149);
+            this.lblPhoneNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPhoneNum.Name = "lblPhoneNum";
+            this.lblPhoneNum.Size = new System.Drawing.Size(149, 25);
+            this.lblPhoneNum.TabIndex = 53;
+            this.lblPhoneNum.Text = "Phone Number:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(86, 104);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(250, 20);
+            this.txtEmail.TabIndex = 51;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblEmail.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblEmail.Location = new System.Drawing.Point(16, 99);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(66, 25);
+            this.lblEmail.TabIndex = 51;
+            this.lblEmail.Text = "Email:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panel3.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(352, 50);
+            this.panel3.TabIndex = 31;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label7.ForeColor = System.Drawing.Color.Gold;
+            this.label7.Location = new System.Drawing.Point(16, 11);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(234, 29);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Personal Information";
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1691, 955);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.pnlPayment);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Payment";
@@ -368,16 +431,20 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlPayment.ResumeLayout(false);
+            this.pnlPayment.PerformLayout();
+            this.pnlCredit.ResumeLayout(false);
+            this.pnlCredit.PerformLayout();
+            this.pnlEWallet.ResumeLayout(false);
+            this.pnlEWallet.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,26 +452,31 @@
         #endregion
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton rbtCreditDebit;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnlPayment;
+        private System.Windows.Forms.TextBox txtCCVNum;
+        private System.Windows.Forms.TextBox txtCardNum;
+        private System.Windows.Forms.Label lblCardNum;
+        private System.Windows.Forms.RadioButton rdbCredit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Where;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label Search;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.RadioButton rdbEWallet;
+        private System.Windows.Forms.Label lblCCV;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtPhoneNum;
+        private System.Windows.Forms.Label lblPhoneNum;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkPayMaya;
+        private System.Windows.Forms.CheckBox chkGcash;
+        private System.Windows.Forms.Panel pnlCredit;
+        private System.Windows.Forms.Panel pnlEWallet;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.TextBox txtTotalPrice;
     }
 }

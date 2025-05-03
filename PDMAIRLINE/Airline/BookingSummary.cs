@@ -23,6 +23,8 @@ namespace Airline
         public string PickedSeats { get; set; }
         public string FlightClass { get; set; }
         public string FlightNumber { get; set; }
+        public decimal TotalPrice { get; set; }
+
 
         SearchFlight searchFlight = new SearchFlight();
         public BookingSummary()
@@ -67,6 +69,7 @@ namespace Airline
             txtDepartDateAndTime.Text = DepartDate;
             txtReturnDateAndTime.Text = ReturnDate;
             txtFlightNum.Text = FlightNumber;
+            txtTotalPrice.Text = TotalPrice.ToString("C2");
         }
     }
 }

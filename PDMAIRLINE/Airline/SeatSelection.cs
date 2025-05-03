@@ -23,9 +23,10 @@ namespace Airline
         public string DepartDate { get; set; }
         public string ReturnDate { get; set; }
         public string ReturnTime { get; set; }
-        public string PromoCode { get; set; }
 
         public string PickedSeats { get; set; }
+
+
 
         public SeatSelection()
         {
@@ -67,6 +68,7 @@ namespace Airline
             BookingSummary bookingsummary = Application.OpenForms.OfType<BookingSummary>().FirstOrDefault();
             string selectedSeats = txtPickedSeats.Text; // This contains the picked seat labels
             string selectedClass = cmbFlightClass.SelectedItem?.ToString();
+            decimal totalPrice = CalculateTotalPrice();
 
             if (bookingsummary == null || bookingsummary.IsDisposed)
             {
@@ -81,9 +83,9 @@ namespace Airline
                     Destination = this.Destination,
                     DepartDate = this.DepartDate,
                     ReturnDate = this.ReturnDate,
-                    PromoCode = this.PromoCode,
                     PickedSeats = selectedSeats,
-                    FlightClass = selectedClass
+                    FlightClass = selectedClass,
+                    TotalPrice = totalPrice
 
                 };
                 bookingsummary.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
@@ -243,5 +245,48 @@ namespace Airline
 
             txtPickedSeats.Text = string.Join(", ", selectedSeats);
         }
-    }
+
+        private decimal CalculateTotalPrice()
+        {
+            string selectedClass = cmbFlightClass.SelectedItem?.ToString();
+            int selectedSeats = panelSeats.Controls.OfType<CheckBox>().Count(cb => cb.Checked);
+            
+            decimal pricePerSeat = 0;
+
+            switch (selectedClass)
+            {
+                case "First Class":
+                    pricePerSeat = 5000;
+                    break;
+                case "Business Class":
+                    pricePerSeat = 3000;
+                    break;
+                case "Economy Class":
+                    pricePerSeat = 2000;
+                    break;
+            }
+            
+            decimal destinationModifier = 0;
+            if (!string.IsNullOrEmpty(Destination))
+            {
+                if (Destination.Contains("Iloilo   ILO"))
+                    destinationModifier = -800;
+                else if (Destination.Contains("Palawan   PAL"))
+                    destinationModifier = -600;
+                else if (Destination.Contains("Cebu   CEB"))
+                    destinationModifier = -400;
+                else if (Destination.Contains("Davao   DVO"))
+                    destinationModifier = -200;
+            }
+            decimal total = (destinationModifier * selectedSeats) + (pricePerSeat * selectedSeats);
+
+            // ✈️ Adjust for trip type (half price if One-way)
+            if (TripType == "One-way")
+            {
+                total /= 2;
+            }
+
+            return total;
+        }
+     }
 }

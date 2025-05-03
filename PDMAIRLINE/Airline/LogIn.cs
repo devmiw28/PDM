@@ -6,7 +6,7 @@ namespace Airline
 {
     public partial class LogIn : Form
     {
-        private readonly string connectionString = "server=localhost;database=pdm_airline_db;user=root;password=;";
+        private readonly string connectionString = "server=localhost;database=pdm_airline_db1;user=root;password=;";
         private static SignUp signupFormInstance;
         private static LogIn loginFormInstance;
 
@@ -17,12 +17,12 @@ namespace Airline
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            string email = TxtEmail.Text.Trim().ToLower();
+            string username = TxtUsername.Text.Trim().ToLower();  // Renamed from TxtEmail
             string password = TxtPassword.Text.Trim();
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter Email and Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter Username and Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -31,9 +31,9 @@ namespace Airline
                 try
                 {
                     conn.Open();
-                    string query = "SELECT * FROM users WHERE email = @Email LIMIT 1";
+                    string query = "SELECT * FROM users WHERE username = @Username LIMIT 1";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Username", username);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -43,23 +43,19 @@ namespace Airline
 
                             if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
                             {
-                                
                                 SessionManager.UserId = Convert.ToInt32(reader["user_id"]);
-                                SessionManager.Email = reader["email"].ToString();
+                                SessionManager.Username = reader["username"].ToString();  // Changed from Email
                                 SessionManager.Role = reader["role"].ToString();
                                 SessionManager.IsVerified = Convert.ToBoolean(reader["is_verified"]);
 
-                                
                                 if (!SessionManager.IsVerified)
                                 {
                                     MessageBox.Show("Account not verified. Please check your email.", "Login Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
 
-                               
                                 MessageBox.Show($"Welcome!: {SessionManager.Role}", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                               
                                 if (SessionManager.Role == "admin")
                                 {
                                     new Admin().Show();
@@ -73,12 +69,12 @@ namespace Airline
                             }
                             else
                             {
-                                MessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Email not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Username not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
@@ -88,7 +84,7 @@ namespace Airline
                 }
             }
 
-            
+
         }
 
 

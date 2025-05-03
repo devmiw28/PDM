@@ -37,7 +37,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtFlightClass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPromo = new System.Windows.Forms.TextBox();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.txtNumInfants = new System.Windows.Forms.TextBox();
             this.txtNumChildren = new System.Windows.Forms.TextBox();
             this.txtNumAdults = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.txtDepartDateAndTime = new System.Windows.Forms.TextBox();
             this.txtFlightNum = new System.Windows.Forms.TextBox();
             this.txtFlightLoc = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -184,17 +184,17 @@
             this.label7.TabIndex = 73;
             this.label7.Text = "Flight Number:";
             // 
-            // txtPromo
+            // txtTotalPrice
             // 
-            this.txtPromo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPromo.BackColor = System.Drawing.Color.White;
-            this.txtPromo.Enabled = false;
-            this.txtPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPromo.Location = new System.Drawing.Point(758, 788);
-            this.txtPromo.Name = "txtPromo";
-            this.txtPromo.ReadOnly = true;
-            this.txtPromo.Size = new System.Drawing.Size(550, 38);
-            this.txtPromo.TabIndex = 72;
+            this.txtTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTotalPrice.BackColor = System.Drawing.Color.White;
+            this.txtTotalPrice.Enabled = false;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPrice.Location = new System.Drawing.Point(758, 788);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(550, 38);
+            this.txtTotalPrice.TabIndex = 72;
             // 
             // txtNumInfants
             // 
@@ -292,18 +292,18 @@
             this.txtFlightLoc.Size = new System.Drawing.Size(550, 38);
             this.txtFlightLoc.TabIndex = 64;
             // 
-            // label6
+            // lblTotalPrice
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label6.Location = new System.Drawing.Point(483, 798);
-            this.label6.Margin = new System.Windows.Forms.Padding(3);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(82, 25);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Promo:";
+            this.lblTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Britannic Bold", 16F);
+            this.lblTotalPrice.Location = new System.Drawing.Point(483, 798);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(3);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTotalPrice.Size = new System.Drawing.Size(123, 25);
+            this.lblTotalPrice.TabIndex = 63;
+            this.lblTotalPrice.Text = "Total Price:";
             // 
             // label5
             // 
@@ -431,7 +431,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtFlightClass);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtPromo);
+            this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.txtNumInfants);
             this.Controls.Add(this.txtNumChildren);
             this.Controls.Add(this.txtNumAdults);
@@ -440,7 +440,7 @@
             this.Controls.Add(this.txtDepartDateAndTime);
             this.Controls.Add(this.txtFlightNum);
             this.Controls.Add(this.txtFlightLoc);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -477,7 +477,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFlightClass;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPromo;
+        private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.TextBox txtNumInfants;
         private System.Windows.Forms.TextBox txtNumChildren;
         private System.Windows.Forms.TextBox txtNumAdults;
@@ -486,7 +486,7 @@
         private System.Windows.Forms.TextBox txtDepartDateAndTime;
         private System.Windows.Forms.TextBox txtFlightNum;
         private System.Windows.Forms.TextBox txtFlightLoc;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

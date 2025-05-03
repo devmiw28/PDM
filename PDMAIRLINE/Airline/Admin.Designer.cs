@@ -38,10 +38,6 @@
             this.TabAdmin = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.tabDepartDateAndTime = new System.Windows.Forms.TabPage();
-            this.tabReturnDateAndTime = new System.Windows.Forms.TabPage();
-            this.tabPromoCode = new System.Windows.Forms.TabPage();
-            this.tabUsers = new System.Windows.Forms.TabPage();
-            this.DataGridUsers = new System.Windows.Forms.DataGridView();
             this.pnlDepart = new System.Windows.Forms.Panel();
             this.btnDepartInsert = new System.Windows.Forms.Button();
             this.lblDepartFlightNumber = new System.Windows.Forms.Label();
@@ -51,6 +47,7 @@
             this.txtDepartTime = new System.Windows.Forms.TextBox();
             this.lblDepartDate = new System.Windows.Forms.Label();
             this.dgDepartDateAndTime = new System.Windows.Forms.DataGridView();
+            this.tabReturnDateAndTime = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnReturnInsert = new System.Windows.Forms.Button();
             this.lblReturnFlightNumber = new System.Windows.Forms.Label();
@@ -60,21 +57,27 @@
             this.txtReturnTime = new System.Windows.Forms.TextBox();
             this.lblReturnDate = new System.Windows.Forms.Label();
             this.dgReturnDateAndTime = new System.Windows.Forms.DataGridView();
-            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabBookHistory = new System.Windows.Forms.TabPage();
+            this.tabUsers = new System.Windows.Forms.TabPage();
+            this.DataGridUsers = new System.Windows.Forms.DataGridView();
+            this.dgBookHistory = new System.Windows.Forms.DataGridView();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.TabAdmin.SuspendLayout();
             this.tabDepartDateAndTime.SuspendLayout();
-            this.tabReturnDateAndTime.SuspendLayout();
-            this.tabUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
             this.pnlDepart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartDateAndTime)).BeginInit();
+            this.tabReturnDateAndTime.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnDateAndTime)).BeginInit();
+            this.tabBookHistory.SuspendLayout();
+            this.tabUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -180,7 +183,7 @@
             this.TabAdmin.Controls.Add(this.tabDashboard);
             this.TabAdmin.Controls.Add(this.tabDepartDateAndTime);
             this.TabAdmin.Controls.Add(this.tabReturnDateAndTime);
-            this.TabAdmin.Controls.Add(this.tabPromoCode);
+            this.TabAdmin.Controls.Add(this.tabBookHistory);
             this.TabAdmin.Controls.Add(this.tabUsers);
             this.TabAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabAdmin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
@@ -217,61 +220,6 @@
             this.tabDepartDateAndTime.TabIndex = 1;
             this.tabDepartDateAndTime.Text = "Depart Date And Time";
             this.tabDepartDateAndTime.UseVisualStyleBackColor = true;
-            // 
-            // tabReturnDateAndTime
-            // 
-            this.tabReturnDateAndTime.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.tabReturnDateAndTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabReturnDateAndTime.Controls.Add(this.panel2);
-            this.tabReturnDateAndTime.Controls.Add(this.dgReturnDateAndTime);
-            this.tabReturnDateAndTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.tabReturnDateAndTime.Location = new System.Drawing.Point(4, 34);
-            this.tabReturnDateAndTime.Name = "tabReturnDateAndTime";
-            this.tabReturnDateAndTime.Size = new System.Drawing.Size(1432, 772);
-            this.tabReturnDateAndTime.TabIndex = 2;
-            this.tabReturnDateAndTime.Text = "Return Date and Time";
-            this.tabReturnDateAndTime.UseVisualStyleBackColor = true;
-            // 
-            // tabPromoCode
-            // 
-            this.tabPromoCode.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.tabPromoCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPromoCode.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.tabPromoCode.Location = new System.Drawing.Point(4, 34);
-            this.tabPromoCode.Name = "tabPromoCode";
-            this.tabPromoCode.Size = new System.Drawing.Size(1432, 772);
-            this.tabPromoCode.TabIndex = 5;
-            this.tabPromoCode.Text = "Promo Code";
-            this.tabPromoCode.UseVisualStyleBackColor = true;
-            // 
-            // tabUsers
-            // 
-            this.tabUsers.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.tabUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabUsers.Controls.Add(this.DataGridUsers);
-            this.tabUsers.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.tabUsers.Location = new System.Drawing.Point(4, 34);
-            this.tabUsers.Name = "tabUsers";
-            this.tabUsers.Size = new System.Drawing.Size(1432, 772);
-            this.tabUsers.TabIndex = 6;
-            this.tabUsers.Text = "Users";
-            this.tabUsers.UseVisualStyleBackColor = true;
-            // 
-            // DataGridUsers
-            // 
-            this.DataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.user_id,
-            this.email,
-            this.role,
-            this.created_at});
-            this.DataGridUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridUsers.Location = new System.Drawing.Point(0, 0);
-            this.DataGridUsers.Name = "DataGridUsers";
-            this.DataGridUsers.RowHeadersVisible = false;
-            this.DataGridUsers.Size = new System.Drawing.Size(1432, 772);
-            this.DataGridUsers.TabIndex = 0;
-            this.DataGridUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // pnlDepart
             // 
@@ -386,6 +334,20 @@
             this.dgDepartDateAndTime.Size = new System.Drawing.Size(853, 434);
             this.dgDepartDateAndTime.TabIndex = 75;
             // 
+            // tabReturnDateAndTime
+            // 
+            this.tabReturnDateAndTime.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.tabReturnDateAndTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabReturnDateAndTime.Controls.Add(this.panel2);
+            this.tabReturnDateAndTime.Controls.Add(this.dgReturnDateAndTime);
+            this.tabReturnDateAndTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.tabReturnDateAndTime.Location = new System.Drawing.Point(4, 34);
+            this.tabReturnDateAndTime.Name = "tabReturnDateAndTime";
+            this.tabReturnDateAndTime.Size = new System.Drawing.Size(1432, 772);
+            this.tabReturnDateAndTime.TabIndex = 2;
+            this.tabReturnDateAndTime.Text = "Return Date and Time";
+            this.tabReturnDateAndTime.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -417,6 +379,7 @@
             this.btnReturnInsert.TabIndex = 77;
             this.btnReturnInsert.Text = "Insert";
             this.btnReturnInsert.UseVisualStyleBackColor = false;
+            this.btnReturnInsert.Click += new System.EventHandler(this.btnReturnInsert_Click);
             // 
             // lblReturnFlightNumber
             // 
@@ -494,28 +457,81 @@
             this.dgReturnDateAndTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgReturnDateAndTime.Location = new System.Drawing.Point(290, 268);
             this.dgReturnDateAndTime.Name = "dgReturnDateAndTime";
+            this.dgReturnDateAndTime.RowHeadersVisible = false;
             this.dgReturnDateAndTime.Size = new System.Drawing.Size(853, 434);
             this.dgReturnDateAndTime.TabIndex = 77;
             // 
-            // created_at
+            // tabBookHistory
             // 
-            this.created_at.HeaderText = "Created At";
-            this.created_at.Name = "created_at";
+            this.tabBookHistory.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.tabBookHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabBookHistory.Controls.Add(this.dgBookHistory);
+            this.tabBookHistory.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.tabBookHistory.Location = new System.Drawing.Point(4, 34);
+            this.tabBookHistory.Name = "tabBookHistory";
+            this.tabBookHistory.Size = new System.Drawing.Size(1432, 772);
+            this.tabBookHistory.TabIndex = 5;
+            this.tabBookHistory.Text = "Book History";
+            this.tabBookHistory.UseVisualStyleBackColor = true;
+            // 
+            // tabUsers
+            // 
+            this.tabUsers.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
+            this.tabUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabUsers.Controls.Add(this.DataGridUsers);
+            this.tabUsers.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.tabUsers.Location = new System.Drawing.Point(4, 34);
+            this.tabUsers.Name = "tabUsers";
+            this.tabUsers.Size = new System.Drawing.Size(1432, 772);
+            this.tabUsers.TabIndex = 6;
+            this.tabUsers.Text = "Users";
+            this.tabUsers.UseVisualStyleBackColor = true;
+            // 
+            // DataGridUsers
+            // 
+            this.DataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.user_id,
+            this.username,
+            this.role,
+            this.created_at});
+            this.DataGridUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridUsers.Location = new System.Drawing.Point(0, 0);
+            this.DataGridUsers.Name = "DataGridUsers";
+            this.DataGridUsers.RowHeadersVisible = false;
+            this.DataGridUsers.Size = new System.Drawing.Size(1432, 772);
+            this.DataGridUsers.TabIndex = 0;
+            this.DataGridUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dgBookHistory
+            // 
+            this.dgBookHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgBookHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgBookHistory.Location = new System.Drawing.Point(0, 0);
+            this.dgBookHistory.Name = "dgBookHistory";
+            this.dgBookHistory.RowHeadersVisible = false;
+            this.dgBookHistory.Size = new System.Drawing.Size(1432, 772);
+            this.dgBookHistory.TabIndex = 78;
+            // 
+            // user_id
+            // 
+            this.user_id.HeaderText = "UserID";
+            this.user_id.Name = "user_id";
+            // 
+            // username
+            // 
+            this.username.HeaderText = "User Name";
+            this.username.Name = "username";
             // 
             // role
             // 
             this.role.HeaderText = "Role";
             this.role.Name = "role";
             // 
-            // email
+            // created_at
             // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // user_id
-            // 
-            this.user_id.HeaderText = "UserID";
-            this.user_id.Name = "user_id";
+            this.created_at.HeaderText = "Created At";
+            this.created_at.Name = "created_at";
             // 
             // Admin
             // 
@@ -535,15 +551,17 @@
             this.pnlHeader.ResumeLayout(false);
             this.TabAdmin.ResumeLayout(false);
             this.tabDepartDateAndTime.ResumeLayout(false);
-            this.tabReturnDateAndTime.ResumeLayout(false);
-            this.tabUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
             this.pnlDepart.ResumeLayout(false);
             this.pnlDepart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartDateAndTime)).EndInit();
+            this.tabReturnDateAndTime.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnDateAndTime)).EndInit();
+            this.tabBookHistory.ResumeLayout(false);
+            this.tabUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -561,7 +579,7 @@
         private System.Windows.Forms.TabPage tabDashboard;
         private System.Windows.Forms.TabPage tabDepartDateAndTime;
         private System.Windows.Forms.TabPage tabReturnDateAndTime;
-        private System.Windows.Forms.TabPage tabPromoCode;
+        private System.Windows.Forms.TabPage tabBookHistory;
         private System.Windows.Forms.TabPage tabUsers;
         private System.Windows.Forms.DataGridView DataGridUsers;
         private System.Windows.Forms.Panel pnlDepart;
@@ -582,8 +600,9 @@
         private System.Windows.Forms.TextBox txtReturnTime;
         private System.Windows.Forms.Label lblReturnDate;
         private System.Windows.Forms.DataGridView dgReturnDateAndTime;
+        private System.Windows.Forms.DataGridView dgBookHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
         private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
     }

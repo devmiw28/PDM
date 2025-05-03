@@ -13,8 +13,9 @@ namespace Airline
 {
     public partial class Admin : Form
     {
-        private readonly string connectionString = "server=localhost;database=pdm_airline_db;user=root;password=;";
-        public event EventHandler FlightAdded;
+        private readonly string connectionString = "server=localhost;database=pdm_airline_db1;user=root;password=;";
+        public event EventHandler DepartFlightAdded;
+        public event EventHandler ReturnFlightAdded;
 
         public Admin()
         {
@@ -25,12 +26,26 @@ namespace Airline
             LoadUserData();
 
             SetupFlightGridColumns();
-            LoadFlightData();
+            SetupReturnFlightGridColumns();
 
-            FlightAdded += Admin_FlightAdded;
+            LoadFlightData();
+            LoadReturnFlightData();
+
+            DepartFlightAdded += Admin_DepartFlightAdded;
+            ReturnFlightAdded += Admin_ReturnFlightAdded;
+
+
         }
 
-        private void Admin_FlightAdded(object sender, EventArgs e)
+        private void Admin_ReturnFlightAdded(object sender, EventArgs e)
+        {
+            LoadReturnFlightData(); // This will refresh the DataGridView
+        }
+
+        
+
+
+        private void Admin_DepartFlightAdded(object sender, EventArgs e)
         {
             // You can update the DataGridView here if you need to perform any additional actions.
             // This will be called when a new flight is added successfully.
@@ -48,7 +63,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT user_id, email, role, created_at FROM users";
+                    string query = "SELECT user_id, username, role, created_at FROM users";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -72,7 +87,7 @@ namespace Airline
         {
             DataGridUsers.AutoGenerateColumns = false;
             user_id.DataPropertyName = "user_id";
-            email.DataPropertyName = "email";
+            username.DataPropertyName = "username";
             role.DataPropertyName = "role";
             created_at.DataPropertyName = "created_at";
         }
@@ -118,6 +133,8 @@ namespace Airline
 
             applyStyle(DataGridUsers);
             applyStyle(dgDepartDateAndTime);
+            applyStyle(dgReturnDateAndTime);
+
         }
 
 
@@ -126,8 +143,8 @@ namespace Airline
             user_id.Width = 150;
             user_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            email.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            email.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            username.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            username.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             role.Width = 300;
             role.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -151,6 +168,8 @@ namespace Airline
                 return;
             }
 
+            
+
             if (!TimeSpan.TryParse(txtDepartTime.Text, out timePart))
             {
                 MessageBox.Show("Invalid time format. Use HH:mm (e.g., 14:30).");
@@ -164,7 +183,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO flights (flight_number, departure_datetime) VALUES (@flightNumber, @departure)";
+                    string query = "INSERT INTO depart_flights (flight_number, departure_datetime) VALUES (@flightNumber, @departure)";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
                     cmd.Parameters.AddWithValue("@departure", departureDateTime);
@@ -252,7 +271,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT flight_id, flight_number, departure_datetime FROM flights ORDER BY departure_datetime ASC";
+                    string query = "SELECT flight_id, flight_number, departure_datetime FROM depart_flights ORDER BY departure_datetime ASC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -269,5 +288,116 @@ namespace Airline
                 MessageBox.Show("Error loading flights: " + ex.Message);
             }
         }
+
+        private void SetupReturnFlightGridColumns()
+        {
+            dgReturnDateAndTime.AutoGenerateColumns = false;
+
+            DataGridViewTextBoxColumn colFlightID = new DataGridViewTextBoxColumn
+            {
+                Name = "flight_id",
+                HeaderText = "Flight ID",
+                DataPropertyName = "flight_id",
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colFlightNumber = new DataGridViewTextBoxColumn
+            {
+                Name = "flight_number",
+                HeaderText = "Flight Number",
+                DataPropertyName = "flight_number",
+                Width = 300,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colReturn = new DataGridViewTextBoxColumn
+            {
+                Name = "return_datetime",
+                HeaderText = "Return Date & Time",
+                DataPropertyName = "return_datetime",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Format = "yyyy-MM-dd HH:mm", Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            dgReturnDateAndTime.Columns.Add(colFlightID);
+            dgReturnDateAndTime.Columns.Add(colFlightNumber);
+            dgReturnDateAndTime.Columns.Add(colReturn);
+        }
+
+        private void LoadReturnFlightData()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT flight_id, flight_number, return_datetime FROM return_flights ORDER BY return_datetime ASC";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            dgReturnDateAndTime.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading return flights: " + ex.Message);
+            }
+        }
+
+        private void btnReturnInsert_Click(object sender, EventArgs e)
+        {
+            string flightNumber = txtReturnFlightNumber.Text.Trim();
+            DateTime datePart = dtpReturnDate.Value.Date;
+            TimeSpan timePart;
+
+            if (string.IsNullOrEmpty(flightNumber))
+            {
+                MessageBox.Show("Please enter a flight number.");
+                return;
+            }
+            
+
+            if (!TimeSpan.TryParse(txtReturnTime.Text, out timePart))
+            {
+                MessageBox.Show("Invalid time format. Use HH:mm (e.g., 14:30).");
+                return;
+            }
+
+            DateTime returnDateTime = datePart.Add(timePart);
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO return_flights (flight_number, return_datetime) VALUES (@flightNumber, @return)";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
+                    cmd.Parameters.AddWithValue("@return", returnDateTime);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Return flight added successfully.");
+
+                    ReturnFlightAdded?.Invoke(this, EventArgs.Empty);
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding return flight: " + ex.Message);
+            }
+
+            txtReturnTime.Text = "";
+            txtReturnFlightNumber.Text = "";
+        }
+
+
+
     }
 }

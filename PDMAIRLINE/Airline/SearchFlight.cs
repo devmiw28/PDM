@@ -243,8 +243,8 @@ namespace Airline
             {
                 seatselection = new SeatSelection();
                 seatselection.DepartDate = dtpDepartDate.Value.ToShortDateString();
-                seatselection.NumAdults = adultCount;  // Pass the number of adults to SeatSelection
-                seatselection.AllowedSeatCount = totalSeats; // ✅ Pass it here
+                seatselection.NumAdults = adultCount;  
+                seatselection.AllowedSeatCount = totalSeats; 
                 seatselection.NumChildren = childCount;
                 seatselection.NumInfants = infantCount;
 
