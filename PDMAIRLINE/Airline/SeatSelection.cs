@@ -29,6 +29,14 @@ namespace Airline
         public string FlightNumber { get; set; }
         public string ReturnFlightNumber { get; set; }
 
+        private bool isSelectingReturn = false;
+        private List<string> selectedDepartureSeats = new List<string>();
+        private List<string> selectedReturnSeats = new List<string>();
+        private string selectedClassDeparture = "";
+        private string selectedClassReturn = "";
+
+
+
         public SeatSelection()
         {
             InitializeComponent();
@@ -49,11 +57,11 @@ namespace Airline
                         seatCheckbox.Tag = seatLabel; // Store seat label hidden
                         seatCheckbox.Text = "";       // Hide label to avoid design layout issues
                     }
-                    
+
                 }
             }
 
-            
+
         }
 
         private void SeatSelection_Load(object sender, EventArgs e)
@@ -69,13 +77,47 @@ namespace Airline
                 txtFlightNumber.Text = FlightNumber;
             }
 
+            if (TripType == "Round-trip")
+                btnNext.Visible = true;
+            else
+                btnNext.Visible = false;
+
+            lblSeatTitle.Text = "Select Seats for Departure Flight";
         }
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
             BookingSummary bookingsummary = Application.OpenForms.OfType<BookingSummary>().FirstOrDefault();
-            string selectedSeats = txtPickedSeats.Text; // This contains the picked seat labels
-            string selectedClass = cmbFlightClass.SelectedItem?.ToString();
+
+            if (TripType == "Round-trip" && !isSelectingReturn)
+            {
+                MessageBox.Show("Please click 'Next' to select return flight seats before proceeding.");
+                return;
+            }
+
+            if (TripType == "Round-trip")
+            {
+                selectedReturnSeats = panelSeats.Controls
+                    .OfType<CheckBox>()
+                    .Where(cb => cb.Checked)
+                    .Select(cb => cb.Tag?.ToString())
+                    .Where(tag => !string.IsNullOrEmpty(tag))
+                    .ToList();
+
+                selectedClassReturn = cmbFlightClass.SelectedItem?.ToString();
+
+                if (selectedReturnSeats.Count != AllowedSeatCount)
+                {
+                    MessageBox.Show($"Please select exactly {AllowedSeatCount} seats for the return flight.");
+                    return;
+                }
+            }
+
+            string selectedClass = TripType == "Round-trip" ? $"{selectedClassDeparture} / {selectedClassReturn}" : cmbFlightClass.SelectedItem?.ToString();
+            string allSeats = TripType == "Round-trip"
+                ? string.Join(", ", selectedDepartureSeats) + " | Return: " + string.Join(", ", selectedReturnSeats)
+                : txtPickedSeats.Text;
+
             decimal totalPrice = CalculateTotalPrice();
 
             if (bookingsummary == null || bookingsummary.IsDisposed)
@@ -83,11 +125,12 @@ namespace Airline
                 // If not open, create a new instance of SearchFlight
                 bookingsummary = new BookingSummary
                 {
-                    
-                    NumAdults = this.NumAdults.ToString(),       // <-- make sure SeatSelection has these values
+                    SelectedDepartureSeats = selectedDepartureSeats,
+                    SelectedReturnSeats = selectedReturnSeats,
+                    NumAdults = this.NumAdults.ToString(),
                     NumChildren = this.NumChildren.ToString(),
                     NumInfants = this.NumInfants.ToString(),
-                    TripType = this.TripType,                    // Optional: if you're passing trip type
+                    TripType = this.TripType,
                     Destination = this.Destination,
                     DepartDate = this.DepartDate,
                     ReturnDate = this.ReturnDate,
@@ -95,7 +138,8 @@ namespace Airline
                     DepartTime = this.DepartTime,
                     FlightNumber = this.FlightNumber,
                     ReturnFlightNumber = this.ReturnFlightNumber,
-                    PickedSeats = selectedSeats,
+                    PickedSeats = string.Join(", ", selectedDepartureSeats) +
+                                  (TripType == "Round-trip" ? " / " + string.Join(", ", selectedReturnSeats) : ""),
                     FlightClass = selectedClass,
                     TotalPrice = totalPrice
 
@@ -125,7 +169,7 @@ namespace Airline
 
         }
 
-       
+
 
         private void cmbFlightClass_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -240,7 +284,7 @@ namespace Airline
                         try
                         {
                             isClassChanging = true;
-                            
+
                         }
                         finally
                         {
@@ -265,7 +309,7 @@ namespace Airline
         {
             string selectedClass = cmbFlightClass.SelectedItem?.ToString();
             int selectedSeats = panelSeats.Controls.OfType<CheckBox>().Count(cb => cb.Checked);
-            
+
             decimal pricePerSeat = 0;
 
             switch (selectedClass)
@@ -280,7 +324,7 @@ namespace Airline
                     pricePerSeat = 2000;
                     break;
             }
-            
+
             decimal destinationModifier = 0;
             if (!string.IsNullOrEmpty(Destination))
             {
@@ -303,5 +347,45 @@ namespace Airline
 
             return total;
         }
-     }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (!isSelectingReturn)
+            {
+                // Save selected departure seats
+                selectedDepartureSeats = panelSeats.Controls
+                .OfType<CheckBox>()
+                .Where(cb => cb.Checked)
+                .Select(cb => cb.Tag?.ToString())
+                .Where(tag => !string.IsNullOrEmpty(tag))
+                .ToList();
+                selectedClassDeparture = cmbFlightClass.SelectedItem?.ToString();
+
+                if (selectedDepartureSeats.Count != AllowedSeatCount)
+                {
+                    MessageBox.Show($"Please select exactly {AllowedSeatCount} seats for the departure flight.");
+                    return;
+                }
+
+                // Reset seat selection for return
+                foreach (Control ctrl in panelSeats.Controls)
+                {
+                    if (ctrl is CheckBox)
+                    {
+                        CheckBox seatCheckbox = (CheckBox)ctrl;
+                        seatCheckbox.Checked = false;
+                        seatCheckbox.Enabled = true;
+                    }
+                }
+
+                cmbFlightClass.SelectedItem = null;
+                txtPickedSeats.Text = "";
+                isSelectingReturn = true;
+
+                lblSeatTitle.Text = "Select Seats for Return Flight";
+            }
+         }
+
+       
+    }
 }

@@ -189,6 +189,7 @@
             this.txtNumSeats = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblFlightClass = new System.Windows.Forms.Label();
+            this.cmbFlightClass = new System.Windows.Forms.ComboBox();
             this.lblSelectionOfSeats = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblFlightNumber = new System.Windows.Forms.Label();
@@ -203,7 +204,9 @@
             this.txtNumInfants = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNoOfInfant = new System.Windows.Forms.Label();
-            this.cmbFlightClass = new System.Windows.Forms.ComboBox();
+            this.grpSeatSelection = new System.Windows.Forms.GroupBox();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblSeatTitle = new System.Windows.Forms.Label();
             this.panelSeats.SuspendLayout();
             this.pnlHeader1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -215,6 +218,7 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.grpSeatSelection.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSeats
@@ -370,9 +374,9 @@
             this.panelSeats.Controls.Add(this.chkD4);
             this.panelSeats.Controls.Add(this.chkF4);
             this.panelSeats.Controls.Add(this.chkE4);
-            this.panelSeats.Location = new System.Drawing.Point(34, 488);
+            this.panelSeats.Location = new System.Drawing.Point(6, 19);
             this.panelSeats.Name = "panelSeats";
-            this.panelSeats.Size = new System.Drawing.Size(1811, 305);
+            this.panelSeats.Size = new System.Drawing.Size(1807, 305);
             this.panelSeats.TabIndex = 52;
             // 
             // label20
@@ -2385,6 +2389,23 @@
             this.lblFlightClass.TabIndex = 201;
             this.lblFlightClass.Text = "Flight Class";
             // 
+            // cmbFlightClass
+            // 
+            this.cmbFlightClass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbFlightClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFlightClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFlightClass.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cmbFlightClass.FormattingEnabled = true;
+            this.cmbFlightClass.Items.AddRange(new object[] {
+            "First Class",
+            "Business Class",
+            "Economy Class"});
+            this.cmbFlightClass.Location = new System.Drawing.Point(137, 12);
+            this.cmbFlightClass.Name = "cmbFlightClass";
+            this.cmbFlightClass.Size = new System.Drawing.Size(295, 33);
+            this.cmbFlightClass.TabIndex = 210;
+            this.cmbFlightClass.SelectedIndexChanged += new System.EventHandler(this.cmbFlightClass_SelectedIndexChanged_1);
+            // 
             // lblSelectionOfSeats
             // 
             this.lblSelectionOfSeats.AutoSize = true;
@@ -2539,28 +2560,53 @@
             this.lblNoOfInfant.TabIndex = 201;
             this.lblNoOfInfant.Text = "No. of Infant";
             // 
-            // cmbFlightClass
+            // grpSeatSelection
             // 
-            this.cmbFlightClass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbFlightClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFlightClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFlightClass.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cmbFlightClass.FormattingEnabled = true;
-            this.cmbFlightClass.Items.AddRange(new object[] {
-            "First Class",
-            "Business Class",
-            "Economy Class"});
-            this.cmbFlightClass.Location = new System.Drawing.Point(137, 12);
-            this.cmbFlightClass.Name = "cmbFlightClass";
-            this.cmbFlightClass.Size = new System.Drawing.Size(295, 33);
-            this.cmbFlightClass.TabIndex = 210;
-            this.cmbFlightClass.SelectedIndexChanged += new System.EventHandler(this.cmbFlightClass_SelectedIndexChanged_1);
+            this.grpSeatSelection.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpSeatSelection.Controls.Add(this.panelSeats);
+            this.grpSeatSelection.Location = new System.Drawing.Point(23, 490);
+            this.grpSeatSelection.Name = "grpSeatSelection";
+            this.grpSeatSelection.Size = new System.Drawing.Size(1819, 324);
+            this.grpSeatSelection.TabIndex = 210;
+            this.grpSeatSelection.TabStop = false;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(1756, 445);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(86, 40);
+            this.btnNext.TabIndex = 211;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lblSeatTitle
+            // 
+            this.lblSeatTitle.AutoSize = true;
+            this.lblSeatTitle.BackColor = System.Drawing.Color.Peru;
+            this.lblSeatTitle.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeatTitle.ForeColor = System.Drawing.Color.White;
+            this.lblSeatTitle.Location = new System.Drawing.Point(1357, 448);
+            this.lblSeatTitle.Name = "lblSeatTitle";
+            this.lblSeatTitle.Size = new System.Drawing.Size(308, 33);
+            this.lblSeatTitle.TabIndex = 204;
+            this.lblSeatTitle.Text = "Select Seats for Departure Flight";
             // 
             // SeatSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1916, 1073);
+            this.Controls.Add(this.lblSeatTitle);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.grpSeatSelection);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel9);
@@ -2569,7 +2615,6 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panelSeats);
             this.Controls.Add(this.pnlHeader1);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnProceed);
@@ -2601,7 +2646,9 @@
             this.panel9.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.grpSeatSelection.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2782,5 +2829,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNoOfInfant;
         private System.Windows.Forms.ComboBox cmbFlightClass;
+        private System.Windows.Forms.GroupBox grpSeatSelection;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblSeatTitle;
     }
 }

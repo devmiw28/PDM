@@ -12,6 +12,9 @@ namespace Airline
 {
     public partial class BookingSummary : Form
     {
+        public List<string> SelectedDepartureSeats { get; set; }
+        public List<string> SelectedReturnSeats { get; set; }
+
         public string TripType { get; set; }
         public string Destination { get; set; }
       
@@ -21,7 +24,7 @@ namespace Airline
         public string PromoCode { get; set; }
         public string PickedSeats { get; set; }
         public string FlightClass { get; set; }
-        public string FlightNumber { get; set; }
+        
         public decimal TotalPrice { get; set; }
 
         public string DepartDate { get; set; }
@@ -30,6 +33,10 @@ namespace Airline
         public string DepartTime { get; set; }
         public string ReturnTime { get; set; }
 
+        public string SelectedClassDeparture { get; set; }
+        public string SelectedClassReturn { get; set; }
+
+        public string FlightNumber { get; set; }
         public string ReturnFlightNumber { get; set; }
 
         SearchFlight searchFlight = new SearchFlight();
@@ -44,17 +51,24 @@ namespace Airline
 
             if (payment == null || payment.IsDisposed)
             {
-                // If not open, create a new instance of SearchFlight
                 payment = new Payment
                 {
-                    TotalPrice = this.TotalPrice
+                    TotalPrice = this.TotalPrice,
+                    DepartureSeats = this.SelectedDepartureSeats,
+                    ReturnSeats = this.SelectedReturnSeats,
+                    TripType = this.TripType,
+                    FlightNumberDeparture = this.FlightNumber,
+                    FlightNumberReturn = this.ReturnFlightNumber,
+                    FlightClass = this.FlightClass,
+                    DepartureDateTime = DateTime.Parse($"{DepartDate} {DepartTime}"),
+                    ReturnDateTime = TripType == "Round-trip" ? DateTime.Parse($"{ReturnDate} {ReturnTime}") : DateTime.MinValue
                 };
-                payment.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+
+                payment.FormClosed += (s, args) => this.Show();
                 payment.Show();
             }
             else
             {
-                // If already open, bring it to the front
                 payment.BringToFront();
                 payment.Focus();
             }

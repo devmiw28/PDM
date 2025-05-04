@@ -15,9 +15,18 @@ namespace Airline
     {
         private readonly string connectionString = "server=localhost;database=pdm_airline_db1;user=root;password=;";
 
-
-
         public decimal TotalPrice { get; set; }
+
+        public List<string> DepartureSeats { get; set; }
+        public List<string> ReturnSeats { get; set; }
+        public string FlightNumberDeparture { get; set; }
+        public string FlightNumberReturn { get; set; }
+        public DateTime DepartureDateTime { get; set; }
+        public DateTime ReturnDateTime { get; set; }
+        public string TripType { get; set; }
+        public string FlightClass { get; set; }
+        public int UserId { get; set; }
+
 
         public Payment()
         {
@@ -34,7 +43,8 @@ namespace Airline
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            // Determine selected payment method
+            UserId = SessionManager.UserId;
+
             string paymentMethod = "";
 
             if (rdbCredit.Checked)
@@ -59,7 +69,6 @@ namespace Airline
                 return;
             }
 
-            // Convert total price to decimal
             decimal paymentAmount;
             if (!decimal.TryParse(txtTotalPrice.Text, System.Globalization.NumberStyles.Currency, null, out paymentAmount))
             {
@@ -67,46 +76,71 @@ namespace Airline
                 return;
             }
 
-            // Generate transaction reference
             string transactionRef = "TXN" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
-            // Open database connection
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
+                conn.Open();
+                MySqlTransaction transaction = conn.BeginTransaction();
+
                 try
                 {
-                    conn.Open();
+                    // 1. Record the payment
+                    string paymentQuery = @"INSERT INTO payments 
+                    (payment_method, payment_amount, transaction_reference, payment_status) 
+                    VALUES (@method, @amount, @ref, 'completed')";
 
-                    // Modified query to include 'payment_status' as 'completed'
-                    string query = @"INSERT INTO payments 
-                             (payment_method, payment_amount, transaction_reference, payment_status) 
-                             VALUES (@method, @amount, @ref, 'completed')";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlCommand cmd = new MySqlCommand(paymentQuery, conn, transaction))
                     {
-                        // Add parameters to command
                         cmd.Parameters.AddWithValue("@method", paymentMethod);
                         cmd.Parameters.AddWithValue("@amount", paymentAmount);
                         cmd.Parameters.AddWithValue("@ref", transactionRef);
-
-                        // Execute the query
-                        int result = cmd.ExecuteNonQuery();
-
-                        // Check if the query was successful
-                        if (result > 0)
-                            MessageBox.Show("Payment recorded successfully!\nTransaction Reference: " + transactionRef,
-                                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
-                            MessageBox.Show("Failed to record payment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cmd.ExecuteNonQuery();
                     }
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // 2. Insert Departure Seats
+                    foreach (string seatCode in DepartureSeats)
+                    {
+                        string seatQuery = "INSERT INTO Seat_Selected (user_id, flight_number, departure_datetime, seat_code, trip_leg) " +
+                                           "VALUES (@userId, @flight, @datetime, @seat, @tripLeg)";
+                        using (MySqlCommand cmd = new MySqlCommand(seatQuery, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@userId", UserId);
+                            cmd.Parameters.AddWithValue("@flight", FlightNumberDeparture);
+                            cmd.Parameters.AddWithValue("@datetime", DepartureDateTime);
+                            cmd.Parameters.AddWithValue("@seat", seatCode);
+                            cmd.Parameters.AddWithValue("@tripLeg", "Departure");
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    if (TripType == "Round-trip")
+                    {
+                        foreach (string seatCode in ReturnSeats)
+                        {
+                            string seatQuery = "INSERT INTO Seat_Selected (user_id, flight_number, departure_datetime, seat_code, trip_leg) " +
+                                               "VALUES (@userId, @flight, @datetime, @seat, @tripLeg)";
+                            using (MySqlCommand cmd = new MySqlCommand(seatQuery, conn, transaction))
+                            {
+                                cmd.Parameters.AddWithValue("@userId", UserId);
+                                cmd.Parameters.AddWithValue("@flight", FlightNumberReturn);
+                                cmd.Parameters.AddWithValue("@datetime", ReturnDateTime);
+                                cmd.Parameters.AddWithValue("@seat", seatCode);
+                                cmd.Parameters.AddWithValue("@tripLeg", "Return");
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+
+                    // Commit transaction if everything succeeded
+                    transaction.Commit();
+                    MessageBox.Show("Payment and seat selection recorded successfully!\nTransaction Reference: " + transactionRef,
+                                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    transaction.Rollback();
+                    MessageBox.Show("Error saving data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
