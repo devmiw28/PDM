@@ -21,12 +21,13 @@ namespace Airline
         public string TripType { get; set; }
         public string Destination { get; set; }
         public string DepartDate { get; set; }
-        public string ReturnDate { get; set; }
+        public string DepartTime { get; set; }
         public string ReturnTime { get; set; }
+        public string ReturnDate { get; set; }
 
         public string PickedSeats { get; set; }
-
-
+        public string FlightNumber { get; set; }
+        public string ReturnFlightNumber { get; set; }
 
         public SeatSelection()
         {
@@ -51,6 +52,8 @@ namespace Airline
                     
                 }
             }
+
+            
         }
 
         private void SeatSelection_Load(object sender, EventArgs e)
@@ -59,8 +62,13 @@ namespace Airline
             txtNumAdults.Text = NumAdults.ToString(); // Display the number of adults
             txtNumChildren.Text = NumChildren.ToString(); // Display the number of childs
             txtNumInfants.Text = NumInfants.ToString();
-
             txtPickedSeats.Text = "";
+
+            if (!string.IsNullOrEmpty(FlightNumber))
+            {
+                txtFlightNumber.Text = FlightNumber;
+            }
+
         }
 
         private void btnProceed_Click(object sender, EventArgs e)
@@ -83,11 +91,18 @@ namespace Airline
                     Destination = this.Destination,
                     DepartDate = this.DepartDate,
                     ReturnDate = this.ReturnDate,
+                    ReturnTime = this.ReturnTime,
+                    DepartTime = this.DepartTime,
+                    FlightNumber = this.FlightNumber,
+                    ReturnFlightNumber = this.ReturnFlightNumber,
                     PickedSeats = selectedSeats,
                     FlightClass = selectedClass,
                     TotalPrice = totalPrice
 
                 };
+
+
+
                 bookingsummary.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
                 bookingsummary.Show();
             }

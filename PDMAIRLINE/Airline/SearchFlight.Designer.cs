@@ -590,6 +590,7 @@
             this.dtpDepartDate.Name = "dtpDepartDate";
             this.dtpDepartDate.Size = new System.Drawing.Size(247, 39);
             this.dtpDepartDate.TabIndex = 70;
+            this.dtpDepartDate.Value = new System.DateTime(2025, 5, 4, 0, 0, 0, 0);
             // 
             // dtpReturnDate
             // 
@@ -600,6 +601,7 @@
             this.dtpReturnDate.Name = "dtpReturnDate";
             this.dtpReturnDate.Size = new System.Drawing.Size(247, 39);
             this.dtpReturnDate.TabIndex = 71;
+            this.dtpReturnDate.Value = new System.DateTime(2025, 5, 4, 0, 0, 0, 0);
             // 
             // SearchFlight
             // 

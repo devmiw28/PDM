@@ -327,9 +327,9 @@
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(86, 25);
+            this.label4.Size = new System.Drawing.Size(157, 25);
             this.label4.TabIndex = 61;
-            this.label4.Text = "Child/s:";
+            this.label4.Text = "Child/Children:";
             // 
             // label3
             // 

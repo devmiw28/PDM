@@ -14,8 +14,7 @@ namespace Airline
     {
         public string TripType { get; set; }
         public string Destination { get; set; }
-        public string DepartDate { get; set; }
-        public string ReturnDate { get; set; }
+      
         public string NumAdults { get; set; }
         public string NumChildren { get; set; }
         public string NumInfants { get; set; }
@@ -25,6 +24,13 @@ namespace Airline
         public string FlightNumber { get; set; }
         public decimal TotalPrice { get; set; }
 
+        public string DepartDate { get; set; }
+        public string ReturnDate { get; set; }
+
+        public string DepartTime { get; set; }
+        public string ReturnTime { get; set; }
+
+        public string ReturnFlightNumber { get; set; }
 
         SearchFlight searchFlight = new SearchFlight();
         public BookingSummary()
@@ -69,8 +75,8 @@ namespace Airline
             txtFlightLoc.Text = Destination;  
             txtTripType.Text = TripType;
             txtFlightClass.Text = FlightClass;
-            txtDepartDateAndTime.Text = DepartDate;
-            txtReturnDateAndTime.Text = ReturnDate;
+            txtDepartDateAndTime.Text = $"{DepartDate} {DepartTime}";
+            txtReturnDateAndTime.Text = TripType == "Round-trip" ? $"{ReturnDate} {ReturnTime}" : "N/A";
             txtFlightNum.Text = FlightNumber;
             txtTotalPrice.Text = TotalPrice.ToString("C2");
         }

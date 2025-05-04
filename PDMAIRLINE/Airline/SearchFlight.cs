@@ -21,6 +21,9 @@ namespace Airline
         private NumericUpDown numericUpDownAdults;         
         private NumericUpDown numericUpDownChildren;        
         private NumericUpDown numericUpDownInfants;
+        
+        private Dictionary<string, string> departTimeToFlightNumber = new Dictionary<string, string>();
+
 
         public SearchFlight()
         {
@@ -50,13 +53,29 @@ namespace Airline
             dtpReturnDate.MinDate = today;
             dtpReturnDate.MaxDate = today.AddYears(1);
 
+            // Set DateTimePicker format to "yyyy-MM-dd" (which is more standard)
+            dtpDepartDate.Format = DateTimePickerFormat.Custom;
+            dtpDepartDate.CustomFormat = "yyyy-MM-dd";
+
+            dtpReturnDate.Format = DateTimePickerFormat.Custom;
+            dtpReturnDate.CustomFormat = "yyyy-MM-dd";
+
+            dtpDepartDate.ValueChanged += dtpDepartDate_ValueChanged;
+            dtpReturnDate.ValueChanged += dtpReturnDate_ValueChanged;
+
+
             // Make the DateTimePicker read - only by preventing user input
             dtpDepartDate.KeyPress += (s, args) =>
             {
                 args.Handled = true;  // Prevent editing through the keyboard
             };
+
+            dtpReturnDate.KeyPress += (s, args) =>
+            {
+                args.Handled = true;
+            };
+
             PopulateComboBoxes();
-            
         }
 
 
@@ -233,98 +252,151 @@ namespace Airline
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            // Validate trip type and ensure the necessary selections are made
             int adultCount = CmbAdults.SelectedItem != null ? Convert.ToInt32(CmbAdults.SelectedItem.ToString()) : 0;
             int childCount = CmbChildren.SelectedItem != null ? Convert.ToInt32(CmbChildren.SelectedItem.ToString()) : 0;
             int infantCount = CmbInfant.SelectedItem != null ? Convert.ToInt32(CmbInfant.SelectedItem.ToString()) : 0;
 
             int totalSeats = adultCount + childCount + infantCount;
 
-            // Check if SearchFlight form is already open
+            string selectedDepartTime = null;
+            // Validate departure time selection
+            if (CmbDepartTime.SelectedItem != null)
+            {
+                selectedDepartTime = CmbDepartTime.SelectedItem.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please select a Departure Time.", "Time Selection Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method if Departure Time is not selected
+            }
+
+            string departFlightNumber = null;
+            if (selectedDepartTime != null && departTimeToFlightNumber.ContainsKey(selectedDepartTime))
+            {
+                departFlightNumber = departTimeToFlightNumber[selectedDepartTime];
+            }
+
+            string returnFlightNumber = null;
+
+            // Handle round-trip validation
+            if (CmbTrip.SelectedItem?.ToString() == "Round-trip")
+            {
+                // Ensure return time is selected
+                if (CmbReturnTime.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a return time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string selectedReturnTime = CmbReturnTime.SelectedItem.ToString();
+                
+
+                // Check that return time is later than departure time
+                DateTime departTime = DateTime.Parse(selectedDepartTime);
+                DateTime returnTime = DateTime.Parse(selectedReturnTime);
+
+                // Calculate the minimum return time (12 hours after departure)
+                DateTime minReturnTime = departTime.AddHours(12);
+
+                // Check if the return time is earlier than the minimum required time
+                if (returnTime < minReturnTime)
+                {
+                    MessageBox.Show("Return time must be at least 12 hours after departure time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            // Prepare the SeatSelection form and pass the necessary data
             SeatSelection seatselection = Application.OpenForms.OfType<SeatSelection>().FirstOrDefault();
-            
+
             if (seatselection == null || seatselection.IsDisposed)
             {
-                seatselection = new SeatSelection();
-                seatselection.DepartDate = dtpDepartDate.Value.ToShortDateString();
-                seatselection.NumAdults = adultCount;  
-                seatselection.AllowedSeatCount = totalSeats; 
-                seatselection.NumChildren = childCount;
-                seatselection.NumInfants = infantCount;
+                seatselection = new SeatSelection
+                {
+                    DepartDate = dtpDepartDate.Value.ToShortDateString(),
+                    NumAdults = adultCount,
+                    AllowedSeatCount = totalSeats,
+                    NumChildren = childCount,
+                    NumInfants = infantCount,
+                    Destination = $"{CmbLoc1.Text} to {CmbLoc2.Text}",
+                    TripType = CmbTrip.SelectedItem?.ToString(),
+                    DepartTime = selectedDepartTime, // Pass selected depart time
+                    FlightNumber = departFlightNumber, // Pass departure flight number
+                    ReturnFlightNumber = returnFlightNumber // Pass return flight number for round-trip
+                };
 
-                seatselection.Destination = $"{CmbLoc1.Text} to {CmbLoc2.Text}";
-
-                seatselection.TripType = CmbTrip.SelectedItem?.ToString();
-
-                // Handle Round-trip and One-way cases
+                // Set the Return Date and Time when it's a round trip
                 if (CmbTrip.SelectedItem?.ToString() == "Round-trip")
                 {
-                    // Pass the Return Date and Time for Round-trip
-                    seatselection.ReturnDate = dtpReturnDate.Value.ToShortDateString();
-                    seatselection.ReturnTime = CmbReturnTime.SelectedItem?.ToString();
-                }
-                else
-                {
-                    // For One-way trip, ReturnDate and ReturnTime can be null
-                    seatselection.ReturnDate = null;
-                    seatselection.ReturnTime = null;
+                    seatselection.ReturnDate = dtpReturnDate.Value.ToShortDateString(); // Add the Return Date here
+                    seatselection.ReturnTime = CmbReturnTime.SelectedItem?.ToString(); // Add the Return Time here
                 }
 
-                seatselection.FormClosed += (s, args) => this.Show(); // When SearchFlight is closed, show Homepage again
+                seatselection.FormClosed += (s, args) => this.Show(); // When SeatSelection is closed, show SearchFlight again
                 seatselection.Show();
             }
             else
             {
-                // If already open, bring it to the front
                 seatselection.BringToFront();
                 seatselection.Focus();
             }
-           
-            
-            this.Hide(); // Optionally hide the Homepage when navigating to SearchFlight
+
+            this.Hide(); // Hide the current SearchFlight form
+
         }
+        private Dictionary<string, string> returnTimeToFlightNumber = new Dictionary<string, string>();
 
         private void LoadAvailableDepartTimes(DateTime selectedDate)
         {
             // Clear the combo box before adding new items
             CmbDepartTime.Items.Clear();
 
-            // Format the selected date to match the format in the database
-            string formattedDate = selectedDate.ToString("yyyy-MM-dd");
-
-            // Debugging output to check the selected date
-            Console.WriteLine("Loading departure times for: " + formattedDate);
+            // Format the selected date to match the format in the database (YYYY-MM-DD)
+            string formattedDate = selectedDate.ToString("yyyy-MM-dd");  // Use database-compatible format
+            Console.WriteLine($"Searching for flights on: {formattedDate}");  // Debug output
 
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    conn.Open();
-                    string query = "SELECT departure_datetime FROM depart_flights WHERE DATE(departure_datetime) = @selectedDate";
+                    conn.Open();  // Ensure connection is open
+
+                    departTimeToFlightNumber.Clear();  
+                    CmbDepartTime.Items.Clear();
+
+                    // Modify the query to filter by selected date
+                    string query = $"SELECT departure_time, flight_number FROM depart_flights WHERE departure_date = '{formattedDate}';";
+
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@selectedDate", formattedDate);
-
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Check if there are any rows returned
-                            if (!reader.HasRows)
+                            // Check if there are any rows in the result
+                            if (reader.HasRows)
                             {
-                                Console.WriteLine("No records found for the selected date.");
+                                while (reader.Read())
+                                {
+                                    TimeSpan departTime = reader.GetTimeSpan("departure_time");
+                                    string flightNumber = reader.GetString("flight_number");
+                                    string timeFormatted = departTime.ToString(@"hh\:mm");
+
+                                    CmbDepartTime.Items.Add(timeFormatted);
+                                    departTimeToFlightNumber[timeFormatted] = flightNumber;
+                                }
                             }
-
-                            while (reader.Read())
+                            else
                             {
-                                // Get the DateTime value from the database
-                                DateTime departTime = reader.GetDateTime("departure_datetime");
-
-                                // Debugging output to see the values
-                                Console.WriteLine("Depart Time: " + departTime);
-
-                                // Add formatted departure time to the ComboBox (HH:mm format)
-                                CmbDepartTime.Items.Add(departTime.ToString("HH:mm"));
+                                Console.WriteLine("No rows returned from the database.");
                             }
                         }
                     }
+                }
+
+                // If no items are found in the ComboBox, show a message
+                if (CmbDepartTime.Items.Count == 0)
+                {
+                    MessageBox.Show("No departure times available for the selected date.");
                 }
             }
             catch (Exception ex)
@@ -337,6 +409,55 @@ namespace Airline
         private void dtpDepartDate_ValueChanged(object sender, EventArgs e)
         {
             LoadAvailableDepartTimes(dtpDepartDate.Value);
+        }
+
+        private void LoadAvailableReturnTimes(DateTime selectedDate)
+        {
+            // Clear the combo box before adding new items
+            CmbReturnTime.Items.Clear();
+
+            // Format the selected date to match the format in the database (YYYY-MM-DD)
+            string formattedDate = selectedDate.ToString("yyyy-MM-dd");
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Query for return times on the selected date
+                    string query = $"SELECT return_time FROM return_flights WHERE return_date = '{formattedDate}';";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    TimeSpan returnTime = reader.GetTimeSpan("return_time");
+                                    CmbReturnTime.Items.Add(returnTime.ToString(@"hh\:mm"));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (CmbReturnTime.Items.Count == 0)
+                {
+                    MessageBox.Show("No return times available for the selected date.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading return times: " + ex.Message);
+            }
+        }
+
+        private void dtpReturnDate_ValueChanged(object sender, EventArgs e)
+        {
+            LoadAvailableReturnTimes(dtpReturnDate.Value);
         }
 
 

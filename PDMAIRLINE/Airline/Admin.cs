@@ -20,10 +20,16 @@ namespace Airline
         public Admin()
         {
             InitializeComponent();
+
+            dtpDepartDate.MinDate = DateTime.Today;
+            dtpReturnDate.MinDate = DateTime.Today;
+
+            dtpDepartDate.MaxDate = DateTime.Today.AddYears(1);
+            dtpReturnDate.MaxDate = DateTime.Today.AddYears(1);
+
             SetupDataGridColumns();
             StyleDataGrid_BrownGold();
             SetColumnSizesAndAlignment();
-            LoadUserData();
 
             SetupFlightGridColumns();
             SetupReturnFlightGridColumns();
@@ -32,11 +38,47 @@ namespace Airline
             LoadFlightData();
             LoadReturnFlightData();
             LoadPaymentHistoryData();
+            LoadUserData();
 
             DepartFlightAdded += Admin_DepartFlightAdded;
             ReturnFlightAdded += Admin_ReturnFlightAdded;
 
 
+            dgDepartDateAndTime.CellFormatting += dgDepartDateAndTime_CellFormatting;
+            dgReturnDateAndTime.CellFormatting += dgReturnDateAndTime_CellFormatting;
+
+        }
+
+        private void dgDepartDateAndTime_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0)  // Ensure the row is valid
+            {
+                if (dgDepartDateAndTime.Columns[e.ColumnIndex].Name == "departure_time")
+                {
+                    // Ensure the value is a valid TimeSpan and format it as HH:mm
+                    if (e.Value is TimeSpan)
+                    {
+                        e.Value = ((TimeSpan)e.Value).ToString(@"hh\:mm");  // Format TimeSpan to HH:mm
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
+        }
+
+        private void dgReturnDateAndTime_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0)  // Ensure the row is valid
+            {
+                if (dgReturnDateAndTime.Columns[e.ColumnIndex].Name == "return_time")
+                {
+                    // Ensure the value is a valid TimeSpan and format it as HH:mm
+                    if (e.Value is TimeSpan)
+                    {
+                        e.Value = ((TimeSpan)e.Value).ToString(@"hh\:mm");  // Format TimeSpan to HH:mm
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
         }
 
         private void Admin_ReturnFlightAdded(object sender, EventArgs e)
@@ -194,8 +236,8 @@ namespace Airline
                     cmd.ExecuteNonQuery();
 
                     // Retrieve the last inserted flight_id using LAST_INSERT_ID()
-                    cmd.CommandText = "SELECT LAST_INSERT_ID()";
-                    int flightId = Convert.ToInt32(cmd.ExecuteScalar());
+                    MySqlCommand idCmd = new MySqlCommand("SELECT LAST_INSERT_ID()", conn);
+                    int flightId = Convert.ToInt32(idCmd.ExecuteScalar());
 
                     // Show success message
                     MessageBox.Show("Flight added successfully.");
@@ -216,18 +258,21 @@ namespace Airline
 
         private void OnFlightAdded(int flightId, string flightNumber, DateTime departureDateTime)
         {
-            // Assuming dgDepartDateAndTime's DataSource is a DataTable
-            DataTable dt = (DataTable)dgDepartDateAndTime.DataSource;
+            DataTable dt = dgDepartDateAndTime.DataSource as DataTable;
 
-            // Create a new row for the new flight
-            DataRow newRow = dt.NewRow();
-            newRow["department_flight_id"] = flightId;
-            newRow["flight_number"] = flightNumber;
-            newRow["departure_date"] = departureDateTime.Date;  // Date part only
-            newRow["departure_time"] = departureDateTime.ToString("HH:mm");  // Time part only
-
-            // Add the new row to the DataTable
-            dt.Rows.Add(newRow);  // Insert at the top or use dt.Rows.Add(newRow) to append at the bottom
+            if (dt != null)
+            {
+                DataRow newRow = dt.NewRow();
+                newRow["departure_flight_id"] = flightId;
+                newRow["flight_number"] = flightNumber;
+                newRow["departure_date"] = departureDateTime.Date;
+                newRow["departure_time"] = departureDateTime.ToString("HH:mm"); // Make sure to format as HH:mm
+                dt.Rows.Add(newRow);
+            }
+            else
+            {
+                LoadFlightData(); // fallback if the DataSource is not set
+            }
         }
 
         private void SetupFlightGridColumns()
@@ -260,7 +305,7 @@ namespace Airline
                 Name = "departure_date",
                 HeaderText = "Departure Date",
                 DataPropertyName = "departure_date",
-                Width = 150,
+                Width = 225,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "yyyy-MM-dd" }
             };
 
@@ -270,7 +315,7 @@ namespace Airline
                 Name = "departure_time",
                 HeaderText = "Departure Time",
                 DataPropertyName = "departure_time",
-                Width = 150,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "HH:mm" }
             };
 
@@ -295,6 +340,14 @@ namespace Airline
                         {
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
+
+                            // Format departure_time as HH:mm
+                            foreach (DataRow row in dt.Rows)
+                            {
+                                TimeSpan departureTime = (TimeSpan)row["departure_time"];
+                                row["departure_time"] = departureTime.ToString(@"hh\:mm");
+                            }
+
                             dgDepartDateAndTime.DataSource = dt;
                         }
                     }
@@ -336,7 +389,7 @@ namespace Airline
                 Name = "return_date",
                 HeaderText = "Return Date",
                 DataPropertyName = "return_date",
-                Width = 150,
+                Width = 225,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "yyyy-MM-dd" }
             };
 
@@ -346,7 +399,7 @@ namespace Airline
                 Name = "return_time",
                 HeaderText = "Return Time",
                 DataPropertyName = "return_time",
-                Width = 150,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "HH:mm" }
             };
 
@@ -371,6 +424,14 @@ namespace Airline
                         {
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
+
+                            // Format return_time as HH:mm
+                            foreach (DataRow row in dt.Rows)
+                            {
+                                TimeSpan returnTime = (TimeSpan)row["return_time"];
+                                row["return_time"] = returnTime.ToString(@"hh\:mm");
+                            }
+
                             dgReturnDateAndTime.DataSource = dt;
                         }
                     }
@@ -526,8 +587,6 @@ namespace Airline
                 MessageBox.Show("Error loading payment history: " + ex.Message);
             }
         }
-
-
-
+        
     }
 }
