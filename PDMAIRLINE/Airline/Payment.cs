@@ -101,8 +101,9 @@ namespace Airline
                     // 2. Insert Departure Seats
                     foreach (string seatCode in DepartureSeats)
                     {
-                        string seatQuery = "INSERT INTO Seat_Selected (user_id, flight_number, departure_datetime, seat_code, trip_leg) " +
-                                           "VALUES (@userId, @flight, @datetime, @seat, @tripLeg)";
+                        string seatQuery = "INSERT INTO Seat_Selected (user_id, flight_number, datetime, seat_code, trip_leg) " +
+                   "VALUES (@userId, @flight, @datetime, @seat, @tripLeg)";
+
                         using (MySqlCommand cmd = new MySqlCommand(seatQuery, conn, transaction))
                         {
                             cmd.Parameters.AddWithValue("@userId", UserId);
@@ -118,8 +119,9 @@ namespace Airline
                     {
                         foreach (string seatCode in ReturnSeats)
                         {
-                            string seatQuery = "INSERT INTO Seat_Selected (user_id, flight_number, departure_datetime, seat_code, trip_leg) " +
-                                               "VALUES (@userId, @flight, @datetime, @seat, @tripLeg)";
+                            string seatQuery = "INSERT INTO Seat_Selected (user_id, flight_number, datetime, seat_code, trip_leg) " +
+                   "VALUES (@userId, @flight, @datetime, @seat, @tripLeg)";
+
                             using (MySqlCommand cmd = new MySqlCommand(seatQuery, conn, transaction))
                             {
                                 cmd.Parameters.AddWithValue("@userId", UserId);

@@ -56,6 +56,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPickedSeats = new System.Windows.Forms.TextBox();
+            this.txtReturnFlightNum = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
@@ -421,11 +422,24 @@
             this.txtPickedSeats.Size = new System.Drawing.Size(550, 38);
             this.txtPickedSeats.TabIndex = 77;
             // 
+            // txtReturnFlightNum
+            // 
+            this.txtReturnFlightNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtReturnFlightNum.BackColor = System.Drawing.Color.White;
+            this.txtReturnFlightNum.Enabled = false;
+            this.txtReturnFlightNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnFlightNum.Location = new System.Drawing.Point(1033, 392);
+            this.txtReturnFlightNum.Name = "txtReturnFlightNum";
+            this.txtReturnFlightNum.ReadOnly = true;
+            this.txtReturnFlightNum.Size = new System.Drawing.Size(275, 38);
+            this.txtReturnFlightNum.TabIndex = 78;
+            // 
             // BookingSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1691, 955);
+            this.Controls.Add(this.txtReturnFlightNum);
             this.Controls.Add(this.txtPickedSeats);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -496,5 +510,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPickedSeats;
+        private System.Windows.Forms.TextBox txtReturnFlightNum;
     }
 }

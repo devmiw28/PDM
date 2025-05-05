@@ -23,6 +23,8 @@ namespace Airline
         private NumericUpDown numericUpDownInfants;
         
         private Dictionary<string, string> departTimeToFlightNumber = new Dictionary<string, string>();
+        private Dictionary<string, string> returnTimeToFlightNumber = new Dictionary<string, string>();
+
 
 
         public SearchFlight()
@@ -290,7 +292,17 @@ namespace Airline
                 }
 
                 string selectedReturnTime = CmbReturnTime.SelectedItem.ToString();
-                
+                if (returnTimeToFlightNumber.ContainsKey(selectedReturnTime))
+                {
+                    returnFlightNumber = returnTimeToFlightNumber[selectedReturnTime];
+                }
+                else
+                {
+                    MessageBox.Show("Return flight number not found for selected time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
 
                 // Check that return time is later than departure time
                 DateTime departTime = DateTime.Parse(selectedDepartTime);
@@ -345,7 +357,7 @@ namespace Airline
             this.Hide(); // Hide the current SearchFlight form
 
         }
-        private Dictionary<string, string> returnTimeToFlightNumber = new Dictionary<string, string>();
+        
 
         private void LoadAvailableDepartTimes(DateTime selectedDate)
         {
@@ -366,7 +378,7 @@ namespace Airline
                     CmbDepartTime.Items.Clear();
 
                     // Modify the query to filter by selected date
-                    string query = $"SELECT departure_time, flight_number FROM depart_flights WHERE departure_date = '{formattedDate}';";
+                    string query = $"SELECT depart_time, depart_flight_number FROM depart_flights WHERE depart_date = '{formattedDate}';";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -377,8 +389,8 @@ namespace Airline
                             {
                                 while (reader.Read())
                                 {
-                                    TimeSpan departTime = reader.GetTimeSpan("departure_time");
-                                    string flightNumber = reader.GetString("flight_number");
+                                    TimeSpan departTime = reader.GetTimeSpan("depart_time");
+                                    string flightNumber = reader.GetString("depart_flight_number");
                                     string timeFormatted = departTime.ToString(@"hh\:mm");
 
                                     CmbDepartTime.Items.Add(timeFormatted);
@@ -415,6 +427,7 @@ namespace Airline
         {
             // Clear the combo box before adding new items
             CmbReturnTime.Items.Clear();
+            returnTimeToFlightNumber.Clear();
 
             // Format the selected date to match the format in the database (YYYY-MM-DD)
             string formattedDate = selectedDate.ToString("yyyy-MM-dd");
@@ -426,7 +439,8 @@ namespace Airline
                     conn.Open();
 
                     // Query for return times on the selected date
-                    string query = $"SELECT return_time FROM return_flights WHERE return_date = '{formattedDate}';";
+                    string query = $"SELECT return_time, return_flight_number FROM return_flights WHERE return_date = '{formattedDate}';";
+
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -436,8 +450,14 @@ namespace Airline
                             {
                                 while (reader.Read())
                                 {
+
                                     TimeSpan returnTime = reader.GetTimeSpan("return_time");
-                                    CmbReturnTime.Items.Add(returnTime.ToString(@"hh\:mm"));
+                                    string flightNumber = reader.GetString("return_flight_number");
+                                    
+                                    string timeFormatted = returnTime.ToString(@"hh\:mm");
+
+                                    CmbReturnTime.Items.Add(timeFormatted);
+                                    returnTimeToFlightNumber[timeFormatted] = flightNumber;
                                 }
                             }
                         }

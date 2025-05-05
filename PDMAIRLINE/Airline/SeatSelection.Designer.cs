@@ -207,6 +207,7 @@
             this.grpSeatSelection = new System.Windows.Forms.GroupBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblSeatTitle = new System.Windows.Forms.Label();
+            this.txtReturnFlightNumber = new System.Windows.Forms.TextBox();
             this.panelSeats.SuspendLayout();
             this.pnlHeader1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -2422,6 +2423,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.Peru;
+            this.panel6.Controls.Add(this.txtReturnFlightNumber);
             this.panel6.Controls.Add(this.lblFlightNumber);
             this.panel6.Controls.Add(this.txtFlightNumber);
             this.panel6.Location = new System.Drawing.Point(273, 918);
@@ -2598,6 +2600,16 @@
             this.lblSeatTitle.Size = new System.Drawing.Size(308, 33);
             this.lblSeatTitle.TabIndex = 204;
             this.lblSeatTitle.Text = "Select Seats for Departure Flight";
+            // 
+            // txtReturnFlightNumber
+            // 
+            this.txtReturnFlightNumber.Enabled = false;
+            this.txtReturnFlightNumber.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnFlightNumber.Location = new System.Drawing.Point(299, 12);
+            this.txtReturnFlightNumber.Name = "txtReturnFlightNumber";
+            this.txtReturnFlightNumber.ReadOnly = true;
+            this.txtReturnFlightNumber.Size = new System.Drawing.Size(136, 33);
+            this.txtReturnFlightNumber.TabIndex = 203;
             // 
             // SeatSelection
             // 
@@ -2832,5 +2844,6 @@
         private System.Windows.Forms.GroupBox grpSeatSelection;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblSeatTitle;
+        private System.Windows.Forms.TextBox txtReturnFlightNumber;
     }
 }

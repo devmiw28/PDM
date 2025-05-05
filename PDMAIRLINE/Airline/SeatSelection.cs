@@ -77,10 +77,22 @@ namespace Airline
                 txtFlightNumber.Text = FlightNumber;
             }
 
+            if (!string.IsNullOrEmpty(ReturnFlightNumber))
+            {
+                txtReturnFlightNumber.Text = ReturnFlightNumber;
+            }
+
             if (TripType == "Round-trip")
+            {
                 btnNext.Visible = true;
+                txtReturnFlightNumber.Visible = true;
+                txtReturnFlightNumber.Text = ReturnFlightNumber;
+            }
             else
+            {
                 btnNext.Visible = false;
+                txtReturnFlightNumber.Visible = false;
+            }
 
             lblSeatTitle.Text = "Select Seats for Departure Flight";
         }

@@ -53,7 +53,7 @@ namespace Airline
         {
             if (e.RowIndex >= 0)  // Ensure the row is valid
             {
-                if (dgDepartDateAndTime.Columns[e.ColumnIndex].Name == "departure_time")
+                if (dgDepartDateAndTime.Columns[e.ColumnIndex].Name == "depart_time")
                 {
                     // Ensure the value is a valid TimeSpan and format it as HH:mm
                     if (e.Value is TimeSpan)
@@ -228,11 +228,11 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO depart_flights (flight_number, departure_date, departure_time) VALUES (@flightNumber, @departureDate, @departureTime)";
+                    string query = "INSERT INTO depart_flights (depart_flight_number, depart_date, depart_time) VALUES (@flightNumber, @departDate, @departTime)";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
-                    cmd.Parameters.AddWithValue("@departureDate", departureDateTime.Date);  // Date part
-                    cmd.Parameters.AddWithValue("@departureTime", departureDateTime.TimeOfDay); // Time part
+                    cmd.Parameters.AddWithValue("@departDate", departureDateTime.Date);  // Date part
+                    cmd.Parameters.AddWithValue("@departTime", departureDateTime.TimeOfDay); // Time part
                     cmd.ExecuteNonQuery();
 
                     // Retrieve the last inserted flight_id using LAST_INSERT_ID()
@@ -263,10 +263,10 @@ namespace Airline
             if (dt != null)
             {
                 DataRow newRow = dt.NewRow();
-                newRow["departure_flight_id"] = flightId;
-                newRow["flight_number"] = flightNumber;
-                newRow["departure_date"] = departureDateTime.Date;
-                newRow["departure_time"] = departureDateTime.ToString("HH:mm"); // Make sure to format as HH:mm
+                newRow["depart_flight_id"] = flightId;
+                newRow["depart_flight_number"] = flightNumber;
+                newRow["depart_date"] = departureDateTime.Date;
+                newRow["depart_time"] = departureDateTime.ToString("HH:mm"); // Make sure to format as HH:mm
                 dt.Rows.Add(newRow);
             }
             else
@@ -282,9 +282,9 @@ namespace Airline
             // Flight ID Column
             DataGridViewTextBoxColumn colFlightID = new DataGridViewTextBoxColumn
             {
-                Name = "departure_flight_id",
+                Name = "depart_flight_id",
                 HeaderText = "Departure Flight ID",
-                DataPropertyName = "departure_flight_id", // This binds to the flight_id column in the DataTable
+                DataPropertyName = "depart_flight_id", // This binds to the flight_id column in the DataTable
                 Width = 100,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
@@ -292,9 +292,9 @@ namespace Airline
             // Flight Number Column
             DataGridViewTextBoxColumn colFlightNumber = new DataGridViewTextBoxColumn
             {
-                Name = "flight_number",
-                HeaderText = "Flight Number",
-                DataPropertyName = "flight_number",
+                Name = "depart_flight_number",
+                HeaderText = "Departure Flight Number",
+                DataPropertyName = "depart_flight_number",
                 Width = 300,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
@@ -302,9 +302,9 @@ namespace Airline
             // Departure Date Column
             DataGridViewTextBoxColumn colDepartureDate = new DataGridViewTextBoxColumn
             {
-                Name = "departure_date",
+                Name = "depart_date",
                 HeaderText = "Departure Date",
-                DataPropertyName = "departure_date",
+                DataPropertyName = "depart_date",
                 Width = 225,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "yyyy-MM-dd" }
             };
@@ -312,9 +312,9 @@ namespace Airline
             // Departure Time Column
             DataGridViewTextBoxColumn colDepartureTime = new DataGridViewTextBoxColumn
             {
-                Name = "departure_time",
+                Name = "depart_time",
                 HeaderText = "Departure Time",
-                DataPropertyName = "departure_time",
+                DataPropertyName = "depart_time",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "HH:mm" }
             };
@@ -333,7 +333,8 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT departure_flight_id, flight_number, departure_date, departure_time FROM depart_flights ORDER BY departure_date, departure_time ASC";
+                    string query = "SELECT depart_flight_id, depart_flight_number, depart_date, depart_time FROM depart_flights ORDER BY depart_date, depart_time ASC";
+
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -344,8 +345,8 @@ namespace Airline
                             // Format departure_time as HH:mm
                             foreach (DataRow row in dt.Rows)
                             {
-                                TimeSpan departureTime = (TimeSpan)row["departure_time"];
-                                row["departure_time"] = departureTime.ToString(@"hh\:mm");
+                                TimeSpan departureTime = (TimeSpan)row["depart_time"];
+                                row["depart_time"] = departureTime.ToString(@"hh\:mm");
                             }
 
                             dgDepartDateAndTime.DataSource = dt;
@@ -376,9 +377,9 @@ namespace Airline
             // Flight Number Column
             DataGridViewTextBoxColumn colFlightNumber = new DataGridViewTextBoxColumn
             {
-                Name = "flight_number",
-                HeaderText = "Flight Number",
-                DataPropertyName = "flight_number",
+                Name = "return_flight_number",
+                HeaderText = "Return Flight Number",
+                DataPropertyName = "return_flight_number",
                 Width = 300,
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
@@ -417,7 +418,8 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT return_flight_id, flight_number, return_date, return_time FROM return_flights ORDER BY return_date, return_time ASC";
+                    string query = "SELECT return_flight_id, return_flight_number, return_date, return_time FROM return_flights ORDER BY return_date, return_time ASC";
+
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -470,7 +472,8 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO return_flights (flight_number, return_date, return_time) VALUES (@flightNumber, @returnDate, @returnTime)";
+                    string query = "INSERT INTO return_flights (return_flight_number, return_date, return_time) VALUES (@flightNumber, @returnDate, @returnTime)";
+
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
                     cmd.Parameters.AddWithValue("@returnDate", returnDate);

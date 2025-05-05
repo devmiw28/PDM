@@ -92,6 +92,7 @@ namespace Airline
             txtDepartDateAndTime.Text = $"{DepartDate} {DepartTime}";
             txtReturnDateAndTime.Text = TripType == "Round-trip" ? $"{ReturnDate} {ReturnTime}" : "N/A";
             txtFlightNum.Text = FlightNumber;
+            txtReturnFlightNum.Text = TripType == "Round-trip" ? ReturnFlightNumber : "N/A";
             txtTotalPrice.Text = TotalPrice.ToString("C2");
         }
     }
