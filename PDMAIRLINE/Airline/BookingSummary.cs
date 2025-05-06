@@ -17,7 +17,8 @@ namespace Airline
 
         public string TripType { get; set; }
         public string Destination { get; set; }
-      
+        public string Origin { get; set; }
+
         public string NumAdults { get; set; }
         public string NumChildren { get; set; }
         public string NumInfants { get; set; }
@@ -53,6 +54,8 @@ namespace Airline
             {
                 payment = new Payment
                 {
+                    Origin = this.Origin,
+                    Destination = this.Destination,
                     TotalPrice = this.TotalPrice,
                     DepartureSeats = this.SelectedDepartureSeats,
                     ReturnSeats = this.SelectedReturnSeats,
@@ -72,6 +75,7 @@ namespace Airline
                 payment.BringToFront();
                 payment.Focus();
             }
+            this.Hide();
 
         }
 
@@ -85,8 +89,8 @@ namespace Airline
             txtNumAdults.Text = NumAdults;
             txtNumChildren.Text = NumChildren;
             txtNumInfants.Text = NumInfants;
-            txtPickedSeats.Text = PickedSeats; 
-            txtFlightLoc.Text = Destination;  
+            txtPickedSeats.Text = PickedSeats;
+            txtFlightLoc.Text = $"{Origin} to {Destination}";
             txtTripType.Text = TripType;
             txtFlightClass.Text = FlightClass;
             txtDepartDateAndTime.Text = $"{DepartDate} {DepartTime}";

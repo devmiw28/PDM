@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Airline
 {
@@ -19,7 +20,6 @@ namespace Airline
         public int NumInfants { get; set; }
 
         public string TripType { get; set; }
-        public string Destination { get; set; }
         public string DepartDate { get; set; }
         public string DepartTime { get; set; }
         public string ReturnTime { get; set; }
@@ -29,16 +29,23 @@ namespace Airline
         public string FlightNumber { get; set; }
         public string ReturnFlightNumber { get; set; }
 
+        public string Origin { get; set; }
+        public string Destination { get; set; }
+
+
         private bool isSelectingReturn = false;
         private List<string> selectedDepartureSeats = new List<string>();
         private List<string> selectedReturnSeats = new List<string>();
         private string selectedClassDeparture = "";
         private string selectedClassReturn = "";
 
+        private List<string> occupiedSeats = new List<string>();
+
 
 
         public SeatSelection()
         {
+
             InitializeComponent();
             Load += SeatSelection_Load;
 
@@ -71,7 +78,8 @@ namespace Airline
             txtNumChildren.Text = NumChildren.ToString(); // Display the number of childs
             txtNumInfants.Text = NumInfants.ToString();
             txtPickedSeats.Text = "";
-
+            LoadOccupiedSeats();
+            btnBack.Visible = false;
             if (!string.IsNullOrEmpty(FlightNumber))
             {
                 txtFlightNumber.Text = FlightNumber;
@@ -97,6 +105,51 @@ namespace Airline
             lblSeatTitle.Text = "Select Seats for Departure Flight";
         }
 
+        private void LoadOccupiedSeats()
+        {
+            string connectionString = "server=localhost;database=pdm_airline_db1;user=root;password=;";
+            string query = "SELECT seat_code FROM seat_selected WHERE flight_number = @flightNumber AND trip_leg = @tripLeg";
+
+            occupiedSeats = new List<string>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@flightNumber", isSelectingReturn ? ReturnFlightNumber : FlightNumber);
+                    cmd.Parameters.AddWithValue("@tripLeg", isSelectingReturn ? "Return" : "Departure");
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            occupiedSeats.Add(reader.GetString("seat_code"));
+                        }
+                    }
+                }
+            }
+
+            // Loop through checkboxes and disable + color occupied seats
+            foreach (Control ctrl in panelSeats.Controls)
+            {
+                if (ctrl is CheckBox)
+                {
+                    CheckBox seatCheckbox = (CheckBox)ctrl;
+
+                    if (seatCheckbox.Tag != null)
+                    {
+                        string seatCode = seatCheckbox.Tag.ToString();
+                        if (occupiedSeats.Contains(seatCode))
+                        {
+                            seatCheckbox.Enabled = false;
+                            seatCheckbox.BackColor = Color.Red;
+                        }
+                    }
+                }
+            }
+        }
+
         private void btnProceed_Click(object sender, EventArgs e)
         {
             BookingSummary bookingsummary = Application.OpenForms.OfType<BookingSummary>().FirstOrDefault();
@@ -117,10 +170,29 @@ namespace Airline
                     .ToList();
 
                 selectedClassReturn = cmbFlightClass.SelectedItem?.ToString();
-
+          
                 if (selectedReturnSeats.Count != AllowedSeatCount)
                 {
                     MessageBox.Show($"Please select exactly {AllowedSeatCount} seats for the return flight.");
+                    return;
+                }
+            }
+
+            if (TripType == "One-way")
+            {
+                // Make sure to get selected departure seats
+                selectedDepartureSeats = panelSeats.Controls
+                    .OfType<CheckBox>()
+                    .Where(cb => cb.Checked)
+                    .Select(cb => cb.Tag?.ToString())
+                    .Where(tag => !string.IsNullOrEmpty(tag))
+                    .ToList();
+
+                selectedClassDeparture = cmbFlightClass.SelectedItem?.ToString();
+
+                if (selectedDepartureSeats.Count != AllowedSeatCount)
+                {
+                    MessageBox.Show($"Please select exactly {AllowedSeatCount} seats.");
                     return;
                 }
             }
@@ -143,6 +215,7 @@ namespace Airline
                     NumChildren = this.NumChildren.ToString(),
                     NumInfants = this.NumInfants.ToString(),
                     TripType = this.TripType,
+                    Origin = this.Origin,
                     Destination = this.Destination,
                     DepartDate = this.DepartDate,
                     ReturnDate = this.ReturnDate,
@@ -168,6 +241,7 @@ namespace Airline
                 bookingsummary.BringToFront();
                 bookingsummary.Focus();
             }
+            this.Hide();
 
         }
 
@@ -219,20 +293,22 @@ namespace Airline
 
                             if (int.TryParse(rowStr, out rowNumber))
                             {
+                                bool isOccupied = occupiedSeats.Contains(seatCheckbox.Tag?.ToString());
                                 switch (selectedClass)
                                 {
                                     case "First Class":
-                                        seatCheckbox.Enabled = (rowNumber >= 1 && rowNumber <= 3);
+                                        seatCheckbox.Enabled = !isOccupied && (rowNumber >= 1 && rowNumber <= 3);
                                         break;
                                     case "Business Class":
-                                        seatCheckbox.Enabled = (rowNumber >= 4 && rowNumber <= 10);
+                                        seatCheckbox.Enabled = !isOccupied && (rowNumber >= 4 && rowNumber <= 10);
                                         break;
                                     case "Economy Class":
-                                        seatCheckbox.Enabled = (rowNumber >= 11 && rowNumber <= 22);
+                                        seatCheckbox.Enabled = !isOccupied && (rowNumber >= 11 && rowNumber <= 22);
                                         break;
                                 }
 
-                                seatCheckbox.BackColor = seatCheckbox.Enabled ? Color.White : Color.LightGray;
+                                seatCheckbox.BackColor = !seatCheckbox.Enabled && isOccupied ? Color.Red :
+                                seatCheckbox.Enabled ? Color.Green : Color.LightGray;
                             }
                         }
                     }
@@ -291,7 +367,6 @@ namespace Airline
                         cmbFlightClass.SelectedItem.ToString() != seatClass)
                     {
                         cmbFlightClass.SelectedItem = seatClass;
-                        MessageBox.Show($"Flight class automatically changed to {seatClass} for this seat.");
 
                         try
                         {
@@ -379,6 +454,14 @@ namespace Airline
                     return;
                 }
 
+                cmbFlightClass.SelectedItem = null;
+                txtPickedSeats.Text = "";
+                isSelectingReturn = true;
+                btnBack.Visible = true;
+                btnNext.Visible = false;
+
+                lblSeatTitle.Text = "Select Seats for Return Flight";
+
                 // Reset seat selection for return
                 foreach (Control ctrl in panelSeats.Controls)
                 {
@@ -387,17 +470,42 @@ namespace Airline
                         CheckBox seatCheckbox = (CheckBox)ctrl;
                         seatCheckbox.Checked = false;
                         seatCheckbox.Enabled = true;
+                        seatCheckbox.BackColor = Color.Green;
                     }
                 }
 
-                cmbFlightClass.SelectedItem = null;
-                txtPickedSeats.Text = "";
-                isSelectingReturn = true;
-
-                lblSeatTitle.Text = "Select Seats for Return Flight";
+                LoadOccupiedSeats();
             }
+
          }
 
-       
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            // Reset seats for departure selection
+            foreach (Control ctrl in panelSeats.Controls)
+            {
+                if (ctrl is CheckBox)
+                 {
+                    CheckBox seatCheckbox = (CheckBox)ctrl;
+                    seatCheckbox.Checked = false;
+                    seatCheckbox.Enabled = true;
+                    seatCheckbox.BackColor = Color.Green;
+                }
+            }
+
+            cmbFlightClass.SelectedItem = null;
+            txtPickedSeats.Text = "";
+            isSelectingReturn = false;
+
+            lblSeatTitle.Text = "Select Seats for Departure Flight";
+
+            // Show/hide navigation buttons
+            btnNext.Visible = true;
+            btnBack.Visible = false;
+
+            LoadOccupiedSeats();
+        }
+
+
     }
 }

@@ -33,16 +33,10 @@
             this.pnlPayment = new System.Windows.Forms.Panel();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
-            this.pnlCredit = new System.Windows.Forms.Panel();
-            this.txtCardNum = new System.Windows.Forms.TextBox();
-            this.lblCCV = new System.Windows.Forms.Label();
-            this.lblCardNum = new System.Windows.Forms.Label();
-            this.txtCCVNum = new System.Windows.Forms.TextBox();
-            this.rdbEWallet = new System.Windows.Forms.RadioButton();
             this.pnlEWallet = new System.Windows.Forms.Panel();
             this.chkPayMaya = new System.Windows.Forms.CheckBox();
             this.chkGcash = new System.Windows.Forms.CheckBox();
-            this.rdbCredit = new System.Windows.Forms.RadioButton();
+            this.rdbEWallet = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Where = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -58,7 +52,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.pnlPayment.SuspendLayout();
-            this.pnlCredit.SuspendLayout();
             this.pnlEWallet.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -97,9 +90,7 @@
             this.pnlPayment.Controls.Add(this.lblTotalPrice);
             this.pnlPayment.Controls.Add(this.txtTotalPrice);
             this.pnlPayment.Controls.Add(this.pnlEWallet);
-            this.pnlPayment.Controls.Add(this.pnlCredit);
             this.pnlPayment.Controls.Add(this.rdbEWallet);
-            this.pnlPayment.Controls.Add(this.rdbCredit);
             this.pnlPayment.Controls.Add(this.panel5);
             this.pnlPayment.Location = new System.Drawing.Point(280, 387);
             this.pnlPayment.Margin = new System.Windows.Forms.Padding(2);
@@ -113,7 +104,7 @@
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblTotalPrice.Location = new System.Drawing.Point(283, 270);
+            this.lblTotalPrice.Location = new System.Drawing.Point(258, 151);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(111, 25);
@@ -125,82 +116,12 @@
             this.txtTotalPrice.BackColor = System.Drawing.Color.White;
             this.txtTotalPrice.Enabled = false;
             this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtTotalPrice.Location = new System.Drawing.Point(398, 268);
+            this.txtTotalPrice.Location = new System.Drawing.Point(373, 149);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(167, 29);
             this.txtTotalPrice.TabIndex = 54;
-            // 
-            // pnlCredit
-            // 
-            this.pnlCredit.Controls.Add(this.txtCardNum);
-            this.pnlCredit.Controls.Add(this.lblCCV);
-            this.pnlCredit.Controls.Add(this.lblCardNum);
-            this.pnlCredit.Controls.Add(this.txtCCVNum);
-            this.pnlCredit.Location = new System.Drawing.Point(284, 124);
-            this.pnlCredit.Name = "pnlCredit";
-            this.pnlCredit.Size = new System.Drawing.Size(307, 108);
-            this.pnlCredit.TabIndex = 54;
-            // 
-            // txtCardNum
-            // 
-            this.txtCardNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtCardNum.Location = new System.Drawing.Point(145, 24);
-            this.txtCardNum.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCardNum.Name = "txtCardNum";
-            this.txtCardNum.Size = new System.Drawing.Size(137, 29);
-            this.txtCardNum.TabIndex = 39;
-            // 
-            // lblCCV
-            // 
-            this.lblCCV.AutoSize = true;
-            this.lblCCV.BackColor = System.Drawing.Color.Transparent;
-            this.lblCCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblCCV.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblCCV.Location = new System.Drawing.Point(80, 66);
-            this.lblCCV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCCV.Name = "lblCCV";
-            this.lblCCV.Size = new System.Drawing.Size(61, 25);
-            this.lblCCV.TabIndex = 45;
-            this.lblCCV.Text = "CVV:";
-            // 
-            // lblCardNum
-            // 
-            this.lblCardNum.AutoSize = true;
-            this.lblCardNum.BackColor = System.Drawing.Color.Transparent;
-            this.lblCardNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblCardNum.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblCardNum.Location = new System.Drawing.Point(6, 24);
-            this.lblCardNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCardNum.Name = "lblCardNum";
-            this.lblCardNum.Size = new System.Drawing.Size(135, 25);
-            this.lblCardNum.TabIndex = 38;
-            this.lblCardNum.Text = "Card Number:";
-            // 
-            // txtCCVNum
-            // 
-            this.txtCCVNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtCCVNum.Location = new System.Drawing.Point(145, 64);
-            this.txtCCVNum.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCCVNum.Name = "txtCCVNum";
-            this.txtCCVNum.Size = new System.Drawing.Size(137, 29);
-            this.txtCCVNum.TabIndex = 41;
-            // 
-            // rdbEWallet
-            // 
-            this.rdbEWallet.AutoSize = true;
-            this.rdbEWallet.Checked = true;
-            this.rdbEWallet.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.rdbEWallet.Location = new System.Drawing.Point(21, 73);
-            this.rdbEWallet.Margin = new System.Windows.Forms.Padding(2);
-            this.rdbEWallet.Name = "rdbEWallet";
-            this.rdbEWallet.Size = new System.Drawing.Size(65, 17);
-            this.rdbEWallet.TabIndex = 46;
-            this.rdbEWallet.TabStop = true;
-            this.rdbEWallet.Text = "E-Wallet";
-            this.rdbEWallet.UseVisualStyleBackColor = true;
-            this.rdbEWallet.CheckedChanged += new System.EventHandler(this.rdbEWallet_CheckedChanged);
             // 
             // pnlEWallet
             // 
@@ -239,18 +160,20 @@
             this.chkGcash.UseVisualStyleBackColor = true;
             this.chkGcash.CheckedChanged += new System.EventHandler(this.chkGcash_CheckedChanged);
             // 
-            // rdbCredit
+            // rdbEWallet
             // 
-            this.rdbCredit.AutoSize = true;
-            this.rdbCredit.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.rdbCredit.Location = new System.Drawing.Point(284, 73);
-            this.rdbCredit.Margin = new System.Windows.Forms.Padding(2);
-            this.rdbCredit.Name = "rdbCredit";
-            this.rdbCredit.Size = new System.Drawing.Size(52, 17);
-            this.rdbCredit.TabIndex = 37;
-            this.rdbCredit.Text = "Credit";
-            this.rdbCredit.UseVisualStyleBackColor = true;
-            this.rdbCredit.CheckedChanged += new System.EventHandler(this.rdbCredit_CheckedChanged);
+            this.rdbEWallet.AutoSize = true;
+            this.rdbEWallet.Checked = true;
+            this.rdbEWallet.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.rdbEWallet.Location = new System.Drawing.Point(21, 73);
+            this.rdbEWallet.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbEWallet.Name = "rdbEWallet";
+            this.rdbEWallet.Size = new System.Drawing.Size(65, 17);
+            this.rdbEWallet.TabIndex = 46;
+            this.rdbEWallet.TabStop = true;
+            this.rdbEWallet.Text = "E-Wallet";
+            this.rdbEWallet.UseVisualStyleBackColor = true;
+            this.rdbEWallet.CheckedChanged += new System.EventHandler(this.rdbEWallet_CheckedChanged);
             // 
             // panel2
             // 
@@ -441,8 +364,6 @@
             this.panel5.PerformLayout();
             this.pnlPayment.ResumeLayout(false);
             this.pnlPayment.PerformLayout();
-            this.pnlCredit.ResumeLayout(false);
-            this.pnlCredit.PerformLayout();
             this.pnlEWallet.ResumeLayout(false);
             this.pnlEWallet.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -461,10 +382,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlPayment;
-        private System.Windows.Forms.TextBox txtCCVNum;
-        private System.Windows.Forms.TextBox txtCardNum;
-        private System.Windows.Forms.Label lblCardNum;
-        private System.Windows.Forms.RadioButton rdbCredit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Where;
         private System.Windows.Forms.Panel pnlHeader;
@@ -472,7 +389,6 @@
         private System.Windows.Forms.Label Search;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.RadioButton rdbEWallet;
-        private System.Windows.Forms.Label lblCCV;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPhoneNum;
         private System.Windows.Forms.Label lblPhoneNum;
@@ -482,7 +398,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chkPayMaya;
         private System.Windows.Forms.CheckBox chkGcash;
-        private System.Windows.Forms.Panel pnlCredit;
         private System.Windows.Forms.Panel pnlEWallet;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TextBox txtTotalPrice;

@@ -27,13 +27,16 @@ namespace Airline
         public string FlightClass { get; set; }
         public int UserId { get; set; }
 
+        public string Origin { get; set; }
+        public string Destination { get; set; }
+
+
 
         public Payment()
         {
             InitializeComponent();
             this.Load += Payment_Load;
             chkGcash.Checked = true;
-            pnlCredit.Enabled = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -47,11 +50,7 @@ namespace Airline
 
             string paymentMethod = "";
 
-            if (rdbCredit.Checked)
-            {
-                paymentMethod = "credit_card";
-            }
-            else if (rdbEWallet.Checked)
+            if (rdbEWallet.Checked)
             {
                 if (chkGcash.Checked)
                     paymentMethod = "gcash";
@@ -87,11 +86,12 @@ namespace Airline
                 {
                     // 1. Record the payment
                     string paymentQuery = @"INSERT INTO payments 
-                    (payment_method, payment_amount, transaction_reference, payment_status) 
-                    VALUES (@method, @amount, @ref, 'completed')";
-
+                    (user_id, payment_method, payment_amount, transaction_reference, payment_status) 
+                    VALUES (@userId, @method, @amount, @ref, 'completed')";
+                    
                     using (MySqlCommand cmd = new MySqlCommand(paymentQuery, conn, transaction))
                     {
+                        cmd.Parameters.AddWithValue("@userId", UserId);
                         cmd.Parameters.AddWithValue("@method", paymentMethod);
                         cmd.Parameters.AddWithValue("@amount", paymentAmount);
                         cmd.Parameters.AddWithValue("@ref", transactionRef);
@@ -134,10 +134,40 @@ namespace Airline
                         }
                     }
 
+                    // 3. Insert into bookings
+                    string bookingReference = "BOOK" + DateTime.Now.ToString("yyyyMMddHHmmss") + new Random().Next(1000, 9999);
+                    string bookingQuery = @"INSERT INTO bookings (user_id, depart_flight_id, return_flight_id, booking_reference, 
+                                            trip_type, origin, destination, total_price, status) 
+                                            VALUES (@user_id, @depart_flight_id, @return_flight_id, @booking_reference, 
+                                            @trip_type, @origin, @destination, @total_price, @status)";
+
+                    // Get the correct flight_id values from the depart_flights and return_flights tables
+                    long departFlightId = GetDepartFlightId(FlightNumberDeparture);  // Get depart_flight_id from depart_flights table
+                    long? returnFlightId = TripType == "Round-trip" ? (long?)GetReturnFlightId(FlightNumberReturn) : null;  // Nullable long for returnFlightId
+
+                    using (MySqlCommand cmd = new MySqlCommand(bookingQuery, conn, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@user_id", UserId);
+                        cmd.Parameters.AddWithValue("@depart_flight_id", departFlightId);  // Use depart_flight_id
+                        cmd.Parameters.AddWithValue("@return_flight_id", returnFlightId.HasValue ? (object)returnFlightId.Value : DBNull.Value);  // Nullable return_flight_id
+                        cmd.Parameters.AddWithValue("@booking_reference", bookingReference);
+                        cmd.Parameters.AddWithValue("@trip_type", TripType);
+                        cmd.Parameters.AddWithValue("@origin",Origin);
+                        cmd.Parameters.AddWithValue("@destination",Destination);
+                        cmd.Parameters.AddWithValue("@total_price", TotalPrice);
+                        cmd.Parameters.AddWithValue("@status", "confirmed");
+                        cmd.ExecuteNonQuery();
+                    }
+
+
+
                     // Commit transaction if everything succeeded
                     transaction.Commit();
                     MessageBox.Show("Payment and seat selection recorded successfully!\nTransaction Reference: " + transactionRef,
                                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    Homepage homeForm = new Homepage();
+                    homeForm.Show();
                 }
                 catch (Exception ex)
                 {
@@ -147,30 +177,61 @@ namespace Airline
             }
         }
 
+        private long GetDepartFlightId(string flightNumber)
+        {
+            long departFlightId = -1;
+
+            string query = "SELECT depart_flight_id FROM depart_flights WHERE depart_flight_number = @flightNumber";  // Use 'depart_flight_number'
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        departFlightId = Convert.ToInt64(result);
+                    }
+                }
+            }
+
+            return departFlightId;
+        }
+
+        private long GetReturnFlightId(string flightNumber)
+        {
+            long returnFlightId = -1;
+
+            string query = "SELECT return_flight_id FROM return_flights WHERE return_flight_number = @flightNumber";  // Use 'return_flight_number'
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        returnFlightId = Convert.ToInt64(result);
+                    }
+                }
+            }
+
+            return returnFlightId;
+        }
+
         private void rdbEWallet_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbEWallet.Checked)
             {
                 pnlEWallet.Enabled = true;
-                pnlCredit.Enabled = false;
-                txtCardNum.Text = "";
-                txtCCVNum.Text = "";
+                
             }
             
             chkGcash.Checked = true;
-
-        }
-
-        private void rdbCredit_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbCredit.Checked)
-            {
-                pnlEWallet.Enabled = false;
-                pnlCredit.Enabled = true;
-                chkGcash.Checked = false;
-                chkPayMaya.Checked = false;
-            }
-            
         }
 
         private void chkGcash_CheckedChanged(object sender, EventArgs e)

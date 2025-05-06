@@ -31,13 +31,13 @@ namespace Airline
         {
             
             InitializeComponent();
-            
-            // Subscribe to the SelectedIndexChanged event
-            CmbLoc1.SelectedIndexChanged -= CmbLoc1_SelectedIndexChanged;
-            CmbLoc2.SelectedIndexChanged -= CmbLoc2_SelectedIndexChanged;
+
+            CmbLoc1.SelectedIndexChanged += CmbLoc1_SelectedIndexChanged;
+            CmbLoc2.SelectedIndexChanged += CmbLoc2_SelectedIndexChanged;
 
 
         }
+
 
         private void SearchFlight_Load(object sender, EventArgs e)
         {
@@ -133,8 +133,6 @@ namespace Airline
 
         private void CmbLoc1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
             // Check if an item is selected
             if (CmbLoc1.SelectedItem != null)
             {
@@ -170,14 +168,10 @@ namespace Airline
             // Prevent processing when clearing ComboBox
             if (isClearingSelection)
                 return;
-
         }
 
         private void CmbLoc2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-            // Check if an item is selected
+        {// Check if an item is selected
             if (CmbLoc2.SelectedItem != null)
             {
                 string selectedLocation = CmbLoc2.SelectedItem.ToString();
@@ -214,13 +208,11 @@ namespace Airline
 
         private void LblXFrom_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("LblXFrom Clicked");
             CmbLoc1.SelectedIndex = -1;
         }
 
         private void LblXTo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("LblXTo Clicked");
             CmbLoc2.SelectedIndex = -1;
         }
 
@@ -302,23 +294,31 @@ namespace Airline
                     return;
                 }
 
-
-
-                // Check that return time is later than departure time
-                DateTime departTime = DateTime.Parse(selectedDepartTime);
-                DateTime returnTime = DateTime.Parse(selectedReturnTime);
-
-                // Calculate the minimum return time (12 hours after departure)
-                DateTime minReturnTime = departTime.AddHours(12);
-
-                // Check if the return time is earlier than the minimum required time
-                if (returnTime < minReturnTime)
+                if (dtpReturnDate.Value.Date <= dtpDepartDate.Value.Date)
                 {
-                    MessageBox.Show("Return time must be at least 12 hours after departure time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
+                    // Ensure that the return date is later than the departure date.
+                    if (dtpReturnDate.Value.Date == dtpDepartDate.Value.Date)
+                    {
+                        DateTime departTime = DateTime.Parse(selectedDepartTime);
+                        DateTime returnTime = DateTime.Parse(selectedReturnTime);
 
+                        // Calculate the minimum return time (12 hours after departure)
+                        DateTime minReturnTime = departTime.AddHours(12);
+
+                        // Calculate the time difference between return and depart time
+                        TimeSpan timeDifference = returnTime - departTime;
+
+                        // Check if return time is at least 12 hours after departure time
+                        if (timeDifference.TotalHours < 12)
+                        {
+                            MessageBox.Show("Return time must be at least 12 hours after departure time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return; // Exit the method if the return time is not valid
+                        }
+                    }
+                }
+                
+            }
+            
             // Prepare the SeatSelection form and pass the necessary data
             SeatSelection seatselection = Application.OpenForms.OfType<SeatSelection>().FirstOrDefault();
 
@@ -331,7 +331,8 @@ namespace Airline
                     AllowedSeatCount = totalSeats,
                     NumChildren = childCount,
                     NumInfants = infantCount,
-                    Destination = $"{CmbLoc1.Text} to {CmbLoc2.Text}",
+                    Origin = CmbLoc1.Text,
+                    Destination = CmbLoc2.Text,
                     TripType = CmbTrip.SelectedItem?.ToString(),
                     DepartTime = selectedDepartTime, // Pass selected depart time
                     FlightNumber = departFlightNumber, // Pass departure flight number
@@ -354,7 +355,7 @@ namespace Airline
                 seatselection.Focus();
             }
 
-            this.Hide(); // Hide the current SearchFlight form
+            this.Hide(); 
 
         }
         

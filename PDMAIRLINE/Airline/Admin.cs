@@ -34,11 +34,15 @@ namespace Airline
             SetupFlightGridColumns();
             SetupReturnFlightGridColumns();
             SetupPaymentHistoryGridColumns();
+            SetupBookingHistoryGridColumns();
+            SetupSeatSelectedGridColumns();
 
             LoadFlightData();
             LoadReturnFlightData();
             LoadPaymentHistoryData();
             LoadUserData();
+            LoadBookingHistoryData();
+            LoadSeatSelectedData();
 
             DepartFlightAdded += Admin_DepartFlightAdded;
             ReturnFlightAdded += Admin_ReturnFlightAdded;
@@ -179,7 +183,8 @@ namespace Airline
             applyStyle(dgDepartDateAndTime);
             applyStyle(dgReturnDateAndTime);
             applyStyle(dgPaymentHistory);
-
+            applyStyle(dgBookingHistory);
+            applyStyle(dgSeatSelected);
         }
 
 
@@ -507,6 +512,16 @@ namespace Airline
                 DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
             };
 
+            // User ID Column
+            DataGridViewTextBoxColumn colUserID = new DataGridViewTextBoxColumn
+            {
+                Name = "user_id",
+                HeaderText = "User ID",
+                DataPropertyName = "user_id", 
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
             // Payment Method Column
             DataGridViewTextBoxColumn colPaymentMethod = new DataGridViewTextBoxColumn
             {
@@ -559,6 +574,7 @@ namespace Airline
 
             // Add columns to the DataGridView
             dgPaymentHistory.Columns.Add(colPaymentID);
+            dgPaymentHistory.Columns.Add(colUserID);
             dgPaymentHistory.Columns.Add(colPaymentMethod);
             dgPaymentHistory.Columns.Add(colPaymentAmount);
             dgPaymentHistory.Columns.Add(colPaymentDate);
@@ -573,7 +589,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT payment_id, payment_method, payment_amount, payment_date, payment_status, transaction_reference FROM payments ORDER BY payment_date DESC";
+                    string query = "SELECT payment_id, user_id, payment_method, payment_amount, payment_date, payment_status, transaction_reference FROM payments ORDER BY payment_date ASC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -590,6 +606,261 @@ namespace Airline
                 MessageBox.Show("Error loading payment history: " + ex.Message);
             }
         }
-        
+
+        private void SetupBookingHistoryGridColumns()
+        {
+            dgBookingHistory.AutoGenerateColumns = false;
+
+            
+            DataGridViewTextBoxColumn colBookingID = new DataGridViewTextBoxColumn
+            {
+                Name = "booking_id",
+                HeaderText = "Booking ID",
+                DataPropertyName = "booking_id", // This binds to the booking_id column in the DataTable
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            
+            DataGridViewTextBoxColumn colUserID = new DataGridViewTextBoxColumn
+            {
+                Name = "user_id",
+                HeaderText = "User ID",
+                DataPropertyName = "user_id",
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Depart Flight ID Column
+            DataGridViewTextBoxColumn colDepartFlightID = new DataGridViewTextBoxColumn
+            {
+                Name = "depart_flight_id",
+                HeaderText = "Depart Flight Id",
+                DataPropertyName = "depart_flight_id",
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Return Flight ID Column
+            DataGridViewTextBoxColumn colReturnFlightID = new DataGridViewTextBoxColumn
+            {
+                Name = "return_flight_id",
+                HeaderText = "Return Flight Id",
+                DataPropertyName = "return_flight_id",
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Booking Reference Column
+            DataGridViewTextBoxColumn colBookingReference = new DataGridViewTextBoxColumn
+            {
+                Name = "booking_reference",
+                HeaderText = "Booking Reference",
+                DataPropertyName = "booking_reference",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter}
+            };
+
+            // Booking Date Column
+            DataGridViewTextBoxColumn colBookingDate = new DataGridViewTextBoxColumn
+            {
+                Name = "booking_date",
+                HeaderText = "Booking Date",
+                DataPropertyName = "booking_date",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter, Format = "yyyy-MM-dd" }
+            };
+
+            DataGridViewTextBoxColumn colrTripType = new DataGridViewTextBoxColumn
+            {
+                Name = "trip_type",
+                HeaderText = "Trip Type",
+                DataPropertyName = "trip_type", 
+                Width = 200,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colOrigin = new DataGridViewTextBoxColumn
+            {
+                Name = "origin",
+                HeaderText = "Origin",
+                DataPropertyName = "origin", 
+                Width = 200,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colDestination = new DataGridViewTextBoxColumn
+            {
+                Name = "destination",
+                HeaderText = "Destination",
+                DataPropertyName = "destination", 
+                Width = 200,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+            // Total Price Column
+            DataGridViewTextBoxColumn colTotalPrice = new DataGridViewTextBoxColumn
+            {
+                Name = "total_price",
+                HeaderText = "Total Price",
+                DataPropertyName = "total_price",
+                Width = 200,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Status Column
+            DataGridViewTextBoxColumn colStatus = new DataGridViewTextBoxColumn
+            {
+                Name = "status",
+                HeaderText = "Status",
+                DataPropertyName = "status",
+                Width = 200,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            // Other necessary columns can be added here...
+
+            // Add columns to the grid
+            dgBookingHistory.Columns.Add(colBookingID);
+            dgBookingHistory.Columns.Add(colUserID);
+            dgBookingHistory.Columns.Add(colDepartFlightID);
+            dgBookingHistory.Columns.Add(colReturnFlightID);
+            dgBookingHistory.Columns.Add(colBookingReference);
+            dgBookingHistory.Columns.Add(colBookingDate);
+            dgBookingHistory.Columns.Add(colrTripType);
+            dgBookingHistory.Columns.Add(colOrigin);
+            dgBookingHistory.Columns.Add(colDestination);
+            dgBookingHistory.Columns.Add(colTotalPrice);
+            dgBookingHistory.Columns.Add(colStatus);
+            // Add any additional columns as needed
+        }
+
+        private void LoadBookingHistoryData()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT booking_id, user_id, depart_flight_id, return_flight_id, booking_reference, booking_date, trip_type, origin, destination, total_price, status FROM bookings ORDER BY booking_date ASC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            dgBookingHistory.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SetupSeatSelectedGridColumns()
+        {
+            dgSeatSelected.AutoGenerateColumns = false;
+
+            DataGridViewTextBoxColumn colSeatSelectedID = new DataGridViewTextBoxColumn
+            {
+                Name = "seat_selected_id",
+                HeaderText = "Seat Selected ID",
+                DataPropertyName = "seat_selected_id",
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colUserID = new DataGridViewTextBoxColumn
+            {
+                Name = "user_id",
+                HeaderText = "User ID",
+                DataPropertyName = "user_id",
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colFlightNumber = new DataGridViewTextBoxColumn
+            {
+                Name = "flight_number",
+                HeaderText = "Flight Number",
+                DataPropertyName = "flight_number",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colDateTime = new DataGridViewTextBoxColumn
+            {
+                Name = "datetime",
+                HeaderText = "Flight Date and Time",
+                DataPropertyName = "datetime",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter}
+            };
+
+            DataGridViewTextBoxColumn colSeatCode = new DataGridViewTextBoxColumn
+            {
+                Name = "seat_code",
+                HeaderText = "Seat Code",
+                DataPropertyName = "seat_code",
+                Width = 100,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colTripLeg = new DataGridViewTextBoxColumn
+            {
+                Name = "trip_leg",
+                HeaderText = "Trip Leg",
+                DataPropertyName = "trip_leg",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            DataGridViewTextBoxColumn colCreatedAt = new DataGridViewTextBoxColumn
+            {
+                Name = "created_at",
+                HeaderText = "Booking Date and Time",
+                DataPropertyName = "created_at",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+            };
+
+            dgSeatSelected.Columns.Add(colSeatSelectedID);
+            dgSeatSelected.Columns.Add(colUserID);
+            dgSeatSelected.Columns.Add(colFlightNumber);
+            dgSeatSelected.Columns.Add(colDateTime);
+            dgSeatSelected.Columns.Add(colSeatCode);
+            dgSeatSelected.Columns.Add(colTripLeg);
+            dgSeatSelected.Columns.Add(colCreatedAt);
+        }
+
+        private void LoadSeatSelectedData()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT seat_selected_id, user_id, flight_number, datetime, seat_code, trip_leg, created_at FROM seat_selected ORDER BY created_at ASC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            dgSeatSelected.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

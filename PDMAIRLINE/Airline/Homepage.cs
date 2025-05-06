@@ -372,5 +372,22 @@ namespace Airline
         {
 
         }
+
+        private void lblSignOut_Click(object sender, EventArgs e)
+        {
+            // Optional: ask for confirmation
+            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Confirm Sign Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No) return;
+
+            // Clear user session
+            SessionManager.ClearSession();
+
+            // Open login form
+            LogIn loginForm = new LogIn(); // Replace with your actual login form class name
+            loginForm.Show();
+
+            // Close or hide this form
+            this.Hide();
+        }
     }
 }

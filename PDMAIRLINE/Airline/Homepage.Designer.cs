@@ -50,6 +50,7 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblLearnMore = new System.Windows.Forms.Label();
+            this.lblSignOut = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination2)).BeginInit();
@@ -303,6 +304,7 @@
             this.pnlHeader.BackColor = System.Drawing.Color.SaddleBrown;
             this.pnlHeader.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
             this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHeader.Controls.Add(this.lblSignOut);
             this.pnlHeader.Controls.Add(this.btnExit);
             this.pnlHeader.Controls.Add(this.lblLearnMore);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -343,6 +345,22 @@
             this.lblLearnMore.TabIndex = 16;
             this.lblLearnMore.Text = "LEARN MORE";
             this.lblLearnMore.Click += new System.EventHandler(this.lblLearnMore_Click);
+            // 
+            // lblSignOut
+            // 
+            this.lblSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignOut.AutoSize = true;
+            this.lblSignOut.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblSignOut.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignOut.ForeColor = System.Drawing.Color.Gold;
+            this.lblSignOut.Location = new System.Drawing.Point(1127, 21);
+            this.lblSignOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSignOut.Name = "lblSignOut";
+            this.lblSignOut.Size = new System.Drawing.Size(110, 25);
+            this.lblSignOut.TabIndex = 17;
+            this.lblSignOut.Text = "SIGN OUT";
+            this.lblSignOut.Click += new System.EventHandler(this.lblSignOut_Click);
             // 
             // Homepage
             // 
@@ -405,5 +423,6 @@
         private System.Windows.Forms.PictureBox PbDestination4;
         private System.Windows.Forms.PictureBox PbDestination3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblSignOut;
     }
 }

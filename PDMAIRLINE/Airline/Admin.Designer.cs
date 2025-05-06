@@ -58,15 +58,17 @@
             this.lblReturnDate = new System.Windows.Forms.Label();
             this.dgReturnDateAndTime = new System.Windows.Forms.DataGridView();
             this.tabBookingHistory = new System.Windows.Forms.TabPage();
-            this.dgBookHistory = new System.Windows.Forms.DataGridView();
+            this.dgBookingHistory = new System.Windows.Forms.DataGridView();
+            this.tabPaymentHistory = new System.Windows.Forms.TabPage();
+            this.dgPaymentHistory = new System.Windows.Forms.DataGridView();
             this.tabUsers = new System.Windows.Forms.TabPage();
             this.DataGridUsers = new System.Windows.Forms.DataGridView();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPaymentHistory = new System.Windows.Forms.TabPage();
-            this.dgPaymentHistory = new System.Windows.Forms.DataGridView();
+            this.tabSeatSelected = new System.Windows.Forms.TabPage();
+            this.dgSeatSelected = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.TabAdmin.SuspendLayout();
@@ -77,11 +79,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnDateAndTime)).BeginInit();
             this.tabBookingHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).BeginInit();
-            this.tabUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookingHistory)).BeginInit();
             this.tabPaymentHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPaymentHistory)).BeginInit();
+            this.tabUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
+            this.tabSeatSelected.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSeatSelected)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -189,6 +193,7 @@
             this.TabAdmin.Controls.Add(this.tabReturnDateAndTime);
             this.TabAdmin.Controls.Add(this.tabBookingHistory);
             this.TabAdmin.Controls.Add(this.tabPaymentHistory);
+            this.TabAdmin.Controls.Add(this.tabSeatSelected);
             this.TabAdmin.Controls.Add(this.tabUsers);
             this.TabAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabAdmin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
@@ -470,7 +475,7 @@
             // 
             this.tabBookingHistory.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
             this.tabBookingHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabBookingHistory.Controls.Add(this.dgBookHistory);
+            this.tabBookingHistory.Controls.Add(this.dgBookingHistory);
             this.tabBookingHistory.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
             this.tabBookingHistory.Location = new System.Drawing.Point(4, 34);
             this.tabBookingHistory.Name = "tabBookingHistory";
@@ -479,15 +484,35 @@
             this.tabBookingHistory.Text = "Booking History";
             this.tabBookingHistory.UseVisualStyleBackColor = true;
             // 
-            // dgBookHistory
+            // dgBookingHistory
             // 
-            this.dgBookHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBookHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgBookHistory.Location = new System.Drawing.Point(0, 0);
-            this.dgBookHistory.Name = "dgBookHistory";
-            this.dgBookHistory.RowHeadersVisible = false;
-            this.dgBookHistory.Size = new System.Drawing.Size(1432, 772);
-            this.dgBookHistory.TabIndex = 78;
+            this.dgBookingHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgBookingHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgBookingHistory.Location = new System.Drawing.Point(0, 0);
+            this.dgBookingHistory.Name = "dgBookingHistory";
+            this.dgBookingHistory.RowHeadersVisible = false;
+            this.dgBookingHistory.Size = new System.Drawing.Size(1432, 772);
+            this.dgBookingHistory.TabIndex = 78;
+            // 
+            // tabPaymentHistory
+            // 
+            this.tabPaymentHistory.Controls.Add(this.dgPaymentHistory);
+            this.tabPaymentHistory.Location = new System.Drawing.Point(4, 34);
+            this.tabPaymentHistory.Name = "tabPaymentHistory";
+            this.tabPaymentHistory.Size = new System.Drawing.Size(1432, 772);
+            this.tabPaymentHistory.TabIndex = 7;
+            this.tabPaymentHistory.Text = "Payment History";
+            this.tabPaymentHistory.UseVisualStyleBackColor = true;
+            // 
+            // dgPaymentHistory
+            // 
+            this.dgPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPaymentHistory.Location = new System.Drawing.Point(0, 0);
+            this.dgPaymentHistory.Name = "dgPaymentHistory";
+            this.dgPaymentHistory.RowHeadersVisible = false;
+            this.dgPaymentHistory.Size = new System.Drawing.Size(1432, 772);
+            this.dgPaymentHistory.TabIndex = 79;
             // 
             // tabUsers
             // 
@@ -538,25 +563,25 @@
             this.created_at.HeaderText = "Created At";
             this.created_at.Name = "created_at";
             // 
-            // tabPaymentHistory
+            // tabSeatSelected
             // 
-            this.tabPaymentHistory.Controls.Add(this.dgPaymentHistory);
-            this.tabPaymentHistory.Location = new System.Drawing.Point(4, 34);
-            this.tabPaymentHistory.Name = "tabPaymentHistory";
-            this.tabPaymentHistory.Size = new System.Drawing.Size(1432, 772);
-            this.tabPaymentHistory.TabIndex = 7;
-            this.tabPaymentHistory.Text = "Payment History";
-            this.tabPaymentHistory.UseVisualStyleBackColor = true;
+            this.tabSeatSelected.Controls.Add(this.dgSeatSelected);
+            this.tabSeatSelected.Location = new System.Drawing.Point(4, 34);
+            this.tabSeatSelected.Name = "tabSeatSelected";
+            this.tabSeatSelected.Size = new System.Drawing.Size(1432, 772);
+            this.tabSeatSelected.TabIndex = 8;
+            this.tabSeatSelected.Text = "Seat Selected";
+            this.tabSeatSelected.UseVisualStyleBackColor = true;
             // 
-            // dgPaymentHistory
+            // dgSeatSelected
             // 
-            this.dgPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgPaymentHistory.Location = new System.Drawing.Point(0, 0);
-            this.dgPaymentHistory.Name = "dgPaymentHistory";
-            this.dgPaymentHistory.RowHeadersVisible = false;
-            this.dgPaymentHistory.Size = new System.Drawing.Size(1432, 772);
-            this.dgPaymentHistory.TabIndex = 79;
+            this.dgSeatSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSeatSelected.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgSeatSelected.Location = new System.Drawing.Point(0, 0);
+            this.dgSeatSelected.Name = "dgSeatSelected";
+            this.dgSeatSelected.RowHeadersVisible = false;
+            this.dgSeatSelected.Size = new System.Drawing.Size(1432, 772);
+            this.dgSeatSelected.TabIndex = 80;
             // 
             // Admin
             // 
@@ -584,11 +609,13 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnDateAndTime)).EndInit();
             this.tabBookingHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgBookHistory)).EndInit();
-            this.tabUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookingHistory)).EndInit();
             this.tabPaymentHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPaymentHistory)).EndInit();
+            this.tabUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
+            this.tabSeatSelected.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgSeatSelected)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,12 +654,14 @@
         private System.Windows.Forms.TextBox txtReturnTime;
         private System.Windows.Forms.Label lblReturnDate;
         private System.Windows.Forms.DataGridView dgReturnDateAndTime;
-        private System.Windows.Forms.DataGridView dgBookHistory;
+        private System.Windows.Forms.DataGridView dgBookingHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
         private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
         private System.Windows.Forms.TabPage tabPaymentHistory;
         private System.Windows.Forms.DataGridView dgPaymentHistory;
+        private System.Windows.Forms.TabPage tabSeatSelected;
+        private System.Windows.Forms.DataGridView dgSeatSelected;
     }
 }
