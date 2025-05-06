@@ -44,8 +44,6 @@
             this.Search = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtPhoneNum = new System.Windows.Forms.TextBox();
-            this.lblPhoneNum = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -264,8 +262,6 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.txtPhoneNum);
-            this.panel1.Controls.Add(this.lblPhoneNum);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.panel3);
@@ -274,28 +270,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 239);
             this.panel1.TabIndex = 51;
-            // 
-            // txtPhoneNum
-            // 
-            this.txtPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtPhoneNum.Location = new System.Drawing.Point(169, 148);
-            this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(167, 29);
-            this.txtPhoneNum.TabIndex = 52;
-            // 
-            // lblPhoneNum
-            // 
-            this.lblPhoneNum.AutoSize = true;
-            this.lblPhoneNum.BackColor = System.Drawing.Color.Transparent;
-            this.lblPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblPhoneNum.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblPhoneNum.Location = new System.Drawing.Point(16, 149);
-            this.lblPhoneNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPhoneNum.Name = "lblPhoneNum";
-            this.lblPhoneNum.Size = new System.Drawing.Size(149, 25);
-            this.lblPhoneNum.TabIndex = 53;
-            this.lblPhoneNum.Text = "Phone Number:";
             // 
             // txtEmail
             // 
@@ -390,8 +364,6 @@
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.RadioButton rdbEWallet;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtPhoneNum;
-        private System.Windows.Forms.Label lblPhoneNum;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Panel panel3;
