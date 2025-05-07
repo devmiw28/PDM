@@ -48,6 +48,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.pnlPayment.SuspendLayout();
             this.pnlEWallet.SuspendLayout();
@@ -264,6 +265,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.panel3);
@@ -276,7 +278,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(86, 97);
+            this.txtEmail.Location = new System.Drawing.Point(87, 88);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(250, 29);
@@ -288,7 +290,7 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblEmail.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblEmail.Location = new System.Drawing.Point(16, 99);
+            this.lblEmail.Location = new System.Drawing.Point(17, 90);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(66, 25);
@@ -319,6 +321,19 @@
             this.label7.Size = new System.Drawing.Size(234, 29);
             this.label7.TabIndex = 32;
             this.label7.Text = "Personal Information";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label1.Location = new System.Drawing.Point(37, 165);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(280, 25);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "\"Ticket will send to your Email.\"";
             // 
             // Payment
             // 
@@ -375,5 +390,6 @@
         private System.Windows.Forms.Panel pnlEWallet;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Label label1;
     }
 }

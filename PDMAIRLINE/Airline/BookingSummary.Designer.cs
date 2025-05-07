@@ -99,9 +99,9 @@
             this.Where.Location = new System.Drawing.Point(67, 70);
             this.Where.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Where.Name = "Where";
-            this.Where.Size = new System.Drawing.Size(688, 37);
+            this.Where.Size = new System.Drawing.Size(504, 37);
             this.Where.TabIndex = 23;
-            this.Where.Text = "What payment method do you want to use?";
+            this.Where.Text = "Here is your booking summary.";
             // 
             // pnlHeader
             // 
