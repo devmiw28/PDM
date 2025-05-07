@@ -66,7 +66,8 @@
             this.btnProceed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnProceed.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
             this.btnProceed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProceed.Location = new System.Drawing.Point(799, 893);
+            this.btnProceed.ForeColor = System.Drawing.Color.White;
+            this.btnProceed.Location = new System.Drawing.Point(789, 868);
             this.btnProceed.Margin = new System.Windows.Forms.Padding(2);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(134, 45);
@@ -84,7 +85,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1691, 220);
+            this.panel2.Size = new System.Drawing.Size(1433, 220);
             this.panel2.TabIndex = 55;
             // 
             // Where
@@ -112,7 +113,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1691, 70);
+            this.pnlHeader.Size = new System.Drawing.Size(1433, 70);
             this.pnlHeader.TabIndex = 54;
             // 
             // btnExit
@@ -124,7 +125,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Gold;
-            this.btnExit.Location = new System.Drawing.Point(1639, 12);
+            this.btnExit.Location = new System.Drawing.Point(1381, 13);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 40);
             this.btnExit.TabIndex = 16;
@@ -140,7 +141,7 @@
             this.Search.BackColor = System.Drawing.Color.Transparent;
             this.Search.Font = new System.Drawing.Font("Britannic Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search.ForeColor = System.Drawing.Color.Gold;
-            this.Search.Location = new System.Drawing.Point(66, 13);
+            this.Search.Location = new System.Drawing.Point(42, 9);
             this.Search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(332, 44);
@@ -152,7 +153,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label8.Location = new System.Drawing.Point(483, 446);
+            this.label8.Location = new System.Drawing.Point(309, 433);
             this.label8.Margin = new System.Windows.Forms.Padding(3);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -166,7 +167,7 @@
             this.txtFlightClass.BackColor = System.Drawing.Color.White;
             this.txtFlightClass.Enabled = false;
             this.txtFlightClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFlightClass.Location = new System.Drawing.Point(758, 436);
+            this.txtFlightClass.Location = new System.Drawing.Point(584, 423);
             this.txtFlightClass.Name = "txtFlightClass";
             this.txtFlightClass.ReadOnly = true;
             this.txtFlightClass.Size = new System.Drawing.Size(550, 38);
@@ -177,7 +178,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label7.Location = new System.Drawing.Point(483, 402);
+            this.label7.Location = new System.Drawing.Point(309, 389);
             this.label7.Margin = new System.Windows.Forms.Padding(3);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -191,7 +192,7 @@
             this.txtTotalPrice.BackColor = System.Drawing.Color.White;
             this.txtTotalPrice.Enabled = false;
             this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPrice.Location = new System.Drawing.Point(758, 788);
+            this.txtTotalPrice.Location = new System.Drawing.Point(584, 775);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(550, 38);
@@ -203,7 +204,7 @@
             this.txtNumInfants.BackColor = System.Drawing.Color.White;
             this.txtNumInfants.Enabled = false;
             this.txtNumInfants.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumInfants.Location = new System.Drawing.Point(758, 700);
+            this.txtNumInfants.Location = new System.Drawing.Point(584, 687);
             this.txtNumInfants.Name = "txtNumInfants";
             this.txtNumInfants.ReadOnly = true;
             this.txtNumInfants.Size = new System.Drawing.Size(550, 38);
@@ -215,7 +216,7 @@
             this.txtNumChildren.BackColor = System.Drawing.Color.White;
             this.txtNumChildren.Enabled = false;
             this.txtNumChildren.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumChildren.Location = new System.Drawing.Point(758, 656);
+            this.txtNumChildren.Location = new System.Drawing.Point(584, 643);
             this.txtNumChildren.Name = "txtNumChildren";
             this.txtNumChildren.ReadOnly = true;
             this.txtNumChildren.Size = new System.Drawing.Size(550, 38);
@@ -227,7 +228,7 @@
             this.txtNumAdults.BackColor = System.Drawing.Color.White;
             this.txtNumAdults.Enabled = false;
             this.txtNumAdults.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumAdults.Location = new System.Drawing.Point(758, 612);
+            this.txtNumAdults.Location = new System.Drawing.Point(584, 599);
             this.txtNumAdults.Name = "txtNumAdults";
             this.txtNumAdults.ReadOnly = true;
             this.txtNumAdults.Size = new System.Drawing.Size(550, 38);
@@ -239,7 +240,7 @@
             this.txtTripType.BackColor = System.Drawing.Color.White;
             this.txtTripType.Enabled = false;
             this.txtTripType.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTripType.Location = new System.Drawing.Point(758, 568);
+            this.txtTripType.Location = new System.Drawing.Point(584, 555);
             this.txtTripType.Name = "txtTripType";
             this.txtTripType.ReadOnly = true;
             this.txtTripType.Size = new System.Drawing.Size(550, 38);
@@ -251,7 +252,7 @@
             this.txtReturnDateAndTime.BackColor = System.Drawing.Color.White;
             this.txtReturnDateAndTime.Enabled = false;
             this.txtReturnDateAndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturnDateAndTime.Location = new System.Drawing.Point(758, 524);
+            this.txtReturnDateAndTime.Location = new System.Drawing.Point(584, 511);
             this.txtReturnDateAndTime.Name = "txtReturnDateAndTime";
             this.txtReturnDateAndTime.ReadOnly = true;
             this.txtReturnDateAndTime.Size = new System.Drawing.Size(550, 38);
@@ -263,7 +264,7 @@
             this.txtDepartDateAndTime.BackColor = System.Drawing.Color.White;
             this.txtDepartDateAndTime.Enabled = false;
             this.txtDepartDateAndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartDateAndTime.Location = new System.Drawing.Point(758, 480);
+            this.txtDepartDateAndTime.Location = new System.Drawing.Point(584, 467);
             this.txtDepartDateAndTime.Name = "txtDepartDateAndTime";
             this.txtDepartDateAndTime.ReadOnly = true;
             this.txtDepartDateAndTime.Size = new System.Drawing.Size(550, 38);
@@ -275,7 +276,7 @@
             this.txtFlightNum.BackColor = System.Drawing.Color.White;
             this.txtFlightNum.Enabled = false;
             this.txtFlightNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFlightNum.Location = new System.Drawing.Point(758, 392);
+            this.txtFlightNum.Location = new System.Drawing.Point(584, 379);
             this.txtFlightNum.Name = "txtFlightNum";
             this.txtFlightNum.ReadOnly = true;
             this.txtFlightNum.Size = new System.Drawing.Size(550, 38);
@@ -287,7 +288,7 @@
             this.txtFlightLoc.BackColor = System.Drawing.Color.White;
             this.txtFlightLoc.Enabled = false;
             this.txtFlightLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFlightLoc.Location = new System.Drawing.Point(758, 348);
+            this.txtFlightLoc.Location = new System.Drawing.Point(584, 335);
             this.txtFlightLoc.Name = "txtFlightLoc";
             this.txtFlightLoc.ReadOnly = true;
             this.txtFlightLoc.Size = new System.Drawing.Size(550, 38);
@@ -298,7 +299,7 @@
             this.lblTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.lblTotalPrice.Location = new System.Drawing.Point(483, 798);
+            this.lblTotalPrice.Location = new System.Drawing.Point(309, 785);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(3);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -311,7 +312,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label5.Location = new System.Drawing.Point(483, 710);
+            this.label5.Location = new System.Drawing.Point(309, 697);
             this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -324,7 +325,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label4.Location = new System.Drawing.Point(483, 666);
+            this.label4.Location = new System.Drawing.Point(309, 653);
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -337,7 +338,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label3.Location = new System.Drawing.Point(483, 622);
+            this.label3.Location = new System.Drawing.Point(309, 609);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -350,7 +351,7 @@
             this.lblDepart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDepart.AutoSize = true;
             this.lblDepart.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.lblDepart.Location = new System.Drawing.Point(483, 490);
+            this.lblDepart.Location = new System.Drawing.Point(309, 477);
             this.lblDepart.Margin = new System.Windows.Forms.Padding(3);
             this.lblDepart.Name = "lblDepart";
             this.lblDepart.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -363,7 +364,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label2.Location = new System.Drawing.Point(483, 534);
+            this.label2.Location = new System.Drawing.Point(309, 521);
             this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -376,7 +377,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label1.Location = new System.Drawing.Point(483, 358);
+            this.label1.Location = new System.Drawing.Point(309, 345);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -389,7 +390,7 @@
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.lblName.Location = new System.Drawing.Point(483, 578);
+            this.lblName.Location = new System.Drawing.Point(309, 565);
             this.lblName.Margin = new System.Windows.Forms.Padding(3);
             this.lblName.Name = "lblName";
             this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -402,7 +403,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Britannic Bold", 16F);
-            this.label9.Location = new System.Drawing.Point(483, 754);
+            this.label9.Location = new System.Drawing.Point(309, 741);
             this.label9.Margin = new System.Windows.Forms.Padding(3);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -416,7 +417,7 @@
             this.txtPickedSeats.BackColor = System.Drawing.Color.White;
             this.txtPickedSeats.Enabled = false;
             this.txtPickedSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPickedSeats.Location = new System.Drawing.Point(758, 744);
+            this.txtPickedSeats.Location = new System.Drawing.Point(584, 731);
             this.txtPickedSeats.Name = "txtPickedSeats";
             this.txtPickedSeats.ReadOnly = true;
             this.txtPickedSeats.Size = new System.Drawing.Size(550, 38);
@@ -428,7 +429,7 @@
             this.txtReturnFlightNum.BackColor = System.Drawing.Color.White;
             this.txtReturnFlightNum.Enabled = false;
             this.txtReturnFlightNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturnFlightNum.Location = new System.Drawing.Point(1033, 392);
+            this.txtReturnFlightNum.Location = new System.Drawing.Point(859, 379);
             this.txtReturnFlightNum.Name = "txtReturnFlightNum";
             this.txtReturnFlightNum.ReadOnly = true;
             this.txtReturnFlightNum.Size = new System.Drawing.Size(275, 38);
@@ -438,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1691, 955);
+            this.ClientSize = new System.Drawing.Size(1433, 966);
             this.Controls.Add(this.txtReturnFlightNum);
             this.Controls.Add(this.txtPickedSeats);
             this.Controls.Add(this.label9);

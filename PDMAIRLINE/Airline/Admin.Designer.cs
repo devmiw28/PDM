@@ -36,12 +36,9 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.TabAdmin = new System.Windows.Forms.TabControl();
-            this.tabDashboard = new System.Windows.Forms.TabPage();
             this.tabDepartDateAndTime = new System.Windows.Forms.TabPage();
             this.pnlDepart = new System.Windows.Forms.Panel();
             this.btnDepartInsert = new System.Windows.Forms.Button();
-            this.lblDepartFlightNumber = new System.Windows.Forms.Label();
-            this.txtDepartFlightNumber = new System.Windows.Forms.TextBox();
             this.lblDepartTime = new System.Windows.Forms.Label();
             this.dtpDepartDate = new System.Windows.Forms.DateTimePicker();
             this.txtDepartTime = new System.Windows.Forms.TextBox();
@@ -50,8 +47,6 @@
             this.tabReturnDateAndTime = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnReturnInsert = new System.Windows.Forms.Button();
-            this.lblReturnFlightNumber = new System.Windows.Forms.Label();
-            this.txtReturnFlightNumber = new System.Windows.Forms.TextBox();
             this.lblReturnTime = new System.Windows.Forms.Label();
             this.dtpReturnDate = new System.Windows.Forms.DateTimePicker();
             this.txtReturnTime = new System.Windows.Forms.TextBox();
@@ -61,14 +56,14 @@
             this.dgBookingHistory = new System.Windows.Forms.DataGridView();
             this.tabPaymentHistory = new System.Windows.Forms.TabPage();
             this.dgPaymentHistory = new System.Windows.Forms.DataGridView();
+            this.tabSeatSelected = new System.Windows.Forms.TabPage();
+            this.dgSeatSelected = new System.Windows.Forms.DataGridView();
             this.tabUsers = new System.Windows.Forms.TabPage();
             this.DataGridUsers = new System.Windows.Forms.DataGridView();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabSeatSelected = new System.Windows.Forms.TabPage();
-            this.dgSeatSelected = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.TabAdmin.SuspendLayout();
@@ -82,10 +77,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgBookingHistory)).BeginInit();
             this.tabPaymentHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPaymentHistory)).BeginInit();
-            this.tabUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
             this.tabSeatSelected.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeatSelected)).BeginInit();
+            this.tabUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,7 +183,6 @@
             // 
             // TabAdmin
             // 
-            this.TabAdmin.Controls.Add(this.tabDashboard);
             this.TabAdmin.Controls.Add(this.tabDepartDateAndTime);
             this.TabAdmin.Controls.Add(this.tabReturnDateAndTime);
             this.TabAdmin.Controls.Add(this.tabBookingHistory);
@@ -202,19 +196,6 @@
             this.TabAdmin.SelectedIndex = 0;
             this.TabAdmin.Size = new System.Drawing.Size(1440, 810);
             this.TabAdmin.TabIndex = 27;
-            // 
-            // tabDashboard
-            // 
-            this.tabDashboard.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
-            this.tabDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabDashboard.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.tabDashboard.Location = new System.Drawing.Point(4, 34);
-            this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.Size = new System.Drawing.Size(1432, 772);
-            this.tabDashboard.TabIndex = 0;
-            this.tabDashboard.Text = "Dashboard";
-            this.tabDashboard.UseVisualStyleBackColor = true;
             // 
             // tabDepartDateAndTime
             // 
@@ -236,8 +217,6 @@
             this.pnlDepart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlDepart.BackColor = System.Drawing.Color.Goldenrod;
             this.pnlDepart.Controls.Add(this.btnDepartInsert);
-            this.pnlDepart.Controls.Add(this.lblDepartFlightNumber);
-            this.pnlDepart.Controls.Add(this.txtDepartFlightNumber);
             this.pnlDepart.Controls.Add(this.lblDepartTime);
             this.pnlDepart.Controls.Add(this.dtpDepartDate);
             this.pnlDepart.Controls.Add(this.txtDepartTime);
@@ -264,29 +243,6 @@
             this.btnDepartInsert.UseVisualStyleBackColor = false;
             this.btnDepartInsert.Click += new System.EventHandler(this.btnDepartInsert_Click);
             // 
-            // lblDepartFlightNumber
-            // 
-            this.lblDepartFlightNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDepartFlightNumber.AutoSize = true;
-            this.lblDepartFlightNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblDepartFlightNumber.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartFlightNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblDepartFlightNumber.Location = new System.Drawing.Point(541, 21);
-            this.lblDepartFlightNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDepartFlightNumber.Name = "lblDepartFlightNumber";
-            this.lblDepartFlightNumber.Size = new System.Drawing.Size(158, 24);
-            this.lblDepartFlightNumber.TabIndex = 76;
-            this.lblDepartFlightNumber.Text = "Flight Number";
-            // 
-            // txtDepartFlightNumber
-            // 
-            this.txtDepartFlightNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDepartFlightNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartFlightNumber.Location = new System.Drawing.Point(545, 49);
-            this.txtDepartFlightNumber.Name = "txtDepartFlightNumber";
-            this.txtDepartFlightNumber.Size = new System.Drawing.Size(247, 38);
-            this.txtDepartFlightNumber.TabIndex = 75;
-            // 
             // lblDepartTime
             // 
             this.lblDepartTime.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -294,7 +250,7 @@
             this.lblDepartTime.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartTime.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartTime.ForeColor = System.Drawing.Color.Black;
-            this.lblDepartTime.Location = new System.Drawing.Point(288, 21);
+            this.lblDepartTime.Location = new System.Drawing.Point(455, 20);
             this.lblDepartTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartTime.Name = "lblDepartTime";
             this.lblDepartTime.Size = new System.Drawing.Size(138, 24);
@@ -306,7 +262,7 @@
             this.dtpDepartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpDepartDate.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
             this.dtpDepartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDepartDate.Location = new System.Drawing.Point(30, 47);
+            this.dtpDepartDate.Location = new System.Drawing.Point(115, 47);
             this.dtpDepartDate.Name = "dtpDepartDate";
             this.dtpDepartDate.Size = new System.Drawing.Size(247, 39);
             this.dtpDepartDate.TabIndex = 71;
@@ -315,7 +271,7 @@
             // 
             this.txtDepartTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDepartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartTime.Location = new System.Drawing.Point(292, 48);
+            this.txtDepartTime.Location = new System.Drawing.Point(459, 47);
             this.txtDepartTime.Name = "txtDepartTime";
             this.txtDepartTime.Size = new System.Drawing.Size(247, 38);
             this.txtDepartTime.TabIndex = 72;
@@ -327,7 +283,7 @@
             this.lblDepartDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartDate.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDepartDate.Location = new System.Drawing.Point(26, 20);
+            this.lblDepartDate.Location = new System.Drawing.Point(111, 20);
             this.lblDepartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartDate.Name = "lblDepartDate";
             this.lblDepartDate.Size = new System.Drawing.Size(137, 24);
@@ -363,8 +319,6 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Goldenrod;
             this.panel2.Controls.Add(this.btnReturnInsert);
-            this.panel2.Controls.Add(this.lblReturnFlightNumber);
-            this.panel2.Controls.Add(this.txtReturnFlightNumber);
             this.panel2.Controls.Add(this.lblReturnTime);
             this.panel2.Controls.Add(this.dtpReturnDate);
             this.panel2.Controls.Add(this.txtReturnTime);
@@ -391,29 +345,6 @@
             this.btnReturnInsert.UseVisualStyleBackColor = false;
             this.btnReturnInsert.Click += new System.EventHandler(this.btnReturnInsert_Click);
             // 
-            // lblReturnFlightNumber
-            // 
-            this.lblReturnFlightNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblReturnFlightNumber.AutoSize = true;
-            this.lblReturnFlightNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblReturnFlightNumber.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturnFlightNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblReturnFlightNumber.Location = new System.Drawing.Point(541, 21);
-            this.lblReturnFlightNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblReturnFlightNumber.Name = "lblReturnFlightNumber";
-            this.lblReturnFlightNumber.Size = new System.Drawing.Size(158, 24);
-            this.lblReturnFlightNumber.TabIndex = 76;
-            this.lblReturnFlightNumber.Text = "Flight Number";
-            // 
-            // txtReturnFlightNumber
-            // 
-            this.txtReturnFlightNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtReturnFlightNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturnFlightNumber.Location = new System.Drawing.Point(545, 49);
-            this.txtReturnFlightNumber.Name = "txtReturnFlightNumber";
-            this.txtReturnFlightNumber.Size = new System.Drawing.Size(247, 38);
-            this.txtReturnFlightNumber.TabIndex = 75;
-            // 
             // lblReturnTime
             // 
             this.lblReturnTime.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -421,7 +352,7 @@
             this.lblReturnTime.BackColor = System.Drawing.Color.Transparent;
             this.lblReturnTime.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnTime.ForeColor = System.Drawing.Color.Black;
-            this.lblReturnTime.Location = new System.Drawing.Point(288, 21);
+            this.lblReturnTime.Location = new System.Drawing.Point(446, 22);
             this.lblReturnTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnTime.Name = "lblReturnTime";
             this.lblReturnTime.Size = new System.Drawing.Size(136, 24);
@@ -433,7 +364,7 @@
             this.dtpReturnDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpReturnDate.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
             this.dtpReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpReturnDate.Location = new System.Drawing.Point(30, 47);
+            this.dtpReturnDate.Location = new System.Drawing.Point(117, 49);
             this.dtpReturnDate.Name = "dtpReturnDate";
             this.dtpReturnDate.Size = new System.Drawing.Size(247, 39);
             this.dtpReturnDate.TabIndex = 71;
@@ -442,7 +373,7 @@
             // 
             this.txtReturnTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtReturnTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturnTime.Location = new System.Drawing.Point(292, 48);
+            this.txtReturnTime.Location = new System.Drawing.Point(450, 49);
             this.txtReturnTime.Name = "txtReturnTime";
             this.txtReturnTime.Size = new System.Drawing.Size(247, 38);
             this.txtReturnTime.TabIndex = 72;
@@ -454,7 +385,7 @@
             this.lblReturnDate.BackColor = System.Drawing.Color.Transparent;
             this.lblReturnDate.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnDate.ForeColor = System.Drawing.Color.Black;
-            this.lblReturnDate.Location = new System.Drawing.Point(26, 20);
+            this.lblReturnDate.Location = new System.Drawing.Point(113, 22);
             this.lblReturnDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnDate.Name = "lblReturnDate";
             this.lblReturnDate.Size = new System.Drawing.Size(135, 24);
@@ -514,6 +445,26 @@
             this.dgPaymentHistory.Size = new System.Drawing.Size(1432, 772);
             this.dgPaymentHistory.TabIndex = 79;
             // 
+            // tabSeatSelected
+            // 
+            this.tabSeatSelected.Controls.Add(this.dgSeatSelected);
+            this.tabSeatSelected.Location = new System.Drawing.Point(4, 34);
+            this.tabSeatSelected.Name = "tabSeatSelected";
+            this.tabSeatSelected.Size = new System.Drawing.Size(1432, 772);
+            this.tabSeatSelected.TabIndex = 8;
+            this.tabSeatSelected.Text = "Seat Selected";
+            this.tabSeatSelected.UseVisualStyleBackColor = true;
+            // 
+            // dgSeatSelected
+            // 
+            this.dgSeatSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSeatSelected.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgSeatSelected.Location = new System.Drawing.Point(0, 0);
+            this.dgSeatSelected.Name = "dgSeatSelected";
+            this.dgSeatSelected.RowHeadersVisible = false;
+            this.dgSeatSelected.Size = new System.Drawing.Size(1432, 772);
+            this.dgSeatSelected.TabIndex = 80;
+            // 
             // tabUsers
             // 
             this.tabUsers.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
@@ -563,26 +514,6 @@
             this.created_at.HeaderText = "Created At";
             this.created_at.Name = "created_at";
             // 
-            // tabSeatSelected
-            // 
-            this.tabSeatSelected.Controls.Add(this.dgSeatSelected);
-            this.tabSeatSelected.Location = new System.Drawing.Point(4, 34);
-            this.tabSeatSelected.Name = "tabSeatSelected";
-            this.tabSeatSelected.Size = new System.Drawing.Size(1432, 772);
-            this.tabSeatSelected.TabIndex = 8;
-            this.tabSeatSelected.Text = "Seat Selected";
-            this.tabSeatSelected.UseVisualStyleBackColor = true;
-            // 
-            // dgSeatSelected
-            // 
-            this.dgSeatSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSeatSelected.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgSeatSelected.Location = new System.Drawing.Point(0, 0);
-            this.dgSeatSelected.Name = "dgSeatSelected";
-            this.dgSeatSelected.RowHeadersVisible = false;
-            this.dgSeatSelected.Size = new System.Drawing.Size(1432, 772);
-            this.dgSeatSelected.TabIndex = 80;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,10 +543,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgBookingHistory)).EndInit();
             this.tabPaymentHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPaymentHistory)).EndInit();
-            this.tabUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
             this.tabSeatSelected.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSeatSelected)).EndInit();
+            this.tabUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridUsers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -630,7 +561,6 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TabControl TabAdmin;
-        private System.Windows.Forms.TabPage tabDashboard;
         private System.Windows.Forms.TabPage tabDepartDateAndTime;
         private System.Windows.Forms.TabPage tabReturnDateAndTime;
         private System.Windows.Forms.TabPage tabBookingHistory;
@@ -638,8 +568,6 @@
         private System.Windows.Forms.DataGridView DataGridUsers;
         private System.Windows.Forms.Panel pnlDepart;
         private System.Windows.Forms.Button btnDepartInsert;
-        private System.Windows.Forms.Label lblDepartFlightNumber;
-        private System.Windows.Forms.TextBox txtDepartFlightNumber;
         private System.Windows.Forms.Label lblDepartTime;
         private System.Windows.Forms.DateTimePicker dtpDepartDate;
         private System.Windows.Forms.TextBox txtDepartTime;
@@ -647,8 +575,6 @@
         private System.Windows.Forms.DataGridView dgDepartDateAndTime;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnReturnInsert;
-        private System.Windows.Forms.Label lblReturnFlightNumber;
-        private System.Windows.Forms.TextBox txtReturnFlightNumber;
         private System.Windows.Forms.Label lblReturnTime;
         private System.Windows.Forms.DateTimePicker dtpReturnDate;
         private System.Windows.Forms.TextBox txtReturnTime;

@@ -117,4 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Welcome to PDM Airlines. Here at PDM Airlines, we're changing the game when it comes to flying.
+We take everything you love about traditional airline service and combine it with today's best
+ technology to create something truly special.  
+
+What makes us different? It starts with our roots in the PDM tradition that means we operate with
+honor, excellence, discipline, and a real dedication to taking care of our customers. These values
+shape every decision we make as we work to improve your travel experience.
+
+At PDM Airlines, we blend aviation expertise with advanced technology to create seamless travel
+experiences. Our intelligent platform simplifies trip planning, searching, and booking flighs by
+combining operational excellence with digital innovation. We deliver efficient, and reliable air
+travel that exceeds expectations.
+
+</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>PDM Airlines aims to make travel easier for passengers while equipping airline teams with efficient tools
+ to handle flights, bookings, and customer data. Our mission is to ensure that every step from search to
+boarding is smooth, secure, and hassle-free.  
+
+</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>- To help passengers book flights with ease.
+- To support airline operations with tools that improve accuracy and reduce workload. 
+- To maintain integrity, excellence, and customer-first service in everything we design.  
+- To continuously enhance and expand our company as air travel evolves.
+
+Whether you're flying for business, leisures, or any other reasons. PDM Airlines is your best partner in the skies.</value>
+  </data>
 </root>

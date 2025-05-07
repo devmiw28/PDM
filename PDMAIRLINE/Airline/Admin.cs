@@ -208,15 +208,10 @@ namespace Airline
 
         private void btnDepartInsert_Click(object sender, EventArgs e)
         {
-            string flightNumber = txtDepartFlightNumber.Text.Trim();
+            // Auto-generate flight number
+            string flightNumber = GenerateFlightNumber();
             DateTime datePart = dtpDepartDate.Value.Date;
             TimeSpan timePart;
-
-            if (string.IsNullOrEmpty(flightNumber))
-            {
-                MessageBox.Show("Please enter a flight number.");
-                return;
-            }
 
             // Validate time format
             if (!TimeSpan.TryParse(txtDepartTime.Text, out timePart))
@@ -225,8 +220,8 @@ namespace Airline
                 return;
             }
 
-            // Separate date and time
-            DateTime departureDateTime = datePart.Add(timePart); // Combining the date and time
+            // Combine date and time
+            DateTime departureDateTime = datePart.Add(timePart);
 
             try
             {
@@ -234,21 +229,20 @@ namespace Airline
                 {
                     conn.Open();
                     string query = "INSERT INTO depart_flights (depart_flight_number, depart_date, depart_time) VALUES (@flightNumber, @departDate, @departTime)";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
-                    cmd.Parameters.AddWithValue("@departDate", departureDateTime.Date);  // Date part
-                    cmd.Parameters.AddWithValue("@departTime", departureDateTime.TimeOfDay); // Time part
-                    cmd.ExecuteNonQuery();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
+                        cmd.Parameters.AddWithValue("@departDate", departureDateTime.Date);
+                        cmd.Parameters.AddWithValue("@departTime", departureDateTime.TimeOfDay);
+                        cmd.ExecuteNonQuery();
+                    }
 
-                    // Retrieve the last inserted flight_id using LAST_INSERT_ID()
-                    MySqlCommand idCmd = new MySqlCommand("SELECT LAST_INSERT_ID()", conn);
-                    int flightId = Convert.ToInt32(idCmd.ExecuteScalar());
-
-                    // Show success message
-                    MessageBox.Show("Flight added successfully.");
-
-                    // Trigger the event to notify the form that a flight has been added
-                    OnFlightAdded(flightId, flightNumber, departureDateTime);
+                    using (MySqlCommand idCmd = new MySqlCommand("SELECT LAST_INSERT_ID()", conn))
+                    {
+                        int flightId = Convert.ToInt32(idCmd.ExecuteScalar());
+                        MessageBox.Show($"Flight '{flightNumber}' added successfully.");
+                        OnFlightAdded(flightId, flightNumber, departureDateTime);
+                    }
                 }
             }
             catch (Exception ex)
@@ -256,9 +250,17 @@ namespace Airline
                 MessageBox.Show("Error adding flight: " + ex.Message);
             }
 
-            // Clear the input fields
+            // Clear input field (just time now)
             txtDepartTime.Text = "";
-            txtDepartFlightNumber.Text = "";
+        }
+
+        private string GenerateFlightNumber()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            Random random = new Random();
+            string suffix = new string(Enumerable.Repeat(chars, 6)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+            return "FN" + suffix;
         }
 
         private void OnFlightAdded(int flightId, string flightNumber, DateTime departureDateTime)
@@ -338,7 +340,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT depart_flight_id, depart_flight_number, depart_date, depart_time FROM depart_flights ORDER BY depart_date, depart_time ASC";
+                    string query = "SELECT depart_flight_id, depart_flight_number, depart_date, depart_time FROM depart_flights ORDER BY depart_flight_id ASC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -423,7 +425,7 @@ namespace Airline
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT return_flight_id, return_flight_number, return_date, return_time FROM return_flights ORDER BY return_date, return_time ASC";
+                    string query = "SELECT return_flight_id, return_flight_number, return_date, return_time FROM return_flights ORDER BY return_flight_id ASC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -452,15 +454,10 @@ namespace Airline
 
         private void btnReturnInsert_Click(object sender, EventArgs e)
         {
-            string flightNumber = txtReturnFlightNumber.Text.Trim();
+            // Auto-generate flight number
+            string flightNumber = GenerateFlightNumber();
             DateTime datePart = dtpReturnDate.Value.Date;
             TimeSpan timePart;
-
-            if (string.IsNullOrEmpty(flightNumber))
-            {
-                MessageBox.Show("Please enter a flight number.");
-                return;
-            }
 
             if (!TimeSpan.TryParse(txtReturnTime.Text, out timePart))
             {
@@ -468,9 +465,8 @@ namespace Airline
                 return;
             }
 
-            // Separate return_date and return_time
-            DateTime returnDate = datePart;  // Only date part
-            TimeSpan returnTime = timePart;  // Only time part
+            DateTime returnDate = datePart;
+            TimeSpan returnTime = timePart;
 
             try
             {
@@ -479,13 +475,15 @@ namespace Airline
                     conn.Open();
                     string query = "INSERT INTO return_flights (return_flight_number, return_date, return_time) VALUES (@flightNumber, @returnDate, @returnTime)";
 
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
-                    cmd.Parameters.AddWithValue("@returnDate", returnDate);
-                    cmd.Parameters.AddWithValue("@returnTime", returnTime);
-                    cmd.ExecuteNonQuery();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@flightNumber", flightNumber);
+                        cmd.Parameters.AddWithValue("@returnDate", returnDate);
+                        cmd.Parameters.AddWithValue("@returnTime", returnTime);
+                        cmd.ExecuteNonQuery();
+                    }
 
-                    MessageBox.Show("Return flight added successfully.");
+                    MessageBox.Show($"Return flight '{flightNumber}' added successfully.");
                     ReturnFlightAdded?.Invoke(this, EventArgs.Empty);
                 }
             }
@@ -495,8 +493,8 @@ namespace Airline
             }
 
             txtReturnTime.Text = "";
-            txtReturnFlightNumber.Text = "";
         }
+
 
         private void SetupPaymentHistoryGridColumns()
         {

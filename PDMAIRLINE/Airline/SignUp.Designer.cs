@@ -141,7 +141,7 @@
             this.ChkShowPassword.AutoSize = true;
             this.ChkShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.ChkShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkShowPassword.Location = new System.Drawing.Point(73, 236);
+            this.ChkShowPassword.Location = new System.Drawing.Point(60, 236);
             this.ChkShowPassword.Name = "ChkShowPassword";
             this.ChkShowPassword.Size = new System.Drawing.Size(114, 19);
             this.ChkShowPassword.TabIndex = 24;

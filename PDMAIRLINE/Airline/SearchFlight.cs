@@ -379,7 +379,7 @@ namespace Airline
                     CmbDepartTime.Items.Clear();
 
                     // Modify the query to filter by selected date
-                    string query = $"SELECT depart_time, depart_flight_number FROM depart_flights WHERE depart_date = '{formattedDate}';";
+                    string query = $"SELECT depart_time, depart_flight_number FROM depart_flights WHERE depart_date = '{formattedDate}'ORDER BY depart_time ASC;";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -440,7 +440,7 @@ namespace Airline
                     conn.Open();
 
                     // Query for return times on the selected date
-                    string query = $"SELECT return_time, return_flight_number FROM return_flights WHERE return_date = '{formattedDate}';";
+                    string query = $"SELECT return_time, return_flight_number FROM return_flights WHERE return_date = '{formattedDate}'ORDER BY return_time ASC;";
 
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))

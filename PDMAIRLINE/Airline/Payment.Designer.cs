@@ -78,9 +78,9 @@
             this.label2.Location = new System.Drawing.Point(16, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(341, 29);
+            this.label2.Size = new System.Drawing.Size(241, 29);
             this.label2.TabIndex = 32;
-            this.label2.Text = "E-WALLET OR CREDIT CARD";
+            this.label2.Text = "PAYMENT METHOD";
             // 
             // pnlPayment
             // 
@@ -250,6 +250,8 @@
             this.btnPay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPay.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
             this.btnPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.btnPay.ForeColor = System.Drawing.Color.White;
             this.btnPay.Location = new System.Drawing.Point(787, 837);
             this.btnPay.Margin = new System.Windows.Forms.Padding(2);
             this.btnPay.Name = "btnPay";

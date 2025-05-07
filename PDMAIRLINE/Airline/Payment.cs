@@ -4,8 +4,10 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using SendGrid;
-using SendGrid.Helpers.Mail;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 
@@ -108,7 +110,17 @@ namespace Airline
 
                         try
                         {
-                            await SendEmailConfirmationAsync(userEmail, bookingRef, transactionRef, TotalPrice);
+                            await SendEmailConfirmationAsync(
+    userEmail,
+    bookingRef,
+    transactionRef,
+    TotalPrice,
+    TripType,
+    FlightNumberDeparture,
+    FlightNumberReturn,
+    Origin,
+    Destination
+);
                         }
                         catch (Exception emailEx)
                         {
@@ -243,27 +255,102 @@ namespace Airline
             }
         }
 
-        private async Task SendEmailConfirmationAsync(string toEmail, string bookingRef, string transactionRef, decimal amount)
+        private async Task SendEmailConfirmationAsync(
+     string toEmail,
+     string bookingRef,
+     string transactionRef,
+     decimal amount,
+     string tripType,
+     string flightNumberDeparture,
+     string flightNumberReturn,
+     string origin,
+     string destination)
         {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
-            var apiKey = "";
-            var client = new SendGridClient(apiKey);
 
-            var from = new EmailAddress("enrollment.test101@gmail.com", "PDM Airline");
-            var to = new EmailAddress(toEmail);
-            var subject = "Your Flight Booking Confirmation";
-            var plainTextContent = $"Thank you for your booking!\n\nBooking Reference: {bookingRef}\nTransaction Reference: {transactionRef}\nAmount Paid: PHP {amount:F2}\n\nSafe travels!";
-            var htmlContent = $"<p>Thank you for your booking!</p><ul><li><strong>Booking Reference:</strong> {bookingRef}</li><li><strong>Transaction Reference:</strong> {transactionRef}</li><li><strong>Amount Paid:</strong> PHP {amount:F2}</li></ul><p>Safe travels!</p>";
+            string apiKey = "32acbac60d91302b5971cb7f1a033260";
+            string secretKey = "83090e888b57e61f07e525837adf4fb1";
 
-            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
-            var response = await client.SendEmailAsync(msg);
+            using (var client = new HttpClient())
+            {
+                var credentials = Encoding.ASCII.GetBytes($"{apiKey}:{secretKey}");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(credentials));
 
-            if (!response.IsSuccessStatusCode)
-                throw new Exception("Failed to send email. Status Code: " + response.StatusCode);
+                var email = new
+                {
+                    Messages = new[] {
+                new {
+                    From = new { Email = "leonardomarkace.pdm@gmail.com", Name = "PDM Airline" },
+                    To = new[] { new { Email = toEmail, Name = "Passenger" } },
+                    Subject = "Your Flight Booking Confirmation",
+                    TextPart = $"Thank you for your booking!\n\nBooking Reference: {bookingRef}\nTransaction Reference: {transactionRef}\nAmount Paid: PHP {amount:F2}\n\nSafe travels!",
+                    HTMLPart = $@"
+                    <div style='font-family: Arial, sans-serif; border: 1px solid #ccc; padding: 20px; max-width: 700px; margin: auto;'>
+                        <div style='background-color: #FFE600; padding: 10px;'>
+                            <h1 style='display: inline-block; margin-left: 10px;'>E-Ticket</h1>
+                        </div>
 
+                        <h3 style='color: #444;'>Booking Details</h3>
+                        <table style='width:100%; border-collapse: collapse; margin-bottom: 15px;'>
+                            <tr><td><strong>Status:</strong> CONFIRMED</td><td><strong>Booking Date:</strong> {DateTime.Now:ddd, dd MMM. yyyy}</td><td><strong>Booking Reference:</strong> {bookingRef}</td></tr>
+                        </table>
 
-            MessageBox.Show("E-ticket has been sent to your email.", "Email Sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        <h3 style='color: #444;'>Departure Flight Details</h3>
+                        <table style='width:100%; border: 1px solid #ddd; border-collapse: collapse;'>
+                            <tr style='background-color: #f5f5f5;'>
+                                <th style='padding: 8px; border: 1px solid #ddd;'>Departure Flight No.</th>
+                                <th style='padding: 8px; border: 1px solid #ddd;'>Departure</th>
+                                <th style='padding: 8px; border: 1px solid #ddd;'>Arrival</th>
+                            </tr>
+                            <tr>
+                                <td style='padding: 8px; border: 1px solid #ddd;'>{flightNumberDeparture}</td>
+                                <td style='padding: 8px; border: 1px solid #ddd;'>{origin}<br>Terminal 3<br>{DateTime.Now.AddDays(1):ddd, dd MMM. yyyy, hh:mm tt}</td>
+                                <td style='padding: 8px; border: 1px solid #ddd;'>{destination}<br>{DateTime.Now.AddDays(1).AddHours(2):ddd, dd MMM. yyyy, hh:mm tt}</td>
+                            </tr>
+                        </table>
 
+                        {(tripType.ToLower() == "round-trip" ? $@"
+                        <h3 style='color: #444;'>Return Flight Details</h3>
+                        <table style='width:100%; border: 1px solid #ddd; border-collapse: collapse;'>
+                            <tr style='background-color: #f5f5f5;'>
+                                <th style='padding: 8px; border: 1px solid #ddd;'>Return Flight No.</th>
+                                <th style='padding: 8px; border: 1px solid #ddd;'>Departure</th>
+                                <th style='padding: 8px; border: 1px solid #ddd;'>Arrival</th>
+                            </tr>
+                            <tr>
+                                <td style='padding: 8px; border: 1px solid #ddd;'>{flightNumberReturn}</td>
+                                <td style='padding: 8px; border: 1px solid #ddd;'>{destination}<br>Terminal 3<br>{DateTime.Now.AddDays(2):ddd, dd MMM. yyyy, hh:mm tt}</td>
+                                <td style='padding: 8px; border: 1px solid #ddd;'>{origin}<br>{DateTime.Now.AddDays(2).AddHours(2):ddd, dd MMM. yyyy, hh:mm tt}</td>
+                            </tr>
+                        </table>" : "")}
+
+                        <h3 style='color: #444;'>Payment</h3>
+                        <p><strong>Transaction Reference:</strong> {transactionRef}</p>
+                        <p><strong>Amount Paid:</strong> PHP {amount:F2}</p>
+
+                        <h3 style='color: #444;'>Guest Details</h3>
+                        <p>Passenger Email: <strong>{toEmail}</strong></p>
+                        <p><strong>Route:</strong> {origin} - {destination}</p>
+
+                        <hr>
+                        <p style='font-size: 12px; color: #555;'>This is a system-generated confirmation. Please do not reply to this email.</p>
+                    </div>"
+                }
+            }
+                };
+
+                string json = JsonConvert.SerializeObject(email);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("https://api.mailjet.com/v3.1/send", content);
+                var responseBody = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Failed to send email. Status: " + response.StatusCode + "\n" + responseBody);
+
+                MessageBox.Show("E-ticket has been sent to your email.", "Email Sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
     }
 }
