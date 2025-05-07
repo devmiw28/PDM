@@ -117,7 +117,7 @@
             this.TxtConfirmPassword.Name = "TxtConfirmPassword";
             this.TxtConfirmPassword.PasswordChar = '*';
             this.TxtConfirmPassword.Size = new System.Drawing.Size(246, 21);
-            this.TxtConfirmPassword.TabIndex = 27;
+            this.TxtConfirmPassword.TabIndex = 3;
             // 
             // btnExit
             // 
@@ -205,7 +205,7 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(246, 21);
-            this.TxtPassword.TabIndex = 14;
+            this.TxtPassword.TabIndex = 2;
             // 
             // BtnSignUp
             // 
@@ -222,7 +222,7 @@
             this.BtnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSignUp.Name = "BtnSignUp";
             this.BtnSignUp.Size = new System.Drawing.Size(252, 64);
-            this.BtnSignUp.TabIndex = 13;
+            this.BtnSignUp.TabIndex = 4;
             this.BtnSignUp.Text = "SIGN UP";
             this.BtnSignUp.UseVisualStyleBackColor = false;
             this.BtnSignUp.Click += new System.EventHandler(this.BtnSignUp_Click);
@@ -237,7 +237,7 @@
             this.TxtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.Size = new System.Drawing.Size(246, 21);
-            this.TxtUsername.TabIndex = 11;
+            this.TxtUsername.TabIndex = 1;
             // 
             // SignUp
             // 

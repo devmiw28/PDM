@@ -16,6 +16,8 @@ namespace Airline
         private readonly string connectionString = "server=localhost;database=pdm_airline_db1;user=root;password=;";
         public event EventHandler DepartFlightAdded;
         public event EventHandler ReturnFlightAdded;
+        private DataTable flightData;
+
 
         public Admin()
         {
@@ -346,17 +348,17 @@ namespace Airline
                     {
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                         {
-                            DataTable dt = new DataTable();
-                            adapter.Fill(dt);
+                            flightData = new DataTable();
+                            adapter.Fill(flightData);
 
                             // Format departure_time as HH:mm
-                            foreach (DataRow row in dt.Rows)
+                            foreach (DataRow row in flightData.Rows)
                             {
                                 TimeSpan departureTime = (TimeSpan)row["depart_time"];
                                 row["depart_time"] = departureTime.ToString(@"hh\:mm");
                             }
 
-                            dgDepartDateAndTime.DataSource = dt;
+                            dgDepartDateAndTime.DataSource = flightData;
                         }
                     }
                 }
@@ -860,5 +862,110 @@ namespace Airline
             }
         }
 
+       
+            private void btnDepartSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = txtDepartSearch.Text.Trim().Replace("'", "''");
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"SELECT depart_flight_id, depart_flight_number, depart_date, depart_time 
+                             FROM depart_flights
+                             WHERE CAST(depart_flight_id AS INT) LIKE @search
+                                OR depart_flight_number LIKE @search
+                                OR depart_date LIKE @search
+                                OR depart_time LIKE @search
+                             ORDER BY depart_flight_id ASC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable filteredDepartData = new DataTable();
+                            adapter.Fill(filteredDepartData);
+
+                            // Format depart_time as HH:mm
+                            foreach (DataRow row in filteredDepartData.Rows)
+                            {
+                                TimeSpan departTime = (TimeSpan)row["depart_time"];
+                                row["depart_time"] = departTime.ToString(@"hh\:mm");
+                            }
+
+                            dgDepartDateAndTime.DataSource = filteredDepartData;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Depart flight search failed: " + ex.Message);
+            }
+        }
+
+        private void btnReturnSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = txtReturnSearch.Text.Trim().Replace("'", "''");
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"SELECT return_flight_id, return_flight_number, return_date, return_time 
+                             FROM return_flights
+                             WHERE CAST(return_flight_id AS INT) LIKE @search
+                                OR return_flight_number LIKE @search
+                                OR return_date LIKE @search
+                                OR return_time LIKE @search
+                             ORDER BY return_flight_id ASC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable filteredReturnData = new DataTable();
+                            adapter.Fill(filteredReturnData);
+
+                            // Format return_time as HH:mm
+                            foreach (DataRow row in filteredReturnData.Rows)
+                            {
+                                TimeSpan returnTime = (TimeSpan)row["return_time"];
+                                row["return_time"] = returnTime.ToString(@"hh\:mm");
+                            }
+
+                            dgReturnDateAndTime.DataSource = filteredReturnData;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Return flight search failed: " + ex.Message);
+            }
+        }
+
+        private void lblSignOut_Click(object sender, EventArgs e)
+        {
+            // Optional: ask for confirmation
+            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Confirm Sign Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No) return;
+
+            // Clear user session
+            SessionManager.ClearSession();
+
+            // Open login form
+            LogIn loginForm = new LogIn(); // Replace with your actual login form class name
+            loginForm.Show();
+
+            // Close or hide this form
+            this.Hide();
+        }
     }
 }

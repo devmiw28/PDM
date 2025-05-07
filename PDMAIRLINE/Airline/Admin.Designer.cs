@@ -64,6 +64,11 @@
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDepartSearch = new System.Windows.Forms.TextBox();
+            this.btnDepartSearch = new System.Windows.Forms.Button();
+            this.btnReturnSearch = new System.Windows.Forms.Button();
+            this.txtReturnSearch = new System.Windows.Forms.TextBox();
+            this.lblSignOut = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.TabAdmin.SuspendLayout();
@@ -157,6 +162,7 @@
             this.pnlHeader.BackColor = System.Drawing.Color.SaddleBrown;
             this.pnlHeader.BackgroundImage = global::Airline.Properties.Resources.PanelHeaderBg;
             this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHeader.Controls.Add(this.lblSignOut);
             this.pnlHeader.Controls.Add(this.btnExit);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
@@ -216,6 +222,8 @@
             // 
             this.pnlDepart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlDepart.BackColor = System.Drawing.Color.Goldenrod;
+            this.pnlDepart.Controls.Add(this.btnDepartSearch);
+            this.pnlDepart.Controls.Add(this.txtDepartSearch);
             this.pnlDepart.Controls.Add(this.btnDepartInsert);
             this.pnlDepart.Controls.Add(this.lblDepartTime);
             this.pnlDepart.Controls.Add(this.dtpDepartDate);
@@ -235,7 +243,7 @@
             this.btnDepartInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDepartInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepartInsert.ForeColor = System.Drawing.Color.White;
-            this.btnDepartInsert.Location = new System.Drawing.Point(337, 92);
+            this.btnDepartInsert.Location = new System.Drawing.Point(277, 91);
             this.btnDepartInsert.Name = "btnDepartInsert";
             this.btnDepartInsert.Size = new System.Drawing.Size(150, 40);
             this.btnDepartInsert.TabIndex = 77;
@@ -250,7 +258,7 @@
             this.lblDepartTime.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartTime.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartTime.ForeColor = System.Drawing.Color.Black;
-            this.lblDepartTime.Location = new System.Drawing.Point(455, 20);
+            this.lblDepartTime.Location = new System.Drawing.Point(273, 20);
             this.lblDepartTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartTime.Name = "lblDepartTime";
             this.lblDepartTime.Size = new System.Drawing.Size(138, 24);
@@ -262,7 +270,7 @@
             this.dtpDepartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpDepartDate.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
             this.dtpDepartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDepartDate.Location = new System.Drawing.Point(115, 47);
+            this.dtpDepartDate.Location = new System.Drawing.Point(24, 47);
             this.dtpDepartDate.Name = "dtpDepartDate";
             this.dtpDepartDate.Size = new System.Drawing.Size(247, 39);
             this.dtpDepartDate.TabIndex = 71;
@@ -271,7 +279,7 @@
             // 
             this.txtDepartTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDepartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartTime.Location = new System.Drawing.Point(459, 47);
+            this.txtDepartTime.Location = new System.Drawing.Point(277, 47);
             this.txtDepartTime.Name = "txtDepartTime";
             this.txtDepartTime.Size = new System.Drawing.Size(247, 38);
             this.txtDepartTime.TabIndex = 72;
@@ -283,7 +291,7 @@
             this.lblDepartDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartDate.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDepartDate.Location = new System.Drawing.Point(111, 20);
+            this.lblDepartDate.Location = new System.Drawing.Point(20, 20);
             this.lblDepartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartDate.Name = "lblDepartDate";
             this.lblDepartDate.Size = new System.Drawing.Size(137, 24);
@@ -318,6 +326,8 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel2.Controls.Add(this.btnReturnSearch);
+            this.panel2.Controls.Add(this.txtReturnSearch);
             this.panel2.Controls.Add(this.btnReturnInsert);
             this.panel2.Controls.Add(this.lblReturnTime);
             this.panel2.Controls.Add(this.dtpReturnDate);
@@ -337,7 +347,7 @@
             this.btnReturnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReturnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnReturnInsert.Location = new System.Drawing.Point(337, 92);
+            this.btnReturnInsert.Location = new System.Drawing.Point(278, 93);
             this.btnReturnInsert.Name = "btnReturnInsert";
             this.btnReturnInsert.Size = new System.Drawing.Size(150, 40);
             this.btnReturnInsert.TabIndex = 77;
@@ -352,7 +362,7 @@
             this.lblReturnTime.BackColor = System.Drawing.Color.Transparent;
             this.lblReturnTime.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnTime.ForeColor = System.Drawing.Color.Black;
-            this.lblReturnTime.Location = new System.Drawing.Point(446, 22);
+            this.lblReturnTime.Location = new System.Drawing.Point(274, 22);
             this.lblReturnTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnTime.Name = "lblReturnTime";
             this.lblReturnTime.Size = new System.Drawing.Size(136, 24);
@@ -364,7 +374,7 @@
             this.dtpReturnDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpReturnDate.Font = new System.Drawing.Font("Lucida Sans", 20.25F);
             this.dtpReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpReturnDate.Location = new System.Drawing.Point(117, 49);
+            this.dtpReturnDate.Location = new System.Drawing.Point(25, 49);
             this.dtpReturnDate.Name = "dtpReturnDate";
             this.dtpReturnDate.Size = new System.Drawing.Size(247, 39);
             this.dtpReturnDate.TabIndex = 71;
@@ -373,7 +383,7 @@
             // 
             this.txtReturnTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtReturnTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturnTime.Location = new System.Drawing.Point(450, 49);
+            this.txtReturnTime.Location = new System.Drawing.Point(278, 49);
             this.txtReturnTime.Name = "txtReturnTime";
             this.txtReturnTime.Size = new System.Drawing.Size(247, 38);
             this.txtReturnTime.TabIndex = 72;
@@ -385,7 +395,7 @@
             this.lblReturnDate.BackColor = System.Drawing.Color.Transparent;
             this.lblReturnDate.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnDate.ForeColor = System.Drawing.Color.Black;
-            this.lblReturnDate.Location = new System.Drawing.Point(113, 22);
+            this.lblReturnDate.Location = new System.Drawing.Point(21, 22);
             this.lblReturnDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnDate.Name = "lblReturnDate";
             this.lblReturnDate.Size = new System.Drawing.Size(135, 24);
@@ -514,6 +524,74 @@
             this.created_at.HeaderText = "Created At";
             this.created_at.Name = "created_at";
             // 
+            // txtDepartSearch
+            // 
+            this.txtDepartSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDepartSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartSearch.Location = new System.Drawing.Point(562, 47);
+            this.txtDepartSearch.Name = "txtDepartSearch";
+            this.txtDepartSearch.Size = new System.Drawing.Size(247, 38);
+            this.txtDepartSearch.TabIndex = 78;
+            // 
+            // btnDepartSearch
+            // 
+            this.btnDepartSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDepartSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnDepartSearch.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
+            this.btnDepartSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDepartSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDepartSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepartSearch.ForeColor = System.Drawing.Color.White;
+            this.btnDepartSearch.Location = new System.Drawing.Point(610, 91);
+            this.btnDepartSearch.Name = "btnDepartSearch";
+            this.btnDepartSearch.Size = new System.Drawing.Size(150, 40);
+            this.btnDepartSearch.TabIndex = 79;
+            this.btnDepartSearch.Text = "Search";
+            this.btnDepartSearch.UseVisualStyleBackColor = false;
+            this.btnDepartSearch.Click += new System.EventHandler(this.btnDepartSearch_Click);
+            // 
+            // btnReturnSearch
+            // 
+            this.btnReturnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReturnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturnSearch.BackgroundImage = global::Airline.Properties.Resources.ButtoncolorBig1;
+            this.btnReturnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReturnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnReturnSearch.Location = new System.Drawing.Point(609, 93);
+            this.btnReturnSearch.Name = "btnReturnSearch";
+            this.btnReturnSearch.Size = new System.Drawing.Size(150, 40);
+            this.btnReturnSearch.TabIndex = 81;
+            this.btnReturnSearch.Text = "Search";
+            this.btnReturnSearch.UseVisualStyleBackColor = false;
+            this.btnReturnSearch.Click += new System.EventHandler(this.btnReturnSearch_Click);
+            // 
+            // txtReturnSearch
+            // 
+            this.txtReturnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtReturnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnSearch.Location = new System.Drawing.Point(561, 49);
+            this.txtReturnSearch.Name = "txtReturnSearch";
+            this.txtReturnSearch.Size = new System.Drawing.Size(247, 38);
+            this.txtReturnSearch.TabIndex = 80;
+            // 
+            // lblSignOut
+            // 
+            this.lblSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignOut.AutoSize = true;
+            this.lblSignOut.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblSignOut.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignOut.ForeColor = System.Drawing.Color.Gold;
+            this.lblSignOut.Location = new System.Drawing.Point(1273, 22);
+            this.lblSignOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSignOut.Name = "lblSignOut";
+            this.lblSignOut.Size = new System.Drawing.Size(110, 25);
+            this.lblSignOut.TabIndex = 23;
+            this.lblSignOut.Text = "SIGN OUT";
+            this.lblSignOut.Click += new System.EventHandler(this.lblSignOut_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +608,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             this.TabAdmin.ResumeLayout(false);
             this.tabDepartDateAndTime.ResumeLayout(false);
             this.pnlDepart.ResumeLayout(false);
@@ -589,5 +668,10 @@
         private System.Windows.Forms.DataGridView dgPaymentHistory;
         private System.Windows.Forms.TabPage tabSeatSelected;
         private System.Windows.Forms.DataGridView dgSeatSelected;
+        private System.Windows.Forms.TextBox txtDepartSearch;
+        private System.Windows.Forms.Button btnDepartSearch;
+        private System.Windows.Forms.Button btnReturnSearch;
+        private System.Windows.Forms.TextBox txtReturnSearch;
+        private System.Windows.Forms.Label lblSignOut;
     }
 }
