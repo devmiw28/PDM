@@ -48,9 +48,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblSignOut = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblLearnMore = new System.Windows.Forms.Label();
-            this.lblSignOut = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbDestination2)).BeginInit();
@@ -313,6 +313,22 @@
             this.pnlHeader.Size = new System.Drawing.Size(1440, 70);
             this.pnlHeader.TabIndex = 15;
             // 
+            // lblSignOut
+            // 
+            this.lblSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignOut.AutoSize = true;
+            this.lblSignOut.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblSignOut.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignOut.ForeColor = System.Drawing.Color.Gold;
+            this.lblSignOut.Location = new System.Drawing.Point(1127, 21);
+            this.lblSignOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSignOut.Name = "lblSignOut";
+            this.lblSignOut.Size = new System.Drawing.Size(110, 25);
+            this.lblSignOut.TabIndex = 17;
+            this.lblSignOut.Text = "SIGN OUT";
+            this.lblSignOut.Click += new System.EventHandler(this.lblSignOut_Click);
+            // 
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -328,6 +344,7 @@
             this.btnExit.TabIndex = 16;
             this.btnExit.Text = "x";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Visible = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblLearnMore
@@ -345,22 +362,6 @@
             this.lblLearnMore.TabIndex = 16;
             this.lblLearnMore.Text = "LEARN MORE";
             this.lblLearnMore.Click += new System.EventHandler(this.lblLearnMore_Click);
-            // 
-            // lblSignOut
-            // 
-            this.lblSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSignOut.AutoSize = true;
-            this.lblSignOut.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblSignOut.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignOut.ForeColor = System.Drawing.Color.Gold;
-            this.lblSignOut.Location = new System.Drawing.Point(1127, 21);
-            this.lblSignOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSignOut.Name = "lblSignOut";
-            this.lblSignOut.Size = new System.Drawing.Size(110, 25);
-            this.lblSignOut.TabIndex = 17;
-            this.lblSignOut.Text = "SIGN OUT";
-            this.lblSignOut.Click += new System.EventHandler(this.lblSignOut_Click);
             // 
             // Homepage
             // 
